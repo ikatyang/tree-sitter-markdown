@@ -5,7 +5,7 @@
 
 Markdown ([CommonMark Spec v0.29-gfm](https://github.github.com/gfm/)) grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 
-_Note: This grammar is based on the assumption that **[link label matchings](https://github.github.com/gfm/#matches) will never fail** since reference links can come before their reference definitions, which causes it hard to do incrementally parsing without this assumption._
+_Note: This grammar is based on the assumption that **[link label matchings](https://github.github.com/gfm/#matches) will never fail** since reference links can come before their reference definitions, which causes it hard to do incremental parsing without this assumption._
 
 [Changelog](https://github.com/ikatyang/tree-sitter-markdown/blob/master/CHANGELOG.md)
 

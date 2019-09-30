@@ -116,7 +116,7 @@ BlockDelimiter *BlockDelimiterList::lit_lbk(const LexedRow row) {
       return &(*itr);
     }
   }
-  return nullptr;
+  return NULL_PTR;
 }
 
 void BlockDelimiterList::clear() { return list_.clear(); }
@@ -149,8 +149,8 @@ unsigned BlockDelimiterList::deserialize(const unsigned char *buffer) {
 void BlockDelimiterList::pop_front() { list_.pop_front(); }
 void BlockDelimiterList::push_back(const BlockDelimiter &dlm) { list_.push_back(dlm); }
 BlockDelimiterList::Iterator BlockDelimiterList::insert(const LexedRow row, const BlockDelimiter &dlm) {
-  ConstIterator itr = list_.begin();
-  ConstIterator end = list_.end();
+  Iterator itr = list_.begin();
+  Iterator end = list_.end();
   for (LexedRow cur_row = 0; itr != end; itr++) {
     if (itr->sym() != SYM_LIT_LBK || cur_row++ == row) {
       return list_.insert(itr, dlm);

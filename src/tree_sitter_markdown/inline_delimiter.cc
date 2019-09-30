@@ -201,7 +201,7 @@ LexedLength InlineDelimiter::ori_len() const { return ori_len_; }
 const LexedPosition &InlineDelimiter::pos() const { return pos_; }
 const LexedPosition &InlineDelimiter::end_pos() const { return end_pos_; }
 InlineDelimiterCustomData InlineDelimiter::ctm_dat() const { return ctm_dat_; }
-bool InlineDelimiter::has_end_dlm() const { return end_dlm_ != nullptr; }
+bool InlineDelimiter::has_end_dlm() const { return end_dlm_ != NULL_PTR; }
 InlineDelimiter *InlineDelimiter::end_dlm() const { return end_dlm_; }
 
 void InlineDelimiter::set_yes(const bool yes) { yes_ = yes; }
@@ -212,7 +212,7 @@ void InlineDelimiter::set_end_dlm(InlineDelimiter *const end_dlm) { end_dlm_ = e
 void InlineDelimiter::set_end_dlm(InlineDelimiterList::Iterator end_dlm_itr) { end_dlm_ = &(*end_dlm_itr); }
 
 InlineDelimiter::InlineDelimiter(const bool yes, const Symbol sym, const LexedPosition &pos, const LexedPosition &end_pos):
-  yes_(yes), sym_(sym), len_(pos.dist(end_pos)), ori_len_(len_), pos_(pos), end_pos_(end_pos), ctm_dat_(0), end_dlm_(nullptr) {}
+  yes_(yes), sym_(sym), len_(pos.dist(end_pos)), ori_len_(len_), pos_(pos), end_pos_(end_pos), ctm_dat_(0), end_dlm_(NULL_PTR) {}
 
 MinimizedInlineDelimiter InlineDelimiter::to_min() const { return MinimizedInlineDelimiter(yes_, sym_, len_); }
 

@@ -78,24 +78,24 @@ void InlineContextStack::pop_paired(const InlineDelimiterList::Iterator end_dlm_
 bool InlineContextStack::pop_all_lnk_bgn(InlineDelimiterList::Iterator &fst_pop_lnk_bgn_itr) {
   bool has_fst_pop_lnk_bgn = false;
 
-  InlineDelimiter *img_bgn = nullptr;
+  InlineDelimiter *img_bgn = NULL_PTR;
   InlineDelimiterCustomData lnk_bgn_cnt = 0;
 
   Iterator ctx_itr = stk_.begin();
   Iterator ctx_end = stk_.end();
   while (ctx_itr != ctx_end) {
     if (ctx_itr->dlm_itr()->sym() == SYM_LNK_BGN) {
-      if (!has_fst_pop_lnk_bgn && img_bgn == nullptr) {
+      if (!has_fst_pop_lnk_bgn && img_bgn == NULL_PTR) {
         has_fst_pop_lnk_bgn = true;
         fst_pop_lnk_bgn_itr = ctx_itr->dlm_itr();
       }
       ctx_itr = stk_.erase(ctx_itr);
       lnk_bgn_cnt++;
     } else {
-      if (lnk_bgn_cnt != 0 && img_bgn != nullptr) {
+      if (lnk_bgn_cnt != 0 && img_bgn != NULL_PTR) {
         img_bgn->set_ctm_dat(img_bgn->ctm_dat() + lnk_bgn_cnt);
         lnk_bgn_cnt = 0;
-        img_bgn = nullptr;
+        img_bgn = NULL_PTR;
       }
       if (ctx_itr->dlm_itr()->sym() == SYM_IMG_BGN) {
         img_bgn = &(*ctx_itr->dlm_itr());
@@ -103,7 +103,7 @@ bool InlineContextStack::pop_all_lnk_bgn(InlineDelimiterList::Iterator &fst_pop_
       ctx_itr++;
     }
   }
-  if (lnk_bgn_cnt != 0 && img_bgn != nullptr) {
+  if (lnk_bgn_cnt != 0 && img_bgn != NULL_PTR) {
     img_bgn->set_ctm_dat(img_bgn->ctm_dat() + lnk_bgn_cnt);
   }
 

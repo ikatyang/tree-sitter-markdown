@@ -96,7 +96,7 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
       }
       if (VLD(SYM_LIT_LBK)) {
         BlockDelimiter *lit_brk = blk_dlms.lit_lbk(lxr.cur_row());
-        if (lit_brk == nullptr) {
+        if (lit_brk == NULL_PTR) {
           LexedIndex lbk_bgn_idx = lxr.cur_idx();
           if (scn_eol(lxr, blk_dlms, blk_ctx_stk)) {
             end_idx = lbk_bgn_idx;
@@ -581,7 +581,7 @@ bool scn_inl_bsl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     } else if (VLD(SYM_BSL_LBK) && is_lbk_chr(lxr.lka_chr())) {
       LexedPosition bsl_end_pos = lxr.cur_pos();
       BlockDelimiter *lit_brk = blk_dlms.lit_lbk(lxr.cur_row());
-      if (lit_brk == nullptr) {
+      if (lit_brk == NULL_PTR) {
         if (scn_eol(lxr, blk_dlms, blk_ctx_stk)) {
           inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_BSL_LBK, bgn_pos, bsl_end_pos));
           end_idx = bgn_pos.idx();

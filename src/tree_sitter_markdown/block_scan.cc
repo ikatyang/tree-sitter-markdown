@@ -295,7 +295,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       break;
     } else if (is_eol) {
       assert(!blk_ctx_stk.empty());
-      const BlockContext *fst_bqt_ctx = nullptr;
+      const BlockContext *fst_bqt_ctx = NULL_PTR;
       for (
         BlockContextStack::ConstIterator cur_ctx_itr = fst_failed_ctx_itr;
         cur_ctx_itr != ctx_end_itr;
@@ -306,7 +306,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           break;
         }
       }
-      if (fst_bqt_ctx != nullptr) {
+      if (fst_bqt_ctx != NULL_PTR) {
         has_blk_lbk = false;
         tmp_blk_dlms.clear();
         for (

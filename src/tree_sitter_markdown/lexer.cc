@@ -1,5 +1,6 @@
 #include "./lexer.h"
 
+#include <cstring>
 #include "./predicate.h"
 
 namespace tree_sitter_markdown {

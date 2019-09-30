@@ -19,6 +19,8 @@ typedef uint16_t InlineDelimiterCustomData;
 #define LEXED_LENGTH_MAX UINT16_MAX
 #define INLINE_DELIMITER_CUSTOM_DATA_MAX UINT16_MAX
 
+#define NULL_PTR 0
+
 struct LexedPosition {
 private:
   LexedIndex idx_;

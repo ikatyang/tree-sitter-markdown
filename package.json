@@ -1,0 +1,37 @@
+{
+  "name": "tree-sitter-markdown",
+  "version": "0.1.0",
+  "description": "Markdown grammar for tree-sitter",
+  "keywords": [
+    "parser",
+    "lexer"
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/ikatyang/tree-sitter-markdown",
+  "homepage": "https://github.com/ikatyang/tree-sitter-markdown#readme",
+  "author": {
+    "name": "Ika",
+    "email": "ikatyang@gmail.com",
+    "url": "https://github.com/ikatyang"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn tree-sitter test",
+    "prepack": "node scripts/update-generated-utils.js && yarn tree-sitter generate",
+    "release": "standard-version",
+    "tree-sitter": "./tree-sitter/target/release/tree-sitter"
+  },
+  "dependencies": {
+    "nan": "^2.14.0"
+  },
+  "devDependencies": {
+    "standard-version": "7.0.0",
+    "unicode-regex": "3.0.0"
+  },
+  "files": [
+    "/src/",
+    "/binding.gyp",
+    "/grammar.js",
+    "/index.js"
+  ]
+}

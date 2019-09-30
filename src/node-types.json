@@ -1,0 +1,41 @@
+[
+  {
+    "type": "document",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "code_fence_content",
+          "named": true
+        },
+        {
+          "type": "heading_content",
+          "named": true
+        },
+        {
+          "type": "info_string",
+          "named": true
+        },
+        {
+          "type": "line_break",
+          "named": true
+        },
+        {
+          "type": "link_label",
+          "named": true
+        },
+        {
+          "type": "paragraph",
+          "named": true
+        },
+        {
+          "type": "table_cell",
+          "named": true
+        }
+      ]
+    }
+  }
+]

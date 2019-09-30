@@ -1,0 +1,615 @@
+================================================================================
+Table (extension) - too more indentation in list item [is NOT table]
+================================================================================
+-  | abc | def |
+       | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (tight_list
+    (list_item
+      (list_marker)
+      (paragraph
+        (soft_line_break)))))
+
+================================================================================
+Table (extension) - more indentation in list item [is table]
+================================================================================
+-  | abc | def |
+    | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (tight_list
+    (list_item
+      (list_marker)
+      (table
+        (table_header_row
+          (table_cell)
+          (table_cell))
+        (table_delimiter_row
+          (table_column_alignment)
+          (table_column_alignment))))))
+
+================================================================================
+Table (extension) - same indentation in list item [is table]
+================================================================================
+-  | abc | def |
+   | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (tight_list
+    (list_item
+      (list_marker)
+      (paragraph
+        (soft_line_break)))))
+
+================================================================================
+Table (extension) - less indentation in list item [is NOT table]
+================================================================================
+-  | abc | def |
+  | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (tight_list
+    (list_item
+      (list_marker)
+      (paragraph
+        (soft_line_break)))))
+
+================================================================================
+Table (extension) - too more indentation in non-list item [is NOT table]
+================================================================================
+>  | abc | def |
+>     | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (block_quote
+    (paragraph
+      (soft_line_break))))
+
+================================================================================
+Table (extension) - more indentation in non-list item [is table]
+================================================================================
+>  | abc | def |
+>   | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (block_quote
+    (table
+      (table_header_row
+        (table_cell)
+        (table_cell))
+      (table_delimiter_row
+        (table_column_alignment)
+        (table_column_alignment)))))
+
+================================================================================
+Table (extension) - same indentation in non-list item [is table]
+================================================================================
+>  | abc | def |
+>  | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (block_quote
+    (table
+      (table_header_row
+        (table_cell)
+        (table_cell))
+      (table_delimiter_row
+        (table_column_alignment)
+        (table_column_alignment)))))
+
+================================================================================
+Table (extension) - less indentation in non-list item [is table]
+================================================================================
+>  | abc | def |
+> | --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (block_quote
+    (table
+      (table_header_row
+        (table_cell)
+        (table_cell))
+      (table_delimiter_row
+        (table_column_alignment)
+        (table_column_alignment)))))
+
+================================================================================
+Table (extension) - too less indentation in non-list item [is NOT table]
+================================================================================
+> | abc | def |
+| --- | --- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (block_quote
+    (paragraph
+      (soft_line_break))))
+
+================================================================================
+Table (extension) - escaped column separator
+================================================================================
+| \| | \\| | \\\| | \\\\| |
+| -- | --- | ---- | ----- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (backslash_escape))
+      (table_cell
+        (backslash_escape))
+      (table_cell
+        (backslash_escape)
+        (backslash_escape))
+      (table_cell
+        (backslash_escape)
+        (backslash_escape)))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in code span
+================================================================================
+| `\|` | `\\|` | `\\\|` | `\\\\|` |
+| ---- | ----- | ------ | ------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (code_span
+          (backslash_escape)))
+      (table_cell
+        (code_span
+          (backslash_escape)))
+      (table_cell
+        (code_span
+          (backslash_escape)))
+      (table_cell
+        (code_span
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in autolink (URI)
+================================================================================
+| <abc:\|> | <abc:\\|> | <abc:\\\|> | <abc:\\\\|> |
+| -------- | --------- | ---------- | ----------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (uri_autolink
+          (backslash_escape)))
+      (table_cell
+        (uri_autolink
+          (backslash_escape)))
+      (table_cell
+        (uri_autolink
+          (backslash_escape)))
+      (table_cell
+        (uri_autolink
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in autolink (email)
+================================================================================
+| <\|@example.com> | <\\|@example.com> | <\|\|@example.com> |
+| ---------------- | ----------------- | ------------------ |
+| is-autolink      | is-NOT-autolink   | is-autolink        |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (email_autolink
+          (backslash_escape)))
+      (table_cell
+        (backslash_escape))
+      (table_cell
+        (email_autolink
+          (backslash_escape)
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))
+    (table_data_row
+      (table_cell)
+      (table_cell)
+      (table_cell))))
+
+================================================================================
+Table (extension) - escaped column separator in autolink (extension)
+================================================================================
+| www.a.com\| | www.a.com\\| | www.a.com\\\| | www.a.com\\\\| |
+| ----------- | ------------ | ------------- | -------------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (www_autolink
+          (backslash_escape)))
+      (table_cell
+        (www_autolink
+          (backslash_escape)))
+      (table_cell
+        (www_autolink
+          (backslash_escape)))
+      (table_cell
+        (www_autolink
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in raw html (unquoted attribute value)
+================================================================================
+| <x x=\|> | <x x=\\|> | <x x=\\\|> | <x x=\\\\|> |
+| -------- | --------- | ---------- | ----------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape))))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in raw html (single-quoted attribute value)
+================================================================================
+| <x x='\|'> | <x x='\\|'> | <x x='\\\|'> | <x x='\\\\|'> |
+| ---------- | ----------- | ------------ | ------------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape))))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in raw html (double-quoted attribute value)
+================================================================================
+| <x x="\|"> | <x x="\\|"> | <x x="\\\|"> | <x x="\\\\|"> |
+| ---------- | ----------- | ------------ | ------------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape)))))
+      (table_cell
+        (html_open_tag
+          (html_tag_name)
+          (html_atrribute
+            (html_attribute_key)
+            (html_attribute_value
+              (backslash_escape))))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in raw html (html comment)
+================================================================================
+| <!--\|--> | <!--\\|--> | <!--\\\|--> | <!--\\\\|--> |
+| --------- | ---------- | ----------- | ------------ |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (html_comment
+          (backslash_escape)))
+      (table_cell
+        (html_comment
+          (backslash_escape)))
+      (table_cell
+        (html_comment
+          (backslash_escape)))
+      (table_cell
+        (html_comment
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in raw html (processing instruction)
+================================================================================
+| <?\|?> | <?\\|?> | <?\\\|?> | <?\\\\|?> |
+| ------ | ------- | -------- | --------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (html_processing_instruction
+          (backslash_escape)))
+      (table_cell
+        (html_processing_instruction
+          (backslash_escape)))
+      (table_cell
+        (html_processing_instruction
+          (backslash_escape)))
+      (table_cell
+        (html_processing_instruction
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in raw html (declaration)
+================================================================================
+| <!X \|> | <!X \\|> | <!X \\\|> | <!X \\\\|> |
+| ------- | -------- | --------- | ---------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (html_declaration
+          (html_declaration_name)
+          (backslash_escape)))
+      (table_cell
+        (html_declaration
+          (html_declaration_name)
+          (backslash_escape)))
+      (table_cell
+        (html_declaration
+          (html_declaration_name)
+          (backslash_escape)))
+      (table_cell
+        (html_declaration
+          (html_declaration_name)
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Table (extension) - escaped column separator in raw html (CDATA)
+================================================================================
+| <![CDATA[\|]]> | <![CDATA[\\|]]> | <![CDATA[\\\|]]> | <![CDATA[\\\\|]]> |
+| -------------- | --------------- | ---------------- | ----------------- |
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (html_cdata_section
+          (backslash_escape)))
+      (table_cell
+        (html_cdata_section
+          (backslash_escape)))
+      (table_cell
+        (html_cdata_section
+          (backslash_escape)))
+      (table_cell
+        (html_cdata_section
+          (backslash_escape))))
+    (table_delimiter_row
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment)
+      (table_column_alignment))))
+
+================================================================================
+Task list item (extension) - setext heading takes precedence over it
+================================================================================
+- [ ] text
+  ===
+
+--------------------------------------------------------------------------------
+
+(document
+  (tight_list
+    (list_item
+      (list_marker)
+      (setext_heading
+        (heading_content)
+        (setext_heading_underline)))))
+
+================================================================================
+Autolink (extension) - valid domain
+================================================================================
+is-NOT-autolink www.example
+is-NOT-autolink www.example.
+is-autolink     www.example.com
+is-NOT-autolink www.example.co_m
+is-NOT-autolink www.e_xample.com
+is-autolink     www.su_b.example.com
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (soft_line_break)
+    (soft_line_break)
+    (www_autolink)
+    (soft_line_break)
+    (soft_line_break)
+    (soft_line_break)
+    (www_autolink)))
+
+================================================================================
+Unnamed 1
+================================================================================
+<a a=a
+a a a>
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (html_open_tag
+      (html_tag_name)
+      (html_atrribute
+        (html_attribute_key)
+        (html_attribute_value))
+      (html_atrribute
+        (html_attribute_key))
+      (html_atrribute
+        (html_attribute_key))
+      (html_atrribute
+        (html_attribute_key)))))
+
+================================================================================
+Unnamed 2
+================================================================================
+[example]: https://example.com/
+
+--------------------------------------------------------------------------------
+
+(document
+  (link_reference_definition
+    (link_label)
+    (link_destination)))

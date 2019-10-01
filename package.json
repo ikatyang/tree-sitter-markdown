@@ -24,7 +24,7 @@
   "standard-version": {
     "preset": "angular",
     "scripts": {
-      "precommit": "rm -r docs && node scripts/generate-playground.js && git add docs"
+      "postbump": "rm -r docs && node scripts/generate-playground.js && git add docs"
     }
   },
   "dependencies": {

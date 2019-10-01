@@ -173,53 +173,6 @@
         }
       ]
     },
-    "_chk_box_pgh": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "_pgh_bgn_mkr"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_lst_chk_box"
-          },
-          "named": true,
-          "value": "checkbox"
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_chk_box_pgh_ctn"
-          },
-          "named": true,
-          "value": "paragraph"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_pgh_end_mkr"
-        }
-      ]
-    },
-    "_chk_box_pgh_ctn": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "_inl_nod"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_inl_lbk"
-          }
-        ]
-      }
-    },
     "_lnk_ref_def": {
       "type": "SEQ",
       "members": [
@@ -1182,6 +1135,18 @@
           "name": "_lst_itm_cnt_bgn_mkr"
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_chk_box_lik_stx"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
@@ -1272,6 +1237,18 @@
           "name": "_lst_itm_cnt_bgn_mkr"
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_chk_box_lik_stx"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
@@ -1343,6 +1320,132 @@
               {
                 "type": "SYMBOL",
                 "name": "_blk_nod"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "_chk_box_pgh": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_pgh_bgn_mkr"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_chk_box_pgh_ctn"
+          },
+          "named": true,
+          "value": "paragraph"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_pgh_end_mkr"
+        }
+      ]
+    },
+    "_chk_box_pgh_ctn": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_lst_chk_box"
+          },
+          "named": true,
+          "value": "task_list_item_marker"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_inl_nod"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_inl_lbk"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "_chk_box_lik_stx": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_chk_box_lik_stx_hed"
+          },
+          "named": true,
+          "value": "setext_heading"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_stx_end_mkr"
+        }
+      ]
+    },
+    "_chk_box_lik_stx_hed": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_pgh_bgn_mkr"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_chk_box_lik_stx_ctn"
+          },
+          "named": true,
+          "value": "heading_content"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_pgh_end_mkr"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_stx_bgn"
+          },
+          "named": true,
+          "value": "setext_heading_underline"
+        }
+      ]
+    },
+    "_chk_box_lik_stx_ctn": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_lst_chk_box"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_inl_nod"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_inl_lbk"
               }
             ]
           }
@@ -2776,7 +2879,12 @@
       "name": "_lit_lbk"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "_chk_box_pgh_ctn",
+      "_chk_box_lik_stx_ctn"
+    ]
+  ],
   "externals": [
     {
       "type": "SYMBOL",

@@ -4483,12 +4483,12 @@ Example 279 - https://github.github.com/gfm/#example-279
   (tight_list
     (task_list_item
       (list_marker)
-      (checkbox)
-      (paragraph))
+      (paragraph
+        (task_list_item_marker)))
     (task_list_item
       (list_marker)
-      (checkbox)
-      (paragraph))))
+      (paragraph
+        (task_list_item_marker)))))
 
 ================================================================================
 Example 280 - https://github.github.com/gfm/#example-280
@@ -4504,21 +4504,21 @@ Example 280 - https://github.github.com/gfm/#example-280
   (tight_list
     (task_list_item
       (list_marker)
-      (checkbox)
-      (paragraph)
+      (paragraph
+        (task_list_item_marker))
       (tight_list
         (task_list_item
           (list_marker)
-          (checkbox)
-          (paragraph))
+          (paragraph
+            (task_list_item_marker)))
         (task_list_item
           (list_marker)
-          (checkbox)
-          (paragraph))))
+          (paragraph
+            (task_list_item_marker)))))
     (task_list_item
       (list_marker)
-      (checkbox)
-      (paragraph))))
+      (paragraph
+        (task_list_item_marker)))))
 
 ================================================================================
 Example 281 - https://github.github.com/gfm/#example-281

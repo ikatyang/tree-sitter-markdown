@@ -16,6 +16,22 @@
           "named": true
         },
         {
+          "type": "html_attribute_key",
+          "named": true
+        },
+        {
+          "type": "html_declaration_name",
+          "named": true
+        },
+        {
+          "type": "html_tag_name",
+          "named": true
+        },
+        {
+          "type": "image_description",
+          "named": true
+        },
+        {
           "type": "info_string",
           "named": true
         },
@@ -28,11 +44,19 @@
           "named": true
         },
         {
+          "type": "link_text",
+          "named": true
+        },
+        {
           "type": "paragraph",
           "named": true
         },
         {
           "type": "table_cell",
+          "named": true
+        },
+        {
+          "type": "task_list_item_marker",
           "named": true
         }
       ]

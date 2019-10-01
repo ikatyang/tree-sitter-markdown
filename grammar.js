@@ -70,6 +70,10 @@ module.exports = grammar({
     $._txt,
   ],
 
+  conflicts: $ => [
+    [$._chk_box_pgh_ctn, $._chk_box_lik_stx_ctn], // requires 2 lookahead tokens to distinguish them
+  ],
+
   extras: $ => [$._lka, $._lit_lbk],
 
   rules: {
@@ -81,8 +85,6 @@ module.exports = grammar({
     _thm_brk_hed: $ => $._thm_brk_bgn,
     _pgh: $ => seq(alias($._pgh_hed, $.paragraph), $._pgh_end_mkr),
     _pgh_hed: $ => seq($._pgh_bgn_mkr, repeat(choice($._inl_nod, $._inl_lbk))),
-    _chk_box_pgh: $ => seq($._pgh_bgn_mkr, $._lst_chk_box, $._chk_box_pgh_ctn, $._pgh_end_mkr),
-    _chk_box_pgh_ctn: $ => repeat1(choice($._inl_nod, $._inl_lbk)),
     _lnk_ref_def: $ => seq($._lnk_ref_def_hed, $._lnk_ref_def_end_mkr),
     _lnk_ref_def_hed: $ => seq($._pgh_bgn_mkr, $._lnk_ref_def_bgn, alias(repeat(choice($._txt, $._bsl_esc)), $.link_label), $._lnk_end, $._lnk_ref_def_cln, $._lnk_dst, optional($._lnk_tit)),
     _stx: $ => seq($._stx_hed, $._stx_end_mkr),
@@ -115,11 +117,17 @@ module.exports = grammar({
     _los_lst: $ => seq($._los_lst_hed, $._lst_end_mkr),
     _los_lst_hed: $ => seq($._lst_bgn_mkr, repeat($._tig_lst_itm), choice($._bnk_lbk, $._los_lst_itm), repeat(choice($._tig_lst_itm, $._los_lst_itm, $._bnk_lbk))),
     _tig_lst_itm: $ => seq(choice($._tig_lst_itm_hed, $._tig_chk_box_lst_itm_hed), $._lst_itm_cnt_end_mkr, $._lst_itm_end_mkr),
-    _tig_lst_itm_hed: $ => seq($._lst_itm_bgn, $._lst_itm_cnt_bgn_mkr, repeat($._blk_nod)),
+    _tig_lst_itm_hed: $ => seq($._lst_itm_bgn, $._lst_itm_cnt_bgn_mkr, optional($._chk_box_lik_stx), repeat($._blk_nod)),
     _tig_chk_box_lst_itm_hed: $ => seq($._lst_itm_bgn, $._lst_itm_cnt_bgn_mkr, $._chk_box_pgh, repeat($._blk_nod)),
     _los_lst_itm: $ => seq(choice($._los_lst_itm_hed, $._los_chk_box_lst_itm_hed), $._lst_itm_cnt_end_mkr, $._lst_itm_end_mkr),
-    _los_lst_itm_hed: $ => seq($._lst_itm_bgn, $._lst_itm_cnt_bgn_mkr, repeat($._blk_nod), $._bnk_lbk, repeat(choice($._bnk_lbk, $._blk_nod))),
+    _los_lst_itm_hed: $ => seq($._lst_itm_bgn, $._lst_itm_cnt_bgn_mkr, optional($._chk_box_lik_stx), repeat($._blk_nod), $._bnk_lbk, repeat(choice($._bnk_lbk, $._blk_nod))),
     _los_chk_box_lst_itm_hed: $ => seq($._lst_itm_bgn, $._lst_itm_cnt_bgn_mkr, $._chk_box_pgh, repeat($._blk_nod), $._bnk_lbk, repeat(choice($._bnk_lbk, $._blk_nod))),
+
+    _chk_box_pgh: $ => seq($._pgh_bgn_mkr, alias($._chk_box_pgh_ctn, $.paragraph), $._pgh_end_mkr),
+    _chk_box_pgh_ctn: $ => seq(alias($._lst_chk_box, $.task_list_item_marker), repeat(choice($._inl_nod, $._inl_lbk))),
+    _chk_box_lik_stx: $ => seq(alias($._chk_box_lik_stx_hed, $.setext_heading), $._stx_end_mkr),
+    _chk_box_lik_stx_hed:$ =>  seq($._pgh_bgn_mkr, alias($._chk_box_lik_stx_ctn, $.heading_content), $._pgh_end_mkr, $._stx_bgn),
+    _chk_box_lik_stx_ctn: $ => seq($._lst_chk_box, repeat(choice($._inl_nod, $._inl_lbk))),
 
     _tbl: $ => seq($._tbl_hed_row, $._tbl_dlm_row, repeat($._tbl_dat_row)),
     _tbl_hed_row: $ => seq($._tbl_hed_row_hed, $._tbl_row_end_mkr),
@@ -185,7 +193,6 @@ module.exports = grammar({
 module.exports = global_alias(module.exports, {
   // block node
   ..._('thematic_break', '_thm_brk_hed'),
-  ..._('paragraph', '_chk_box_pgh_ctn'),
   ..._('link_reference_definition', '_lnk_ref_def_hed'),
   ..._('setext_heading', '_stx_hed'),
   ..._('atx_heading', '_atx_hed'),
@@ -236,7 +243,6 @@ module.exports = global_alias(module.exports, {
   // inline token
   ..._('backslash_escape', '_bsl_esc'),
   ..._('character_reference', '_chr_ref'),
-  ..._('checkbox', '_lst_chk_box'),
   ..._('table_column_alignment', '_tbl_col_aln'),
   ..._('hard_line_break', '_hrd_lbk'),
   ..._('soft_line_break', '_sft_lbk'),

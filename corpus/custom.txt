@@ -547,11 +547,18 @@ Task list item (extension) - setext heading takes precedence over it
 ================================================================================
 - [ ] text
   ===
+- [x] text
+  ===
 
 --------------------------------------------------------------------------------
 
 (document
   (tight_list
+    (list_item
+      (list_marker)
+      (setext_heading
+        (heading_content)
+        (setext_heading_underline)))
     (list_item
       (list_marker)
       (setext_heading

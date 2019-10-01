@@ -774,17 +774,9 @@ bool scn_inl_lbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     if (lxr.adv_if(' ') || lxr.adv_if('x') || lxr.adv_if('X')) {
       if (lxr.adv_if(']')) {
         LexedPosition end_pos = lxr.cur_pos();
-        if (lxr.adv_rpt(is_wsp_chr) && !is_wht_chr(lxr.lka_chr())) {
-          for (;;) {
-            lxr.adv_til(is_eol_chr);
-            if (scn_eol(lxr, blk_dlms, blk_ctx_stk)) break;
-          }
-          // task list items are only allowed to be in paragraphs but not in setext headings
-          if (blk_dlms.back().sym() != SYM_STX_END_MKR) {
-            inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_LST_CHK_BOX, bgn_pos, end_pos));
-            lxr.jmp_pos(end_pos);
-            return true;
-          }
+        if (lxr.adv_rpt(is_wsp_chr) && !is_eol_chr(lxr.lka_chr())) {
+          inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_LST_CHK_BOX, bgn_pos, end_pos));
+          return true;
         }
       }
     }

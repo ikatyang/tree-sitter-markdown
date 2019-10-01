@@ -20,6 +20,7 @@ private:
   LexedCharacter cur_chr_;
   LexedCharacter lka_chr_;
   LexedCharacter end_chr_;
+  LexedIndex buf_bgn_idx_;
   std::vector<LexedCharacter> chr_buf_;
   LexedLength cur_spc_;
   LexedColumn cur_ind_;

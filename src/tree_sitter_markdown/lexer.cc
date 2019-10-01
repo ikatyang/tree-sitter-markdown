@@ -21,13 +21,14 @@ void Lexer::clear() {
 }
 void Lexer::init(TSLexer *lexer) {
   lxr_ = lexer;
-  cur_idx_ = LEXED_INDEX_MAX;
-  cur_row_ = LEXED_ROW_MAX;
+  cur_idx_ = 0;
+  cur_row_ = 0;
   cur_col_ = bgn_col_;
   end_col_ = LEXED_INDEX_MAX;
   cur_chr_ = bgn_chr_;
   lka_chr_ = lexer->lookahead;
   end_chr_ = LEXED_CHARACTER_MAX;
+  buf_bgn_idx_ = LEXED_INDEX_MAX;
   chr_buf_.clear();
   cur_spc_ = 0;
   cur_ind_ = 0;
@@ -72,12 +73,10 @@ void Lexer::adv(const bool skp) {
     cur_ind_ = 0;
   }
 
-  if (cur_row_ != LEXED_ROW_MAX) {
-    if (
-      lka_chr_ == '\r'
-      || (lka_chr_ == '\n' && cur_chr_ != '\r')
-    ) cur_row_++;
-  }
+  if (
+    lka_chr_ == '\r'
+    || (lka_chr_ == '\n' && cur_chr_ != '\r')
+  ) cur_row_++;
 
   if (is_rec_tbl_col_cnt_ && !is_wsp_chr(lka_chr_)) {
     if (lka_chr_ == '|' && cur_chr_ != '\\') {
@@ -93,16 +92,17 @@ void Lexer::adv(const bool skp) {
   if (lka_chr_ == ' ') cur_spc_++;
   else cur_spc_ = 0;
 
+  cur_idx_++;
   cur_chr_ = lka_chr_;
-  if (cur_idx_ == LEXED_INDEX_MAX) {
+  if (buf_bgn_idx_ == LEXED_INDEX_MAX) {
     lxr_->advance(lxr_, skp);
     lka_chr_ = lxr_->lookahead;
   } else {
-    if (++cur_idx_ + 1 >= chr_buf_.size()) {
+    if (cur_idx_ - buf_bgn_idx_ + 1 >= chr_buf_.size()) {
       lxr_->advance(lxr_, skp);
       chr_buf_.push_back(lxr_->lookahead);
     }
-    lka_chr_ = chr_buf_[cur_idx_ + 1];
+    lka_chr_ = chr_buf_[cur_idx_ - buf_bgn_idx_ + 1];
   }
 }
 void Lexer::adv_len(const LexedLength len, const bool skp) {
@@ -158,36 +158,38 @@ LexedLength Lexer::adv_rpt_len(bool (*is_chr)(LexedCharacter), const LexedLength
 }
 
 void Lexer::bgn_buf() {
-  assert(cur_idx_ == LEXED_INDEX_MAX);
-  cur_idx_ = 0;
-  assert(cur_row_ == LEXED_ROW_MAX);
-  cur_row_ = 0;
+  assert(buf_bgn_idx_ == LEXED_INDEX_MAX);
+  buf_bgn_idx_ = cur_idx_;
   chr_buf_.push_back(cur_chr_);
   chr_buf_.push_back(lka_chr_);
 }
 void Lexer::jmp_pos(const LexedPosition &pos) {
   if (pos.idx() == cur_idx_) return;
-  assert(pos.idx() < chr_buf_.size() - 1);
+  assert(pos.idx() >= buf_bgn_idx_);
+  assert(pos.idx() - buf_bgn_idx_ < chr_buf_.size() - 1);
   cur_idx_ = pos.idx();
   cur_row_ = pos.row();
   cur_col_ = pos.col();
-  cur_chr_ = chr_buf_[cur_idx_];
-  lka_chr_ = chr_buf_[cur_idx_ + 1];
+  cur_chr_ = chr_buf_[cur_idx_ - buf_bgn_idx_];
+  lka_chr_ = chr_buf_[cur_idx_ - buf_bgn_idx_ + 1];
   cur_spc_ = 0;
   cur_ind_ = 0;
 }
 bool Lexer::has_chr_at_idx(const LexedCharacter chr, const LexedIndex idx) const {
-  assert(idx < chr_buf_.size());
-  return idx < 0 ? false : chr_buf_[idx] == chr;
+  assert(idx >= buf_bgn_idx_);
+  assert(idx - buf_bgn_idx_ < chr_buf_.size());
+  return idx < 0 ? false : chr_buf_[idx - buf_bgn_idx_] == chr;
 }
 bool Lexer::has_chr_at_idx(bool (*is_chr)(LexedCharacter), const LexedIndex idx) const {
-  assert(idx < chr_buf_.size());
-  return idx < 0 ? false : is_chr(chr_buf_[idx]);
+  assert(idx >= buf_bgn_idx_);
+  assert(idx - buf_bgn_idx_ < chr_buf_.size());
+  return idx < 0 ? false : is_chr(chr_buf_[idx - buf_bgn_idx_]);
 }
 bool Lexer::has_chr_in_rng(bool (*is_chr)(LexedCharacter), const LexedIndex idx, const LexedIndex end_idx) const {
-  assert(idx <= end_idx);
-  assert(end_idx < chr_buf_.size() - 1);
-  for (LexedIndex i = idx; i < end_idx; i++) {
+  assert(idx >= buf_bgn_idx_);
+  assert(idx - buf_bgn_idx_ <= end_idx);
+  assert(end_idx - buf_bgn_idx_ < chr_buf_.size() - 1);
+  for (LexedIndex i = idx - buf_bgn_idx_; i < end_idx - buf_bgn_idx_; i++) {
     if (is_chr(chr_buf_[i])) return true;
   }
   return false;

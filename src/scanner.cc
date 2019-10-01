@@ -179,8 +179,6 @@ struct Scanner {
       return false;
     }
 
-    lxr_.bgn_buf();
-
     if (is_eol_chr(lxr_.lka_chr())) {
       assert(blk_dlms_.empty());
       scn_eol(lxr_, blk_dlms_, blk_ctx_stk_);
@@ -195,6 +193,8 @@ struct Scanner {
       assert(!blk_dlms_.empty());
       return lxr_.ret_sym(TKN_LKA);
     }
+
+    lxr_.bgn_buf();
 
     Symbol sym = scn_inl(lxr_, inl_dlms_, inl_ctx_stk_, blk_dlms_, blk_ctx_stk_);
     if (sym == SYM_TXT) {

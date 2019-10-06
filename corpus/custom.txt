@@ -45,8 +45,13 @@ Table (extension) - same indentation in list item [is table]
   (tight_list
     (list_item
       (list_marker)
-      (paragraph
-        (soft_line_break)))))
+      (table
+        (table_header_row
+          (table_cell)
+          (table_cell))
+        (table_delimiter_row
+          (table_column_alignment)
+          (table_column_alignment))))))
 
 ================================================================================
 Table (extension) - less indentation in list item [is NOT table]

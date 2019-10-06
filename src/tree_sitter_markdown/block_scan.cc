@@ -70,7 +70,7 @@ void scn_blk(Lexer &lxr, BlockDelimiterList &blk_dlms, const BlockContextStack &
       bool is_pas_all_blk_ctx = ctx_itr == ctx_end
                              && (blk_ctx_stk.empty() || !is_lst_itm_bgn(blk_ctx_stk.back().sym())
                                   ? cur_ind < 4
-                                  : cur_ind > ind && cur_ind - ind < 4);
+                                  : cur_ind >= ind && cur_ind - ind < 4);
       if (is_pas_all_blk_ctx && !is_eol_chr(lxr.lka_chr()) && scn_tbl_dlm_row(lxr, tbl_col_cnt)) {
         is_tbl = true;
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_TBL_HED_ROW_BGN_MKR, bgn_pos, bgn_pos));

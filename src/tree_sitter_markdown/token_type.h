@@ -12,6 +12,7 @@ enum TokenType {
                                                 TKN_LNK_REF_DEF_END_MKR,
   TKN_STX_BGN,                                  TKN_STX_END_MKR,
   TKN_ATX_BGN,                                  TKN_ATX_END_MKR,
+  TKN_IND_COD_BGN_PFX,
   TKN_IND_COD_BGN_MKR,                          TKN_IND_COD_END_MKR,
   TKN_FEN_COD_BGN,         TKN_FEN_COD_END,     TKN_FEN_COD_END_MKR,
   TKN_HTM_BLK_SCR_BGN,     TKN_HTM_BLK_SCR_END, TKN_HTM_BLK_SCR_END_MKR,
@@ -70,6 +71,8 @@ enum TokenType {
   TKN_BNK_LBK,
   TKN_LIT_LBK,
   TKN_TXT,
+
+  TKN_VRT_SPC,
 
   TKN_NOT_FOUND,
 };

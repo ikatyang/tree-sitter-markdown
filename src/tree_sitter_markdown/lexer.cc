@@ -32,6 +32,7 @@ void Lexer::init(TSLexer *lexer) {
   chr_buf_.clear();
   cur_spc_ = 0;
   cur_ind_ = 0;
+  ind_chr_col_buf_.clear();
   is_rec_tbl_col_cnt_ = false;
 }
 void Lexer::mrk_end() {
@@ -61,16 +62,20 @@ void Lexer::adv(const bool skp) {
   if (lka_chr_ == '\n' || lka_chr_ == '\r') {
     cur_col_ = 0;
     cur_ind_ = 0;
+    ind_chr_col_buf_.clear();
   } else if (lka_chr_ == '\t') {
     LexedColumn offset = 4 - (cur_col_ % 4);
     cur_col_ += offset;
     cur_ind_ += offset;
+    ind_chr_col_buf_.push_back(offset);
   } else if (lka_chr_ == ' ') {
     cur_col_++;
     cur_ind_++;
+    ind_chr_col_buf_.push_back(1);
   } else {
     cur_col_++;
     cur_ind_ = 0;
+    ind_chr_col_buf_.clear();
   }
 
   if (
@@ -217,6 +222,23 @@ uint16_t Lexer::tbl_col_cnt() {
   bool has_end_pip = (tbl_col_pip_cnt_ - tbl_col_has_bgn_pip_) && !tbl_col_has_ctn_;
   if (has_end_pip) tbl_col_cnt_--;
   return tbl_col_cnt_;
+}
+
+LexedLength Lexer::clc_vtr_spc_cnt(const LexedColumn cur_ind, const LexedColumn tgt_ind, LexedLength &ind_chr_cnt_btw_cur_and_tgt) const {
+  const LexedColumn actual_tgt_ind = cur_ind_ - cur_ind + tgt_ind;
+  if (actual_tgt_ind == 0) {
+    ind_chr_cnt_btw_cur_and_tgt = 0;
+    return 0;
+  }
+  LexedColumn ind = 0;
+  for (uint16_t i = 0; i < ind_chr_col_buf_.size(); i++) {
+    ind += ind_chr_col_buf_[i];
+    if (ind >= actual_tgt_ind) {
+      ind_chr_cnt_btw_cur_and_tgt = i + 1;
+      return ind - actual_tgt_ind;
+    }
+  }
+  assert(false);
 }
 
 bool Lexer::ret_sym(const TokenType rlt_sym) {

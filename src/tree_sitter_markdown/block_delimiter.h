@@ -24,10 +24,13 @@ public:
   const LexedPosition &pos() const;
   const LexedPosition &end_pos() const;
 
+  void set_len(const LexedLength length);
+  void set_ind(const LexedColumn indentation);
   void set_pos(const LexedPosition &position, const LexedPosition &end_position);
   void drop_pos();
 
   BlockDelimiter();
+  BlockDelimiter(const Symbol symbol, const LexedLength length, const LexedColumn indentation = 0);
   BlockDelimiter(const Symbol symbol, const LexedPosition &position, const LexedPosition &end_position, const LexedColumn indentation = 0);
 
   unsigned serialize(unsigned char *buffer) const;
@@ -58,6 +61,8 @@ public:
   void push_back(const BlockDelimiter &delimiter);
   Iterator insert(const LexedRow row, const BlockDelimiter &delimiter);
   Iterator erase(Iterator iterator, Iterator end_iterator);
+
+  void push_vtr_spc(const LexedLength count);
 
   void transfer_to(BlockDelimiterList &list);
 };

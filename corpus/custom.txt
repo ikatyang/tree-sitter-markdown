@@ -588,6 +588,40 @@ is-autolink     www.su_b.example.com
     (www_autolink)))
 
 ================================================================================
+Virtual space
+================================================================================
+   -    	three virtual spaces
+
+- ```
+	two virtual spaces
+  ```
+
+-  <script>
+	/* one virtual space */</script>
+
+--------------------------------------------------------------------------------
+
+(document
+  (loose_list
+    (list_item
+      (list_marker)
+      (indented_code_block
+        (virtual_space)
+        (virtual_space)
+        (virtual_space)))
+    (list_item
+      (list_marker)
+      (fenced_code_block
+        (virtual_space)
+        (virtual_space)
+        (code_fence_content)))
+    (list_item
+      (list_marker)
+      (html_block
+        (line_break)
+        (virtual_space)))))
+
+================================================================================
 Unnamed 1
 ================================================================================
 <a a=a

@@ -83,6 +83,35 @@ struct Scanner {
       TokenType rlt_sym = min_inl_dlms_.front().tkn_typ(lxr_.cur_chr(), lxr_.lka_chr());
       if (rlt_sym != TKN_NOT_FOUND) {
         min_inl_dlms_.pop_front();
+        has_opt_wsp_ind_ = false;
+        return lxr_.ret_sym(rlt_sym);
+      }
+    }
+
+    if (
+      !blk_dlms_.empty()
+      && (blk_dlms_.front().sym() == SYM_VRT_SPC
+        || blk_dlms_.front().sym() == SYM_IND_COD_BGN_PFX
+        || blk_dlms_.front().sym() == SYM_IND_COD_BGN_MKR)
+    ) {
+      BlockDelimiter &dlm = blk_dlms_.front();
+      TokenType rlt_sym = dlm.tkn_typ(lxr_.lka_chr());
+      if (rlt_sym != TKN_NOT_FOUND) {
+        if (dlm.sym() == SYM_VRT_SPC) {
+          if (dlm.len() == 1) {
+            blk_dlms_.pop_front();
+          } else {
+            dlm.set_len(dlm.len() - 1);
+          }
+        } else if (dlm.sym() == SYM_IND_COD_BGN_PFX) {
+          lxr_.adv_len(dlm.len());
+          blk_dlms_.pop_front();
+        } else if (dlm.sym() == SYM_IND_COD_BGN_MKR) {
+          blk_ctx_stk_.push(BlockContext(dlm.sym(), dlm.len(), dlm.ind()));
+          blk_dlms_.pop_front();
+        } else assert(false);
+        lxr_.mrk_end();
+        has_opt_wsp_ind_ = false;
         return lxr_.ret_sym(rlt_sym);
       }
     }
@@ -94,8 +123,10 @@ struct Scanner {
       TokenType rlt_sym = dlm.tkn_typ(lxr_.lka_chr());
       if (rlt_sym != TKN_NOT_FOUND) {
         LexedLength spc_cnt = lxr_.cur_spc();
-        lxr_.adv_len(dlm.len());
-        lxr_.mrk_end();
+        if (dlm.len() || rlt_sym == TKN_PGH_BGN_MKR) {
+          lxr_.adv_len(dlm.len());
+          lxr_.mrk_end();
+        }
         if (is_blk_opn_sym(dlm.sym())) {
           blk_ctx_stk_.push(BlockContext(dlm.sym(), dlm.len(), dlm.ind()));
           if (is_lst_itm_bgn(dlm.sym()) || dlm.sym() == SYM_BQT_BGN) {
@@ -114,6 +145,10 @@ struct Scanner {
         if (rlt_sym == TKN_LIT_LBK) {
           if (valid_symbols[TKN_HRD_LBK] && spc_cnt >= 2) rlt_sym = TKN_HRD_LBK;
           else if (valid_symbols[TKN_SFT_LBK]) rlt_sym = TKN_SFT_LBK;
+          if (rlt_sym != TKN_LIT_LBK) {
+            lxr_.adv_rpt(is_wsp_chr);
+            lxr_.mrk_end();
+          }
         }
         if (rlt_sym == TKN_LIT_LBK || rlt_sym == TKN_BNK_LBK) {
           if (valid_symbols[TKN_BLK_LBK]) rlt_sym = TKN_BLK_LBK;
@@ -186,9 +221,8 @@ struct Scanner {
       return lxr_.ret_sym(TKN_LKA);
     }
 
-    if (valid_symbols[TKN_IND_COD_BGN_MKR] || valid_symbols[TKN_LST_ITM_CNT_BGN_MKR]) {
+    if (valid_symbols[TKN_IND_COD_BGN_PFX] || valid_symbols[TKN_LST_ITM_CNT_BGN_MKR]) {
       assert(blk_dlms_.empty());
-      lxr_.mrk_end();
       scn_blk(lxr_, blk_dlms_, blk_ctx_stk_, lxr_.cur_ind() - has_opt_wsp_ind_);
       assert(!blk_dlms_.empty());
       return lxr_.ret_sym(TKN_LKA);

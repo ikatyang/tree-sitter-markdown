@@ -10,6 +10,7 @@ module.exports = grammar({
                                                 $._lnk_ref_def_end_mkr,
     $._stx_bgn,                                 $._stx_end_mkr,
     $._atx_bgn,                                 $._atx_end_mkr,
+    $._ind_cod_bgn_pfx,
     $._ind_cod_bgn_mkr,                         $._ind_cod_end_mkr,
     $._fen_cod_bgn,         $._fen_cod_end,     $._fen_cod_end_mkr,
     $._htm_blk_scr_bgn,     $._htm_blk_scr_end, $._htm_blk_scr_end_mkr,
@@ -68,13 +69,15 @@ module.exports = grammar({
     $._bnk_lbk,
     $._lit_lbk,
     $._txt,
+
+    $.virtual_space,
   ],
 
   conflicts: $ => [
     [$._chk_box_pgh_ctn, $._chk_box_lik_stx_ctn], // requires 2 lookahead tokens to distinguish them
   ],
 
-  extras: $ => [$._lka, $._lit_lbk],
+  extras: $ => [$._lka, $._lit_lbk, $.virtual_space],
 
   rules: {
     document: $ => seq(repeat(choice($._blk_nod, $._bnk_lbk)), $._eof),
@@ -91,7 +94,7 @@ module.exports = grammar({
     _stx_hed: $ => seq(alias($._pgh_hed, $.heading_content), $._pgh_end_mkr, $._stx_bgn),
     _atx: $ => seq($._atx_hed, $._atx_end_mkr),
     _atx_hed: $ => seq($._atx_bgn, alias(repeat($._inl_nod), $.heading_content), optional($._atx_end)),
-    _ind_cod: $ => seq($._ind_cod_hed, $._ind_cod_end_mkr),
+    _ind_cod: $ => seq($._ind_cod_bgn_pfx, $._ind_cod_hed, $._ind_cod_end_mkr),
     _ind_cod_hed: $ => seq($._ind_cod_bgn_mkr, repeat(choice($._txt, $._blk_lbk))),
     _fen_cod: $ => seq($._fen_cod_hed, $._fen_cod_end_mkr),
     _fen_cod_hed: $ => seq($._fen_cod_bgn, optional(seq($._fen_cod_inf_bgn_mkr, alias(repeat(choice($._inl_txt)), $.info_string), $._fen_cod_inf_end_mkr)), optional(seq($._blk_lbk, alias(repeat(choice($._txt, alias($._blk_lbk, $.line_break))), $.code_fence_content))), optional(seq($._blk_lbk, $._fen_cod_end))),

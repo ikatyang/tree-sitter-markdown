@@ -14,6 +14,7 @@ void scn_blk(Lexer &lexer, BlockDelimiterList &block_delimiters, const BlockCont
 bool /*is_interrupted*/ scn_eol(Lexer &lexer, BlockDelimiterList &block_delimiters, BlockContextStack &block_context_stack);
 
 LexedColumn adv_blk_pfx(Lexer &lexer, BlockContextStack::ConstIterator &block_context_iterator, const BlockContextStack::ConstIterator &block_context_end_iterator);
+LexedColumn adv_blk_pfx(Lexer &lexer, BlockContextStack::ConstIterator &block_context_iterator, const BlockContextStack::ConstIterator &block_context_end_iterator, LexedPosition &last_non_whitespace_end_position);
 bool scn_tbl_dlm_row(Lexer &lexer, const uint16_t table_column_count);
 
 enum BlockScanResult {

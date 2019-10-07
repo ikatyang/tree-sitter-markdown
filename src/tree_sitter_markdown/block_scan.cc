@@ -23,10 +23,10 @@ BlockScanResult scn_blk_nod(Lexer &lxr, BlockDelimiterList &blk_dlms, const Lexe
   return scn_rlt;
 }
 
-void push_lst_nod_mkr_if_necessary(BlockDelimiterList &blk_dlms, BlockDelimiter &nxt_blk_dlm, const LexedPosition bgn_pos, const LexedColumn ind, const Symbol lst_blk_ctx_sym) {
+void push_lst_nod_mkr_if_necessary(BlockDelimiterList &blk_dlms, BlockDelimiter &nxt_blk_dlm, const LexedColumn ind, const Symbol lst_blk_ctx_sym) {
   if (is_lst_itm_bgn(lst_blk_ctx_sym)) {
-    LexedColumn lst_itm_cnt_ind = nxt_blk_dlm.sym() == SYM_IND_COD_BGN_MKR ? 0 : ind;
-    blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_CNT_BGN_MKR, bgn_pos, bgn_pos, lst_itm_cnt_ind));
+    LexedColumn lst_itm_cnt_ind = nxt_blk_dlm.sym() == SYM_IND_COD_BGN_PFX ? 0 : ind;
+    blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_CNT_BGN_MKR, 0, lst_itm_cnt_ind));
   }
 
   if (
@@ -43,7 +43,7 @@ void push_lst_nod_mkr_if_necessary(BlockDelimiterList &blk_dlms, BlockDelimiter 
     else if (nxt_blk_dlm.sym() == SYM_DOT_LST_ITM_BGN) lst_bgn_mkr = SYM_DOT_LST_BGN_MKR;
     else if (nxt_blk_dlm.sym() == SYM_RPR_LST_ITM_BGN) lst_bgn_mkr = SYM_RPR_LST_BGN_MKR;
     if (lst_bgn_mkr != SYM_NOT_FOUND) {
-      blk_dlms.push_back(BlockDelimiter(lst_bgn_mkr, bgn_pos, bgn_pos));
+      blk_dlms.push_back(BlockDelimiter(lst_bgn_mkr, 0));
     }
   }
 }
@@ -80,7 +80,7 @@ void scn_blk(Lexer &lxr, BlockDelimiterList &blk_dlms, const BlockContextStack &
     if (!is_tbl) tmp_blk_dlms.push_back(BlockDelimiter(SYM_PGH_BGN_MKR, bgn_pos, bgn_pos));
   }
   assert(!tmp_blk_dlms.empty());
-  push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), bgn_pos, ind, blk_ctx_stk.empty() ? SYM_NOT_FOUND : blk_ctx_stk.back().sym());
+  push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), ind, blk_ctx_stk.empty() ? SYM_NOT_FOUND : blk_ctx_stk.back().sym());
   tmp_blk_dlms.transfer_to(blk_dlms);
 }
 
@@ -92,7 +92,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
   if (!blk_ctx_stk.empty()) {
     Symbol ctx_sym = blk_ctx_stk.back().sym();
     if (is_lst_itm_bgn(ctx_sym)) {
-      blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_CNT_BGN_MKR, bgn_pos, bgn_pos, 0));
+      blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_CNT_BGN_MKR, 0));
       if (is_lbk_chr(lxr.lka_chr())) {
         lxr.adv_if('\r');
         lxr.adv_if('\n');
@@ -148,16 +148,16 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
   for (;;) {
     BlockContextStack::ConstIterator ctx_itr = blk_ctx_stk.begin();
     const BlockContextStack::ConstIterator ctx_end_itr = blk_ctx_stk.end();
-    const LexedColumn cur_ind = adv_blk_pfx(lxr, ctx_itr, ctx_end_itr);
+    LexedPosition lst_non_wsp_end_pos;
+    const LexedColumn cur_ind = adv_blk_pfx(lxr, ctx_itr, ctx_end_itr, lst_non_wsp_end_pos);
     const BlockContextStack::ConstIterator fst_failed_ctx_itr = ctx_itr;
-    const LexedPosition cur_pos = lxr.cur_pos();
     const bool is_pas_all_blk_ctx = fst_failed_ctx_itr == ctx_end_itr;
     const bool is_eol = is_eol_chr(lxr.lka_chr());
     if (is_pas_all_blk_ctx && is_eol) {
       if (blk_ctx_stk.empty() || blk_ctx_stk.back().sym() == SYM_BQT_BGN) {
         assert(!has_blk_lbk);
         has_blk_lbk = true;
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, bgn_pos, lst_non_wsp_end_pos));
         break;
       }
       if (
@@ -172,25 +172,39 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
         break;
       }
+      bool is_vtr_spc_sensitive = blk_ctx_stk.back().sym() == SYM_IND_COD_BGN_MKR
+                               || blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN
+                               || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN
+                               || blk_ctx_stk.back().sym() == SYM_HTM_BLK_SCR_BGN
+                               || blk_ctx_stk.back().sym() == SYM_HTM_BLK_CMT_BGN
+                               || blk_ctx_stk.back().sym() == SYM_HTM_BLK_PRC_BGN
+                               || blk_ctx_stk.back().sym() == SYM_HTM_BLK_DCL_BGN
+                               || blk_ctx_stk.back().sym() == SYM_HTM_BLK_CDA_BGN;
+      LexedLength ind_chr_cnt = 0;
+      LexedLength vrt_spc_cnt = !is_vtr_spc_sensitive ? 0 : lxr.clc_vtr_spc_cnt(cur_ind, 0, ind_chr_cnt);
       has_blk_lbk = true;
-      tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, lst_bgn_pos, cur_pos));
+      tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, lst_bgn_pos.dist(lst_non_wsp_end_pos) + ind_chr_cnt));
+      tmp_blk_dlms.push_vtr_spc(vrt_spc_cnt);
     } else if (is_pas_all_blk_ctx) {
       if (blk_ctx_stk.empty() || blk_ctx_stk.back().sym() == SYM_BQT_BGN) {
         assert(!has_blk_lbk);
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
         has_opn_mkr = true;
         scn_blk(lxr, tmp_blk_dlms, blk_ctx_stk, cur_ind);
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_LST_ITM_CNT_BGN_MKR) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, lst_non_wsp_end_pos));
         has_opn_mkr = true;
         scn_blk(lxr, tmp_blk_dlms, blk_ctx_stk, cur_ind);
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_HTM_BLK_DIV_BGN || blk_ctx_stk.back().sym() == SYM_HTM_BLK_CMP_BGN) {
         assert(!has_blk_lbk);
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, cur_pos));
+        LexedLength ind_chr_cnt;
+        LexedLength vrt_spc_cnt = lxr.clc_vtr_spc_cnt(cur_ind, 0, ind_chr_cnt);
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos.dist(lst_non_wsp_end_pos) + ind_chr_cnt));
+        tmp_blk_dlms.push_vtr_spc(vrt_spc_cnt);
         break;
       }
       if (
@@ -201,27 +215,38 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         || blk_ctx_stk.back().sym() == SYM_HTM_BLK_DCL_BGN
         || blk_ctx_stk.back().sym() == SYM_HTM_BLK_CDA_BGN
       ) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
+        LexedLength ind_chr_cnt;
+        LexedLength vrt_spc_cnt = lxr.clc_vtr_spc_cnt(cur_ind, 0, ind_chr_cnt);
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos.dist(lst_non_wsp_end_pos) + ind_chr_cnt));
+        tmp_blk_dlms.push_vtr_spc(vrt_spc_cnt);
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
-        if (BSR_ACCEPT == scn_fen_cod('`', SYM_BTK_FEN_COD_END, /*min_len*/ blk_ctx_stk.back().len(), /*allow_non_wsp*/ false, /*allow_dlm_chr*/ false, lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, false)) {
+        LexedLength ind_chr_cnt;
+        LexedLength vrt_spc_cnt = lxr.clc_vtr_spc_cnt(cur_ind, 0, ind_chr_cnt);
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos.dist(lst_non_wsp_end_pos) + ind_chr_cnt));
+        if (BSR_ACCEPT == scn_fen_cod('`', SYM_BTK_FEN_COD_END, /*min_len*/ blk_ctx_stk.back().len(), /*allow_non_wsp*/ false, /*allow_dlm_chr*/ false, lxr, tmp_blk_dlms, cur_ind + blk_ctx_stk.back().ind(), is_pas_all_blk_ctx, false)) {
           has_end_mkr = true;
           tmp_blk_dlms.push_back(BlockDelimiter(SYM_BTK_FEN_COD_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
+        } else {
+          tmp_blk_dlms.push_vtr_spc(vrt_spc_cnt);
         }
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
-        if (BSR_ACCEPT == scn_fen_cod('~', SYM_TLD_FEN_COD_END, /*min_len*/ blk_ctx_stk.back().len(), /*allow_non_wsp*/ false, /*allow_dlm_chr*/ false, lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, false)) {
+        LexedLength ind_chr_cnt;
+        LexedLength vrt_spc_cnt = lxr.clc_vtr_spc_cnt(cur_ind, 0, ind_chr_cnt);
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos.dist(lst_non_wsp_end_pos) + ind_chr_cnt));
+        if (BSR_ACCEPT == scn_fen_cod('~', SYM_TLD_FEN_COD_END, /*min_len*/ blk_ctx_stk.back().len(), /*allow_non_wsp*/ false, /*allow_dlm_chr*/ false, lxr, tmp_blk_dlms, cur_ind + blk_ctx_stk.back().ind(), is_pas_all_blk_ctx, false)) {
           has_end_mkr = true;
           tmp_blk_dlms.push_back(BlockDelimiter(SYM_TLD_FEN_COD_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
+        } else {
+          tmp_blk_dlms.push_vtr_spc(vrt_spc_cnt);
         }
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_ASR_LST_BGN_MKR) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, lst_non_wsp_end_pos));
         if (BSR_ACCEPT != scn_stx_and_thm_brk_and_lst_itm('*', SYM_NOT_FOUND, SYM_NOT_FOUND, SYM_ASR_LST_ITM_BGN, lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, /*is_pgh_cont_ln*/ false)) {
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
@@ -231,7 +256,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_HYP_LST_BGN_MKR) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, lst_non_wsp_end_pos));
         if (BSR_ACCEPT != scn_stx_and_thm_brk_and_lst_itm('-', SYM_NOT_FOUND, SYM_NOT_FOUND, SYM_HYP_LST_ITM_BGN, lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, /*is_pgh_cont_ln*/ false)) {
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
@@ -241,7 +266,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_PLS_LST_BGN_MKR) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, lst_non_wsp_end_pos));
         if (BSR_ACCEPT != scn_stx_and_thm_brk_and_lst_itm('+', SYM_NOT_FOUND, SYM_NOT_FOUND, SYM_PLS_LST_ITM_BGN, lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, /*is_pgh_cont_ln*/ false)) {
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
@@ -251,7 +276,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_DOT_LST_BGN_MKR) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, lst_non_wsp_end_pos));
         if (BSR_ACCEPT != scn_num_lst_itm(/*allow_dot*/ true, /*allow_rpr*/ false, lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, /*is_pgh_cont_ln*/ false)) {
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
@@ -261,7 +286,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_RPR_LST_BGN_MKR) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, lst_bgn_pos, lst_non_wsp_end_pos));
         if (BSR_ACCEPT != scn_num_lst_itm(/*allow_dot*/ false, /*allow_rpr*/ true, lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, /*is_pgh_cont_ln*/ false)) {
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
@@ -281,16 +306,16 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         has_opn_mkr = true;
         has_end_mkr = true;
         blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
-        blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, cur_pos));
+        blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
         BlockContextStack::ConstReverseIterator lst_blk_ctx_itr = ++blk_ctx_stk.rbegin();
         Symbol lst_blk_ctx_sym = lst_blk_ctx_itr == blk_ctx_stk.rend() ? SYM_NOT_FOUND : lst_blk_ctx_itr->sym();
-        push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), cur_pos, cur_ind, lst_blk_ctx_sym);
+        push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), cur_ind, lst_blk_ctx_sym);
       } else if (is_pgh_cont_ln) {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
       } else {
         blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, cur_pos));
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_TBL_DAT_ROW_BGN_MKR, cur_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_TBL_DAT_ROW_BGN_MKR, 0));
       }
       break;
     } else if (is_eol) {
@@ -332,7 +357,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
       has_blk_lbk = true;
-      tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, lst_bgn_pos, cur_pos));
+      tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, lst_bgn_pos, lxr.cur_pos()));
     } else {
       assert(!blk_ctx_stk.empty());
       if (
@@ -392,12 +417,12 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           cur_ctx_itr++;
           blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, bgn_pos, bgn_pos));
         }
-        blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, cur_pos));
+        blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
         const BlockContextStack::ConstReverseIterator lst_blk_ctx_itr = cur_ctx_itr;
         Symbol lst_blk_ctx_sym = lst_blk_ctx_itr == blk_ctx_stk.rend() ? SYM_NOT_FOUND : lst_blk_ctx_itr->sym();
-        push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), cur_pos, cur_ind, lst_blk_ctx_sym);
+        push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), cur_ind, lst_blk_ctx_sym);
       } else {
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, cur_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
       }
       break;
     }
@@ -427,27 +452,43 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
 }
 
 LexedColumn adv_blk_pfx(Lexer &lxr, BlockContextStack::ConstIterator &ctx_itr, const BlockContextStack::ConstIterator &ctx_end) {
+  LexedPosition lst_non_wsp_end_pos;
+  return adv_blk_pfx(lxr, ctx_itr, ctx_end, lst_non_wsp_end_pos);
+}
+LexedColumn adv_blk_pfx(Lexer &lxr, BlockContextStack::ConstIterator &ctx_itr, const BlockContextStack::ConstIterator &ctx_end, LexedPosition &lst_non_wsp_end_pos) {
+  lst_non_wsp_end_pos.set(lxr.cur_pos());
   lxr.adv_rpt(is_wsp_chr);
   LexedColumn cur_ind = lxr.cur_ind();
   for (; ctx_itr != ctx_end; ctx_itr++) {
     if (ctx_itr->sym() == SYM_BQT_BGN) {
       if (cur_ind < 4 && lxr.adv_if('>')) {
+        lst_non_wsp_end_pos.set(lxr.cur_pos());
         lxr.adv_rpt(is_wsp_chr);
         cur_ind = lxr.cur_ind();
         if (cur_ind) cur_ind--;
       } else break;
-    } else if (is_lst_itm_bgn(ctx_itr->sym())) {
-      LexedColumn lst_itm_ind = ctx_itr->ind() + ctx_itr->len() + 1;
-      if (cur_ind >= lst_itm_ind) {
-        cur_ind -= lst_itm_ind;
+    } else if (
+      is_lst_itm_bgn(ctx_itr->sym())
+      || ctx_itr->sym() == SYM_LST_ITM_CNT_BGN_MKR
+      || ctx_itr->sym() == SYM_IND_COD_BGN_MKR
+    ) {
+      LexedColumn ind = ctx_itr->sym() == SYM_IND_COD_BGN_MKR
+        ? 4
+        : ctx_itr->sym() == SYM_LST_ITM_CNT_BGN_MKR
+          ? ctx_itr->ind()
+          : ctx_itr->ind() + ctx_itr->len() + 1;
+      if (cur_ind >= ind) {
+        cur_ind -= ind;
       } else break;
     } else if (
-      ctx_itr->sym() == SYM_LST_ITM_CNT_BGN_MKR
-      || ctx_itr->sym() == SYM_IND_COD_BGN_MKR
+      ctx_itr->sym() == SYM_BTK_FEN_COD_BGN
+      || ctx_itr->sym() == SYM_TLD_FEN_COD_BGN
     ) {
       if (cur_ind >= ctx_itr->ind()) {
         cur_ind -= ctx_itr->ind();
-      } else break;
+      } else {
+        cur_ind = 0;
+      }
     }
   }
   return cur_ind;
@@ -481,7 +522,11 @@ bool scn_tbl_dlm_row(Lexer &lxr, const uint16_t tbl_col_cnt) {
 
 BlockScanResult scn_ind_cod(Lexer &lxr, BlockDelimiterList &blk_dlms, const LexedColumn ind, const bool is_pas_all_blk_ctx, const bool is_pgh_cont_ln) {
   if (!is_pas_all_blk_ctx || is_pgh_cont_ln || ind < 4 || is_wht_chr(lxr.lka_chr())) return BSR_REJECT;
-  blk_dlms.push_back(BlockDelimiter(SYM_IND_COD_BGN_MKR, lxr.cur_pos(), lxr.cur_pos(), 4));
+  LexedLength ind_chr_cnt;
+  LexedLength vtr_spc_cnt = lxr.clc_vtr_spc_cnt(ind, 4, ind_chr_cnt);
+  blk_dlms.push_back(BlockDelimiter(SYM_IND_COD_BGN_PFX, ind_chr_cnt));
+  blk_dlms.push_back(BlockDelimiter(SYM_IND_COD_BGN_MKR, 0));
+  blk_dlms.push_vtr_spc(vtr_spc_cnt);
   return BSR_ACCEPT;
 }
 
@@ -670,7 +715,7 @@ BlockScanResult scn_fen_cod(
     }
   }
 
-  blk_dlms.push_back(BlockDelimiter(sym, bgn_pos, end_pos));
+  blk_dlms.push_back(BlockDelimiter(sym, bgn_pos, end_pos, ind));
   return BSR_ACCEPT;
 }
 

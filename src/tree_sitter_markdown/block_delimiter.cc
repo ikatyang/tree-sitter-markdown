@@ -11,6 +11,12 @@ bool BlockDelimiter::has_pos() const { return has_pos_; }
 const LexedPosition &BlockDelimiter::pos() const { assert(has_pos_); return pos_; }
 const LexedPosition &BlockDelimiter::end_pos() const { assert(has_pos_); return end_pos_; }
 
+void BlockDelimiter::set_len(const LexedLength len) {
+  len_ = len;
+}
+void BlockDelimiter::set_ind(const LexedColumn ind) {
+  ind_ = ind;
+}
 void BlockDelimiter::set_pos(const LexedPosition &pos, const LexedPosition &end_pos) {
   pos_.set(pos);
   end_pos_.set(end_pos);
@@ -22,6 +28,8 @@ void BlockDelimiter::drop_pos() {
 }
 
 BlockDelimiter::BlockDelimiter(): sym_(SYM_NOT_FOUND), len_(LEXED_LENGTH_MAX), ind_(LEXED_COLUMN_MAX), has_pos_(false) {}
+BlockDelimiter::BlockDelimiter(const Symbol sym, const LexedLength len, const LexedColumn ind):
+  sym_(sym), len_(len), ind_(ind), has_pos_(false) {}
 BlockDelimiter::BlockDelimiter(const Symbol sym, const LexedPosition &pos, const LexedPosition &end_pos, const LexedColumn ind):
   sym_(sym), len_(pos.dist(end_pos)), ind_(ind), has_pos_(true), pos_(pos), end_pos_(end_pos) {}
 
@@ -43,7 +51,8 @@ unsigned BlockDelimiter::deserialize(const unsigned char *buffer) {
 }
 
 TokenType BlockDelimiter::tkn_typ(LexedCharacter c) const {
-  if (sym_ == SYM_LIT_LBK) { if (is_lbk_chr(c)) return TKN_LIT_LBK; }
+  if (sym_ == SYM_VRT_SPC) { return TKN_VRT_SPC; }
+  else if (sym_ == SYM_LIT_LBK) { if (is_lbk_chr(c)) return TKN_LIT_LBK; }
   else if (sym_ == SYM_BNK_LBK) { if (is_lbk_chr(c)) return TKN_BNK_LBK; }
   else if (sym_ == SYM_ASR_THM_BRK_BGN) { if (c == '*') return TKN_THM_BRK_BGN; }
   else if (sym_ == SYM_USC_THM_BRK_BGN) { if (c == '_') return TKN_THM_BRK_BGN; }
@@ -52,7 +61,8 @@ TokenType BlockDelimiter::tkn_typ(LexedCharacter c) const {
   else if (sym_ == SYM_EQL_STX_BGN) { if (c == '=') return TKN_STX_BGN; }
   else if (sym_ == SYM_HYP_STX_BGN) { if (c == '-') return TKN_STX_BGN; }
   else if (sym_ == SYM_ATX_BGN) { if (c == '#') return TKN_ATX_BGN; }
-  else if (sym_ == SYM_IND_COD_BGN_MKR) { if (!is_wht_chr(c)) return TKN_IND_COD_BGN_MKR; }
+  else if (sym_ == SYM_IND_COD_BGN_PFX) { if (is_wsp_chr(c)) return TKN_IND_COD_BGN_PFX; }
+  else if (sym_ == SYM_IND_COD_BGN_MKR) { return TKN_IND_COD_BGN_MKR; }
   else if (sym_ == SYM_BTK_FEN_COD_BGN) { if (c == '`') return TKN_FEN_COD_BGN; }
   else if (sym_ == SYM_TLD_FEN_COD_BGN) { if (c == '~') return TKN_FEN_COD_BGN; }
   else if (sym_ == SYM_HTM_BLK_SCR_BGN) { if (c == '<') return TKN_HTM_BLK_SCR_BGN; }
@@ -161,6 +171,11 @@ BlockDelimiterList::Iterator BlockDelimiterList::insert(const LexedRow row, cons
 }
 BlockDelimiterList::Iterator BlockDelimiterList::erase(Iterator itr, Iterator end_itr) {
   return list_.erase(itr, end_itr);
+}
+
+void BlockDelimiterList::push_vtr_spc(const LexedLength cnt) {
+  if (cnt == 0) return;
+  list_.push_back(BlockDelimiter(SYM_VRT_SPC, cnt));
 }
 
 void BlockDelimiterList::transfer_to(BlockDelimiterList &list) {

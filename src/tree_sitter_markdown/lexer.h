@@ -24,6 +24,8 @@ private:
   std::vector<LexedCharacter> chr_buf_;
   LexedLength cur_spc_;
   LexedColumn cur_ind_;
+  typedef std::vector<uint8_t> IndentCharColumnBuffer;
+  IndentCharColumnBuffer ind_chr_col_buf_;
   bool is_rec_tbl_col_cnt_;
   bool tbl_col_is_bgn_;
   bool tbl_col_has_bgn_pip_;
@@ -68,6 +70,8 @@ public:
   void bgn_rec_tbl_col_cnt();
   void end_rec_tbl_col_cnt();
   uint16_t tbl_col_cnt();
+
+  LexedLength clc_vtr_spc_cnt(const LexedColumn current_indentation, const LexedColumn target_indentation, LexedLength &indentation_character_count_between_current_and_target) const;
 
   bool ret_sym(const TokenType result_symbol);
 };

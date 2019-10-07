@@ -60,7 +60,9 @@ Example 5 - https://github.github.com/gfm/#example-5
     (list_item
       (list_marker)
       (paragraph)
-      (indented_code_block))))
+      (indented_code_block
+        (virtual_space)
+        (virtual_space)))))
 
 ================================================================================
 Example 6 - https://github.github.com/gfm/#example-6
@@ -71,7 +73,9 @@ Example 6 - https://github.github.com/gfm/#example-6
 
 (document
   (block_quote
-    (indented_code_block)))
+    (indented_code_block
+      (virtual_space)
+      (virtual_space))))
 
 ================================================================================
 Example 7 - https://github.github.com/gfm/#example-7
@@ -84,7 +88,9 @@ Example 7 - https://github.github.com/gfm/#example-7
   (tight_list
     (list_item
       (list_marker)
-      (indented_code_block))))
+      (indented_code_block
+        (virtual_space)
+        (virtual_space)))))
 
 ================================================================================
 Example 8 - https://github.github.com/gfm/#example-8

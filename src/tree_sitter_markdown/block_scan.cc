@@ -73,11 +73,11 @@ void scn_blk(Lexer &lxr, BlockDelimiterList &blk_dlms, const BlockContextStack &
                                   : cur_ind >= ind && cur_ind - ind < 4);
       if (is_pas_all_blk_ctx && !is_eol_chr(lxr.lka_chr()) && scn_tbl_dlm_row(lxr, tbl_col_cnt)) {
         is_tbl = true;
-        tmp_blk_dlms.push_back(BlockDelimiter(SYM_TBL_HED_ROW_BGN_MKR, bgn_pos, bgn_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(SYM_TBL_HED_ROW_BGN_MKR, 0));
       }
     }
 
-    if (!is_tbl) tmp_blk_dlms.push_back(BlockDelimiter(SYM_PGH_BGN_MKR, bgn_pos, bgn_pos));
+    if (!is_tbl) tmp_blk_dlms.push_back(BlockDelimiter(SYM_PGH_BGN_MKR, 0));
   }
   assert(!tmp_blk_dlms.empty());
   push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), ind, blk_ctx_stk.empty() ? SYM_NOT_FOUND : blk_ctx_stk.back().sym());
@@ -102,14 +102,14 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         bool is_pas_all_blk_ctx = ctx_itr == ctx_end;
         if (!is_pas_all_blk_ctx || is_eol_chr(lxr.lka_chr())) {
           // disallow double blank lines in list item begin
-          blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_CNT_END_MKR, bgn_pos, bgn_pos));
-          blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_END_MKR, bgn_pos, bgn_pos));
+          blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_CNT_END_MKR, 0));
+          blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_END_MKR, 0));
         }
       }
       return true;
     }
     if (ctx_sym == SYM_TBL_HED_ROW_BGN_MKR) {
-      blk_dlms.push_back(BlockDelimiter(SYM_TBL_ROW_END_MKR, bgn_pos, bgn_pos));
+      blk_dlms.push_back(BlockDelimiter(SYM_TBL_ROW_END_MKR, 0));
       lxr.adv_if('\r');
       lxr.adv_if('\n');
       BlockContextStack::ConstIterator ctx_itr = blk_ctx_stk.begin();
@@ -127,12 +127,12 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       BlockContextStack::ConstReverseIterator itr = blk_ctx_stk.rbegin(), end = blk_ctx_stk.rend();
       itr != end;
       itr++
-    ) blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(itr->sym()), bgn_pos, bgn_pos));
+    ) blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(itr->sym()), 0));
     return true;
   }
 
   if (!blk_ctx_stk.empty() && blk_ctx_stk.back().sym() == SYM_ATX_BGN) {
-    blk_dlms.push_back(BlockDelimiter(SYM_ATX_END_MKR, bgn_pos, bgn_pos));
+    blk_dlms.push_back(BlockDelimiter(SYM_ATX_END_MKR, 0));
     return true;
   }
 
@@ -169,7 +169,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       ) {
         assert(!has_blk_lbk);
         has_end_mkr = true;
-        tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         break;
       }
       bool is_vtr_spc_sensitive = blk_ctx_stk.back().sym() == SYM_IND_COD_BGN_MKR
@@ -251,7 +251,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
           has_end_mkr = true;
-          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, bgn_pos, bgn_pos));
+          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, 0));
         }
         break;
       }
@@ -261,7 +261,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
           has_end_mkr = true;
-          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, bgn_pos, bgn_pos));
+          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, 0));
         }
         break;
       }
@@ -271,7 +271,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
           has_end_mkr = true;
-          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, bgn_pos, bgn_pos));
+          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, 0));
         }
         break;
       }
@@ -281,7 +281,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
           has_end_mkr = true;
-          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, bgn_pos, bgn_pos));
+          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, 0));
         }
         break;
       }
@@ -291,7 +291,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           has_blk_lbk = false;
           tmp_blk_dlms.clear();
           has_end_mkr = true;
-          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, bgn_pos, bgn_pos));
+          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, 0));
         }
         break;
       }
@@ -305,7 +305,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       if (BSR_ACCEPT == scn_blk_nod(lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, is_pgh_cont_ln)) {
         has_opn_mkr = true;
         has_end_mkr = true;
-        blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
+        blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
         BlockContextStack::ConstReverseIterator lst_blk_ctx_itr = ++blk_ctx_stk.rbegin();
         Symbol lst_blk_ctx_sym = lst_blk_ctx_itr == blk_ctx_stk.rend() ? SYM_NOT_FOUND : lst_blk_ctx_itr->sym();
@@ -313,7 +313,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       } else if (is_pgh_cont_ln) {
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
       } else {
-        blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
+        blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_TBL_DAT_ROW_BGN_MKR, 0));
       }
@@ -339,7 +339,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           cur_ctx_itr++
         ) {
           has_end_mkr = true;
-          tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(cur_ctx_itr->sym()), bgn_pos, bgn_pos));
+          tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(cur_ctx_itr->sym()), 0));
           if (&(*cur_ctx_itr) == fst_bqt_ctx) break;
         }
         break;
@@ -353,7 +353,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       ) {
         assert(!has_blk_lbk);
         has_end_mkr = true;
-        tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         break;
       }
       has_blk_lbk = true;
@@ -384,9 +384,9 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         has_blk_lbk = false;
         tmp_blk_dlms.clear();
         has_end_mkr = true;
-        tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), bgn_pos, bgn_pos));
+        tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         if (tmp_blk_dlms.back().sym() == SYM_LST_ITM_CNT_END_MKR) {
-          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_END_MKR, bgn_pos, bgn_pos));
+          tmp_blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_END_MKR, 0));
         }
         break;
       }
@@ -396,12 +396,12 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         BlockContextStack::ConstReverseIterator cur_ctx_itr = blk_ctx_stk.rbegin();
         for (;; cur_ctx_itr++) {
           has_end_mkr = true;
-          blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(cur_ctx_itr->sym()), bgn_pos, bgn_pos));
+          blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(cur_ctx_itr->sym()), 0));
           if (&(*cur_ctx_itr) == &(*fst_failed_ctx_itr)) break;
         }
         if (blk_dlms.back().sym() == SYM_LST_ITM_CNT_END_MKR) {
           cur_ctx_itr++;
-          blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_END_MKR, bgn_pos, bgn_pos));
+          blk_dlms.push_back(BlockDelimiter(SYM_LST_ITM_END_MKR, 0));
         }
         cur_ctx_itr++;
         if (
@@ -415,7 +415,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
           )
         ) {
           cur_ctx_itr++;
-          blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, bgn_pos, bgn_pos));
+          blk_dlms.push_back(BlockDelimiter(SYM_LST_END_MKR, 0));
         }
         blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
         const BlockContextStack::ConstReverseIterator lst_blk_ctx_itr = cur_ctx_itr;
@@ -441,7 +441,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       BlockContextStack::ConstReverseIterator itr = blk_ctx_stk.rbegin(), end = blk_ctx_stk.rend();
       itr != end;
       itr++, has_end_mkr = true
-    ) tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(itr->sym()), bgn_pos, bgn_pos));
+    ) tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(itr->sym()), 0));
     break;
   }
 

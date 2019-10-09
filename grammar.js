@@ -70,14 +70,14 @@ module.exports = grammar({
     $._lit_lbk,
     $._txt,
 
-    $.virtual_space,
+    $._vtr_spc,
   ],
 
   conflicts: $ => [
     [$._chk_box_pgh_ctn, $._chk_box_lik_stx_ctn], // requires 2 lookahead tokens to distinguish them
   ],
 
-  extras: $ => [$._lka, $._lit_lbk, $.virtual_space],
+  extras: $ => [$._lka, $._lit_lbk],
 
   rules: {
     document: $ => seq(repeat(choice($._blk_nod, $._bnk_lbk)), $._eof),
@@ -95,23 +95,28 @@ module.exports = grammar({
     _atx: $ => seq($._atx_hed, $._atx_end_mkr),
     _atx_hed: $ => seq($._atx_bgn, alias(repeat($._inl_nod), $.heading_content), optional($._atx_end)),
     _ind_cod: $ => seq($._ind_cod_bgn_pfx, $._ind_cod_hed, $._ind_cod_end_mkr),
-    _ind_cod_hed: $ => seq($._ind_cod_bgn_mkr, repeat(choice($._txt, $._blk_lbk))),
+    _ind_cod_hed: $ => seq($._ind_cod_bgn_mkr, repeat(choice($._vtr_spc, $._txt, $._blk_lbk))),
     _fen_cod: $ => seq($._fen_cod_hed, $._fen_cod_end_mkr),
-    _fen_cod_hed: $ => seq($._fen_cod_bgn, optional(seq($._fen_cod_inf_bgn_mkr, alias(repeat(choice($._inl_txt)), $.info_string), $._fen_cod_inf_end_mkr)), optional(seq($._blk_lbk, alias(repeat(choice($._txt, alias($._blk_lbk, $.line_break))), $.code_fence_content))), optional(seq($._blk_lbk, $._fen_cod_end))),
+    _fen_cod_hed: $ => seq(
+      $._fen_cod_bgn,
+      optional(seq($._fen_cod_inf_bgn_mkr, alias(repeat(choice($._inl_txt)), $.info_string), $._fen_cod_inf_end_mkr)),
+      optional(seq($._blk_lbk, alias(repeat(choice(alias($._vtr_spc, $.virtual_space), $._txt, alias($._blk_lbk, $.line_break))), $.code_fence_content))),
+      optional(seq($._blk_lbk, $._fen_cod_end)),
+    ),
     _htm_blk_scr: $ => seq($._htm_blk_scr_hed, $._htm_blk_scr_end_mkr),
-    _htm_blk_scr_hed: $ => seq($._htm_blk_scr_bgn, repeat(choice($._txt, $._blk_lbk)), optional($._htm_blk_scr_end)),
+    _htm_blk_scr_hed: $ => seq($._htm_blk_scr_bgn, repeat(choice($._vtr_spc, $._txt, $._blk_lbk)), optional($._htm_blk_scr_end)),
     _htm_blk_cmt: $ => seq($._htm_blk_cmt_hed, $._htm_blk_cmt_end_mkr),
-    _htm_blk_cmt_hed: $ => seq($._htm_blk_cmt_bgn, repeat(choice($._txt, $._blk_lbk)), optional($._htm_blk_cmt_end)),
+    _htm_blk_cmt_hed: $ => seq($._htm_blk_cmt_bgn, repeat(choice($._vtr_spc, $._txt, $._blk_lbk)), optional($._htm_blk_cmt_end)),
     _htm_blk_prc: $ => seq($._htm_blk_prc_hed, $._htm_blk_prc_end_mkr),
-    _htm_blk_prc_hed: $ => seq($._htm_blk_prc_bgn, repeat(choice($._txt, $._blk_lbk)), optional($._htm_blk_prc_end)),
+    _htm_blk_prc_hed: $ => seq($._htm_blk_prc_bgn, repeat(choice($._vtr_spc, $._txt, $._blk_lbk)), optional($._htm_blk_prc_end)),
     _htm_blk_dcl: $ => seq($._htm_blk_dcl_hed, $._htm_blk_dcl_end_mkr),
-    _htm_blk_dcl_hed: $ => seq($._htm_blk_dcl_bgn, repeat(choice($._txt, $._blk_lbk)), optional($._htm_blk_dcl_end)),
+    _htm_blk_dcl_hed: $ => seq($._htm_blk_dcl_bgn, repeat(choice($._vtr_spc, $._txt, $._blk_lbk)), optional($._htm_blk_dcl_end)),
     _htm_blk_cda: $ => seq($._htm_blk_cda_hed, $._htm_blk_cda_end_mkr),
-    _htm_blk_cda_hed: $ => seq($._htm_blk_cda_bgn, repeat(choice($._txt, $._blk_lbk)), optional($._htm_blk_cda_end)),
+    _htm_blk_cda_hed: $ => seq($._htm_blk_cda_bgn, repeat(choice($._vtr_spc, $._txt, $._blk_lbk)), optional($._htm_blk_cda_end)),
     _htm_blk_div: $ => seq($._htm_blk_div_hed, $._htm_blk_div_end_mkr),
-    _htm_blk_div_hed: $ => seq($._htm_blk_div_bgn, repeat(choice($._txt, $._blk_lbk))),
+    _htm_blk_div_hed: $ => seq($._htm_blk_div_bgn, repeat(choice($._vtr_spc, $._txt, $._blk_lbk))),
     _htm_blk_cmp: $ => seq($._htm_blk_cmp_hed, $._htm_blk_cmp_end_mkr),
-    _htm_blk_cmp_hed: $ => seq($._htm_blk_cmp_bgn, repeat(choice($._txt, $._blk_lbk))),
+    _htm_blk_cmp_hed: $ => seq($._htm_blk_cmp_bgn, repeat(choice($._vtr_spc, $._txt, $._blk_lbk))),
     _bqt: $ => seq($._bqt_hed, $._bqt_end_mkr),
     _bqt_hed: $ => seq($._bqt_bgn, repeat(choice($._blk_nod, $._bnk_lbk))),
 
@@ -238,6 +243,7 @@ module.exports = global_alias(module.exports, {
   ..._('html_attribute_value', '_htm_atr_val'),
 
   // block token
+  ..._('virtual_space', '_vtr_spc'),
   ..._('atx_heading_marker', '_atx_bgn'),
   ..._('setext_heading_underline', '_stx_bgn'),
   ..._('list_marker', '_lst_itm_bgn'),

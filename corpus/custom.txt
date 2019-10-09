@@ -617,9 +617,9 @@ Virtual space
     (list_item
       (list_marker)
       (fenced_code_block
-        (virtual_space)
-        (virtual_space)
-        (code_fence_content)))
+        (code_fence_content
+          (virtual_space)
+          (virtual_space))))
     (list_item
       (list_marker)
       (html_block

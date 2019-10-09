@@ -400,6 +400,15 @@
             "type": "CHOICE",
             "members": [
               {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
+              {
                 "type": "SYMBOL",
                 "name": "_txt"
               },
@@ -498,6 +507,15 @@
                       "type": "CHOICE",
                       "members": [
                         {
+                          "type": "ALIAS",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "_vtr_spc"
+                          },
+                          "named": true,
+                          "value": "virtual_space"
+                        },
+                        {
                           "type": "SYMBOL",
                           "name": "_txt"
                         },
@@ -577,6 +595,15 @@
             "type": "CHOICE",
             "members": [
               {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
+              {
                 "type": "SYMBOL",
                 "name": "_txt"
               },
@@ -636,6 +663,15 @@
           "content": {
             "type": "CHOICE",
             "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
               {
                 "type": "SYMBOL",
                 "name": "_txt"
@@ -697,6 +733,15 @@
             "type": "CHOICE",
             "members": [
               {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
+              {
                 "type": "SYMBOL",
                 "name": "_txt"
               },
@@ -756,6 +801,15 @@
           "content": {
             "type": "CHOICE",
             "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
               {
                 "type": "SYMBOL",
                 "name": "_txt"
@@ -817,6 +871,15 @@
             "type": "CHOICE",
             "members": [
               {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
+              {
                 "type": "SYMBOL",
                 "name": "_txt"
               },
@@ -877,6 +940,15 @@
             "type": "CHOICE",
             "members": [
               {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
+              {
                 "type": "SYMBOL",
                 "name": "_txt"
               },
@@ -924,6 +996,15 @@
           "content": {
             "type": "CHOICE",
             "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
               {
                 "type": "SYMBOL",
                 "name": "_txt"
@@ -2881,10 +2962,6 @@
     {
       "type": "SYMBOL",
       "name": "_lit_lbk"
-    },
-    {
-      "type": "SYMBOL",
-      "name": "virtual_space"
     }
   ],
   "conflicts": [
@@ -3328,7 +3405,7 @@
     },
     {
       "type": "SYMBOL",
-      "name": "virtual_space"
+      "name": "_vtr_spc"
     }
   ],
   "inline": [],

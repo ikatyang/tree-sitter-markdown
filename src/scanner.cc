@@ -197,11 +197,10 @@ struct Scanner {
         return lxr_.ret_sym(rlt_sym);
       }
 
-      if (has_txt) {
-        lxr_.mrk_end();
-        has_opt_wsp_ind_ = false;
-        return lxr_.ret_sym(TKN_TXT);
-      }
+      assert(has_txt);
+      lxr_.mrk_end();
+      has_opt_wsp_ind_ = false;
+      return lxr_.ret_sym(TKN_TXT);
     }
 
     assert(min_inl_dlms_.empty());

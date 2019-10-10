@@ -146,6 +146,18 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
   bool has_blk_lbk = false;
 
   for (;;) {
+    // EOF-only newlines are NOT considered part of the fenced code block content
+    if (
+      is_eof_chr(lxr.lka_chr())
+      && !blk_ctx_stk.empty()
+      && (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN)
+    ) {
+      assert(!has_blk_lbk);
+      has_end_mkr = true;
+      tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
+      break;
+    }
+
     BlockContextStack::ConstIterator ctx_itr = blk_ctx_stk.begin();
     const BlockContextStack::ConstIterator ctx_end_itr = blk_ctx_stk.end();
     LexedPosition lst_non_wsp_end_pos;
@@ -185,6 +197,9 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       has_blk_lbk = true;
       tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, lst_bgn_pos.dist(lst_non_wsp_end_pos) + ind_chr_cnt));
       tmp_blk_dlms.push_vtr_spc(vrt_spc_cnt);
+      if (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN) {
+        break;
+      }
     } else if (is_pas_all_blk_ctx) {
       if (blk_ctx_stk.empty() || blk_ctx_stk.back().sym() == SYM_BQT_BGN) {
         assert(!has_blk_lbk);
@@ -358,12 +373,19 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       }
       has_blk_lbk = true;
       tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, lst_bgn_pos, lxr.cur_pos()));
+      if (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN) {
+        break;
+      }
     } else {
       assert(!blk_ctx_stk.empty());
+      if (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN) {
+        assert(!has_blk_lbk);
+        has_end_mkr = true;
+        tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
+        break;
+      }
       if (
         blk_ctx_stk.back().sym() == SYM_IND_COD_BGN_MKR
-        || blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN
-        || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN
         || blk_ctx_stk.back().sym() == SYM_HTM_BLK_SCR_BGN
         || blk_ctx_stk.back().sym() == SYM_HTM_BLK_CMT_BGN
         || blk_ctx_stk.back().sym() == SYM_HTM_BLK_PRC_BGN

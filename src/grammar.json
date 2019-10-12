@@ -2962,6 +2962,10 @@
     {
       "type": "SYMBOL",
       "name": "_lit_lbk"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_wsp"
     }
   ],
   "conflicts": [
@@ -3398,6 +3402,10 @@
     {
       "type": "SYMBOL",
       "name": "_lit_lbk"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_wsp"
     },
     {
       "type": "SYMBOL",

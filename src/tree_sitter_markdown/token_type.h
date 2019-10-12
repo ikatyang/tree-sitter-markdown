@@ -70,6 +70,7 @@ enum TokenType {
   TKN_BLK_LBK,
   TKN_BNK_LBK,
   TKN_LIT_LBK,
+  TKN_WSP,
   TKN_TXT,
 
   TKN_VRT_SPC,

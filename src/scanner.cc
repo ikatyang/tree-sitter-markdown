@@ -116,12 +116,18 @@ struct Scanner {
       }
     }
 
-    lxr_.adv_rpt(is_wsp_chr, true);
+    bool has_wsp = lxr_.adv_rpt(is_wsp_chr);
 
     if (!blk_dlms_.empty()) {
       BlockDelimiter &dlm = blk_dlms_.front();
       TokenType rlt_sym = dlm.tkn_typ(lxr_.lka_chr());
       if (rlt_sym != TKN_NOT_FOUND) {
+        // whitespaces are not considered part of block token
+        if (has_wsp && !/*exception*/(rlt_sym == TKN_LIT_LBK || rlt_sym == TKN_BNK_LBK)) {
+          lxr_.mrk_end();
+          // has_opt_wsp_ind_ is not affected
+          return lxr_.ret_sym(TKN_WSP);
+        }
         LexedLength spc_cnt = lxr_.cur_spc();
         if (dlm.len() || rlt_sym == TKN_PGH_BGN_MKR) {
           lxr_.adv_len(dlm.len());
@@ -159,18 +165,19 @@ struct Scanner {
 
     if (!min_inl_dlms_.empty()) {
       bool has_txt = false;
-      for (bool is_fst_rnd = true; !min_inl_dlms_.empty(); is_fst_rnd = false) {
-        if (!is_fst_rnd && is_wht_chr(lxr_.lka_chr())) {
-          assert(has_txt);
-          break;
-        }
-
+      while (!min_inl_dlms_.empty() && !is_eol_chr(lxr_.lka_chr())) {
         MinimizedInlineDelimiter &dlm = min_inl_dlms_.front();
         TokenType rlt_sym = dlm.tkn_typ(lxr_.cur_chr(), lxr_.lka_chr());
 
         if (rlt_sym == TKN_NOT_FOUND) {
-          has_txt = true;
-          lxr_.adv();
+          if (is_wsp_chr(lxr_.lka_chr())) {
+            assert(has_txt);
+            lxr_.mrk_end();
+            lxr_.adv_rpt(is_wsp_chr);
+          } else {
+            has_txt = true;
+            lxr_.adv();
+          }
           continue;
         }
 
@@ -198,7 +205,7 @@ struct Scanner {
       }
 
       assert(has_txt);
-      lxr_.mrk_end();
+      if (!is_wsp_chr(lxr_.cur_chr())) lxr_.mrk_end();
       has_opt_wsp_ind_ = false;
       return lxr_.ret_sym(TKN_TXT);
     }

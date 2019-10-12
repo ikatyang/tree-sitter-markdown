@@ -7,10 +7,10 @@
 
 #define LANGUAGE_VERSION 10
 #define STATE_COUNT 963
-#define SYMBOL_COUNT 213
+#define SYMBOL_COUNT 214
 #define ALIAS_COUNT 13
-#define TOKEN_COUNT 110
-#define EXTERNAL_TOKEN_COUNT 109
+#define TOKEN_COUNT 111
+#define EXTERNAL_TOKEN_COUNT 110
 #define FIELD_COUNT 0
 #define MAX_ALIAS_SEQUENCE_LENGTH 8
 
@@ -122,124 +122,125 @@ enum {
   sym__blk_lbk = 105,
   sym__bnk_lbk = 106,
   sym__lit_lbk = 107,
-  sym__txt = 108,
-  sym__vtr_spc = 109,
-  sym_document = 110,
-  sym__blk_nod = 111,
-  sym__thm_brk = 112,
-  sym__thm_brk_hed = 113,
-  sym__pgh = 114,
-  sym__pgh_hed = 115,
-  sym__lnk_ref_def = 116,
-  sym__lnk_ref_def_hed = 117,
-  sym__stx = 118,
-  sym__stx_hed = 119,
-  sym__atx = 120,
-  sym__atx_hed = 121,
-  sym__ind_cod = 122,
-  sym__ind_cod_hed = 123,
-  sym__fen_cod = 124,
-  sym__fen_cod_hed = 125,
-  sym__htm_blk_scr = 126,
-  sym__htm_blk_scr_hed = 127,
-  sym__htm_blk_cmt = 128,
-  sym__htm_blk_cmt_hed = 129,
-  sym__htm_blk_prc = 130,
-  sym__htm_blk_prc_hed = 131,
-  sym__htm_blk_dcl = 132,
-  sym__htm_blk_dcl_hed = 133,
-  sym__htm_blk_cda = 134,
-  sym__htm_blk_cda_hed = 135,
-  sym__htm_blk_div = 136,
-  sym__htm_blk_div_hed = 137,
-  sym__htm_blk_cmp = 138,
-  sym__htm_blk_cmp_hed = 139,
-  sym__bqt = 140,
-  sym__bqt_hed = 141,
-  sym__tig_lst = 142,
-  sym__tig_lst_hed = 143,
-  sym__los_lst = 144,
-  sym__los_lst_hed = 145,
-  sym__tig_lst_itm = 146,
-  sym__tig_lst_itm_hed = 147,
-  sym__tig_chk_box_lst_itm_hed = 148,
-  sym__los_lst_itm = 149,
-  sym__los_lst_itm_hed = 150,
-  sym__los_chk_box_lst_itm_hed = 151,
-  sym__chk_box_pgh = 152,
-  sym__chk_box_pgh_ctn = 153,
-  sym__chk_box_lik_stx = 154,
-  sym__chk_box_lik_stx_hed = 155,
-  sym__chk_box_lik_stx_ctn = 156,
-  sym__tbl = 157,
-  sym__tbl_hed_row = 158,
-  sym__tbl_hed_row_hed = 159,
-  sym__tbl_dlm_row = 160,
-  sym__tbl_dlm_row_hed = 161,
-  sym__tbl_dat_row = 162,
-  sym__tbl_dat_row_hed = 163,
-  aux_sym__tbl_dat_cel = 164,
-  sym__inl_nod = 165,
-  sym__inl_txt = 166,
-  sym__inl_lbk = 167,
-  sym__emp = 168,
-  sym__stg = 169,
-  sym__del = 170,
-  sym__lnk = 171,
-  sym__img = 172,
-  sym__lnk_tal = 173,
-  sym__lnk_tal_inl = 174,
-  sym__lnk_tal_ful = 175,
-  sym__lnk_tal_clp = 176,
-  sym__lnk_dst = 177,
-  sym__lnk_tit = 178,
-  sym__ext_www_aut_lnk = 179,
-  sym__ext_www_aut_lnk_hed = 180,
-  sym__ext_url_aut_lnk = 181,
-  sym__ext_url_aut_lnk_hed = 182,
-  sym__ext_eml_aut_lnk = 183,
-  sym__ext_eml_aut_lnk_hed = 184,
-  sym__uri_aut_lnk = 185,
-  sym__eml_aut_lnk = 186,
-  sym__cod_spn = 187,
-  sym__htm_opn_tag = 188,
-  sym__htm_slf_cls_tag = 189,
-  sym__htm_opn_tag_hed = 190,
-  sym__htm_cls_tag = 191,
-  sym__htm_cmt = 192,
-  sym__htm_prc = 193,
-  sym__htm_dcl = 194,
-  sym__htm_cda = 195,
-  sym__htm_atr = 196,
-  sym__htm_atr_val = 197,
-  aux_sym_document_repeat1 = 198,
-  aux_sym__pgh_hed_repeat1 = 199,
-  aux_sym__lnk_ref_def_hed_repeat1 = 200,
-  aux_sym__atx_hed_repeat1 = 201,
-  aux_sym__ind_cod_hed_repeat1 = 202,
-  aux_sym__fen_cod_hed_repeat1 = 203,
-  aux_sym__tig_lst_hed_repeat1 = 204,
-  aux_sym__los_lst_hed_repeat1 = 205,
-  aux_sym__tig_lst_itm_hed_repeat1 = 206,
-  aux_sym__los_lst_itm_hed_repeat1 = 207,
-  aux_sym__tbl_repeat1 = 208,
-  aux_sym__tbl_hed_row_hed_repeat1 = 209,
-  aux_sym__tbl_dlm_row_hed_repeat1 = 210,
-  aux_sym__lnk_dst_repeat1 = 211,
-  aux_sym__htm_opn_tag_hed_repeat1 = 212,
-  alias_sym_code_fence_content = 213,
-  alias_sym_heading_content = 214,
-  alias_sym_html_attribute_key = 215,
-  alias_sym_html_declaration_name = 216,
-  alias_sym_html_tag_name = 217,
-  alias_sym_image_description = 218,
-  alias_sym_info_string = 219,
-  alias_sym_line_break = 220,
-  alias_sym_link_label = 221,
-  alias_sym_link_text = 222,
-  alias_sym_paragraph = 223,
-  alias_sym_table_cell = 224,
-  alias_sym_task_list_item_marker = 225,
+  sym__wsp = 108,
+  sym__txt = 109,
+  sym__vtr_spc = 110,
+  sym_document = 111,
+  sym__blk_nod = 112,
+  sym__thm_brk = 113,
+  sym__thm_brk_hed = 114,
+  sym__pgh = 115,
+  sym__pgh_hed = 116,
+  sym__lnk_ref_def = 117,
+  sym__lnk_ref_def_hed = 118,
+  sym__stx = 119,
+  sym__stx_hed = 120,
+  sym__atx = 121,
+  sym__atx_hed = 122,
+  sym__ind_cod = 123,
+  sym__ind_cod_hed = 124,
+  sym__fen_cod = 125,
+  sym__fen_cod_hed = 126,
+  sym__htm_blk_scr = 127,
+  sym__htm_blk_scr_hed = 128,
+  sym__htm_blk_cmt = 129,
+  sym__htm_blk_cmt_hed = 130,
+  sym__htm_blk_prc = 131,
+  sym__htm_blk_prc_hed = 132,
+  sym__htm_blk_dcl = 133,
+  sym__htm_blk_dcl_hed = 134,
+  sym__htm_blk_cda = 135,
+  sym__htm_blk_cda_hed = 136,
+  sym__htm_blk_div = 137,
+  sym__htm_blk_div_hed = 138,
+  sym__htm_blk_cmp = 139,
+  sym__htm_blk_cmp_hed = 140,
+  sym__bqt = 141,
+  sym__bqt_hed = 142,
+  sym__tig_lst = 143,
+  sym__tig_lst_hed = 144,
+  sym__los_lst = 145,
+  sym__los_lst_hed = 146,
+  sym__tig_lst_itm = 147,
+  sym__tig_lst_itm_hed = 148,
+  sym__tig_chk_box_lst_itm_hed = 149,
+  sym__los_lst_itm = 150,
+  sym__los_lst_itm_hed = 151,
+  sym__los_chk_box_lst_itm_hed = 152,
+  sym__chk_box_pgh = 153,
+  sym__chk_box_pgh_ctn = 154,
+  sym__chk_box_lik_stx = 155,
+  sym__chk_box_lik_stx_hed = 156,
+  sym__chk_box_lik_stx_ctn = 157,
+  sym__tbl = 158,
+  sym__tbl_hed_row = 159,
+  sym__tbl_hed_row_hed = 160,
+  sym__tbl_dlm_row = 161,
+  sym__tbl_dlm_row_hed = 162,
+  sym__tbl_dat_row = 163,
+  sym__tbl_dat_row_hed = 164,
+  aux_sym__tbl_dat_cel = 165,
+  sym__inl_nod = 166,
+  sym__inl_txt = 167,
+  sym__inl_lbk = 168,
+  sym__emp = 169,
+  sym__stg = 170,
+  sym__del = 171,
+  sym__lnk = 172,
+  sym__img = 173,
+  sym__lnk_tal = 174,
+  sym__lnk_tal_inl = 175,
+  sym__lnk_tal_ful = 176,
+  sym__lnk_tal_clp = 177,
+  sym__lnk_dst = 178,
+  sym__lnk_tit = 179,
+  sym__ext_www_aut_lnk = 180,
+  sym__ext_www_aut_lnk_hed = 181,
+  sym__ext_url_aut_lnk = 182,
+  sym__ext_url_aut_lnk_hed = 183,
+  sym__ext_eml_aut_lnk = 184,
+  sym__ext_eml_aut_lnk_hed = 185,
+  sym__uri_aut_lnk = 186,
+  sym__eml_aut_lnk = 187,
+  sym__cod_spn = 188,
+  sym__htm_opn_tag = 189,
+  sym__htm_slf_cls_tag = 190,
+  sym__htm_opn_tag_hed = 191,
+  sym__htm_cls_tag = 192,
+  sym__htm_cmt = 193,
+  sym__htm_prc = 194,
+  sym__htm_dcl = 195,
+  sym__htm_cda = 196,
+  sym__htm_atr = 197,
+  sym__htm_atr_val = 198,
+  aux_sym_document_repeat1 = 199,
+  aux_sym__pgh_hed_repeat1 = 200,
+  aux_sym__lnk_ref_def_hed_repeat1 = 201,
+  aux_sym__atx_hed_repeat1 = 202,
+  aux_sym__ind_cod_hed_repeat1 = 203,
+  aux_sym__fen_cod_hed_repeat1 = 204,
+  aux_sym__tig_lst_hed_repeat1 = 205,
+  aux_sym__los_lst_hed_repeat1 = 206,
+  aux_sym__tig_lst_itm_hed_repeat1 = 207,
+  aux_sym__los_lst_itm_hed_repeat1 = 208,
+  aux_sym__tbl_repeat1 = 209,
+  aux_sym__tbl_hed_row_hed_repeat1 = 210,
+  aux_sym__tbl_dlm_row_hed_repeat1 = 211,
+  aux_sym__lnk_dst_repeat1 = 212,
+  aux_sym__htm_opn_tag_hed_repeat1 = 213,
+  alias_sym_code_fence_content = 214,
+  alias_sym_heading_content = 215,
+  alias_sym_html_attribute_key = 216,
+  alias_sym_html_declaration_name = 217,
+  alias_sym_html_tag_name = 218,
+  alias_sym_image_description = 219,
+  alias_sym_info_string = 220,
+  alias_sym_line_break = 221,
+  alias_sym_link_label = 222,
+  alias_sym_link_text = 223,
+  alias_sym_paragraph = 224,
+  alias_sym_table_cell = 225,
+  alias_sym_task_list_item_marker = 226,
 };
 
 static const char *ts_symbol_names[] = {
@@ -351,6 +352,7 @@ static const char *ts_symbol_names[] = {
   [sym__blk_lbk] = "_blk_lbk",
   [sym__bnk_lbk] = "_bnk_lbk",
   [sym__lit_lbk] = "_lit_lbk",
+  [sym__wsp] = "_wsp",
   [sym__txt] = "_txt",
   [sym__vtr_spc] = "virtual_space",
   [sym_document] = "document",
@@ -901,6 +903,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym__lit_lbk] = {
+    .visible = false,
+    .named = true,
+  },
+  [sym__wsp] = {
     .visible = false,
     .named = true,
   },
@@ -2526,8 +2532,9 @@ enum {
   ts_external_token__blk_lbk = 104,
   ts_external_token__bnk_lbk = 105,
   ts_external_token__lit_lbk = 106,
-  ts_external_token__txt = 107,
-  ts_external_token__vtr_spc = 108,
+  ts_external_token__wsp = 107,
+  ts_external_token__txt = 108,
+  ts_external_token__vtr_spc = 109,
 };
 
 static TSSymbol ts_external_scanner_symbol_map[EXTERNAL_TOKEN_COUNT] = {
@@ -2638,6 +2645,7 @@ static TSSymbol ts_external_scanner_symbol_map[EXTERNAL_TOKEN_COUNT] = {
   [ts_external_token__blk_lbk] = sym__blk_lbk,
   [ts_external_token__bnk_lbk] = sym__bnk_lbk,
   [ts_external_token__lit_lbk] = sym__lit_lbk,
+  [ts_external_token__wsp] = sym__wsp,
   [ts_external_token__txt] = sym__txt,
   [ts_external_token__vtr_spc] = sym__vtr_spc,
 };
@@ -2751,6 +2759,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -2774,6 +2783,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [3] = {
     [ts_external_token__lka] = true,
@@ -2795,6 +2805,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [4] = {
     [ts_external_token__lka] = true,
@@ -2815,6 +2826,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__lst_itm_cnt_end_mkr] = true,
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [5] = {
     [ts_external_token__lka] = true,
@@ -2836,6 +2848,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [6] = {
     [ts_external_token__lka] = true,
@@ -2864,6 +2877,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [7] = {
@@ -2891,6 +2905,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [8] = {
@@ -2919,6 +2934,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [9] = {
@@ -2946,6 +2962,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [10] = {
@@ -2973,6 +2990,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [11] = {
@@ -3000,6 +3018,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [12] = {
@@ -3027,6 +3046,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [13] = {
@@ -3053,6 +3073,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_cda_bgn] = true,
     [ts_external_token__tbl_col_sep] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [14] = {
@@ -3079,6 +3100,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_cda_bgn] = true,
     [ts_external_token__atx_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [15] = {
@@ -3104,6 +3126,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_prc_bgn] = true,
     [ts_external_token__htm_cda_bgn] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [16] = {
@@ -3129,6 +3152,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_cda_bgn] = true,
     [ts_external_token__tbl_col_sep] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [17] = {
@@ -3153,6 +3177,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_prc_bgn] = true,
     [ts_external_token__htm_cda_bgn] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [18] = {
@@ -3182,6 +3207,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [19] = {
@@ -3211,6 +3237,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [20] = {
@@ -3240,6 +3267,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [21] = {
@@ -3269,6 +3297,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [22] = {
@@ -3298,6 +3327,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__hrd_lbk] = true,
     [ts_external_token__sft_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [23] = {
@@ -3326,6 +3356,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_cda_bgn] = true,
     [ts_external_token__tbl_col_sep] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [24] = {
@@ -3354,6 +3385,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_cda_bgn] = true,
     [ts_external_token__atx_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [25] = {
@@ -3377,6 +3409,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_dat_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [26] = {
     [ts_external_token__lka] = true,
@@ -3399,6 +3432,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_dat_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [27] = {
     [ts_external_token__eof] = true,
@@ -3421,6 +3455,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_dat_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [28] = {
     [ts_external_token__lka] = true,
@@ -3442,6 +3477,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__tbl_dat_row_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [29] = {
     [ts_external_token__lka] = true,
@@ -3464,6 +3500,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [30] = {
     [ts_external_token__eof] = true,
@@ -3486,6 +3523,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [31] = {
     [ts_external_token__lka] = true,
@@ -3508,6 +3546,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [32] = {
     [ts_external_token__lka] = true,
@@ -3529,6 +3568,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__lst_itm_cnt_end_mkr] = true,
     [ts_external_token__tbl_hed_row_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [33] = {
     [ts_external_token__lka] = true,
@@ -3536,6 +3576,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__lst_itm_bgn] = true,
     [ts_external_token__bnk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [34] = {
     [ts_external_token__lka] = true,
@@ -3543,6 +3584,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_blk_prc_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3552,6 +3594,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__fen_cod_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3561,6 +3604,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__chr_ref] = true,
     [ts_external_token__fen_cod_inf_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [37] = {
@@ -3569,6 +3613,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_blk_scr_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3578,6 +3623,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__chr_ref] = true,
     [ts_external_token__lnk_dst_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [39] = {
@@ -3586,6 +3632,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__chr_ref] = true,
     [ts_external_token__lnk_tit_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [40] = {
@@ -3594,6 +3641,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_blk_cmt_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3603,6 +3651,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_blk_cda_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3612,6 +3661,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_blk_dcl_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3621,6 +3671,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__chr_ref] = true,
     [ts_external_token__lnk_dst_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [44] = {
@@ -3628,6 +3679,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_blk_cmp_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3636,6 +3688,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__fen_cod_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3644,6 +3697,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__ind_cod_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3652,6 +3706,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_blk_div_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
     [ts_external_token__vtr_spc] = true,
   },
@@ -3660,6 +3715,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_tag_end] = true,
     [ts_external_token__htm_slf_tag_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [49] = {
@@ -3667,6 +3723,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__lnk_ref_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [50] = {
@@ -3674,6 +3731,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__ext_aut_lnk_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [51] = {
@@ -3681,6 +3739,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__cod_spn_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [52] = {
@@ -3688,6 +3747,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__aut_lnk_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [53] = {
@@ -3695,6 +3755,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__htm_prc_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [54] = {
@@ -3702,6 +3763,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__htm_cda_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [55] = {
@@ -3709,6 +3771,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__htm_cmt_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [56] = {
@@ -3716,6 +3779,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__htm_tag_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [57] = {
@@ -3723,6 +3787,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__htm_atr_val_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [58] = {
@@ -3730,6 +3795,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__htm_atr_val_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [59] = {
@@ -3738,6 +3804,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__lnk_dst_bgn] = true,
     [ts_external_token__lnk_dst_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [60] = {
     [ts_external_token__lka] = true,
@@ -3745,6 +3812,7 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__htm_slf_tag_end] = true,
     [ts_external_token__htm_atr_eql] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [61] = {
@@ -3752,42 +3820,49 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__bsl_esc] = true,
     [ts_external_token__lnk_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [62] = {
     [ts_external_token__lka] = true,
     [ts_external_token__tbl_dlm_row_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [63] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lnk_inl_end] = true,
     [ts_external_token__lnk_tit_bgn] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [64] = {
     [ts_external_token__lka] = true,
     [ts_external_token__tbl_row_end_mkr] = true,
     [ts_external_token__tbl_col_sep] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [65] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lnk_dst_bgn] = true,
     [ts_external_token__lnk_dst_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [66] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lnk_ref_def_end_mkr] = true,
     [ts_external_token__lnk_tit_bgn] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [67] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_atr_val_bgn] = true,
     [ts_external_token__htm_atr_val_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [68] = {
     [ts_external_token__lka] = true,
@@ -3795,174 +3870,208 @@ static bool ts_external_scanner_states[102][EXTERNAL_TOKEN_COUNT] = {
     [ts_external_token__fen_cod_inf_bgn_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [69] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_tag_end] = true,
     [ts_external_token__htm_slf_tag_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [70] = {
     [ts_external_token__lka] = true,
     [ts_external_token__tbl_row_end_mkr] = true,
     [ts_external_token__tbl_col_aln] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [71] = {
     [ts_external_token__lka] = true,
     [ts_external_token__ind_cod_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [72] = {
     [ts_external_token__lka] = true,
     [ts_external_token__tbl_col_sep] = true,
     [ts_external_token__tbl_col_aln] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [73] = {
     [ts_external_token__lka] = true,
     [ts_external_token__fen_cod_end_mkr] = true,
     [ts_external_token__blk_lbk] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [74] = {
     [ts_external_token__lka] = true,
     [ts_external_token__atx_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [75] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_blk_cmt_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [76] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_blk_prc_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [77] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_blk_dcl_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [78] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_blk_cda_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [79] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_blk_div_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [80] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_blk_cmp_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [81] = {
     [ts_external_token__lka] = true,
     [ts_external_token__bqt_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [82] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lst_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [83] = {
     [ts_external_token__lka] = true,
     [ts_external_token__ind_cod_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [84] = {
     [ts_external_token__lka] = true,
     [ts_external_token__ext_aut_lnk_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [85] = {
     [ts_external_token__lka] = true,
     [ts_external_token__tbl_row_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [86] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_tag_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [87] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lnk_inl_end] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [88] = {
     [ts_external_token__lka] = true,
     [ts_external_token__thm_brk_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [89] = {
     [ts_external_token__lka] = true,
     [ts_external_token__pgh_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [90] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lnk_ref_def_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [91] = {
     [ts_external_token__lka] = true,
     [ts_external_token__stx_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [92] = {
     [ts_external_token__lka] = true,
     [ts_external_token__fen_cod_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [93] = {
     [ts_external_token__lka] = true,
     [ts_external_token__htm_blk_scr_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [94] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
     [ts_external_token__txt] = true,
   },
   [95] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [96] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lst_itm_cnt_bgn_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [97] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lst_itm_cnt_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [98] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lnk_ref_def_cln] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [99] = {
     [ts_external_token__lka] = true,
     [ts_external_token__lst_itm_end_mkr] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [100] = {
     [ts_external_token__lka] = true,
     [ts_external_token__tbl_col_aln] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
   [101] = {
     [ts_external_token__lka] = true,
     [ts_external_token__stx_bgn] = true,
     [ts_external_token__lit_lbk] = true,
+    [ts_external_token__wsp] = true,
   },
 };
 
@@ -4076,6 +4185,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__blk_lbk] = ACTIONS(1),
     [sym__bnk_lbk] = ACTIONS(1),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1),
     [sym__vtr_spc] = ACTIONS(1),
   },
@@ -4138,6 +4248,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(37),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [2] = {
     [sym__blk_nod] = STATE(9),
@@ -4200,6 +4311,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(45),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [3] = {
     [sym__blk_nod] = STATE(26),
@@ -4261,6 +4373,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(43),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [4] = {
     [sym__blk_nod] = STATE(17),
@@ -4320,6 +4433,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(53),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [5] = {
     [sym__blk_nod] = STATE(5),
@@ -4379,6 +4493,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(99),
     [sym__bnk_lbk] = ACTIONS(102),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [6] = {
     [sym__blk_nod] = STATE(11),
@@ -4438,6 +4553,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(107),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [7] = {
     [sym__blk_nod] = STATE(13),
@@ -4497,6 +4613,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(111),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [8] = {
     [sym__blk_nod] = STATE(4),
@@ -4556,6 +4673,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(115),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [9] = {
     [sym__blk_nod] = STATE(17),
@@ -4615,6 +4733,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(115),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [10] = {
     [sym__blk_nod] = STATE(10),
@@ -4674,6 +4793,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(161),
     [sym__bnk_lbk] = ACTIONS(164),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [11] = {
     [sym__blk_nod] = STATE(5),
@@ -4733,6 +4853,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(169),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [12] = {
     [sym__blk_nod] = STATE(20),
@@ -4792,6 +4913,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(173),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [13] = {
     [sym__blk_nod] = STATE(17),
@@ -4851,6 +4973,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(177),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [14] = {
     [sym__blk_nod] = STATE(22),
@@ -4910,6 +5033,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(179),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [15] = {
     [sym__blk_nod] = STATE(25),
@@ -4969,6 +5093,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(185),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [16] = {
     [sym__blk_nod] = STATE(10),
@@ -5028,6 +5153,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(189),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [17] = {
     [sym__blk_nod] = STATE(17),
@@ -5087,6 +5213,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(235),
     [sym__bnk_lbk] = ACTIONS(233),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [18] = {
     [sym__blk_nod] = STATE(18),
@@ -5146,6 +5273,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(161),
     [sym__bnk_lbk] = ACTIONS(241),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [19] = {
     [sym__blk_nod] = STATE(5),
@@ -5205,6 +5333,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(169),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [20] = {
     [sym__blk_nod] = STATE(5),
@@ -5264,6 +5393,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(169),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [21] = {
     [sym__blk_nod] = STATE(24),
@@ -5323,6 +5453,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(248),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [22] = {
     [sym__blk_nod] = STATE(5),
@@ -5382,6 +5513,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(169),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [23] = {
     [sym__blk_nod] = STATE(19),
@@ -5441,6 +5573,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(252),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [24] = {
     [sym__blk_nod] = STATE(5),
@@ -5500,6 +5633,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(169),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [25] = {
     [sym__blk_nod] = STATE(18),
@@ -5559,6 +5693,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__bnk_lbk] = ACTIONS(258),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [26] = {
     [sym__blk_nod] = STATE(31),
@@ -5617,6 +5752,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(113),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [27] = {
     [sym__blk_nod] = STATE(30),
@@ -5675,6 +5811,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(113),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [28] = {
     [sym__blk_nod] = STATE(29),
@@ -5733,6 +5870,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(109),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [29] = {
     [sym__blk_nod] = STATE(31),
@@ -5791,6 +5929,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(175),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [30] = {
     [sym__blk_nod] = STATE(31),
@@ -5849,6 +5988,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(51),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(35),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [31] = {
     [sym__blk_nod] = STATE(31),
@@ -5907,6 +6047,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(233),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(235),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [32] = {
     [sym__chk_box_pgh_ctn] = STATE(932),
@@ -5963,6 +6104,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(265),
     [sym__sft_lbk] = ACTIONS(265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(265),
   },
   [33] = {
@@ -6020,6 +6162,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(265),
     [sym__sft_lbk] = ACTIONS(265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(265),
   },
   [34] = {
@@ -6074,6 +6217,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [35] = {
@@ -6128,6 +6272,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [36] = {
@@ -6182,6 +6327,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [37] = {
@@ -6236,6 +6382,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(265),
     [sym__sft_lbk] = ACTIONS(265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(265),
   },
   [38] = {
@@ -6290,6 +6437,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [39] = {
@@ -6344,6 +6492,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [40] = {
@@ -6398,6 +6547,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [41] = {
@@ -6452,6 +6602,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [42] = {
@@ -6506,6 +6657,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [43] = {
@@ -6560,6 +6712,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [44] = {
@@ -6614,6 +6767,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [45] = {
@@ -6668,6 +6822,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [46] = {
@@ -6722,6 +6877,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [47] = {
@@ -6776,6 +6932,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [48] = {
@@ -6830,6 +6987,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [49] = {
@@ -6884,6 +7042,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [50] = {
@@ -6938,6 +7097,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [51] = {
@@ -6992,6 +7152,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [52] = {
@@ -7046,6 +7207,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [53] = {
@@ -7100,6 +7262,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [54] = {
@@ -7154,6 +7317,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [55] = {
@@ -7208,6 +7372,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [56] = {
@@ -7262,6 +7427,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [57] = {
@@ -7316,6 +7482,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [58] = {
@@ -7370,6 +7537,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [59] = {
@@ -7424,6 +7592,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [60] = {
@@ -7478,6 +7647,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [61] = {
@@ -7532,6 +7702,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [62] = {
@@ -7586,6 +7757,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(305),
     [sym__sft_lbk] = ACTIONS(305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(305),
   },
   [63] = {
@@ -7639,6 +7811,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [64] = {
@@ -7692,6 +7865,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [65] = {
@@ -7745,6 +7919,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [66] = {
@@ -7798,6 +7973,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(409),
     [sym__sft_lbk] = ACTIONS(409),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(409),
   },
   [67] = {
@@ -7851,6 +8027,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [68] = {
@@ -7904,6 +8081,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [69] = {
@@ -7957,6 +8135,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(265),
     [sym__sft_lbk] = ACTIONS(265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(265),
   },
   [70] = {
@@ -8010,6 +8189,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [71] = {
@@ -8063,6 +8243,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [72] = {
@@ -8116,6 +8297,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [73] = {
@@ -8169,6 +8351,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(505),
     [sym__sft_lbk] = ACTIONS(505),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(505),
   },
   [74] = {
@@ -8222,6 +8405,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(547),
     [sym__sft_lbk] = ACTIONS(547),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(547),
   },
   [75] = {
@@ -8275,6 +8459,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [76] = {
@@ -8328,6 +8513,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [77] = {
@@ -8381,6 +8567,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [78] = {
@@ -8434,6 +8621,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [79] = {
@@ -8487,6 +8675,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [80] = {
@@ -8540,6 +8729,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [81] = {
@@ -8593,6 +8783,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [82] = {
@@ -8646,6 +8837,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [83] = {
@@ -8699,6 +8891,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [84] = {
@@ -8752,6 +8945,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [85] = {
@@ -8805,6 +8999,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [86] = {
@@ -8858,6 +9053,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [87] = {
@@ -8911,6 +9107,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [88] = {
@@ -8964,6 +9161,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [89] = {
@@ -9017,6 +9215,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [90] = {
@@ -9070,6 +9269,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [91] = {
@@ -9123,6 +9323,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [92] = {
@@ -9176,6 +9377,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [93] = {
@@ -9229,6 +9431,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [94] = {
@@ -9282,6 +9485,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [95] = {
@@ -9335,6 +9539,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [96] = {
@@ -9388,6 +9593,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [97] = {
@@ -9441,6 +9647,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(265),
     [sym__sft_lbk] = ACTIONS(265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(265),
   },
   [98] = {
@@ -9494,6 +9701,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [99] = {
@@ -9547,6 +9755,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(265),
     [sym__sft_lbk] = ACTIONS(265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(265),
   },
   [100] = {
@@ -9600,6 +9809,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [101] = {
@@ -9653,6 +9863,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [102] = {
@@ -9706,6 +9917,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [103] = {
@@ -9759,6 +9971,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [104] = {
@@ -9812,6 +10025,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(649),
     [sym__sft_lbk] = ACTIONS(649),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(649),
   },
   [105] = {
@@ -9865,6 +10079,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [106] = {
@@ -9918,6 +10133,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [107] = {
@@ -9971,6 +10187,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [108] = {
@@ -10024,6 +10241,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(379),
     [sym__sft_lbk] = ACTIONS(379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(379),
   },
   [109] = {
@@ -10077,6 +10295,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(699),
     [sym__sft_lbk] = ACTIONS(699),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(699),
   },
   [110] = {
@@ -10130,6 +10349,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [111] = {
@@ -10183,6 +10403,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(465),
     [sym__sft_lbk] = ACTIONS(465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(465),
   },
   [112] = {
@@ -10236,6 +10457,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(347),
     [sym__sft_lbk] = ACTIONS(347),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(347),
   },
   [113] = {
@@ -10288,6 +10510,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__tbl_col_sep] = ACTIONS(777),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [114] = {
@@ -10340,6 +10563,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__tbl_col_sep] = ACTIONS(781),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [115] = {
@@ -10392,6 +10616,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__tbl_col_sep] = ACTIONS(785),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [116] = {
@@ -10444,6 +10669,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__tbl_col_sep] = ACTIONS(789),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [117] = {
@@ -10495,6 +10721,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(819),
     [sym__atx_end] = ACTIONS(821),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(793),
   },
   [118] = {
@@ -10546,6 +10773,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__tbl_col_sep] = ACTIONS(823),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [119] = {
@@ -10597,6 +10825,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(878),
     [sym__tbl_col_sep] = ACTIONS(825),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(827),
   },
   [120] = {
@@ -10648,6 +10877,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(934),
     [sym__atx_end] = ACTIONS(881),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(883),
   },
   [121] = {
@@ -10699,6 +10929,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(819),
     [sym__atx_end] = ACTIONS(939),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(793),
   },
   [122] = {
@@ -10749,6 +10980,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [123] = {
@@ -10799,6 +11031,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [124] = {
@@ -10849,6 +11082,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [125] = {
@@ -10899,6 +11133,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__tbl_col_sep] = ACTIONS(947),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [126] = {
@@ -10949,6 +11184,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [127] = {
@@ -10999,6 +11235,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [128] = {
@@ -11049,6 +11286,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__tbl_col_sep] = ACTIONS(953),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [129] = {
@@ -11099,6 +11337,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [130] = {
@@ -11149,6 +11388,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [131] = {
@@ -11199,6 +11439,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [132] = {
@@ -11248,6 +11489,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [133] = {
@@ -11297,6 +11539,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [134] = {
@@ -11346,6 +11589,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_prc_bgn] = ACTIONS(773),
     [sym__htm_cda_bgn] = ACTIONS(775),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(749),
   },
   [135] = {
@@ -11378,6 +11622,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(961),
     [sym__sft_lbk] = ACTIONS(961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(961),
   },
   [136] = {
@@ -11410,6 +11655,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(961),
     [sym__sft_lbk] = ACTIONS(961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(961),
   },
   [137] = {
@@ -11442,6 +11688,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(961),
     [sym__sft_lbk] = ACTIONS(961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(961),
   },
   [138] = {
@@ -11474,6 +11721,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(961),
     [sym__sft_lbk] = ACTIONS(961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(961),
   },
   [139] = {
@@ -11506,6 +11754,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(961),
     [sym__sft_lbk] = ACTIONS(961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(961),
   },
   [140] = {
@@ -11537,6 +11786,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(961),
     [sym__tbl_col_sep] = ACTIONS(961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(961),
   },
   [141] = {
@@ -11568,6 +11818,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(961),
     [sym__atx_end] = ACTIONS(961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(961),
   },
   [142] = {
@@ -11595,6 +11846,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(991),
     [sym__sft_lbk] = ACTIONS(991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(991),
   },
   [143] = {
@@ -11622,6 +11874,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(993),
     [sym__sft_lbk] = ACTIONS(993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(993),
   },
   [144] = {
@@ -11649,6 +11902,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(995),
     [sym__sft_lbk] = ACTIONS(995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(995),
   },
   [145] = {
@@ -11676,6 +11930,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(997),
     [sym__sft_lbk] = ACTIONS(997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(997),
   },
   [146] = {
@@ -11703,6 +11958,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(999),
     [sym__sft_lbk] = ACTIONS(999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(999),
   },
   [147] = {
@@ -11730,6 +11986,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(993),
     [sym__sft_lbk] = ACTIONS(993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(993),
   },
   [148] = {
@@ -11757,6 +12014,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1001),
     [sym__sft_lbk] = ACTIONS(1001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1001),
   },
   [149] = {
@@ -11784,6 +12042,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1003),
     [sym__sft_lbk] = ACTIONS(1003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1003),
   },
   [150] = {
@@ -11811,6 +12070,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1005),
     [sym__sft_lbk] = ACTIONS(1005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1005),
   },
   [151] = {
@@ -11838,6 +12098,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1007),
     [sym__sft_lbk] = ACTIONS(1007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1007),
   },
   [152] = {
@@ -11865,6 +12126,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1009),
     [sym__sft_lbk] = ACTIONS(1009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1009),
   },
   [153] = {
@@ -11892,6 +12154,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1011),
     [sym__sft_lbk] = ACTIONS(1011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1011),
   },
   [154] = {
@@ -11919,6 +12182,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1013),
     [sym__sft_lbk] = ACTIONS(1013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1013),
   },
   [155] = {
@@ -11946,6 +12210,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1015),
     [sym__sft_lbk] = ACTIONS(1015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1015),
   },
   [156] = {
@@ -11973,6 +12238,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1017),
     [sym__sft_lbk] = ACTIONS(1017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1017),
   },
   [157] = {
@@ -12000,6 +12266,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1019),
     [sym__sft_lbk] = ACTIONS(1019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1019),
   },
   [158] = {
@@ -12027,6 +12294,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1021),
     [sym__sft_lbk] = ACTIONS(1021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1021),
   },
   [159] = {
@@ -12054,6 +12322,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1023),
     [sym__sft_lbk] = ACTIONS(1023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1023),
   },
   [160] = {
@@ -12081,6 +12350,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1025),
     [sym__sft_lbk] = ACTIONS(1025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1025),
   },
   [161] = {
@@ -12108,6 +12378,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1027),
     [sym__sft_lbk] = ACTIONS(1027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1027),
   },
   [162] = {
@@ -12135,6 +12406,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1029),
     [sym__sft_lbk] = ACTIONS(1029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1029),
   },
   [163] = {
@@ -12162,6 +12434,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1001),
     [sym__sft_lbk] = ACTIONS(1001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1001),
   },
   [164] = {
@@ -12189,6 +12462,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1031),
     [sym__sft_lbk] = ACTIONS(1031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1031),
   },
   [165] = {
@@ -12216,6 +12490,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1033),
     [sym__sft_lbk] = ACTIONS(1033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1033),
   },
   [166] = {
@@ -12243,6 +12518,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1021),
     [sym__sft_lbk] = ACTIONS(1021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1021),
   },
   [167] = {
@@ -12270,6 +12546,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1017),
     [sym__sft_lbk] = ACTIONS(1017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1017),
   },
   [168] = {
@@ -12297,6 +12574,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1023),
     [sym__sft_lbk] = ACTIONS(1023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1023),
   },
   [169] = {
@@ -12324,6 +12602,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1029),
     [sym__sft_lbk] = ACTIONS(1029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1029),
   },
   [170] = {
@@ -12351,6 +12630,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1031),
     [sym__sft_lbk] = ACTIONS(1031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1031),
   },
   [171] = {
@@ -12378,6 +12658,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1033),
     [sym__sft_lbk] = ACTIONS(1033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1033),
   },
   [172] = {
@@ -12405,6 +12686,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1015),
     [sym__sft_lbk] = ACTIONS(1015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1015),
   },
   [173] = {
@@ -12432,6 +12714,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1013),
     [sym__sft_lbk] = ACTIONS(1013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1013),
   },
   [174] = {
@@ -12459,6 +12742,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1017),
     [sym__sft_lbk] = ACTIONS(1017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1017),
   },
   [175] = {
@@ -12486,6 +12770,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1011),
     [sym__sft_lbk] = ACTIONS(1011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1011),
   },
   [176] = {
@@ -12513,6 +12798,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1009),
     [sym__sft_lbk] = ACTIONS(1009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1009),
   },
   [177] = {
@@ -12540,6 +12826,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1015),
     [sym__sft_lbk] = ACTIONS(1015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1015),
   },
   [178] = {
@@ -12567,6 +12854,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1013),
     [sym__sft_lbk] = ACTIONS(1013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1013),
   },
   [179] = {
@@ -12594,6 +12882,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1011),
     [sym__sft_lbk] = ACTIONS(1011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1011),
   },
   [180] = {
@@ -12621,6 +12910,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1009),
     [sym__sft_lbk] = ACTIONS(1009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1009),
   },
   [181] = {
@@ -12648,6 +12938,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1035),
     [sym__sft_lbk] = ACTIONS(1035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1035),
   },
   [182] = {
@@ -12675,6 +12966,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1005),
     [sym__sft_lbk] = ACTIONS(1005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1005),
   },
   [183] = {
@@ -12702,6 +12994,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1005),
     [sym__sft_lbk] = ACTIONS(1005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1005),
   },
   [184] = {
@@ -12729,6 +13022,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(991),
     [sym__sft_lbk] = ACTIONS(991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(991),
   },
   [185] = {
@@ -12756,6 +13050,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1033),
     [sym__sft_lbk] = ACTIONS(1033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1033),
   },
   [186] = {
@@ -12783,6 +13078,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1031),
     [sym__sft_lbk] = ACTIONS(1031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1031),
   },
   [187] = {
@@ -12810,6 +13106,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1029),
     [sym__sft_lbk] = ACTIONS(1029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1029),
   },
   [188] = {
@@ -12837,6 +13134,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(991),
     [sym__sft_lbk] = ACTIONS(991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(991),
   },
   [189] = {
@@ -12864,6 +13162,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(999),
     [sym__sft_lbk] = ACTIONS(999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(999),
   },
   [190] = {
@@ -12891,6 +13190,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1023),
     [sym__sft_lbk] = ACTIONS(1023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1023),
   },
   [191] = {
@@ -12918,6 +13218,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1021),
     [sym__sft_lbk] = ACTIONS(1021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1021),
   },
   [192] = {
@@ -12945,6 +13246,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1001),
     [sym__sft_lbk] = ACTIONS(1001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1001),
   },
   [193] = {
@@ -12972,6 +13274,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1037),
     [sym__sft_lbk] = ACTIONS(1037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1037),
   },
   [194] = {
@@ -12999,6 +13302,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1039),
     [sym__sft_lbk] = ACTIONS(1039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1039),
   },
   [195] = {
@@ -13026,6 +13330,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1041),
     [sym__sft_lbk] = ACTIONS(1041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1041),
   },
   [196] = {
@@ -13053,6 +13358,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1027),
     [sym__sft_lbk] = ACTIONS(1027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1027),
   },
   [197] = {
@@ -13080,6 +13386,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1025),
     [sym__sft_lbk] = ACTIONS(1025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1025),
   },
   [198] = {
@@ -13107,6 +13414,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1019),
     [sym__sft_lbk] = ACTIONS(1019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1019),
   },
   [199] = {
@@ -13134,6 +13442,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(999),
     [sym__sft_lbk] = ACTIONS(999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(999),
   },
   [200] = {
@@ -13161,6 +13470,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1037),
     [sym__sft_lbk] = ACTIONS(1037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1037),
   },
   [201] = {
@@ -13188,6 +13498,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1007),
     [sym__sft_lbk] = ACTIONS(1007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1007),
   },
   [202] = {
@@ -13215,6 +13526,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1003),
     [sym__sft_lbk] = ACTIONS(1003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1003),
   },
   [203] = {
@@ -13242,6 +13554,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1043),
     [sym__sft_lbk] = ACTIONS(1043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1043),
   },
   [204] = {
@@ -13269,6 +13582,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(993),
     [sym__sft_lbk] = ACTIONS(993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(993),
   },
   [205] = {
@@ -13296,6 +13610,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(997),
     [sym__sft_lbk] = ACTIONS(997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(997),
   },
   [206] = {
@@ -13323,6 +13638,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(995),
     [sym__sft_lbk] = ACTIONS(995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(995),
   },
   [207] = {
@@ -13350,6 +13666,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1039),
     [sym__sft_lbk] = ACTIONS(1039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1039),
   },
   [208] = {
@@ -13377,6 +13694,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1037),
     [sym__sft_lbk] = ACTIONS(1037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1037),
   },
   [209] = {
@@ -13404,6 +13722,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1041),
     [sym__sft_lbk] = ACTIONS(1041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1041),
   },
   [210] = {
@@ -13431,6 +13750,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1045),
     [sym__sft_lbk] = ACTIONS(1045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1045),
   },
   [211] = {
@@ -13458,6 +13778,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1027),
     [sym__sft_lbk] = ACTIONS(1027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1027),
   },
   [212] = {
@@ -13485,6 +13806,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1047),
     [sym__sft_lbk] = ACTIONS(1047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1047),
   },
   [213] = {
@@ -13512,6 +13834,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1039),
     [sym__sft_lbk] = ACTIONS(1039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1039),
   },
   [214] = {
@@ -13539,6 +13862,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1049),
     [sym__sft_lbk] = ACTIONS(1049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1049),
   },
   [215] = {
@@ -13566,6 +13890,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1041),
     [sym__sft_lbk] = ACTIONS(1041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1041),
   },
   [216] = {
@@ -13593,6 +13918,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1051),
     [sym__sft_lbk] = ACTIONS(1051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1051),
   },
   [217] = {
@@ -13620,6 +13946,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1053),
     [sym__sft_lbk] = ACTIONS(1053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1053),
   },
   [218] = {
@@ -13647,6 +13974,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1043),
     [sym__sft_lbk] = ACTIONS(1043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1043),
   },
   [219] = {
@@ -13674,6 +14002,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1055),
     [sym__sft_lbk] = ACTIONS(1055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1055),
   },
   [220] = {
@@ -13701,6 +14030,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1057),
     [sym__sft_lbk] = ACTIONS(1057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1057),
   },
   [221] = {
@@ -13728,6 +14058,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1045),
     [sym__sft_lbk] = ACTIONS(1045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1045),
   },
   [222] = {
@@ -13755,6 +14086,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1059),
     [sym__sft_lbk] = ACTIONS(1059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1059),
   },
   [223] = {
@@ -13782,6 +14114,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1061),
     [sym__sft_lbk] = ACTIONS(1061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1061),
   },
   [224] = {
@@ -13809,6 +14142,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1061),
     [sym__sft_lbk] = ACTIONS(1061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1061),
   },
   [225] = {
@@ -13836,6 +14170,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1055),
     [sym__sft_lbk] = ACTIONS(1055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1055),
   },
   [226] = {
@@ -13863,6 +14198,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1057),
     [sym__sft_lbk] = ACTIONS(1057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1057),
   },
   [227] = {
@@ -13890,6 +14226,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1053),
     [sym__sft_lbk] = ACTIONS(1053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1053),
   },
   [228] = {
@@ -13917,6 +14254,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1051),
     [sym__sft_lbk] = ACTIONS(1051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1051),
   },
   [229] = {
@@ -13944,6 +14282,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1049),
     [sym__sft_lbk] = ACTIONS(1049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1049),
   },
   [230] = {
@@ -13971,6 +14310,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1047),
     [sym__sft_lbk] = ACTIONS(1047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1047),
   },
   [231] = {
@@ -13998,6 +14338,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1043),
     [sym__sft_lbk] = ACTIONS(1043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1043),
   },
   [232] = {
@@ -14025,6 +14366,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1045),
     [sym__sft_lbk] = ACTIONS(1045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1045),
   },
   [233] = {
@@ -14052,6 +14394,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1059),
     [sym__sft_lbk] = ACTIONS(1059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1059),
   },
   [234] = {
@@ -14079,6 +14422,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1063),
     [sym__sft_lbk] = ACTIONS(1063),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1063),
   },
   [235] = {
@@ -14106,6 +14450,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1035),
     [sym__sft_lbk] = ACTIONS(1035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1035),
   },
   [236] = {
@@ -14133,6 +14478,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1061),
     [sym__sft_lbk] = ACTIONS(1061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1061),
   },
   [237] = {
@@ -14160,6 +14506,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1053),
     [sym__sft_lbk] = ACTIONS(1053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1053),
   },
   [238] = {
@@ -14187,6 +14534,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1035),
     [sym__sft_lbk] = ACTIONS(1035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1035),
   },
   [239] = {
@@ -14214,6 +14562,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1047),
     [sym__sft_lbk] = ACTIONS(1047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1047),
   },
   [240] = {
@@ -14241,6 +14590,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1055),
     [sym__sft_lbk] = ACTIONS(1055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1055),
   },
   [241] = {
@@ -14268,6 +14618,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(995),
     [sym__sft_lbk] = ACTIONS(995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(995),
   },
   [242] = {
@@ -14295,6 +14646,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(997),
     [sym__sft_lbk] = ACTIONS(997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(997),
   },
   [243] = {
@@ -14322,6 +14674,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(993),
     [sym__sft_lbk] = ACTIONS(993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(993),
   },
   [244] = {
@@ -14349,6 +14702,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1051),
     [sym__sft_lbk] = ACTIONS(1051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1051),
   },
   [245] = {
@@ -14376,6 +14730,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1049),
     [sym__sft_lbk] = ACTIONS(1049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1049),
   },
   [246] = {
@@ -14403,6 +14758,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1003),
     [sym__sft_lbk] = ACTIONS(1003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1003),
   },
   [247] = {
@@ -14430,6 +14786,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1049),
     [sym__sft_lbk] = ACTIONS(1049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1049),
   },
   [248] = {
@@ -14457,6 +14814,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1047),
     [sym__sft_lbk] = ACTIONS(1047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1047),
   },
   [249] = {
@@ -14484,6 +14842,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1035),
     [sym__sft_lbk] = ACTIONS(1035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1035),
   },
   [250] = {
@@ -14511,6 +14870,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1007),
     [sym__sft_lbk] = ACTIONS(1007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1007),
   },
   [251] = {
@@ -14538,6 +14898,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1057),
     [sym__sft_lbk] = ACTIONS(1057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1057),
   },
   [252] = {
@@ -14565,6 +14926,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1019),
     [sym__sft_lbk] = ACTIONS(1019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1019),
   },
   [253] = {
@@ -14592,6 +14954,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1025),
     [sym__sft_lbk] = ACTIONS(1025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1025),
   },
   [254] = {
@@ -14619,6 +14982,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1059),
     [sym__sft_lbk] = ACTIONS(1059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1059),
   },
   [255] = {
@@ -14646,6 +15010,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(995),
     [sym__sft_lbk] = ACTIONS(995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(995),
   },
   [256] = {
@@ -14673,6 +15038,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(997),
     [sym__sft_lbk] = ACTIONS(997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(997),
   },
   [257] = {
@@ -14700,6 +15066,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(993),
     [sym__sft_lbk] = ACTIONS(993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(993),
   },
   [258] = {
@@ -14727,6 +15094,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1003),
     [sym__sft_lbk] = ACTIONS(1003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1003),
   },
   [259] = {
@@ -14754,6 +15122,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1007),
     [sym__sft_lbk] = ACTIONS(1007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1007),
   },
   [260] = {
@@ -14781,6 +15150,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1019),
     [sym__sft_lbk] = ACTIONS(1019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1019),
   },
   [261] = {
@@ -14808,6 +15178,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1025),
     [sym__sft_lbk] = ACTIONS(1025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1025),
   },
   [262] = {
@@ -14835,6 +15206,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1027),
     [sym__sft_lbk] = ACTIONS(1027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1027),
   },
   [263] = {
@@ -14862,6 +15234,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1025),
     [sym__sft_lbk] = ACTIONS(1025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1025),
   },
   [264] = {
@@ -14889,6 +15262,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1027),
     [sym__sft_lbk] = ACTIONS(1027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1027),
   },
   [265] = {
@@ -14916,6 +15290,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1001),
     [sym__sft_lbk] = ACTIONS(1001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1001),
   },
   [266] = {
@@ -14943,6 +15318,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1021),
     [sym__sft_lbk] = ACTIONS(1021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1021),
   },
   [267] = {
@@ -14970,6 +15346,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1023),
     [sym__sft_lbk] = ACTIONS(1023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1023),
   },
   [268] = {
@@ -14997,6 +15374,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1001),
     [sym__sft_lbk] = ACTIONS(1001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1001),
   },
   [269] = {
@@ -15024,6 +15402,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1021),
     [sym__sft_lbk] = ACTIONS(1021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1021),
   },
   [270] = {
@@ -15051,6 +15430,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1029),
     [sym__sft_lbk] = ACTIONS(1029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1029),
   },
   [271] = {
@@ -15078,6 +15458,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1031),
     [sym__sft_lbk] = ACTIONS(1031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1031),
   },
   [272] = {
@@ -15105,6 +15486,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1023),
     [sym__sft_lbk] = ACTIONS(1023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1023),
   },
   [273] = {
@@ -15132,6 +15514,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1029),
     [sym__sft_lbk] = ACTIONS(1029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1029),
   },
   [274] = {
@@ -15159,6 +15542,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1051),
     [sym__sft_lbk] = ACTIONS(1051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1051),
   },
   [275] = {
@@ -15186,6 +15570,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1031),
     [sym__sft_lbk] = ACTIONS(1031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1031),
   },
   [276] = {
@@ -15213,6 +15598,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1033),
     [sym__sft_lbk] = ACTIONS(1033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1033),
   },
   [277] = {
@@ -15240,6 +15626,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1053),
     [sym__sft_lbk] = ACTIONS(1053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1053),
   },
   [278] = {
@@ -15267,6 +15654,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1033),
     [sym__sft_lbk] = ACTIONS(1033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1033),
   },
   [279] = {
@@ -15294,6 +15682,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1017),
     [sym__sft_lbk] = ACTIONS(1017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1017),
   },
   [280] = {
@@ -15321,6 +15710,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1015),
     [sym__sft_lbk] = ACTIONS(1015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1015),
   },
   [281] = {
@@ -15348,6 +15738,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1013),
     [sym__sft_lbk] = ACTIONS(1013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1013),
   },
   [282] = {
@@ -15375,6 +15766,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1011),
     [sym__sft_lbk] = ACTIONS(1011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1011),
   },
   [283] = {
@@ -15402,6 +15794,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1009),
     [sym__sft_lbk] = ACTIONS(1009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1009),
   },
   [284] = {
@@ -15429,6 +15822,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1017),
     [sym__sft_lbk] = ACTIONS(1017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1017),
   },
   [285] = {
@@ -15456,6 +15850,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1005),
     [sym__sft_lbk] = ACTIONS(1005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1005),
   },
   [286] = {
@@ -15483,6 +15878,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1015),
     [sym__sft_lbk] = ACTIONS(1015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1015),
   },
   [287] = {
@@ -15510,6 +15906,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1013),
     [sym__sft_lbk] = ACTIONS(1013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1013),
   },
   [288] = {
@@ -15537,6 +15934,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1011),
     [sym__sft_lbk] = ACTIONS(1011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1011),
   },
   [289] = {
@@ -15564,6 +15962,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1009),
     [sym__sft_lbk] = ACTIONS(1009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1009),
   },
   [290] = {
@@ -15591,6 +15990,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(991),
     [sym__sft_lbk] = ACTIONS(991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(991),
   },
   [291] = {
@@ -15618,6 +16018,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1005),
     [sym__sft_lbk] = ACTIONS(1005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1005),
   },
   [292] = {
@@ -15645,6 +16046,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(991),
     [sym__sft_lbk] = ACTIONS(991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(991),
   },
   [293] = {
@@ -15672,6 +16074,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(999),
     [sym__sft_lbk] = ACTIONS(999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(999),
   },
   [294] = {
@@ -15699,6 +16102,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1037),
     [sym__sft_lbk] = ACTIONS(1037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1037),
   },
   [295] = {
@@ -15726,6 +16130,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1039),
     [sym__sft_lbk] = ACTIONS(1039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1039),
   },
   [296] = {
@@ -15753,6 +16158,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1041),
     [sym__sft_lbk] = ACTIONS(1041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1041),
   },
   [297] = {
@@ -15780,6 +16186,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1019),
     [sym__sft_lbk] = ACTIONS(1019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1019),
   },
   [298] = {
@@ -15807,6 +16214,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1043),
     [sym__sft_lbk] = ACTIONS(1043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1043),
   },
   [299] = {
@@ -15834,6 +16242,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(999),
     [sym__sft_lbk] = ACTIONS(999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(999),
   },
   [300] = {
@@ -15861,6 +16270,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1037),
     [sym__sft_lbk] = ACTIONS(1037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1037),
   },
   [301] = {
@@ -15888,6 +16298,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1045),
     [sym__sft_lbk] = ACTIONS(1045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1045),
   },
   [302] = {
@@ -15915,6 +16326,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1039),
     [sym__sft_lbk] = ACTIONS(1039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1039),
   },
   [303] = {
@@ -15942,6 +16354,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1063),
     [sym__sft_lbk] = ACTIONS(1063),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1063),
   },
   [304] = {
@@ -15969,6 +16382,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1041),
     [sym__sft_lbk] = ACTIONS(1041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1041),
   },
   [305] = {
@@ -15996,6 +16410,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1055),
     [sym__sft_lbk] = ACTIONS(1055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1055),
   },
   [306] = {
@@ -16023,6 +16438,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1057),
     [sym__sft_lbk] = ACTIONS(1057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1057),
   },
   [307] = {
@@ -16050,6 +16466,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1059),
     [sym__sft_lbk] = ACTIONS(1059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1059),
   },
   [308] = {
@@ -16077,6 +16494,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1061),
     [sym__sft_lbk] = ACTIONS(1061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1061),
   },
   [309] = {
@@ -16104,6 +16522,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1043),
     [sym__sft_lbk] = ACTIONS(1043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1043),
   },
   [310] = {
@@ -16131,6 +16550,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1063),
     [sym__sft_lbk] = ACTIONS(1063),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1063),
   },
   [311] = {
@@ -16158,6 +16578,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1045),
     [sym__sft_lbk] = ACTIONS(1045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1045),
   },
   [312] = {
@@ -16185,6 +16606,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1007),
     [sym__sft_lbk] = ACTIONS(1007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1007),
   },
   [313] = {
@@ -16212,6 +16634,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1055),
     [sym__sft_lbk] = ACTIONS(1055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1055),
   },
   [314] = {
@@ -16239,6 +16662,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1057),
     [sym__sft_lbk] = ACTIONS(1057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1057),
   },
   [315] = {
@@ -16266,6 +16690,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1003),
     [sym__sft_lbk] = ACTIONS(1003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1003),
   },
   [316] = {
@@ -16293,6 +16718,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1059),
     [sym__sft_lbk] = ACTIONS(1059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1059),
   },
   [317] = {
@@ -16320,6 +16746,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(997),
     [sym__sft_lbk] = ACTIONS(997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(997),
   },
   [318] = {
@@ -16347,6 +16774,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1063),
     [sym__sft_lbk] = ACTIONS(1063),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1063),
   },
   [319] = {
@@ -16374,6 +16802,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(995),
     [sym__sft_lbk] = ACTIONS(995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(995),
   },
   [320] = {
@@ -16401,6 +16830,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1047),
     [sym__sft_lbk] = ACTIONS(1047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1047),
   },
   [321] = {
@@ -16428,6 +16858,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1035),
     [sym__sft_lbk] = ACTIONS(1035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1035),
   },
   [322] = {
@@ -16455,6 +16886,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1061),
     [sym__sft_lbk] = ACTIONS(1061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1061),
   },
   [323] = {
@@ -16482,6 +16914,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1053),
     [sym__sft_lbk] = ACTIONS(1053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1053),
   },
   [324] = {
@@ -16509,6 +16942,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1051),
     [sym__sft_lbk] = ACTIONS(1051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1051),
   },
   [325] = {
@@ -16536,6 +16970,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1063),
     [sym__sft_lbk] = ACTIONS(1063),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1063),
   },
   [326] = {
@@ -16563,6 +16998,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__hrd_lbk] = ACTIONS(1049),
     [sym__sft_lbk] = ACTIONS(1049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1049),
   },
   [327] = {
@@ -16589,6 +17025,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(995),
     [sym__tbl_col_sep] = ACTIONS(995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(995),
   },
   [328] = {
@@ -16615,6 +17052,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1031),
     [sym__tbl_col_sep] = ACTIONS(1031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1031),
   },
   [329] = {
@@ -16641,6 +17079,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1065),
     [sym__tbl_col_sep] = ACTIONS(1065),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1065),
   },
   [330] = {
@@ -16667,6 +17106,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1067),
     [sym__atx_end] = ACTIONS(1067),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1067),
   },
   [331] = {
@@ -16693,6 +17133,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1061),
     [sym__tbl_col_sep] = ACTIONS(1061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1061),
   },
   [332] = {
@@ -16719,6 +17160,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1053),
     [sym__tbl_col_sep] = ACTIONS(1053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1053),
   },
   [333] = {
@@ -16745,6 +17187,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1051),
     [sym__tbl_col_sep] = ACTIONS(1051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1051),
   },
   [334] = {
@@ -16771,6 +17214,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1049),
     [sym__tbl_col_sep] = ACTIONS(1049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1049),
   },
   [335] = {
@@ -16797,6 +17241,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1047),
     [sym__tbl_col_sep] = ACTIONS(1047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1047),
   },
   [336] = {
@@ -16823,6 +17268,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1035),
     [sym__tbl_col_sep] = ACTIONS(1035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1035),
   },
   [337] = {
@@ -16849,6 +17295,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(997),
     [sym__tbl_col_sep] = ACTIONS(997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(997),
   },
   [338] = {
@@ -16875,6 +17322,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(993),
     [sym__tbl_col_sep] = ACTIONS(993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(993),
   },
   [339] = {
@@ -16901,6 +17349,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1003),
     [sym__tbl_col_sep] = ACTIONS(1003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1003),
   },
   [340] = {
@@ -16927,6 +17376,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1007),
     [sym__tbl_col_sep] = ACTIONS(1007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1007),
   },
   [341] = {
@@ -16953,6 +17403,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1019),
     [sym__tbl_col_sep] = ACTIONS(1019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1019),
   },
   [342] = {
@@ -16979,6 +17430,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1025),
     [sym__tbl_col_sep] = ACTIONS(1025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1025),
   },
   [343] = {
@@ -17005,6 +17457,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1027),
     [sym__tbl_col_sep] = ACTIONS(1027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1027),
   },
   [344] = {
@@ -17031,6 +17484,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1001),
     [sym__tbl_col_sep] = ACTIONS(1001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1001),
   },
   [345] = {
@@ -17057,6 +17511,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1021),
     [sym__tbl_col_sep] = ACTIONS(1021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1021),
   },
   [346] = {
@@ -17083,6 +17538,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1023),
     [sym__tbl_col_sep] = ACTIONS(1023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1023),
   },
   [347] = {
@@ -17109,6 +17565,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1029),
     [sym__tbl_col_sep] = ACTIONS(1029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1029),
   },
   [348] = {
@@ -17135,6 +17592,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1033),
     [sym__tbl_col_sep] = ACTIONS(1033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1033),
   },
   [349] = {
@@ -17161,6 +17619,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1017),
     [sym__tbl_col_sep] = ACTIONS(1017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1017),
   },
   [350] = {
@@ -17187,6 +17646,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1015),
     [sym__tbl_col_sep] = ACTIONS(1015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1015),
   },
   [351] = {
@@ -17213,6 +17673,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1013),
     [sym__tbl_col_sep] = ACTIONS(1013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1013),
   },
   [352] = {
@@ -17239,6 +17700,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1011),
     [sym__tbl_col_sep] = ACTIONS(1011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1011),
   },
   [353] = {
@@ -17265,6 +17727,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1059),
     [sym__atx_end] = ACTIONS(1059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1059),
   },
   [354] = {
@@ -17291,6 +17754,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1057),
     [sym__atx_end] = ACTIONS(1057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1057),
   },
   [355] = {
@@ -17317,6 +17781,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1055),
     [sym__atx_end] = ACTIONS(1055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1055),
   },
   [356] = {
@@ -17343,6 +17808,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1009),
     [sym__tbl_col_sep] = ACTIONS(1009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1009),
   },
   [357] = {
@@ -17369,6 +17835,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1045),
     [sym__atx_end] = ACTIONS(1045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1045),
   },
   [358] = {
@@ -17395,6 +17862,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1005),
     [sym__tbl_col_sep] = ACTIONS(1005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1005),
   },
   [359] = {
@@ -17421,6 +17889,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1043),
     [sym__atx_end] = ACTIONS(1043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1043),
   },
   [360] = {
@@ -17447,6 +17916,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(991),
     [sym__tbl_col_sep] = ACTIONS(991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(991),
   },
   [361] = {
@@ -17473,6 +17943,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1041),
     [sym__atx_end] = ACTIONS(1041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1041),
   },
   [362] = {
@@ -17499,6 +17970,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1039),
     [sym__atx_end] = ACTIONS(1039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1039),
   },
   [363] = {
@@ -17525,6 +17997,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1037),
     [sym__atx_end] = ACTIONS(1037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1037),
   },
   [364] = {
@@ -17551,6 +18024,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(999),
     [sym__atx_end] = ACTIONS(999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(999),
   },
   [365] = {
@@ -17577,6 +18051,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(991),
     [sym__atx_end] = ACTIONS(991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(991),
   },
   [366] = {
@@ -17603,6 +18078,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1005),
     [sym__atx_end] = ACTIONS(1005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1005),
   },
   [367] = {
@@ -17629,6 +18105,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1009),
     [sym__atx_end] = ACTIONS(1009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1009),
   },
   [368] = {
@@ -17655,6 +18132,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1011),
     [sym__atx_end] = ACTIONS(1011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1011),
   },
   [369] = {
@@ -17681,6 +18159,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1013),
     [sym__atx_end] = ACTIONS(1013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1013),
   },
   [370] = {
@@ -17707,6 +18186,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1015),
     [sym__atx_end] = ACTIONS(1015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1015),
   },
   [371] = {
@@ -17733,6 +18213,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1017),
     [sym__atx_end] = ACTIONS(1017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1017),
   },
   [372] = {
@@ -17759,6 +18240,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(999),
     [sym__tbl_col_sep] = ACTIONS(999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(999),
   },
   [373] = {
@@ -17785,6 +18267,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1037),
     [sym__tbl_col_sep] = ACTIONS(1037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1037),
   },
   [374] = {
@@ -17811,6 +18294,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1039),
     [sym__tbl_col_sep] = ACTIONS(1039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1039),
   },
   [375] = {
@@ -17837,6 +18321,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1041),
     [sym__tbl_col_sep] = ACTIONS(1041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1041),
   },
   [376] = {
@@ -17863,6 +18348,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1043),
     [sym__tbl_col_sep] = ACTIONS(1043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1043),
   },
   [377] = {
@@ -17889,6 +18375,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1033),
     [sym__atx_end] = ACTIONS(1033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1033),
   },
   [378] = {
@@ -17915,6 +18402,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1031),
     [sym__atx_end] = ACTIONS(1031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1031),
   },
   [379] = {
@@ -17941,6 +18429,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1029),
     [sym__atx_end] = ACTIONS(1029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1029),
   },
   [380] = {
@@ -17967,6 +18456,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1023),
     [sym__atx_end] = ACTIONS(1023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1023),
   },
   [381] = {
@@ -17993,6 +18483,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1021),
     [sym__atx_end] = ACTIONS(1021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1021),
   },
   [382] = {
@@ -18019,6 +18510,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1001),
     [sym__atx_end] = ACTIONS(1001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1001),
   },
   [383] = {
@@ -18045,6 +18537,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1027),
     [sym__atx_end] = ACTIONS(1027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1027),
   },
   [384] = {
@@ -18071,6 +18564,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1025),
     [sym__atx_end] = ACTIONS(1025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1025),
   },
   [385] = {
@@ -18097,6 +18591,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1019),
     [sym__atx_end] = ACTIONS(1019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1019),
   },
   [386] = {
@@ -18123,6 +18618,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1007),
     [sym__atx_end] = ACTIONS(1007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1007),
   },
   [387] = {
@@ -18149,6 +18645,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1003),
     [sym__atx_end] = ACTIONS(1003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1003),
   },
   [388] = {
@@ -18175,6 +18672,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(993),
     [sym__atx_end] = ACTIONS(993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(993),
   },
   [389] = {
@@ -18201,6 +18699,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(997),
     [sym__atx_end] = ACTIONS(997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(997),
   },
   [390] = {
@@ -18227,6 +18726,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(995),
     [sym__atx_end] = ACTIONS(995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(995),
   },
   [391] = {
@@ -18253,6 +18753,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1045),
     [sym__tbl_col_sep] = ACTIONS(1045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1045),
   },
   [392] = {
@@ -18279,6 +18780,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1055),
     [sym__tbl_col_sep] = ACTIONS(1055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1055),
   },
   [393] = {
@@ -18305,6 +18807,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1035),
     [sym__atx_end] = ACTIONS(1035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1035),
   },
   [394] = {
@@ -18331,6 +18834,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1047),
     [sym__atx_end] = ACTIONS(1047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1047),
   },
   [395] = {
@@ -18357,6 +18861,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1049),
     [sym__atx_end] = ACTIONS(1049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1049),
   },
   [396] = {
@@ -18383,6 +18888,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1057),
     [sym__tbl_col_sep] = ACTIONS(1057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1057),
   },
   [397] = {
@@ -18409,6 +18915,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1059),
     [sym__tbl_col_sep] = ACTIONS(1059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1059),
   },
   [398] = {
@@ -18435,6 +18942,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1051),
     [sym__atx_end] = ACTIONS(1051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1051),
   },
   [399] = {
@@ -18461,6 +18969,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1053),
     [sym__atx_end] = ACTIONS(1053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1053),
   },
   [400] = {
@@ -18487,6 +18996,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_cda_bgn] = ACTIONS(1061),
     [sym__atx_end] = ACTIONS(1061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1061),
   },
   [401] = {
@@ -18513,6 +19023,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1071),
     [sym__bnk_lbk] = ACTIONS(1069),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [402] = {
     [sym__tbl_dat_row] = STATE(408),
@@ -18538,6 +19049,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__bnk_lbk] = ACTIONS(1074),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [403] = {
     [sym__tbl_dat_row] = STATE(403),
@@ -18563,6 +19075,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1071),
     [sym__bnk_lbk] = ACTIONS(1069),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [404] = {
     [sym__tbl_dat_row] = STATE(405),
@@ -18588,6 +19101,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__bnk_lbk] = ACTIONS(1074),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [405] = {
     [sym__tbl_dat_row] = STATE(401),
@@ -18613,6 +19127,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__bnk_lbk] = ACTIONS(1078),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [406] = {
     [sym__tbl_dat_row] = STATE(403),
@@ -18638,6 +19153,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__bnk_lbk] = ACTIONS(1078),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [407] = {
     [sym__tbl_dat_row] = STATE(406),
@@ -18663,6 +19179,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__bnk_lbk] = ACTIONS(1074),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [408] = {
     [sym__tbl_dat_row] = STATE(409),
@@ -18688,6 +19205,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__bnk_lbk] = ACTIONS(1078),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [409] = {
     [sym__tbl_dat_row] = STATE(409),
@@ -18713,6 +19231,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1071),
     [sym__bnk_lbk] = ACTIONS(1069),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [410] = {
     [sym__tbl_dat_row] = STATE(411),
@@ -18737,6 +19256,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1078),
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [411] = {
     [sym__tbl_dat_row] = STATE(411),
@@ -18761,6 +19281,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1069),
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1071),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [412] = {
     [sym__tbl_dat_row] = STATE(410),
@@ -18785,6 +19306,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1074),
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1076),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [413] = {
     [sym__lka] = ACTIONS(3),
@@ -18807,6 +19329,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1080),
     [sym__bnk_lbk] = ACTIONS(1080),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [414] = {
     [sym__lka] = ACTIONS(3),
@@ -18829,6 +19352,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1082),
     [sym__bnk_lbk] = ACTIONS(1082),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [415] = {
     [sym__eof] = ACTIONS(1082),
@@ -18851,6 +19375,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1082),
     [sym__bnk_lbk] = ACTIONS(1082),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [416] = {
     [sym__lka] = ACTIONS(3),
@@ -18873,6 +19398,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1084),
     [sym__bnk_lbk] = ACTIONS(1084),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [417] = {
     [sym__lka] = ACTIONS(3),
@@ -18895,6 +19421,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1080),
     [sym__bnk_lbk] = ACTIONS(1080),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [418] = {
     [sym__lka] = ACTIONS(3),
@@ -18917,6 +19444,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1082),
     [sym__bnk_lbk] = ACTIONS(1082),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [419] = {
     [sym__eof] = ACTIONS(1084),
@@ -18939,6 +19467,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1084),
     [sym__bnk_lbk] = ACTIONS(1084),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [420] = {
     [sym__eof] = ACTIONS(1080),
@@ -18961,6 +19490,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1080),
     [sym__bnk_lbk] = ACTIONS(1080),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [421] = {
     [sym__lka] = ACTIONS(3),
@@ -18983,6 +19513,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1084),
     [sym__bnk_lbk] = ACTIONS(1084),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [422] = {
     [sym__eof] = ACTIONS(1088),
@@ -19004,6 +19535,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1088),
     [sym__bnk_lbk] = ACTIONS(1088),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [423] = {
     [sym__lka] = ACTIONS(3),
@@ -19025,6 +19557,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1090),
     [sym__bnk_lbk] = ACTIONS(1090),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [424] = {
     [sym__lka] = ACTIONS(3),
@@ -19046,6 +19579,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1092),
     [sym__bnk_lbk] = ACTIONS(1092),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [425] = {
     [sym__lka] = ACTIONS(3),
@@ -19067,6 +19601,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1094),
     [sym__bnk_lbk] = ACTIONS(1094),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [426] = {
     [sym__lka] = ACTIONS(3),
@@ -19088,6 +19623,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1096),
     [sym__bnk_lbk] = ACTIONS(1096),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [427] = {
     [sym__lka] = ACTIONS(3),
@@ -19109,6 +19645,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1088),
     [sym__bnk_lbk] = ACTIONS(1088),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [428] = {
     [sym__lka] = ACTIONS(3),
@@ -19130,6 +19667,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1090),
     [sym__bnk_lbk] = ACTIONS(1090),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [429] = {
     [sym__lka] = ACTIONS(3),
@@ -19151,6 +19689,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1098),
     [sym__bnk_lbk] = ACTIONS(1098),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [430] = {
     [sym__lka] = ACTIONS(3),
@@ -19172,6 +19711,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1100),
     [sym__bnk_lbk] = ACTIONS(1100),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [431] = {
     [sym__lka] = ACTIONS(3),
@@ -19193,6 +19733,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1102),
     [sym__bnk_lbk] = ACTIONS(1102),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [432] = {
     [sym__lka] = ACTIONS(3),
@@ -19214,6 +19755,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1080),
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1080),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [433] = {
     [sym__eof] = ACTIONS(1102),
@@ -19235,6 +19777,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1102),
     [sym__bnk_lbk] = ACTIONS(1102),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [434] = {
     [sym__eof] = ACTIONS(1100),
@@ -19256,6 +19799,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1100),
     [sym__bnk_lbk] = ACTIONS(1100),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [435] = {
     [sym__lka] = ACTIONS(3),
@@ -19277,6 +19821,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1104),
     [sym__bnk_lbk] = ACTIONS(1104),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [436] = {
     [sym__eof] = ACTIONS(1098),
@@ -19298,6 +19843,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1098),
     [sym__bnk_lbk] = ACTIONS(1098),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [437] = {
     [sym__lka] = ACTIONS(3),
@@ -19319,6 +19865,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1106),
     [sym__bnk_lbk] = ACTIONS(1106),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [438] = {
     [sym__eof] = ACTIONS(1090),
@@ -19340,6 +19887,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1090),
     [sym__bnk_lbk] = ACTIONS(1090),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [439] = {
     [sym__eof] = ACTIONS(1096),
@@ -19361,6 +19909,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1096),
     [sym__bnk_lbk] = ACTIONS(1096),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [440] = {
     [sym__lka] = ACTIONS(3),
@@ -19382,6 +19931,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1102),
     [sym__bnk_lbk] = ACTIONS(1102),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [441] = {
     [sym__lka] = ACTIONS(3),
@@ -19403,6 +19953,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1100),
     [sym__bnk_lbk] = ACTIONS(1100),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [442] = {
     [sym__eof] = ACTIONS(1094),
@@ -19424,6 +19975,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1094),
     [sym__bnk_lbk] = ACTIONS(1094),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [443] = {
     [sym__lka] = ACTIONS(3),
@@ -19445,6 +19997,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1104),
     [sym__bnk_lbk] = ACTIONS(1104),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [444] = {
     [sym__eof] = ACTIONS(1092),
@@ -19466,6 +20019,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1092),
     [sym__bnk_lbk] = ACTIONS(1092),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [445] = {
     [sym__lka] = ACTIONS(3),
@@ -19487,6 +20041,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1084),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1084),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [446] = {
     [sym__lka] = ACTIONS(3),
@@ -19508,6 +20063,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1108),
     [sym__bnk_lbk] = ACTIONS(1108),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [447] = {
     [sym__lka] = ACTIONS(3),
@@ -19529,6 +20085,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1098),
     [sym__bnk_lbk] = ACTIONS(1098),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [448] = {
     [sym__eof] = ACTIONS(1110),
@@ -19550,6 +20107,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1110),
     [sym__bnk_lbk] = ACTIONS(1110),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [449] = {
     [sym__lka] = ACTIONS(3),
@@ -19571,6 +20129,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1110),
     [sym__bnk_lbk] = ACTIONS(1110),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [450] = {
     [sym__lka] = ACTIONS(3),
@@ -19592,6 +20151,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1088),
     [sym__bnk_lbk] = ACTIONS(1088),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [451] = {
     [sym__lka] = ACTIONS(3),
@@ -19613,6 +20173,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1096),
     [sym__bnk_lbk] = ACTIONS(1096),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [452] = {
     [sym__lka] = ACTIONS(3),
@@ -19634,6 +20195,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1094),
     [sym__bnk_lbk] = ACTIONS(1094),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [453] = {
     [sym__lka] = ACTIONS(3),
@@ -19655,6 +20217,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1082),
     [sym__tbl_dat_row_bgn_mkr] = ACTIONS(1082),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [454] = {
     [sym__lka] = ACTIONS(3),
@@ -19676,6 +20239,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1092),
     [sym__bnk_lbk] = ACTIONS(1092),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [455] = {
     [sym__lka] = ACTIONS(3),
@@ -19697,6 +20261,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1110),
     [sym__bnk_lbk] = ACTIONS(1110),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [456] = {
     [sym__lka] = ACTIONS(3),
@@ -19718,6 +20283,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1108),
     [sym__bnk_lbk] = ACTIONS(1108),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [457] = {
     [sym__lka] = ACTIONS(3),
@@ -19739,6 +20305,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1112),
     [sym__bnk_lbk] = ACTIONS(1112),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [458] = {
     [sym__lka] = ACTIONS(3),
@@ -19760,6 +20327,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1114),
     [sym__bnk_lbk] = ACTIONS(1114),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [459] = {
     [sym__lka] = ACTIONS(3),
@@ -19781,6 +20349,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1116),
     [sym__bnk_lbk] = ACTIONS(1116),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [460] = {
     [sym__lka] = ACTIONS(3),
@@ -19802,6 +20371,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1118),
     [sym__bnk_lbk] = ACTIONS(1118),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [461] = {
     [sym__lka] = ACTIONS(3),
@@ -19823,6 +20393,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1112),
     [sym__bnk_lbk] = ACTIONS(1112),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [462] = {
     [sym__lka] = ACTIONS(3),
@@ -19844,6 +20415,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1114),
     [sym__bnk_lbk] = ACTIONS(1114),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [463] = {
     [sym__lka] = ACTIONS(3),
@@ -19865,6 +20437,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1116),
     [sym__bnk_lbk] = ACTIONS(1116),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [464] = {
     [sym__lka] = ACTIONS(3),
@@ -19886,6 +20459,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1118),
     [sym__bnk_lbk] = ACTIONS(1118),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [465] = {
     [sym__lka] = ACTIONS(3),
@@ -19907,6 +20481,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1120),
     [sym__bnk_lbk] = ACTIONS(1120),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [466] = {
     [sym__eof] = ACTIONS(1108),
@@ -19928,6 +20503,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1108),
     [sym__bnk_lbk] = ACTIONS(1108),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [467] = {
     [sym__lka] = ACTIONS(3),
@@ -19949,6 +20525,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1122),
     [sym__bnk_lbk] = ACTIONS(1122),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [468] = {
     [sym__eof] = ACTIONS(1112),
@@ -19970,6 +20547,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1112),
     [sym__bnk_lbk] = ACTIONS(1112),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [469] = {
     [sym__eof] = ACTIONS(1114),
@@ -19991,6 +20569,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1114),
     [sym__bnk_lbk] = ACTIONS(1114),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [470] = {
     [sym__eof] = ACTIONS(1116),
@@ -20012,6 +20591,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1116),
     [sym__bnk_lbk] = ACTIONS(1116),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [471] = {
     [sym__eof] = ACTIONS(1118),
@@ -20033,6 +20613,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1118),
     [sym__bnk_lbk] = ACTIONS(1118),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [472] = {
     [sym__lka] = ACTIONS(3),
@@ -20054,6 +20635,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1120),
     [sym__bnk_lbk] = ACTIONS(1120),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [473] = {
     [sym__eof] = ACTIONS(1120),
@@ -20075,6 +20657,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1120),
     [sym__bnk_lbk] = ACTIONS(1120),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [474] = {
     [sym__eof] = ACTIONS(1104),
@@ -20096,6 +20679,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1104),
     [sym__bnk_lbk] = ACTIONS(1104),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [475] = {
     [sym__lka] = ACTIONS(3),
@@ -20116,6 +20700,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1088),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1088),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [476] = {
     [sym__lka] = ACTIONS(3),
@@ -20136,6 +20721,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1100),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1100),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [477] = {
     [sym__lka] = ACTIONS(3),
@@ -20156,6 +20742,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1116),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1116),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [478] = {
     [sym__lka] = ACTIONS(3),
@@ -20176,6 +20763,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1114),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1114),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [479] = {
     [sym__lka] = ACTIONS(3),
@@ -20196,6 +20784,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1112),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1112),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [480] = {
     [sym__lka] = ACTIONS(3),
@@ -20216,6 +20805,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1108),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1108),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [481] = {
     [sym__lka] = ACTIONS(3),
@@ -20236,6 +20826,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1110),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1110),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [482] = {
     [sym__lka] = ACTIONS(3),
@@ -20256,6 +20847,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1092),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1092),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [483] = {
     [sym__lka] = ACTIONS(3),
@@ -20276,6 +20868,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1094),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1094),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [484] = {
     [sym__lka] = ACTIONS(3),
@@ -20296,6 +20889,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1096),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1096),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [485] = {
     [sym__lka] = ACTIONS(3),
@@ -20316,6 +20910,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1104),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1104),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [486] = {
     [sym__lka] = ACTIONS(3),
@@ -20336,6 +20931,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1090),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1090),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [487] = {
     [sym__lka] = ACTIONS(3),
@@ -20356,6 +20952,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1098),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1098),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [488] = {
     [sym__lka] = ACTIONS(3),
@@ -20376,6 +20973,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1120),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1120),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [489] = {
     [sym__lka] = ACTIONS(3),
@@ -20396,6 +20994,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1102),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1102),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [490] = {
     [sym__lka] = ACTIONS(3),
@@ -20416,6 +21015,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1122),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1122),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [491] = {
     [sym__lka] = ACTIONS(3),
@@ -20436,6 +21036,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1118),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1118),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [492] = {
     [sym__lka] = ACTIONS(3),
@@ -20456,6 +21057,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1106),
     [sym__tbl_hed_row_bgn_mkr] = ACTIONS(1106),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [493] = {
     [sym__tig_lst_itm] = STATE(493),
@@ -20470,6 +21072,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1126),
     [sym__bnk_lbk] = ACTIONS(1129),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [494] = {
     [sym__tig_lst_itm] = STATE(493),
@@ -20484,6 +21087,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1134),
     [sym__bnk_lbk] = ACTIONS(1136),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [495] = {
     [sym__tig_lst_itm] = STATE(498),
@@ -20498,6 +21102,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1134),
     [sym__bnk_lbk] = ACTIONS(1140),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [496] = {
     [sym__tig_lst_itm] = STATE(499),
@@ -20512,6 +21117,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1134),
     [sym__bnk_lbk] = ACTIONS(1144),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [497] = {
     [sym__tig_lst_itm] = STATE(494),
@@ -20526,6 +21132,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1134),
     [sym__bnk_lbk] = ACTIONS(1148),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [498] = {
     [sym__tig_lst_itm] = STATE(500),
@@ -20540,6 +21147,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1134),
     [sym__bnk_lbk] = ACTIONS(1152),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [499] = {
     [sym__tig_lst_itm] = STATE(493),
@@ -20554,6 +21162,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1134),
     [sym__bnk_lbk] = ACTIONS(1136),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [500] = {
     [sym__tig_lst_itm] = STATE(500),
@@ -20565,6 +21174,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1156),
     [sym__bnk_lbk] = ACTIONS(1154),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [501] = {
     [aux_sym__ind_cod_hed_repeat1] = STATE(501),
@@ -20573,6 +21183,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1161),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1164),
     [sym__vtr_spc] = ACTIONS(1164),
   },
@@ -20583,6 +21194,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1169),
     [sym__blk_lbk] = ACTIONS(1171),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1173),
     [sym__vtr_spc] = ACTIONS(1173),
   },
@@ -20594,6 +21206,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1175),
     [sym__fen_cod_inf_end_mkr] = ACTIONS(1177),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1175),
   },
   [504] = {
@@ -20603,6 +21216,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1179),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1182),
     [sym__vtr_spc] = ACTIONS(1182),
   },
@@ -20614,6 +21228,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1185),
     [sym__lnk_dst_end] = ACTIONS(1187),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1185),
   },
   [506] = {
@@ -20624,6 +21239,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1189),
     [sym__lnk_dst_end] = ACTIONS(1191),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1189),
   },
   [507] = {
@@ -20634,6 +21250,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1193),
     [sym__lnk_tit_end] = ACTIONS(1196),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1193),
   },
   [508] = {
@@ -20643,6 +21260,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1200),
     [sym__blk_lbk] = ACTIONS(1202),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1204),
     [sym__vtr_spc] = ACTIONS(1204),
   },
@@ -20653,6 +21271,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1206),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1209),
     [sym__vtr_spc] = ACTIONS(1209),
   },
@@ -20663,6 +21282,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1214),
     [sym__blk_lbk] = ACTIONS(1202),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1204),
     [sym__vtr_spc] = ACTIONS(1204),
   },
@@ -20673,6 +21293,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1218),
     [sym__blk_lbk] = ACTIONS(1220),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1222),
     [sym__vtr_spc] = ACTIONS(1222),
   },
@@ -20684,6 +21305,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1224),
     [sym__lnk_tit_end] = ACTIONS(1226),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1224),
   },
   [513] = {
@@ -20693,6 +21315,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1228),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1231),
     [sym__vtr_spc] = ACTIONS(1231),
   },
@@ -20703,6 +21326,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1236),
     [sym__blk_lbk] = ACTIONS(1238),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1173),
     [sym__vtr_spc] = ACTIONS(1173),
   },
@@ -20713,6 +21337,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1242),
     [sym__blk_lbk] = ACTIONS(1244),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1246),
     [sym__vtr_spc] = ACTIONS(1246),
   },
@@ -20723,6 +21348,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1250),
     [sym__blk_lbk] = ACTIONS(1252),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1173),
     [sym__vtr_spc] = ACTIONS(1173),
   },
@@ -20734,6 +21360,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1254),
     [sym__fen_cod_inf_end_mkr] = ACTIONS(1257),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1254),
   },
   [518] = {
@@ -20744,6 +21371,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1259),
     [sym__lnk_tit_end] = ACTIONS(1261),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1259),
   },
   [519] = {
@@ -20754,6 +21382,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1263),
     [sym__lnk_dst_end_mkr] = ACTIONS(1265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1263),
   },
   [520] = {
@@ -20764,6 +21393,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1189),
     [sym__lnk_dst_end] = ACTIONS(1265),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1189),
   },
   [521] = {
@@ -20774,6 +21404,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1267),
     [sym__lnk_dst_end] = ACTIONS(1196),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1267),
   },
   [522] = {
@@ -20783,6 +21414,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1272),
     [sym__blk_lbk] = ACTIONS(1274),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1276),
     [sym__vtr_spc] = ACTIONS(1276),
   },
@@ -20794,6 +21426,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1278),
     [sym__lnk_dst_end_mkr] = ACTIONS(1196),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1278),
   },
   [524] = {
@@ -20803,6 +21436,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1283),
     [sym__blk_lbk] = ACTIONS(1285),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1287),
     [sym__vtr_spc] = ACTIONS(1287),
   },
@@ -20814,6 +21448,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1263),
     [sym__lnk_dst_end_mkr] = ACTIONS(1191),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1263),
   },
   [526] = {
@@ -20823,6 +21458,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1291),
     [sym__blk_lbk] = ACTIONS(1285),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1287),
     [sym__vtr_spc] = ACTIONS(1287),
   },
@@ -20833,6 +21469,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1295),
     [sym__blk_lbk] = ACTIONS(1220),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1222),
     [sym__vtr_spc] = ACTIONS(1222),
   },
@@ -20843,6 +21480,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1299),
     [sym__blk_lbk] = ACTIONS(1274),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1276),
     [sym__vtr_spc] = ACTIONS(1276),
   },
@@ -20854,6 +21492,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1301),
     [sym__lnk_tit_end] = ACTIONS(1303),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1301),
   },
   [530] = {
@@ -20863,6 +21502,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1305),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1308),
     [sym__vtr_spc] = ACTIONS(1308),
   },
@@ -20873,6 +21513,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1313),
     [sym__blk_lbk] = ACTIONS(1244),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1246),
     [sym__vtr_spc] = ACTIONS(1246),
   },
@@ -20884,6 +21525,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1175),
     [sym__fen_cod_inf_end_mkr] = ACTIONS(1315),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1175),
   },
   [533] = {
@@ -20894,6 +21536,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1224),
     [sym__lnk_tit_end] = ACTIONS(1317),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1224),
   },
   [534] = {
@@ -20904,6 +21547,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1319),
     [sym__lnk_dst_end_mkr] = ACTIONS(1187),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1319),
   },
   [535] = {
@@ -20914,6 +21558,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1321),
     [sym__lnk_dst_end] = ACTIONS(1323),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1321),
   },
   [536] = {
@@ -20924,6 +21569,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1325),
     [sym__lnk_dst_end_mkr] = ACTIONS(1323),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1325),
   },
   [537] = {
@@ -20932,6 +21578,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -20941,6 +21588,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(1331),
     [sym__blk_lbk] = ACTIONS(1333),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1335),
     [sym__vtr_spc] = ACTIONS(1335),
   },
@@ -20950,6 +21598,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1337),
     [sym__blk_lbk] = ACTIONS(1339),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1173),
     [sym__vtr_spc] = ACTIONS(1173),
   },
@@ -20959,6 +21608,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -20968,6 +21618,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -20977,6 +21628,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__ind_cod_end_mkr] = ACTIONS(1343),
     [sym__blk_lbk] = ACTIONS(1345),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1347),
     [sym__vtr_spc] = ACTIONS(1347),
   },
@@ -20986,6 +21638,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_div_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1349),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1352),
     [sym__vtr_spc] = ACTIONS(1352),
   },
@@ -20995,6 +21648,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1355),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1358),
     [sym__vtr_spc] = ACTIONS(1358),
   },
@@ -21004,6 +21658,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21013,6 +21668,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__ind_cod_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1363),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1366),
     [sym__vtr_spc] = ACTIONS(1366),
   },
@@ -21022,6 +21678,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21031,6 +21688,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(1369),
     [sym__blk_lbk] = ACTIONS(1333),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1335),
     [sym__vtr_spc] = ACTIONS(1335),
   },
@@ -21040,6 +21698,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -21049,6 +21708,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21058,6 +21718,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21067,6 +21728,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21076,6 +21738,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21086,6 +21749,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_tag_end] = ACTIONS(1379),
     [sym__htm_slf_tag_end] = ACTIONS(1379),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1381),
   },
   [555] = {
@@ -21095,6 +21759,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_tag_end] = ACTIONS(1383),
     [sym__htm_slf_tag_end] = ACTIONS(1383),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1381),
   },
   [556] = {
@@ -21103,6 +21768,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -21112,6 +21778,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -21121,6 +21788,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_div_end_mkr] = ACTIONS(1385),
     [sym__blk_lbk] = ACTIONS(1387),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1389),
     [sym__vtr_spc] = ACTIONS(1389),
   },
@@ -21130,6 +21798,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_div_end_mkr] = ACTIONS(1391),
     [sym__blk_lbk] = ACTIONS(1387),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1389),
     [sym__vtr_spc] = ACTIONS(1389),
   },
@@ -21139,6 +21808,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(1159),
     [sym__blk_lbk] = ACTIONS(1393),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1396),
     [sym__vtr_spc] = ACTIONS(1396),
   },
@@ -21148,6 +21818,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__ind_cod_end_mkr] = ACTIONS(1399),
     [sym__blk_lbk] = ACTIONS(1345),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1347),
     [sym__vtr_spc] = ACTIONS(1347),
   },
@@ -21157,6 +21828,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1401),
     [sym__blk_lbk] = ACTIONS(1403),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1173),
     [sym__vtr_spc] = ACTIONS(1173),
   },
@@ -21166,6 +21838,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21175,6 +21848,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21184,6 +21858,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1405),
     [sym__blk_lbk] = ACTIONS(1407),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1173),
     [sym__vtr_spc] = ACTIONS(1173),
   },
@@ -21194,6 +21869,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_tag_end] = ACTIONS(1409),
     [sym__htm_slf_tag_end] = ACTIONS(1409),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1411),
   },
   [567] = {
@@ -21202,6 +21878,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -21211,6 +21888,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21220,6 +21898,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1416),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [570] = {
@@ -21228,6 +21907,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1418),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1420),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1418),
   },
   [571] = {
@@ -21236,6 +21916,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1422),
     [sym__cod_spn_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1422),
   },
   [572] = {
@@ -21244,6 +21925,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1429),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [573] = {
@@ -21252,6 +21934,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1431),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [574] = {
@@ -21260,6 +21943,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1435),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [575] = {
@@ -21268,6 +21952,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1437),
     [sym__aut_lnk_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1437),
   },
   [576] = {
@@ -21276,6 +21961,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1442),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [577] = {
@@ -21284,6 +21970,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1444),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [578] = {
@@ -21292,6 +21979,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1446),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [579] = {
@@ -21300,6 +21988,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1450),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [580] = {
@@ -21308,6 +21997,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1452),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [581] = {
@@ -21316,6 +22006,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1454),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1454),
   },
   [582] = {
@@ -21324,6 +22015,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1457),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [583] = {
@@ -21332,6 +22024,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1461),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [584] = {
@@ -21340,6 +22033,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1463),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [585] = {
@@ -21347,6 +22041,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_div_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21355,6 +22050,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_div_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -21364,6 +22060,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1465),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [588] = {
@@ -21372,6 +22069,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1467),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [589] = {
@@ -21380,6 +22078,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1471),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [590] = {
@@ -21388,6 +22087,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1473),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [591] = {
@@ -21396,6 +22096,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1475),
     [sym__htm_atr_val_end_mkr] = ACTIONS(1477),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1475),
   },
   [592] = {
@@ -21404,6 +22105,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1479),
     [sym__htm_atr_val_end] = ACTIONS(1477),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1479),
   },
   [593] = {
@@ -21412,6 +22114,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1481),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [594] = {
@@ -21421,6 +22124,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1485),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1487),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [595] = {
     [aux_sym__lnk_ref_def_hed_repeat1] = STATE(671),
@@ -21428,6 +22132,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1489),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [596] = {
@@ -21436,6 +22141,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1491),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [597] = {
@@ -21444,6 +22150,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1493),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [598] = {
@@ -21452,6 +22159,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1495),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [599] = {
@@ -21460,6 +22168,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1497),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [600] = {
@@ -21468,6 +22177,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1499),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [601] = {
@@ -21476,6 +22186,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1501),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [602] = {
@@ -21484,6 +22195,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1503),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [603] = {
@@ -21492,6 +22204,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1505),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [604] = {
@@ -21500,6 +22213,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1507),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [605] = {
@@ -21508,6 +22222,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1475),
     [sym__htm_atr_val_end_mkr] = ACTIONS(1509),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1475),
   },
   [606] = {
@@ -21516,6 +22231,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1479),
     [sym__htm_atr_val_end] = ACTIONS(1509),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1479),
   },
   [607] = {
@@ -21524,6 +22240,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1511),
     [sym__htm_cmt_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1511),
   },
   [608] = {
@@ -21532,6 +22249,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1514),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [609] = {
@@ -21540,6 +22258,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1516),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [610] = {
@@ -21548,6 +22267,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1518),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [611] = {
@@ -21556,6 +22276,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1520),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [612] = {
@@ -21565,6 +22286,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1485),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1487),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [613] = {
     [aux_sym__lnk_ref_def_hed_repeat1] = STATE(658),
@@ -21572,6 +22294,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1524),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [614] = {
@@ -21580,6 +22303,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1526),
     [sym__htm_prc_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1526),
   },
   [615] = {
@@ -21588,6 +22312,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1529),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [616] = {
@@ -21596,6 +22321,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1418),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1531),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1418),
   },
   [617] = {
@@ -21604,6 +22330,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1533),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [618] = {
@@ -21612,6 +22339,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1535),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [619] = {
@@ -21620,6 +22348,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1537),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [620] = {
@@ -21628,6 +22357,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1539),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [621] = {
@@ -21636,6 +22366,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1541),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [622] = {
@@ -21644,6 +22375,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1418),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1543),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1418),
   },
   [623] = {
@@ -21652,6 +22384,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1545),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [624] = {
@@ -21660,6 +22393,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1547),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [625] = {
@@ -21668,6 +22402,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1549),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [626] = {
@@ -21676,6 +22411,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1551),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [627] = {
@@ -21684,6 +22420,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1553),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [628] = {
@@ -21692,6 +22429,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1555),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [629] = {
@@ -21699,6 +22437,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -21707,6 +22446,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -21716,6 +22456,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1557),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [632] = {
@@ -21724,6 +22465,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1559),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [633] = {
@@ -21733,6 +22475,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1485),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1487),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [634] = {
     [aux_sym__lnk_ref_def_hed_repeat1] = STATE(643),
@@ -21740,6 +22483,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1563),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [635] = {
@@ -21748,6 +22492,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1565),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [636] = {
@@ -21756,6 +22501,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1567),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [637] = {
@@ -21764,6 +22510,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1569),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [638] = {
@@ -21772,6 +22519,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1571),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [639] = {
@@ -21780,6 +22528,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1573),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [640] = {
@@ -21788,6 +22537,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_slf_tag_end] = ACTIONS(1575),
     [sym__htm_atr_eql] = ACTIONS(1577),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1575),
   },
   [641] = {
@@ -21796,6 +22546,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1579),
     [sym__lnk_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1579),
   },
   [642] = {
@@ -21804,6 +22555,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1582),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [643] = {
@@ -21812,6 +22564,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1584),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [644] = {
@@ -21820,6 +22573,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1586),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [645] = {
@@ -21829,6 +22583,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1485),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1487),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [646] = {
     [aux_sym__lnk_ref_def_hed_repeat1] = STATE(609),
@@ -21836,6 +22591,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1590),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [647] = {
@@ -21844,6 +22600,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1418),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1592),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1418),
   },
   [648] = {
@@ -21852,6 +22609,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1594),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [649] = {
@@ -21860,6 +22618,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1596),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [650] = {
@@ -21868,6 +22627,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1598),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [651] = {
@@ -21876,6 +22636,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1600),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [652] = {
@@ -21884,6 +22645,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1602),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [653] = {
@@ -21893,6 +22655,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1485),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1487),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [654] = {
     [aux_sym__lnk_ref_def_hed_repeat1] = STATE(658),
@@ -21900,6 +22663,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1606),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [655] = {
@@ -21908,6 +22672,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1608),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [656] = {
@@ -21916,6 +22681,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1610),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [657] = {
@@ -21924,6 +22690,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1612),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [658] = {
@@ -21932,6 +22699,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1614),
     [sym__htm_cda_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1614),
   },
   [659] = {
@@ -21940,6 +22708,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1617),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [660] = {
@@ -21948,6 +22717,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__chr_ref] = ACTIONS(1619),
     [sym__fen_cod_inf_end_mkr] = ACTIONS(1619),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1619),
   },
   [661] = {
@@ -21957,6 +22727,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1485),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1487),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [662] = {
     [aux_sym__lnk_ref_def_hed_repeat1] = STATE(575),
@@ -21964,6 +22735,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1623),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [663] = {
@@ -21972,6 +22744,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1625),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [664] = {
@@ -21980,6 +22753,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1627),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [665] = {
@@ -21988,6 +22762,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1629),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [666] = {
@@ -21996,6 +22771,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1631),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [667] = {
@@ -22004,6 +22780,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1633),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [668] = {
@@ -22012,6 +22789,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1635),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [669] = {
@@ -22020,6 +22798,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1637),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [670] = {
@@ -22028,6 +22807,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1639),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [671] = {
@@ -22036,6 +22816,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1641),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [672] = {
@@ -22044,6 +22825,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1418),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1643),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1418),
   },
   [673] = {
@@ -22051,6 +22833,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__ind_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -22059,6 +22842,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__ind_cod_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -22068,6 +22852,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1645),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [676] = {
@@ -22076,6 +22861,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1418),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1647),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1418),
   },
   [677] = {
@@ -22084,6 +22870,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1649),
     [sym__htm_tag_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1649),
   },
   [678] = {
@@ -22091,6 +22878,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1329),
     [sym__blk_lbk] = ACTIONS(1329),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1329),
     [sym__vtr_spc] = ACTIONS(1329),
   },
@@ -22099,6 +22887,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_end_mkr] = ACTIONS(1341),
     [sym__blk_lbk] = ACTIONS(1341),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1341),
     [sym__vtr_spc] = ACTIONS(1341),
   },
@@ -22108,6 +22897,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1652),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [681] = {
@@ -22116,6 +22906,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1654),
     [sym__lnk_end] = ACTIONS(1656),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1654),
   },
   [682] = {
@@ -22124,6 +22915,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1658),
     [sym__lnk_ref_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1658),
   },
   [683] = {
@@ -22132,6 +22924,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1661),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [684] = {
@@ -22140,6 +22933,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1663),
     [sym__htm_atr_val_end] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1663),
   },
   [685] = {
@@ -22148,6 +22942,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1666),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [686] = {
@@ -22156,6 +22951,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1668),
     [sym__htm_atr_val_end_mkr] = ACTIONS(1425),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1668),
   },
   [687] = {
@@ -22164,6 +22960,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1671),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [688] = {
@@ -22172,6 +22969,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1673),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [689] = {
@@ -22180,6 +22978,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1675),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [690] = {
@@ -22188,6 +22987,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1677),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [691] = {
@@ -22196,6 +22996,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1679),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [692] = {
@@ -22204,6 +23005,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1681),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [693] = {
@@ -22212,6 +23014,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1683),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [694] = {
@@ -22220,6 +23023,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1654),
     [sym__lnk_end] = ACTIONS(1685),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1654),
   },
   [695] = {
@@ -22228,6 +23032,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1687),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [696] = {
@@ -22236,6 +23041,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1414),
     [sym__lnk_ref_end] = ACTIONS(1689),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1414),
   },
   [697] = {
@@ -22245,6 +23051,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1485),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1487),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [698] = {
     [aux_sym__lnk_ref_def_hed_repeat1] = STATE(658),
@@ -22252,6 +23059,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1693),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [699] = {
@@ -22260,6 +23068,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1695),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [700] = {
@@ -22268,6 +23077,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1697),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [701] = {
@@ -22276,6 +23086,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1469),
     [sym__htm_tag_end] = ACTIONS(1699),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1469),
   },
   [702] = {
@@ -22284,6 +23095,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1701),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [703] = {
@@ -22292,6 +23104,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1703),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [704] = {
@@ -22300,6 +23113,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1705),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [705] = {
@@ -22308,6 +23122,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1707),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [706] = {
@@ -22316,6 +23131,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1709),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [707] = {
@@ -22324,6 +23140,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1711),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [708] = {
@@ -22332,6 +23149,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1713),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [709] = {
@@ -22340,6 +23158,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1715),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [710] = {
@@ -22348,6 +23167,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1717),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [711] = {
@@ -22356,6 +23176,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1719),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [712] = {
@@ -22364,6 +23185,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1721),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [713] = {
@@ -22372,6 +23194,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1723),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [714] = {
@@ -22380,6 +23203,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1725),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [715] = {
@@ -22388,6 +23212,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1440),
     [sym__htm_cda_end] = ACTIONS(1727),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1440),
   },
   [716] = {
@@ -22396,6 +23221,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1433),
     [sym__htm_prc_end] = ACTIONS(1729),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1433),
   },
   [717] = {
@@ -22404,6 +23230,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1459),
     [sym__htm_cmt_end] = ACTIONS(1731),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1459),
   },
   [718] = {
@@ -22412,6 +23239,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1733),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [719] = {
@@ -22420,6 +23248,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1448),
     [sym__cod_spn_end] = ACTIONS(1735),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1448),
   },
   [720] = {
@@ -22428,6 +23257,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1427),
     [sym__aut_lnk_end] = ACTIONS(1737),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1427),
   },
   [721] = {
@@ -22435,6 +23265,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_tag_end] = ACTIONS(1739),
     [sym__htm_slf_tag_end] = ACTIONS(1739),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1739),
   },
   [722] = {
@@ -22442,6 +23273,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__htm_cmt_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [723] = {
@@ -22450,12 +23282,14 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_dlm_row_bgn_mkr] = ACTIONS(1743),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [724] = {
     [sym__lka] = ACTIONS(3),
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__htm_prc_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [725] = {
@@ -22463,6 +23297,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__lnk_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [726] = {
@@ -22471,6 +23306,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_dlm_row_bgn_mkr] = ACTIONS(1743),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [727] = {
     [sym__lnk_tit] = STATE(882),
@@ -22478,12 +23314,14 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_inl_end] = ACTIONS(1745),
     [sym__lnk_tit_bgn] = ACTIONS(1747),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [728] = {
     [sym__lka] = ACTIONS(3),
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__htm_atr_val_end_mkr] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [729] = {
@@ -22491,6 +23329,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__htm_atr_val_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [730] = {
@@ -22498,6 +23337,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__lnk_ref_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [731] = {
@@ -22505,6 +23345,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__htm_tag_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [732] = {
@@ -22512,6 +23353,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__aut_lnk_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [733] = {
@@ -22519,6 +23361,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [734] = {
@@ -22527,6 +23370,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1749),
     [sym__bnk_lbk] = ACTIONS(1749),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [735] = {
     [sym__lnk_tit] = STATE(914),
@@ -22534,6 +23378,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_inl_end] = ACTIONS(1751),
     [sym__lnk_tit_bgn] = ACTIONS(1747),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [736] = {
     [aux_sym__tbl_dlm_row_hed_repeat1] = STATE(748),
@@ -22541,6 +23386,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(1753),
     [sym__tbl_col_sep] = ACTIONS(1755),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [737] = {
     [sym__lnk_dst] = STATE(750),
@@ -22548,6 +23394,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1757),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1759),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [738] = {
     [sym__lnk_tit] = STATE(850),
@@ -22555,6 +23402,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_inl_end] = ACTIONS(1761),
     [sym__lnk_tit_bgn] = ACTIONS(1747),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [739] = {
     [sym__lnk_tit] = STATE(843),
@@ -22562,12 +23410,14 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_inl_end] = ACTIONS(1763),
     [sym__lnk_tit_bgn] = ACTIONS(1747),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [740] = {
     [sym__lka] = ACTIONS(3),
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__htm_cda_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [741] = {
@@ -22575,6 +23425,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__bsl_esc] = ACTIONS(1741),
     [sym__cod_spn_end] = ACTIONS(1741),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1741),
   },
   [742] = {
@@ -22583,6 +23434,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lst_itm_bgn] = ACTIONS(1765),
     [sym__bnk_lbk] = ACTIONS(1765),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [743] = {
     [aux_sym__tbl_hed_row_hed_repeat1] = STATE(745),
@@ -22590,6 +23442,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(959),
     [sym__tbl_col_sep] = ACTIONS(1767),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [744] = {
     [aux_sym__tbl_hed_row_hed_repeat1] = STATE(745),
@@ -22597,6 +23450,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(945),
     [sym__tbl_col_sep] = ACTIONS(1769),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [745] = {
     [aux_sym__tbl_hed_row_hed_repeat1] = STATE(745),
@@ -22604,6 +23458,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(1771),
     [sym__tbl_col_sep] = ACTIONS(1773),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [746] = {
     [aux_sym__tbl_dlm_row_hed_repeat1] = STATE(755),
@@ -22611,6 +23466,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(1776),
     [sym__tbl_col_sep] = ACTIONS(1778),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [747] = {
     [sym__lnk_tit] = STATE(946),
@@ -22618,6 +23474,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_inl_end] = ACTIONS(1780),
     [sym__lnk_tit_bgn] = ACTIONS(1747),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [748] = {
     [aux_sym__tbl_dlm_row_hed_repeat1] = STATE(757),
@@ -22625,6 +23482,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(1776),
     [sym__tbl_col_sep] = ACTIONS(1778),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [749] = {
     [sym__lnk_tit] = STATE(934),
@@ -22632,6 +23490,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_inl_end] = ACTIONS(1782),
     [sym__lnk_tit_bgn] = ACTIONS(1747),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [750] = {
     [sym__lnk_tit] = STATE(935),
@@ -22639,6 +23498,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_ref_def_end_mkr] = ACTIONS(1784),
     [sym__lnk_tit_bgn] = ACTIONS(1786),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [751] = {
     [sym__lnk_dst] = STATE(761),
@@ -22646,6 +23506,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_dst_bgn] = ACTIONS(1757),
     [sym__lnk_dst_bgn_mkr] = ACTIONS(1759),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [752] = {
     [sym__htm_atr_val] = STATE(762),
@@ -22653,12 +23514,14 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__htm_atr_val_bgn] = ACTIONS(1788),
     [sym__htm_atr_val_bgn_mkr] = ACTIONS(1790),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [753] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1792),
     [sym__htm_slf_tag_end] = ACTIONS(1792),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1792),
   },
   [754] = {
@@ -22667,6 +23530,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__fen_cod_inf_bgn_mkr] = ACTIONS(1796),
     [sym__blk_lbk] = ACTIONS(1798),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [755] = {
     [aux_sym__tbl_dlm_row_hed_repeat1] = STATE(757),
@@ -22674,6 +23538,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(1800),
     [sym__tbl_col_sep] = ACTIONS(1802),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [756] = {
     [sym__tbl_dlm_row] = STATE(412),
@@ -22681,6 +23546,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_dlm_row_bgn_mkr] = ACTIONS(1743),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [757] = {
     [aux_sym__tbl_dlm_row_hed_repeat1] = STATE(757),
@@ -22688,6 +23554,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(1804),
     [sym__tbl_col_sep] = ACTIONS(1806),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [758] = {
     [aux_sym__tbl_hed_row_hed_repeat1] = STATE(745),
@@ -22695,6 +23562,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(951),
     [sym__tbl_col_sep] = ACTIONS(1809),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [759] = {
     [sym__tbl_dlm_row] = STATE(402),
@@ -22702,6 +23570,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_dlm_row_bgn_mkr] = ACTIONS(1743),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [760] = {
     [sym__lnk_tit] = STATE(807),
@@ -22709,6 +23578,7 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_inl_end] = ACTIONS(1811),
     [sym__lnk_tit_bgn] = ACTIONS(1747),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [761] = {
     [sym__lnk_tit] = STATE(942),
@@ -22716,12 +23586,14 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__lnk_ref_def_end_mkr] = ACTIONS(1813),
     [sym__lnk_tit_bgn] = ACTIONS(1786),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [762] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1815),
     [sym__htm_slf_tag_end] = ACTIONS(1815),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1815),
   },
   [763] = {
@@ -22730,1022 +23602,1222 @@ static uint16_t ts_parse_table[STATE_COUNT][SYMBOL_COUNT] = {
     [sym__tbl_row_end_mkr] = ACTIONS(955),
     [sym__tbl_col_sep] = ACTIONS(1817),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [764] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1819),
     [sym__htm_slf_tag_end] = ACTIONS(1821),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [765] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1804),
     [sym__tbl_col_sep] = ACTIONS(1804),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [766] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1823),
     [sym__htm_slf_tag_end] = ACTIONS(1825),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [767] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(1827),
     [sym__lnk_tit_bgn] = ACTIONS(1827),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [768] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1829),
     [sym__tbl_col_aln] = ACTIONS(1831),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [769] = {
     [sym__ind_cod_hed] = STATE(796),
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_bgn_mkr] = ACTIONS(1833),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [770] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(1835),
     [sym__lnk_tit_bgn] = ACTIONS(1835),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [771] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1837),
     [sym__htm_slf_tag_end] = ACTIONS(1839),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [772] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1841),
     [sym__htm_slf_tag_end] = ACTIONS(1843),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [773] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_col_sep] = ACTIONS(1845),
     [sym__tbl_col_aln] = ACTIONS(1847),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [774] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1776),
     [sym__tbl_col_aln] = ACTIONS(1831),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [775] = {
     [sym__ind_cod_hed] = STATE(859),
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_bgn_mkr] = ACTIONS(1833),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [776] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(1849),
     [sym__blk_lbk] = ACTIONS(1851),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [777] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1800),
     [sym__tbl_col_aln] = ACTIONS(1831),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [778] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1853),
     [sym__htm_slf_tag_end] = ACTIONS(1855),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [779] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(1835),
     [sym__lnk_tit_bgn] = ACTIONS(1835),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [780] = {
     [sym__ind_cod_hed] = STATE(802),
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_bgn_mkr] = ACTIONS(1833),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [781] = {
     [sym__ind_cod_hed] = STATE(831),
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_bgn_mkr] = ACTIONS(1833),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [782] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(1857),
     [sym__blk_lbk] = ACTIONS(1859),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [783] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1861),
     [sym__htm_slf_tag_end] = ACTIONS(1863),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [784] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(1827),
     [sym__lnk_tit_bgn] = ACTIONS(1827),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [785] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1865),
     [sym__htm_slf_tag_end] = ACTIONS(1867),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [786] = {
     [sym__lka] = ACTIONS(3),
     [sym__atx_end_mkr] = ACTIONS(1869),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [787] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1871),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [788] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1873),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [789] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1875),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [790] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1877),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [791] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_div_end_mkr] = ACTIONS(1879),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [792] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(1881),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [793] = {
     [sym__lka] = ACTIONS(3),
     [sym__bqt_end_mkr] = ACTIONS(1883),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [794] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(1885),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [795] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(1887),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [796] = {
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_end_mkr] = ACTIONS(1889),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [797] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1891),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [798] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1893),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [799] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1895),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [800] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1897),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [801] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1899),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [802] = {
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_end_mkr] = ACTIONS(1901),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [803] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1903),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [804] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1905),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [805] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1907),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [806] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1909),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [807] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(1911),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [808] = {
     [sym__lka] = ACTIONS(3),
     [sym__thm_brk_end_mkr] = ACTIONS(1913),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [809] = {
     [sym__lka] = ACTIONS(3),
     [sym__pgh_end_mkr] = ACTIONS(1915),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [810] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(1917),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [811] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(1919),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [812] = {
     [sym__lka] = ACTIONS(3),
     [sym__atx_end_mkr] = ACTIONS(1921),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [813] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(1923),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [814] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1925),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [815] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1927),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [816] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1929),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [817] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1931),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [818] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1933),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [819] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_div_end_mkr] = ACTIONS(1935),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [820] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(1937),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [821] = {
     [sym__lka] = ACTIONS(3),
     [sym__bqt_end_mkr] = ACTIONS(1939),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [822] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(1941),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [823] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(1943),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [824] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1945),
   },
   [825] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1947),
   },
   [826] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(1949),
   },
   [827] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1951),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [828] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1953),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [829] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(1955),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [830] = {
     [ts_builtin_sym_end] = ACTIONS(1957),
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [831] = {
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_end_mkr] = ACTIONS(1959),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [832] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1961),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [833] = {
     [ts_builtin_sym_end] = ACTIONS(1963),
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [834] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1965),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [835] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(1967),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [836] = {
     [sym__lka] = ACTIONS(3),
     [sym__atx_end_mkr] = ACTIONS(1969),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [837] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(1971),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [838] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(1973),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [839] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1975),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [840] = {
     [sym__lka] = ACTIONS(3),
     [sym__pgh_end_mkr] = ACTIONS(1977),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [841] = {
     [sym__lka] = ACTIONS(3),
     [sym__thm_brk_end_mkr] = ACTIONS(1979),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [842] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_scr_end_mkr] = ACTIONS(1291),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [843] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(1981),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [844] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1983),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [845] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(1200),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [846] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_prc_end_mkr] = ACTIONS(1218),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [847] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(1272),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [848] = {
     [sym__lka] = ACTIONS(3),
     [sym__pgh_end_mkr] = ACTIONS(1985),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [849] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cda_end_mkr] = ACTIONS(1242),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [850] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(1987),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [851] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_itm_cnt_bgn_mkr] = ACTIONS(1989),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [852] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(1991),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [853] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1993),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [854] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(1995),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [855] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(1997),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [856] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(1999),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [857] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_itm_cnt_end_mkr] = ACTIONS(2001),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [858] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(2003),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [859] = {
     [sym__lka] = ACTIONS(3),
     [sym__ind_cod_end_mkr] = ACTIONS(2005),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [860] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2007),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [861] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2009),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [862] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2011),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [863] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2013),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [864] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2015),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [865] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2017),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [866] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(2019),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [867] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(2021),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [868] = {
     [sym__lka] = ACTIONS(3),
     [sym__bqt_end_mkr] = ACTIONS(2023),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [869] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(2025),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [870] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_dlm_row_bgn_mkr] = ACTIONS(2027),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [871] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(2029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [872] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(2031),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [873] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(2033),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [874] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_end_mkr] = ACTIONS(2035),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [875] = {
     [sym__lka] = ACTIONS(3),
     [sym__bqt_end_mkr] = ACTIONS(2037),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [876] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(2039),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [877] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_div_end_mkr] = ACTIONS(2041),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [878] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cda_end_mkr] = ACTIONS(2043),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [879] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(2045),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [880] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_prc_end_mkr] = ACTIONS(2047),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [881] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(2049),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [882] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(2051),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [883] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmp_end_mkr] = ACTIONS(2053),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [884] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_div_end_mkr] = ACTIONS(2055),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [885] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cda_end_mkr] = ACTIONS(2057),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [886] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(2059),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [887] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_prc_end_mkr] = ACTIONS(2061),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [888] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_scr_end_mkr] = ACTIONS(2063),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [889] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2065),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [890] = {
     [sym__lka] = ACTIONS(3),
     [sym__atx_end_mkr] = ACTIONS(2067),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [891] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(2069),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [892] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(2071),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [893] = {
     [sym__lka] = ACTIONS(3),
     [sym__pgh_end_mkr] = ACTIONS(2073),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [894] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2075),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [895] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2077),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [896] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2079),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [897] = {
     [sym__lka] = ACTIONS(3),
     [sym__thm_brk_end_mkr] = ACTIONS(2081),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [898] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(2083),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [899] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_scr_end_mkr] = ACTIONS(2085),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [900] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2087),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [901] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_cln] = ACTIONS(2089),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [902] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(2091),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [903] = {
     [sym__lka] = ACTIONS(3),
     [sym__atx_end_mkr] = ACTIONS(2093),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [904] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(2095),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [905] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(1857),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [906] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_scr_end_mkr] = ACTIONS(2097),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [907] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cmt_end_mkr] = ACTIONS(2099),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [908] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_prc_end_mkr] = ACTIONS(2101),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [909] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_dcl_end_mkr] = ACTIONS(2103),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [910] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_blk_cda_end_mkr] = ACTIONS(2105),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [911] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_itm_end_mkr] = ACTIONS(2107),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [912] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_itm_end_mkr] = ACTIONS(2109),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [913] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(2111),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [914] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(2113),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [915] = {
     [sym__lka] = ACTIONS(3),
     [sym__atx_end_mkr] = ACTIONS(2115),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [916] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(2117),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [917] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(2119),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [918] = {
     [sym__lka] = ACTIONS(3),
     [sym__pgh_end_mkr] = ACTIONS(2121),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [919] = {
     [sym__lka] = ACTIONS(3),
     [sym__thm_brk_end_mkr] = ACTIONS(2123),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [920] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_col_aln] = ACTIONS(2125),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [921] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_row_end_mkr] = ACTIONS(2127),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [922] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_cln] = ACTIONS(2129),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [923] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(1250),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [924] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(2131),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [925] = {
     [sym__lka] = ACTIONS(3),
     [sym__lst_itm_cnt_bgn_mkr] = ACTIONS(2133),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [926] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2135),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [927] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2137),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [928] = {
     [sym__lka] = ACTIONS(3),
     [sym__ext_aut_lnk_end_mkr] = ACTIONS(2139),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [929] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2141),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [930] = {
     [ts_builtin_sym_end] = ACTIONS(2143),
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [931] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2145),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [932] = {
     [sym__lka] = ACTIONS(3),
     [sym__pgh_end_mkr] = ACTIONS(2147),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [933] = {
     [sym__lka] = ACTIONS(3),
     [sym__pgh_end_mkr] = ACTIONS(2149),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [934] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(2151),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [935] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(2153),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [936] = {
     [sym__lka] = ACTIONS(3),
     [sym__htm_tag_end] = ACTIONS(2155),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [937] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2157),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [938] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2159),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [939] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_bgn] = ACTIONS(2161),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [940] = {
     [sym__lka] = ACTIONS(3),
     [sym__tbl_col_aln] = ACTIONS(1831),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [941] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(2163),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [942] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(2165),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [943] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2167),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [944] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2169),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [945] = {
     [sym__lka] = ACTIONS(3),
     [sym__stx_end_mkr] = ACTIONS(2171),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [946] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(2173),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [947] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_inl_end] = ACTIONS(2029),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [948] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2175),
   },
   [949] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2177),
   },
   [950] = {
     [sym__lka] = ACTIONS(3),
     [sym__thm_brk_end_mkr] = ACTIONS(2179),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [951] = {
     [sym__lka] = ACTIONS(3),
     [sym__fen_cod_end_mkr] = ACTIONS(2181),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [952] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2183),
   },
   [953] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2185),
   },
   [954] = {
     [sym__lka] = ACTIONS(3),
     [sym__lnk_ref_def_end_mkr] = ACTIONS(2163),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
   },
   [955] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2187),
   },
   [956] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2189),
   },
   [957] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2191),
   },
   [958] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2193),
   },
   [959] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2195),
   },
   [960] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2197),
   },
   [961] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2199),
   },
   [962] = {
     [sym__lka] = ACTIONS(3),
     [sym__lit_lbk] = ACTIONS(3),
+    [sym__wsp] = ACTIONS(3),
     [sym__txt] = ACTIONS(2201),
   },
 };

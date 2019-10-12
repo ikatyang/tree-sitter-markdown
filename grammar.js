@@ -68,6 +68,7 @@ module.exports = grammar({
     $._blk_lbk,
     $._bnk_lbk,
     $._lit_lbk,
+    $._wsp,
     $._txt,
 
     $._vtr_spc,
@@ -77,7 +78,7 @@ module.exports = grammar({
     [$._chk_box_pgh_ctn, $._chk_box_lik_stx_ctn], // requires 2 lookahead tokens to distinguish them
   ],
 
-  extras: $ => [$._lka, $._lit_lbk],
+  extras: $ => [$._lka, $._lit_lbk, $._wsp],
 
   rules: {
     document: $ => seq(repeat(choice($._blk_nod, $._bnk_lbk)), $._eof),

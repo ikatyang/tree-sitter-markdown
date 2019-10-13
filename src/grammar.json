@@ -455,34 +455,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "_fen_cod_inf_bgn_mkr"
-                },
-                {
-                  "type": "ALIAS",
-                  "content": {
-                    "type": "REPEAT",
-                    "content": {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "SYMBOL",
-                          "name": "_inl_txt"
-                        }
-                      ]
-                    }
-                  },
-                  "named": true,
-                  "value": "info_string"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "_fen_cod_inf_end_mkr"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "_fen_cod_inf"
             },
             {
               "type": "BLANK"
@@ -500,39 +474,21 @@
                   "name": "_blk_lbk"
                 },
                 {
-                  "type": "ALIAS",
-                  "content": {
-                    "type": "REPEAT",
-                    "content": {
-                      "type": "CHOICE",
-                      "members": [
-                        {
-                          "type": "ALIAS",
-                          "content": {
-                            "type": "SYMBOL",
-                            "name": "_vtr_spc"
-                          },
-                          "named": true,
-                          "value": "virtual_space"
-                        },
-                        {
-                          "type": "SYMBOL",
-                          "name": "_txt"
-                        },
-                        {
-                          "type": "ALIAS",
-                          "content": {
-                            "type": "SYMBOL",
-                            "name": "_blk_lbk"
-                          },
-                          "named": true,
-                          "value": "line_break"
-                        }
-                      ]
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "ALIAS",
+                      "content": {
+                        "type": "SYMBOL",
+                        "name": "_fen_cod_ctn"
+                      },
+                      "named": true,
+                      "value": "code_fence_content"
+                    },
+                    {
+                      "type": "BLANK"
                     }
-                  },
-                  "named": true,
-                  "value": "code_fence_content"
+                  ]
                 }
               ]
             },
@@ -563,6 +519,66 @@
           ]
         }
       ]
+    },
+    "_fen_cod_inf": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_fen_cod_inf_bgn_mkr"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "REPEAT",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_inl_txt"
+                }
+              ]
+            }
+          },
+          "named": true,
+          "value": "info_string"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_fen_cod_inf_end_mkr"
+        }
+      ]
+    },
+    "_fen_cod_ctn": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_vtr_spc"
+            },
+            "named": true,
+            "value": "virtual_space"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_txt"
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_blk_lbk"
+            },
+            "named": true,
+            "value": "line_break"
+          }
+        ]
+      }
     },
     "_htm_blk_scr": {
       "type": "SEQ",
@@ -2654,7 +2670,7 @@
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "_txt"
+            "name": "_wrd"
           },
           "named": true,
           "value": "html_tag_name"
@@ -2684,7 +2700,7 @@
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "_txt"
+            "name": "_wrd"
           },
           "named": true,
           "value": "html_tag_name"
@@ -2774,7 +2790,7 @@
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "_txt"
+            "name": "_wrd"
           },
           "named": true,
           "value": "html_declaration_name"
@@ -2847,7 +2863,7 @@
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "_txt"
+            "name": "_wrd"
           },
           "named": true,
           "value": "html_attribute_key"
@@ -3410,6 +3426,10 @@
     {
       "type": "SYMBOL",
       "name": "_txt"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_wrd"
     },
     {
       "type": "SYMBOL",

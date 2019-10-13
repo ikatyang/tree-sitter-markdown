@@ -165,9 +165,9 @@ struct Scanner {
     }
 
     if (!min_inl_dlms_.empty()) {
-      if (has_wsp && valid_symbols[TKN_WRD]) {
+      if (has_wsp && !is_eol_chr(lxr_.lka_chr())) {
         lxr_.mrk_end();
-        return lxr_.ret_sym(TKN_WSP);
+        return lxr_.ret_sym(valid_symbols[TKN_TXT] ? TKN_TXT : TKN_WSP);
       }
 
       bool has_txt = false;

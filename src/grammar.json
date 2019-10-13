@@ -3088,6 +3088,17 @@
           ]
         }
       ]
+    },
+    "_txt": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "SYMBOL",
+          "name": "_txt_frg"
+        }
+      }
     }
   },
   "extras": [
@@ -3545,7 +3556,7 @@
     },
     {
       "type": "SYMBOL",
-      "name": "_txt"
+      "name": "_txt_frg"
     },
     {
       "type": "SYMBOL",

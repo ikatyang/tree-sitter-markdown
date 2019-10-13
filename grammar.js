@@ -69,7 +69,7 @@ module.exports = grammar({
     $._bnk_lbk,
     $._lit_lbk,
     $._wsp,
-    $._txt,
+    $._txt_frg,
     $._wrd,
 
     $._vtr_spc,
@@ -199,6 +199,8 @@ module.exports = grammar({
       seq($._htm_atr_val_bgn, repeat(choice($._txt, $._bsl_esc)), $._htm_atr_val_end),
       seq($._htm_atr_val_bgn_mkr, repeat(choice($._txt, $._bsl_esc)), $._htm_atr_val_end_mkr),
     ),
+
+    _txt: $ => prec.right(repeat1($._txt_frg)),
   },
 });
 
@@ -305,6 +307,7 @@ function recursive_alias(rule, alias_map, checklist) {
     case "REPEAT1":
     case "FIELD":
     case "ALIAS":
+    case "PREC_RIGHT":
       return { ...rule, content: recursive_alias(rule.content, alias_map, checklist) };
     case "SYMBOL":
       if (rule.name in alias_map) {

@@ -178,12 +178,10 @@ Example 12 - https://github.github.com/gfm/#example-12
     (list_item
       (list_marker)
       (paragraph
-        (text)
         (text)))
     (list_item
       (list_marker)
       (paragraph
-        (text)
         (text)))))
 
 ================================================================================
@@ -341,10 +339,6 @@ a------
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
     (text))
   (paragraph
     (text))
@@ -505,7 +499,6 @@ Example 33 - https://github.github.com/gfm/#example-33
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -519,7 +512,6 @@ Example 34 - https://github.github.com/gfm/#example-34
 
 (document
   (paragraph
-    (text)
     (text))
   (paragraph
     (text)))
@@ -534,7 +526,6 @@ Example 35 - https://github.github.com/gfm/#example-35
 (document
   (paragraph
     (backslash_escape)
-    (text)
     (text)))
 
 ================================================================================
@@ -551,6 +542,7 @@ Example 36 - https://github.github.com/gfm/#example-36
       (text)
       (emphasis
         (text))
+      (text)
       (backslash_escape)
       (text)
       (backslash_escape))))
@@ -614,7 +606,6 @@ foo
   (paragraph
     (text)
     (soft_line_break)
-    (text)
     (text)))
 
 ================================================================================
@@ -677,8 +668,6 @@ Example 44 - https://github.github.com/gfm/#example-44
   (atx_heading
     (atx_heading_marker)
     (heading_content
-      (text)
-      (text)
       (text))))
 
 ================================================================================
@@ -692,7 +681,6 @@ Example 45 - https://github.github.com/gfm/#example-45
   (atx_heading
     (atx_heading_marker)
     (heading_content
-      (text)
       (text))))
 
 ================================================================================
@@ -714,7 +702,6 @@ Example 46 - https://github.github.com/gfm/#example-46
   (atx_heading
     (atx_heading_marker)
     (heading_content
-      (text)
       (text)
       (backslash_escape)
       (text)))
@@ -752,14 +739,12 @@ Bar foo
 
 (document
   (paragraph
-    (text)
     (text))
   (atx_heading
     (atx_heading_marker)
     (heading_content
       (text)))
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -777,7 +762,9 @@ Example 49 - https://github.github.com/gfm/#example-49
   (atx_heading
     (atx_heading_marker))
   (atx_heading
-    (atx_heading_marker)))
+    (atx_heading_marker)
+    (heading_content
+      (text))))
 
 ================================================================================
 Example 50 - https://github.github.com/gfm/#example-50
@@ -955,7 +942,6 @@ Foo
   (paragraph
     (text)
     (soft_line_break)
-    (text)
     (text))
   (paragraph
     (text))
@@ -986,7 +972,6 @@ Foo\
 (document
   (setext_heading
     (heading_content
-      (text)
       (text))
     (setext_heading_underline)))
 
@@ -1006,22 +991,15 @@ of dashes"/>
 (document
   (setext_heading
     (heading_content
-      (text)
       (text))
     (setext_heading_underline))
   (paragraph
     (text))
   (setext_heading
     (heading_content
-      (text)
-      (text)
-      (text)
-      (text)
       (text))
     (setext_heading_underline))
   (paragraph
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -1803,7 +1781,8 @@ aaa
 
 (document
   (paragraph
-    (code_span)
+    (code_span
+      (text))
     (soft_line_break)
     (text)))
 
@@ -2031,7 +2010,6 @@ okay.
     (line_break)
     (text))
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -2742,7 +2720,6 @@ Example 157 - https://github.github.com/gfm/#example-157
   (paragraph
     (emphasis
       (text))
-    (text)
     (text))
   (html_block
     (text)))
@@ -2944,8 +2921,6 @@ line2
     (link_destination
       (text))
     (link_title
-      (text)
-      (text)
       (text)))
   (paragraph
     (link
@@ -2968,13 +2943,8 @@ with blank line'
     (link
       (link_text
         (text)))
-    (text)
-    (text)
     (text))
   (paragraph
-    (text)
-    (text)
-    (text)
     (text))
   (paragraph
     (link
@@ -3058,8 +3028,6 @@ Example 170 - https://github.github.com/gfm/#example-170
     (text)
     (html_open_tag
       (html_tag_name))
-    (text)
-    (text)
     (text))
   (paragraph
     (link
@@ -3223,9 +3191,6 @@ Example 178 - https://github.github.com/gfm/#example-178
     (link
       (link_text
         (text)))
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -3243,7 +3208,6 @@ Example 179 - https://github.github.com/gfm/#example-179
     (link_destination
       (text)))
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -3300,7 +3264,6 @@ Foo
     (link
       (link_text
         (text)))
-    (text)
     (text))
   (paragraph
     (link
@@ -3320,6 +3283,7 @@ Example 183 - https://github.github.com/gfm/#example-183
   (atx_heading
     (atx_heading_marker)
     (heading_content
+      (text)
       (link
         (link_text
           (text)))))
@@ -3766,17 +3730,9 @@ Example 203 - https://github.github.com/gfm/#example-203
 (document
   (paragraph
     (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (soft_line_break)
     (text)
-    (text)
-    (text)
     (soft_line_break)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -4023,7 +3979,6 @@ Example 216 - https://github.github.com/gfm/#example-216
     (paragraph
       (text)
       (soft_line_break)
-      (text)
       (text))))
 
 ================================================================================
@@ -4242,7 +4197,6 @@ Example 230 - https://github.github.com/gfm/#example-230
       (text)))
   (block_quote
     (paragraph
-      (text)
       (text))))
 
 ================================================================================
@@ -4260,19 +4214,12 @@ with two lines.
 (document
   (paragraph
     (text)
-    (text)
     (soft_line_break)
-    (text)
-    (text)
-    (text)
     (text))
   (indented_code_block
     (text))
   (block_quote
     (paragraph
-      (text)
-      (text)
-      (text)
       (text))))
 
 ================================================================================
@@ -4293,19 +4240,12 @@ Example 232 - https://github.github.com/gfm/#example-232
       (list_marker)
       (paragraph
         (text)
-        (text)
         (soft_line_break)
-        (text)
-        (text)
-        (text)
         (text))
       (indented_code_block
         (text))
       (block_quote
         (paragraph
-          (text)
-          (text)
-          (text)
           (text))))))
 
 ================================================================================
@@ -4433,7 +4373,6 @@ Example 239 - https://github.github.com/gfm/#example-239
   (paragraph
     (text))
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -4533,9 +4472,6 @@ Example 244 - https://github.github.com/gfm/#example-244
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -4575,9 +4511,6 @@ Example 247 - https://github.github.com/gfm/#example-247
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -4888,7 +4821,6 @@ foo
   (paragraph
     (text)
     (soft_line_break)
-    (text)
     (text)))
 
 ================================================================================
@@ -4909,19 +4841,12 @@ Example 264 - https://github.github.com/gfm/#example-264
       (list_marker)
       (paragraph
         (text)
-        (text)
         (soft_line_break)
-        (text)
-        (text)
-        (text)
         (text))
       (indented_code_block
         (text))
       (block_quote
         (paragraph
-          (text)
-          (text)
-          (text)
           (text))))))
 
 ================================================================================
@@ -4942,19 +4867,12 @@ Example 265 - https://github.github.com/gfm/#example-265
       (list_marker)
       (paragraph
         (text)
-        (text)
         (soft_line_break)
-        (text)
-        (text)
-        (text)
         (text))
       (indented_code_block
         (text))
       (block_quote
         (paragraph
-          (text)
-          (text)
-          (text)
           (text))))))
 
 ================================================================================
@@ -4975,19 +4893,12 @@ Example 266 - https://github.github.com/gfm/#example-266
       (list_marker)
       (paragraph
         (text)
-        (text)
         (soft_line_break)
-        (text)
-        (text)
-        (text)
         (text))
       (indented_code_block
         (text))
       (block_quote
         (paragraph
-          (text)
-          (text)
-          (text)
           (text))))))
 
 ================================================================================
@@ -5032,19 +4943,12 @@ with two lines.
       (list_marker)
       (paragraph
         (text)
-        (text)
         (soft_line_break)
-        (text)
-        (text)
-        (text)
         (text))
       (indented_code_block
         (text))
       (block_quote
         (paragraph
-          (text)
-          (text)
-          (text)
           (text))))))
 
 ================================================================================
@@ -5061,11 +4965,7 @@ Example 269 - https://github.github.com/gfm/#example-269
       (list_marker)
       (paragraph
         (text)
-        (text)
         (soft_line_break)
-        (text)
-        (text)
-        (text)
         (text)))))
 
 ================================================================================
@@ -5085,8 +4985,6 @@ continued here.
           (paragraph
             (text)
             (soft_line_break)
-            (text)
-            (text)
             (text)))))))
 
 ================================================================================
@@ -5106,8 +5004,6 @@ Example 271 - https://github.github.com/gfm/#example-271
           (paragraph
             (text)
             (soft_line_break)
-            (text)
-            (text)
             (text)))))))
 
 ================================================================================
@@ -5413,22 +5309,7 @@ The number of windows in my house is
 (document
   (paragraph
     (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (soft_line_break)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -5441,24 +5322,11 @@ The number of windows in my house is
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text))
   (tight_list
     (list_item
       (list_marker)
       (paragraph
-        (text)
-        (text)
-        (text)
-        (text)
-        (text)
-        (text)
         (text)))))
 
 ================================================================================
@@ -5686,7 +5554,6 @@ Example 292 - https://github.github.com/gfm/#example-292
       (paragraph
         (text)
         (soft_line_break)
-        (text)
         (text)))))
 
 ================================================================================
@@ -6065,7 +5932,6 @@ Example 307 - https://github.github.com/gfm/#example-307
   (paragraph
     (code_span
       (text))
-    (text)
     (text)))
 
 ================================================================================
@@ -6119,17 +5985,6 @@ Example 309 - https://github.github.com/gfm/#example-309
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -6151,55 +6006,30 @@ Example 310 - https://github.github.com/gfm/#example-310
   (paragraph
     (backslash_escape)
     (text)
-    (text)
+    (soft_line_break)
+    (backslash_escape)
     (text)
     (soft_line_break)
     (backslash_escape)
     (text)
-    (text)
-    (text)
-    (text)
     (soft_line_break)
     (backslash_escape)
-    (text)
-    (text)
-    (text)
-    (text)
-    (soft_line_break)
-    (backslash_escape)
-    (text)
-    (text)
     (text)
     (soft_line_break)
     (text)
     (backslash_escape)
     (text)
-    (text)
+    (soft_line_break)
+    (backslash_escape)
     (text)
     (soft_line_break)
     (backslash_escape)
     (text)
-    (text)
-    (text)
     (soft_line_break)
     (backslash_escape)
     (text)
-    (text)
-    (text)
     (soft_line_break)
     (backslash_escape)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (soft_line_break)
-    (backslash_escape)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -6364,16 +6194,23 @@ Example 321 - https://github.github.com/gfm/#example-321
 (document
   (paragraph
     (character_reference)
+    (text)
     (character_reference)
+    (text)
     (character_reference)
+    (text)
     (character_reference)
+    (text)
     (character_reference)
     (soft_line_break)
     (character_reference)
+    (text)
     (character_reference)
+    (text)
     (character_reference)
     (soft_line_break)
     (character_reference)
+    (text)
     (character_reference)))
 
 ================================================================================
@@ -6386,8 +6223,11 @@ Example 322 - https://github.github.com/gfm/#example-322
 (document
   (paragraph
     (character_reference)
+    (text)
     (character_reference)
+    (text)
     (character_reference)
+    (text)
     (character_reference)))
 
 ================================================================================
@@ -6400,7 +6240,9 @@ Example 323 - https://github.github.com/gfm/#example-323
 (document
   (paragraph
     (character_reference)
+    (text)
     (character_reference)
+    (text)
     (character_reference)))
 
 ================================================================================
@@ -6416,23 +6258,11 @@ Example 324 - https://github.github.com/gfm/#example-324
 (document
   (paragraph
     (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
+    (soft_line_break)
     (text)
     (soft_line_break)
     (text)
-    (text)
     (soft_line_break)
-    (text)
-    (text)
-    (soft_line_break)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -6444,7 +6274,6 @@ Example 325 - https://github.github.com/gfm/#example-325
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -6456,7 +6285,6 @@ Example 326 - https://github.github.com/gfm/#example-326
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -6633,7 +6461,6 @@ Example 337 - https://github.github.com/gfm/#example-337
       (link_text
         (text)))
     (text)
-    (text)
     (character_reference)
     (text)
     (character_reference)
@@ -6724,7 +6551,8 @@ Example 344 - https://github.github.com/gfm/#example-344
     (code_span
       (text))
     (soft_line_break)
-    (code_span)))
+    (code_span
+      (text))))
 
 ================================================================================
 Example 345 - https://github.github.com/gfm/#example-345
@@ -6740,8 +6568,6 @@ baz
 (document
   (paragraph
     (code_span
-      (text)
-      (text)
       (text))))
 
 ================================================================================
@@ -6769,7 +6595,6 @@ baz`
 (document
   (paragraph
     (code_span
-      (text)
       (text))))
 
 ================================================================================
@@ -6783,7 +6608,6 @@ Example 348 - https://github.github.com/gfm/#example-348
   (paragraph
     (code_span
       (text))
-    (text)
     (text)))
 
 ================================================================================
@@ -6848,7 +6672,6 @@ Example 353 - https://github.github.com/gfm/#example-353
   (paragraph
     (code_span
       (text))
-    (text)
     (text)))
 
 ================================================================================
@@ -6879,7 +6702,6 @@ Example 355 - https://github.github.com/gfm/#example-355
   (paragraph
     (code_span
       (text))
-    (text)
     (text)))
 
 ================================================================================
@@ -6904,8 +6726,6 @@ Example 357 - https://github.github.com/gfm/#example-357
 
 (document
   (paragraph
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -6917,7 +6737,6 @@ Example 358 - https://github.github.com/gfm/#example-358
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -6929,7 +6748,6 @@ Example 359 - https://github.github.com/gfm/#example-359
 
 (document
   (paragraph
-    (text)
     (text)
     (code_span
       (text))))
@@ -6955,10 +6773,6 @@ a * foo bar*
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -6970,9 +6784,6 @@ a*"foo"*
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -6984,8 +6795,6 @@ Example 363 - https://github.github.com/gfm/#example-363
 
 (document
   (paragraph
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7036,9 +6845,6 @@ _ foo bar_
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7050,9 +6856,6 @@ a_"foo"_
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7064,9 +6867,6 @@ foo_bar_
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7078,10 +6878,6 @@ Example 370 - https://github.github.com/gfm/#example-370
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7093,9 +6889,6 @@ Example 371 - https://github.github.com/gfm/#example-371
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7107,9 +6900,6 @@ aa_"bb"_cc
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7170,7 +6960,6 @@ Example 377 - https://github.github.com/gfm/#example-377
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -7221,7 +7010,6 @@ _(_foo)
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -7259,7 +7047,6 @@ _пристаням_стремятся
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -7308,9 +7095,6 @@ Example 388 - https://github.github.com/gfm/#example-388
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7322,9 +7106,6 @@ a**"foo"**
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7361,9 +7142,6 @@ __ foo bar__
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7378,8 +7156,6 @@ foo bar__
   (paragraph
     (text)
     (soft_line_break)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7391,9 +7167,6 @@ a__"foo"__
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7405,9 +7178,6 @@ foo__bar__
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7419,10 +7189,6 @@ Example 396 - https://github.github.com/gfm/#example-396
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7434,9 +7200,6 @@ Example 397 - https://github.github.com/gfm/#example-397
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7487,7 +7250,6 @@ Example 401 - https://github.github.com/gfm/#example-401
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -7573,7 +7335,6 @@ __(__foo)
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -7611,7 +7372,6 @@ __пристаням__стремятся
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -7889,11 +7649,6 @@ Example 429 - https://github.github.com/gfm/#example-429
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -7905,12 +7660,6 @@ Example 430 - https://github.github.com/gfm/#example-430
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -8108,11 +7857,6 @@ __ is not an empty emphasis
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -8124,12 +7868,6 @@ ____ is not an empty strong emphasis
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -8141,7 +7879,6 @@ foo ***
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -8179,7 +7916,6 @@ foo *****
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -8295,7 +8031,6 @@ foo ___
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -8333,7 +8068,6 @@ foo _____
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -8568,7 +8302,6 @@ Example 478 - https://github.github.com/gfm/#example-478
   (paragraph
     (emphasis
       (text))
-    (text)
     (text)))
 
 ================================================================================
@@ -8764,9 +8497,6 @@ Example 491 - https://github.github.com/gfm/#example-491
   (paragraph
     (strikethrough
       (text))
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -8780,12 +8510,8 @@ new paragraph~~.
 
 (document
   (paragraph
-    (text)
     (text))
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -8860,8 +8586,6 @@ Example 497 - https://github.github.com/gfm/#example-497
     (link
       (link_text
         (text)))
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -8893,9 +8617,7 @@ bar)
       (link_text
         (text)))
     (text)
-    (text)
     (soft_line_break)
-    (text)
     (text)))
 
 ================================================================================
@@ -8946,8 +8668,6 @@ Example 502 - https://github.github.com/gfm/#example-502
       (link_text
         (text)))
     (text)
-    (text)
-    (text)
     (backslash_escape)
     (text)))
 
@@ -8966,14 +8686,10 @@ Example 503 - https://github.github.com/gfm/#example-503
       (link_text
         (text)))
     (text)
-    (text)
-    (text)
     (soft_line_break)
     (link
       (link_text
         (text)))
-    (text)
-    (text)
     (text)
     (soft_line_break)
     (link
@@ -9226,10 +8942,6 @@ Example 516 - https://github.github.com/gfm/#example-516
     (link
       (link_text
         (text)))
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -9308,7 +9020,6 @@ Example 521 - https://github.github.com/gfm/#example-521
     (link
       (link_text
         (text)))
-    (text)
     (text)))
 
 ================================================================================
@@ -9360,6 +9071,7 @@ Example 524 - https://github.github.com/gfm/#example-524
           (text)
           (strong_emphasis
             (text))
+          (text)
           (code_span
             (text))))
       (link_destination
@@ -9621,6 +9333,7 @@ Example 538 - https://github.github.com/gfm/#example-538
           (text)
           (strong_emphasis
             (text))
+          (text)
           (code_span
             (text))))
       (link_label
@@ -9880,7 +9593,6 @@ Example 549 - https://github.github.com/gfm/#example-549
 (document
   (link_reference_definition
     (link_label
-      (text)
       (text))
     (link_destination
       (text)))
@@ -9905,6 +9617,7 @@ Example 550 - https://github.github.com/gfm/#example-550
     (link
       (link_text
         (text)))
+    (text)
     (link
       (link_text
         (text))))
@@ -10011,8 +9724,6 @@ Example 554 - https://github.github.com/gfm/#example-554
         (text)))
     (text))
   (paragraph
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -10039,7 +9750,6 @@ Example 555 - https://github.github.com/gfm/#example-555
     (link
       (link_text
         (text)))
-    (text)
     (text)))
 
 ================================================================================
@@ -10063,7 +9773,6 @@ Example 556 - https://github.github.com/gfm/#example-556
     (link
       (link_text
         (text)))
-    (text)
     (text)))
 
 ================================================================================
@@ -10125,8 +9834,6 @@ Example 559 - https://github.github.com/gfm/#example-559
   (paragraph
     (text))
   (paragraph
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -10148,8 +9855,6 @@ Example 560 - https://github.github.com/gfm/#example-560
   (paragraph
     (text)
     (soft_line_break)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -10506,10 +10211,6 @@ Example 576 - https://github.github.com/gfm/#example-576
     (link
       (link_text
         (text)))
-    (text)
-    (text)
-    (text)
-    (text)
     (text))
   (link_reference_definition
     (link_label
@@ -11000,8 +10701,6 @@ Example 598 - https://github.github.com/gfm/#example-598
     (link
       (link_text
         (text)))
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11176,9 +10875,6 @@ Example 610 - https://github.github.com/gfm/#example-610
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11227,7 +10923,6 @@ Example 614 - https://github.github.com/gfm/#example-614
 (document
   (paragraph
     (text)
-    (text)
     (backslash_escape)
     (text)))
 
@@ -11240,7 +10935,6 @@ Example 615 - https://github.github.com/gfm/#example-615
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -11265,7 +10959,6 @@ Example 617 - https://github.github.com/gfm/#example-617
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -11277,7 +10970,6 @@ Example 618 - https://github.github.com/gfm/#example-618
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -11325,9 +11017,6 @@ Visit www.commonmark.org/help for more information.
     (text)
     (www_autolink
       (text))
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11422,7 +11111,6 @@ www.commonmark.org/he<lp
   (paragraph
     (www_autolink
       (text))
-    (text)
     (text)))
 
 ================================================================================
@@ -11438,7 +11126,6 @@ http://commonmark.org
   (paragraph
     (uri_autolink))
   (paragraph
-    (text)
     (text)
     (uri_autolink
       (text))
@@ -11465,14 +11152,7 @@ hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
 (document
   (paragraph
     (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (email_autolink)
-    (text)
     (text)))
 
 ================================================================================
@@ -11491,25 +11171,14 @@ a.b-c_d@a.b_
 (document
   (paragraph
     (text)
-    (text)
     (email_autolink))
   (paragraph
-    (text)
     (text)
     (email_autolink)
     (text))
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
     (text))
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11614,10 +11283,6 @@ Example 637 - https://github.github.com/gfm/#example-637
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11629,10 +11294,6 @@ Example 638 - https://github.github.com/gfm/#example-638
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11644,13 +11305,6 @@ Example 639 - https://github.github.com/gfm/#example-639
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11666,24 +11320,11 @@ bim!bop />
 (document
   (paragraph
     (text)
-    (text)
-    (text)
+    (soft_line_break)
     (text)
     (soft_line_break)
     (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (soft_line_break)
-    (text)
-    (text)
-    (text)
-    (text)
-    (soft_line_break)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11695,9 +11336,6 @@ Example 641 - https://github.github.com/gfm/#example-641
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11723,9 +11361,6 @@ Example 643 - https://github.github.com/gfm/#example-643
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11740,7 +11375,6 @@ comment - with hyphen -->
   (paragraph
     (text)
     (html_comment
-      (text)
       (text))))
 
 ================================================================================
@@ -11752,18 +11386,6 @@ foo <!-- not a comment -- two hyphens -->
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11777,22 +11399,8 @@ foo <!-- foo--->
 
 (document
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text))
   (paragraph
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
-    (text)
     (text)))
 
 ================================================================================
@@ -11879,9 +11487,6 @@ Example 652 - https://github.github.com/gfm/#example-652
 (document
   (paragraph
     (text)
-    (text)
-    (text)
-    (text)
     (backslash_escape)
     (text)))
 
@@ -11900,10 +11505,13 @@ Example 653 - https://github.github.com/gfm/#example-653
   (paragraph
     (html_open_tag
       (html_tag_name))
+    (text)
     (html_open_tag
       (html_tag_name))
+    (text)
     (html_open_tag
       (html_tag_name))
+    (text)
     (html_open_tag
       (html_tag_name)))
   (html_block
@@ -12024,7 +11632,6 @@ span`
 (document
   (paragraph
     (code_span
-      (text)
       (text))))
 
 ================================================================================
@@ -12038,7 +11645,6 @@ span`
 (document
   (paragraph
     (code_span
-      (text)
       (text))))
 
 ================================================================================
@@ -12056,7 +11662,6 @@ bar">
       (html_atrribute
         (html_attribute_key)
         (html_attribute_value
-          (text)
           (text))))))
 
 ================================================================================
@@ -12074,7 +11679,6 @@ bar">
       (html_atrribute
         (html_attribute_key)
         (html_attribute_value
-          (text)
           (text))))))
 
 ================================================================================
@@ -12086,7 +11690,6 @@ foo\
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -12111,7 +11714,6 @@ Example 667 - https://github.github.com/gfm/#example-667
   (atx_heading
     (atx_heading_marker)
     (heading_content
-      (text)
       (text))))
 
 ================================================================================
@@ -12164,7 +11766,6 @@ hello $.;'there
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -12176,7 +11777,6 @@ Foo χρῆν
 
 (document
   (paragraph
-    (text)
     (text)))
 
 ================================================================================
@@ -12188,5 +11788,4 @@ Multiple     spaces
 
 (document
   (paragraph
-    (text)
     (text)))

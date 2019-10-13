@@ -356,7 +356,7 @@ static const char *ts_symbol_names[] = {
   [sym__bnk_lbk] = "_bnk_lbk",
   [sym__lit_lbk] = "_lit_lbk",
   [sym__wsp] = "_wsp",
-  [sym__txt] = "_txt",
+  [sym__txt] = "text",
   [sym__wrd] = "_wrd",
   [sym__vtr_spc] = "virtual_space",
   [sym_document] = "document",
@@ -917,7 +917,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym__txt] = {
-    .visible = false,
+    .visible = true,
     .named = true,
   },
   [sym__wrd] = {

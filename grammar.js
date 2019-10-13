@@ -254,6 +254,7 @@ module.exports = global_alias(module.exports, {
   ..._('line_break', '_blk_lbk'),
 
   // inline token
+  ..._('text', '_txt'),
   ..._('backslash_escape', '_bsl_esc'),
   ..._('character_reference', '_chr_ref'),
   ..._('table_column_alignment', '_tbl_col_aln'),

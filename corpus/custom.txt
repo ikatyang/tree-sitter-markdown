@@ -92,7 +92,17 @@ Table (extension) - too more indentation in list item [is NOT table]
     (list_item
       (list_marker)
       (paragraph
-        (soft_line_break)))))
+        (text)
+        (text)
+        (text)
+        (text)
+        (text)
+        (soft_line_break)
+        (text)
+        (text)
+        (text)
+        (text)
+        (text)))))
 
 ================================================================================
 Table (extension) - more indentation in list item [is table]
@@ -108,8 +118,10 @@ Table (extension) - more indentation in list item [is table]
       (list_marker)
       (table
         (table_header_row
-          (table_cell)
-          (table_cell))
+          (table_cell
+            (text))
+          (table_cell
+            (text)))
         (table_delimiter_row
           (table_column_alignment)
           (table_column_alignment))))))
@@ -128,8 +140,10 @@ Table (extension) - same indentation in list item [is table]
       (list_marker)
       (table
         (table_header_row
-          (table_cell)
-          (table_cell))
+          (table_cell
+            (text))
+          (table_cell
+            (text)))
         (table_delimiter_row
           (table_column_alignment)
           (table_column_alignment))))))
@@ -147,7 +161,17 @@ Table (extension) - less indentation in list item [is NOT table]
     (list_item
       (list_marker)
       (paragraph
-        (soft_line_break)))))
+        (text)
+        (text)
+        (text)
+        (text)
+        (text)
+        (soft_line_break)
+        (text)
+        (text)
+        (text)
+        (text)
+        (text)))))
 
 ================================================================================
 Table (extension) - too more indentation in non-list item [is NOT table]
@@ -160,7 +184,17 @@ Table (extension) - too more indentation in non-list item [is NOT table]
 (document
   (block_quote
     (paragraph
-      (soft_line_break))))
+      (text)
+      (text)
+      (text)
+      (text)
+      (text)
+      (soft_line_break)
+      (text)
+      (text)
+      (text)
+      (text)
+      (text))))
 
 ================================================================================
 Table (extension) - more indentation in non-list item [is table]
@@ -174,8 +208,10 @@ Table (extension) - more indentation in non-list item [is table]
   (block_quote
     (table
       (table_header_row
-        (table_cell)
-        (table_cell))
+        (table_cell
+          (text))
+        (table_cell
+          (text)))
       (table_delimiter_row
         (table_column_alignment)
         (table_column_alignment)))))
@@ -192,8 +228,10 @@ Table (extension) - same indentation in non-list item [is table]
   (block_quote
     (table
       (table_header_row
-        (table_cell)
-        (table_cell))
+        (table_cell
+          (text))
+        (table_cell
+          (text)))
       (table_delimiter_row
         (table_column_alignment)
         (table_column_alignment)))))
@@ -210,8 +248,10 @@ Table (extension) - less indentation in non-list item [is table]
   (block_quote
     (table
       (table_header_row
-        (table_cell)
-        (table_cell))
+        (table_cell
+          (text))
+        (table_cell
+          (text)))
       (table_delimiter_row
         (table_column_alignment)
         (table_column_alignment)))))
@@ -227,7 +267,17 @@ Table (extension) - too less indentation in non-list item [is NOT table]
 (document
   (block_quote
     (paragraph
-      (soft_line_break))))
+      (text)
+      (text)
+      (text)
+      (text)
+      (text)
+      (soft_line_break)
+      (text)
+      (text)
+      (text)
+      (text)
+      (text))))
 
 ================================================================================
 Table (extension) - escaped column separator
@@ -272,12 +322,15 @@ Table (extension) - escaped column separator in code span
           (backslash_escape)))
       (table_cell
         (code_span
+          (text)
           (backslash_escape)))
       (table_cell
         (code_span
+          (text)
           (backslash_escape)))
       (table_cell
         (code_span
+          (text)
           (backslash_escape))))
     (table_delimiter_row
       (table_column_alignment)
@@ -298,15 +351,19 @@ Table (extension) - escaped column separator in autolink (URI)
     (table_header_row
       (table_cell
         (uri_autolink
+          (text)
           (backslash_escape)))
       (table_cell
         (uri_autolink
+          (text)
           (backslash_escape)))
       (table_cell
         (uri_autolink
+          (text)
           (backslash_escape)))
       (table_cell
         (uri_autolink
+          (text)
           (backslash_escape))))
     (table_delimiter_row
       (table_column_alignment)
@@ -328,21 +385,28 @@ Table (extension) - escaped column separator in autolink (email)
     (table_header_row
       (table_cell
         (email_autolink
-          (backslash_escape)))
+          (backslash_escape)
+          (text)))
       (table_cell
-        (backslash_escape))
+        (text)
+        (backslash_escape)
+        (text))
       (table_cell
         (email_autolink
           (backslash_escape)
-          (backslash_escape))))
+          (backslash_escape)
+          (text))))
     (table_delimiter_row
       (table_column_alignment)
       (table_column_alignment)
       (table_column_alignment))
     (table_data_row
-      (table_cell)
-      (table_cell)
-      (table_cell))))
+      (table_cell
+        (text))
+      (table_cell
+        (text))
+      (table_cell
+        (text)))))
 
 ================================================================================
 Table (extension) - escaped column separator in autolink (extension)
@@ -360,12 +424,15 @@ Table (extension) - escaped column separator in autolink (extension)
           (backslash_escape)))
       (table_cell
         (www_autolink
+          (text)
           (backslash_escape)))
       (table_cell
         (www_autolink
+          (text)
           (backslash_escape)))
       (table_cell
         (www_autolink
+          (text)
           (backslash_escape))))
     (table_delimiter_row
       (table_column_alignment)
@@ -397,6 +464,7 @@ Table (extension) - escaped column separator in raw html (unquoted attribute val
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape)))))
       (table_cell
         (html_open_tag
@@ -404,6 +472,7 @@ Table (extension) - escaped column separator in raw html (unquoted attribute val
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape)))))
       (table_cell
         (html_open_tag
@@ -411,6 +480,7 @@ Table (extension) - escaped column separator in raw html (unquoted attribute val
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape))))))
     (table_delimiter_row
       (table_column_alignment)
@@ -442,6 +512,7 @@ Table (extension) - escaped column separator in raw html (single-quoted attribut
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape)))))
       (table_cell
         (html_open_tag
@@ -449,6 +520,7 @@ Table (extension) - escaped column separator in raw html (single-quoted attribut
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape)))))
       (table_cell
         (html_open_tag
@@ -456,6 +528,7 @@ Table (extension) - escaped column separator in raw html (single-quoted attribut
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape))))))
     (table_delimiter_row
       (table_column_alignment)
@@ -487,6 +560,7 @@ Table (extension) - escaped column separator in raw html (double-quoted attribut
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape)))))
       (table_cell
         (html_open_tag
@@ -494,6 +568,7 @@ Table (extension) - escaped column separator in raw html (double-quoted attribut
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape)))))
       (table_cell
         (html_open_tag
@@ -501,6 +576,7 @@ Table (extension) - escaped column separator in raw html (double-quoted attribut
           (html_atrribute
             (html_attribute_key)
             (html_attribute_value
+              (text)
               (backslash_escape))))))
     (table_delimiter_row
       (table_column_alignment)
@@ -524,12 +600,15 @@ Table (extension) - escaped column separator in raw html (html comment)
           (backslash_escape)))
       (table_cell
         (html_comment
+          (text)
           (backslash_escape)))
       (table_cell
         (html_comment
+          (text)
           (backslash_escape)))
       (table_cell
         (html_comment
+          (text)
           (backslash_escape))))
     (table_delimiter_row
       (table_column_alignment)
@@ -553,12 +632,15 @@ Table (extension) - escaped column separator in raw html (processing instruction
           (backslash_escape)))
       (table_cell
         (html_processing_instruction
+          (text)
           (backslash_escape)))
       (table_cell
         (html_processing_instruction
+          (text)
           (backslash_escape)))
       (table_cell
         (html_processing_instruction
+          (text)
           (backslash_escape))))
     (table_delimiter_row
       (table_column_alignment)
@@ -584,14 +666,17 @@ Table (extension) - escaped column separator in raw html (declaration)
       (table_cell
         (html_declaration
           (html_declaration_name)
+          (text)
           (backslash_escape)))
       (table_cell
         (html_declaration
           (html_declaration_name)
+          (text)
           (backslash_escape)))
       (table_cell
         (html_declaration
           (html_declaration_name)
+          (text)
           (backslash_escape))))
     (table_delimiter_row
       (table_column_alignment)
@@ -615,12 +700,15 @@ Table (extension) - escaped column separator in raw html (CDATA)
           (backslash_escape)))
       (table_cell
         (html_cdata_section
+          (text)
           (backslash_escape)))
       (table_cell
         (html_cdata_section
+          (text)
           (backslash_escape)))
       (table_cell
         (html_cdata_section
+          (text)
           (backslash_escape))))
     (table_delimiter_row
       (table_column_alignment)
@@ -643,12 +731,14 @@ Task list item (extension) - setext heading takes precedence over it
     (list_item
       (list_marker)
       (setext_heading
-        (heading_content)
+        (heading_content
+          (text))
         (setext_heading_underline)))
     (list_item
       (list_marker)
       (setext_heading
-        (heading_content)
+        (heading_content
+          (text))
         (setext_heading_underline)))))
 
 ================================================================================
@@ -665,12 +755,23 @@ is-autolink     www.su_b.example.com
 
 (document
   (paragraph
+    (text)
+    (text)
     (soft_line_break)
+    (text)
+    (text)
+    (text)
     (soft_line_break)
+    (text)
     (www_autolink)
     (soft_line_break)
+    (text)
+    (text)
     (soft_line_break)
+    (text)
+    (text)
     (soft_line_break)
+    (text)
     (www_autolink)))
 
 ================================================================================
@@ -694,18 +795,22 @@ Virtual space
       (indented_code_block
         (virtual_space)
         (virtual_space)
-        (virtual_space)))
+        (virtual_space)
+        (text)))
     (list_item
       (list_marker)
       (fenced_code_block
         (code_fence_content
           (virtual_space)
-          (virtual_space))))
+          (virtual_space)
+          (text))))
     (list_item
       (list_marker)
       (html_block
+        (text)
         (line_break)
-        (virtual_space)))))
+        (virtual_space)
+        (text)))))
 
 ================================================================================
 Unnamed 1
@@ -721,7 +826,8 @@ a a a>
       (html_tag_name)
       (html_atrribute
         (html_attribute_key)
-        (html_attribute_value))
+        (html_attribute_value
+          (text)))
       (html_atrribute
         (html_attribute_key))
       (html_atrribute
@@ -738,5 +844,7 @@ Unnamed 2
 
 (document
   (link_reference_definition
-    (link_label)
-    (link_destination)))
+    (link_label
+      (text))
+    (link_destination
+      (text))))

@@ -215,9 +215,15 @@ struct Scanner {
         return lxr_.ret_sym(rlt_sym);
       }
 
+      has_opt_wsp_ind_ = false;
+
+      if (is_eol_chr(lxr_.lka_chr()) && !has_txt) {
+        lxr_.mrk_end();
+        return lxr_.ret_sym(TKN_WSP);
+      }
+
       assert(has_txt);
       if (!is_wsp_chr(lxr_.cur_chr())) lxr_.mrk_end();
-      has_opt_wsp_ind_ = false;
       return lxr_.ret_sym(valid_symbols[TKN_WRD] ? TKN_WRD : TKN_TXT);
     }
 

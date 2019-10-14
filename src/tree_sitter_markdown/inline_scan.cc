@@ -42,10 +42,9 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
   bool is_txt = true;
   bool is_invalid = false;
 
-  if (
-    blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN
-    || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN
-  ) {
+  bool is_fen_cod_inf = blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN
+                     || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN;
+  if (is_fen_cod_inf) {
     is_txt = false;
     inl_ctx_stk.push(
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_FEN_COD_INF_BGN_MKR, lxr.cur_pos(), lxr.cur_pos()))
@@ -53,7 +52,7 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
   }
 
   for (bool is_fst_rnd = true; is_fst_rnd || !inl_ctx_stk.empty(); is_fst_rnd = false) {
-    if (!is_fst_rnd) {
+    if (!is_fst_rnd && !is_fen_cod_inf) {
       blk_ctx_stk.mrk_has_fst_ctn();
     }
 
@@ -164,7 +163,9 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
     is_invalid = true;
   }
 
-  blk_ctx_stk.mrk_has_fst_ctn();
+  if (!is_fen_cod_inf) {
+    blk_ctx_stk.mrk_has_fst_ctn();
+  }
 
   return is_txt ? SYM_TXT : inl_dlms.front().sym();
 }

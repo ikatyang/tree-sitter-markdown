@@ -92,6 +92,7 @@ enum Symbol {
   SYM_BLK_TXT,
   SYM_LIT_LBK,
   SYM_BNK_LBK,
+  SYM_FEN_COD_CTN_BGN_MKR, // immediate
 
   // block open
   SYM_ASR_THM_BRK_BGN, // ***

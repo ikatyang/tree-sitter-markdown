@@ -65,6 +65,7 @@ public:
   void push_vtr_spc(const LexedLength count);
 
   void transfer_to(BlockDelimiterList &list);
+  void transfer_to(BlockDelimiterList &list, const uint16_t count);
 };
 
 }

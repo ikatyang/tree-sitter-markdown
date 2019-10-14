@@ -139,6 +139,8 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
   lxr.adv_if('\r');
   lxr.adv_if('\n');
 
+  LexedCharacter lbk_nxt_chr = lxr.lka_chr();
+
   BlockDelimiterList tmp_blk_dlms;
   LexedPosition lst_bgn_pos = bgn_pos;
   bool has_end_mkr = false;
@@ -465,6 +467,15 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       itr++, has_end_mkr = true
     ) tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(itr->sym()), 0));
     break;
+  }
+
+  if (!has_opn_mkr && !has_end_mkr && !blk_ctx_stk.empty() && !is_eof_chr(lbk_nxt_chr)) {
+    BlockContext &ctx = blk_ctx_stk.back();
+    if (!ctx.has_fst_ctn() && (ctx.sym() == SYM_BTK_FEN_COD_BGN || ctx.sym() == SYM_TLD_FEN_COD_BGN)) {
+      assert(tmp_blk_dlms.front().sym() == SYM_LIT_LBK || tmp_blk_dlms.front().sym() == SYM_BNK_LBK);
+      tmp_blk_dlms.transfer_to(blk_dlms, 1);
+      blk_dlms.push_back(BlockDelimiter(SYM_FEN_COD_CTN_BGN_MKR, 0));
+    }
   }
 
   blk_ctx_stk.mrk_has_fst_ctn();

@@ -63,6 +63,7 @@ TokenType BlockDelimiter::tkn_typ(LexedCharacter c) const {
   else if (sym_ == SYM_ATX_BGN) { if (c == '#') return TKN_ATX_BGN; }
   else if (sym_ == SYM_IND_COD_BGN_PFX) { if (is_wsp_chr(c)) return TKN_IND_COD_BGN_PFX; }
   else if (sym_ == SYM_IND_COD_BGN_MKR) { return TKN_IND_COD_BGN_MKR; }
+  else if (sym_ == SYM_FEN_COD_CTN_BGN_MKR) { return TKN_FEN_COD_CTN_BGN_MKR; }
   else if (sym_ == SYM_BTK_FEN_COD_BGN) { if (c == '`') return TKN_FEN_COD_BGN; }
   else if (sym_ == SYM_TLD_FEN_COD_BGN) { if (c == '~') return TKN_FEN_COD_BGN; }
   else if (sym_ == SYM_HTM_BLK_SCR_BGN) { if (c == '<') return TKN_HTM_BLK_SCR_BGN; }
@@ -180,6 +181,12 @@ void BlockDelimiterList::push_vtr_spc(const LexedLength cnt) {
 
 void BlockDelimiterList::transfer_to(BlockDelimiterList &list) {
   while (!empty()) {
+    list.push_back(front());
+    pop_front();
+  }
+}
+void BlockDelimiterList::transfer_to(BlockDelimiterList &list, const uint16_t cnt) {
+  for (uint16_t i = 0; i < cnt; i++) {
     list.push_back(front());
     pop_front();
   }

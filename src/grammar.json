@@ -561,39 +561,48 @@
       ]
     },
     "_fen_cod_ctn": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_vtr_spc"
-            },
-            "named": true,
-            "value": "virtual_space"
-          },
-          {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_txt"
-            },
-            "named": true,
-            "value": "text"
-          },
-          {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_blk_lbk"
-            },
-            "named": true,
-            "value": "line_break"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_fen_cod_ctn_bgn_mkr"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_vtr_spc"
+                },
+                "named": true,
+                "value": "virtual_space"
+              },
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_txt"
+                },
+                "named": true,
+                "value": "text"
+              },
+              {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_blk_lbk"
+                },
+                "named": true,
+                "value": "line_break"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
     },
     "_htm_blk_scr": {
       "type": "SEQ",
@@ -3119,6 +3128,9 @@
     [
       "_chk_box_pgh_ctn",
       "_chk_box_lik_stx_ctn"
+    ],
+    [
+      "_fen_cod_ctn"
     ]
   ],
   "externals": [
@@ -3177,6 +3189,10 @@
     {
       "type": "SYMBOL",
       "name": "_ind_cod_end_mkr"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_fen_cod_ctn_bgn_mkr"
     },
     {
       "type": "SYMBOL",

@@ -49,7 +49,6 @@ void push_lst_nod_mkr_if_necessary(BlockDelimiterList &blk_dlms, BlockDelimiter 
 }
 
 void scn_blk(Lexer &lxr, BlockDelimiterList &blk_dlms, const BlockContextStack &blk_ctx_stk, const LexedColumn ind) {
-  LexedPosition bgn_pos = lxr.cur_pos();
   lxr.bgn_rec_tbl_col_cnt();
   BlockDelimiterList tmp_blk_dlms;
   if (BSR_ACCEPT == scn_blk_nod(lxr, tmp_blk_dlms, ind, /*is_pas_all_blk_ctx*/ true, /*is_pgh_cont_ln*/ false)) {

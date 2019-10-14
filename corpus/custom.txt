@@ -56,12 +56,16 @@ Fenced code block - trailing blank lines are considered part of its content
       (list_marker)
       (fenced_code_block
         (code_fence_content
-          (line_break))))
+          (text)
+          (line_break)
+          (text))))
     (list_item
       (list_marker)
       (fenced_code_block
         (code_fence_content
-          (line_break))))
+          (text)
+          (line_break)
+          (text))))
     (list_item
       (list_marker))))
 

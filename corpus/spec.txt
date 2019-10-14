@@ -1366,6 +1366,7 @@ Example 82 - https://github.github.com/gfm/#example-82
   (indented_code_block
     (text)
     (line_break)
+    (text)
     (line_break)
     (text)))
 
@@ -1640,7 +1641,8 @@ Example 99 - https://github.github.com/gfm/#example-99
 (document
   (fenced_code_block
     (code_fence_content
-      (line_break))))
+      (line_break)
+      (text))))
 
 ================================================================================
 Example 100 - https://github.github.com/gfm/#example-100

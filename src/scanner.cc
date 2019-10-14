@@ -119,12 +119,17 @@ struct Scanner {
 
     bool has_wsp = lxr_.adv_rpt(is_wsp_chr);
 
+    if (has_wsp && is_eol_chr(lxr_.lka_chr()) && valid_symbols[TKN_TXT] && valid_symbols[TKN_BLK_LBK]) {
+      lxr_.mrk_end();
+      return lxr_.ret_sym(TKN_TXT); // BLK_TXT
+    }
+
     if (!blk_dlms_.empty()) {
       BlockDelimiter &dlm = blk_dlms_.front();
       TokenType rlt_sym = dlm.tkn_typ(lxr_.lka_chr());
       if (rlt_sym != TKN_NOT_FOUND) {
         // whitespaces are not considered part of block token
-        if (has_wsp && !/*exception*/(rlt_sym == TKN_LIT_LBK || rlt_sym == TKN_BNK_LBK)) {
+        if (has_wsp && !/*exception*/(rlt_sym == TKN_LIT_LBK || rlt_sym == TKN_BNK_LBK || rlt_sym == TKN_FEN_COD_CTN_BGN_MKR)) {
           lxr_.mrk_end();
           // has_opt_wsp_ind_ is not affected
           return lxr_.ret_sym(TKN_WSP);

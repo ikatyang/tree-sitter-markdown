@@ -184,15 +184,15 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     ctx_sym == SYM_IND_COD_BGN_MKR
     || ctx_sym == SYM_BTK_FEN_COD_BGN
     || ctx_sym == SYM_TLD_FEN_COD_BGN
-    || ctx_sym == SYM_HTM_BLK_DIV_BGN
-    || ctx_sym == SYM_HTM_BLK_CMP_BGN
+    || ctx_sym == SYM_HTM_BLK_DIV_BGN_MKR
+    || ctx_sym == SYM_HTM_BLK_CMP_BGN_MKR
   ) {
     while (!is_eol_chr(lxr.lka_chr())) lxr.adv();
     lxr.mrk_end();
     return true;
   }
 
-  if (ctx_sym == SYM_HTM_BLK_SCR_BGN) {
+  if (ctx_sym == SYM_HTM_BLK_SCR_BGN_MKR) {
     bool has_end = false;
     while (!is_eol_chr(lxr.lka_chr())) {
       if (!has_end && lxr.lka_chr() == '<') {
@@ -213,7 +213,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
 
-  if (ctx_sym == SYM_HTM_BLK_CMT_BGN) {
+  if (ctx_sym == SYM_HTM_BLK_CMT_BGN_MKR) {
     bool has_end = false;
     while (!is_eol_chr(lxr.lka_chr())) {
       if (!has_end && lxr.adv_if('-')) {
@@ -237,7 +237,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
 
-  if (ctx_sym == SYM_HTM_BLK_PRC_BGN) {
+  if (ctx_sym == SYM_HTM_BLK_PRC_BGN_MKR) {
     bool has_end = false;
     while (!is_eol_chr(lxr.lka_chr())) {
       if (!has_end && lxr.adv_rpt('?')) {
@@ -258,7 +258,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
 
-  if (ctx_sym == SYM_HTM_BLK_DCL_BGN) {
+  if (ctx_sym == SYM_HTM_BLK_DCL_BGN_MKR) {
     bool has_end = false;
     while (!is_eol_chr(lxr.lka_chr())) {
       if (!has_end && lxr.adv_if('>')) {
@@ -279,7 +279,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
 
-  if (ctx_sym == SYM_HTM_BLK_CDA_BGN) {
+  if (ctx_sym == SYM_HTM_BLK_CDA_BGN_MKR) {
     bool has_end = false;
     while (!is_eol_chr(lxr.lka_chr())) {
       if (!has_end && lxr.adv_if(']')) {

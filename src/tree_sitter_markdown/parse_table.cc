@@ -25,13 +25,13 @@ Symbol get_blk_cls_sym(const Symbol opn_sym) {
     case SYM_IND_COD_BGN_MKR: return SYM_IND_COD_END_MKR;
     case SYM_BTK_FEN_COD_BGN: return SYM_BTK_FEN_COD_END_MKR;
     case SYM_TLD_FEN_COD_BGN: return SYM_TLD_FEN_COD_END_MKR;
-    case SYM_HTM_BLK_SCR_BGN: return SYM_HTM_BLK_SCR_END_MKR;
-    case SYM_HTM_BLK_CMT_BGN: return SYM_HTM_BLK_CMT_END_MKR;
-    case SYM_HTM_BLK_PRC_BGN: return SYM_HTM_BLK_PRC_END_MKR;
-    case SYM_HTM_BLK_DCL_BGN: return SYM_HTM_BLK_DCL_END_MKR;
-    case SYM_HTM_BLK_CDA_BGN: return SYM_HTM_BLK_CDA_END_MKR;
-    case SYM_HTM_BLK_DIV_BGN: return SYM_HTM_BLK_DIV_END_MKR;
-    case SYM_HTM_BLK_CMP_BGN: return SYM_HTM_BLK_CMP_END_MKR;
+    case SYM_HTM_BLK_SCR_BGN_MKR: return SYM_HTM_BLK_SCR_END_MKR;
+    case SYM_HTM_BLK_CMT_BGN_MKR: return SYM_HTM_BLK_CMT_END_MKR;
+    case SYM_HTM_BLK_PRC_BGN_MKR: return SYM_HTM_BLK_PRC_END_MKR;
+    case SYM_HTM_BLK_DCL_BGN_MKR: return SYM_HTM_BLK_DCL_END_MKR;
+    case SYM_HTM_BLK_CDA_BGN_MKR: return SYM_HTM_BLK_CDA_END_MKR;
+    case SYM_HTM_BLK_DIV_BGN_MKR: return SYM_HTM_BLK_DIV_END_MKR;
+    case SYM_HTM_BLK_CMP_BGN_MKR: return SYM_HTM_BLK_CMP_END_MKR;
     case SYM_BQT_BGN: return SYM_BQT_END_MKR;
     case SYM_ASR_LST_BGN_MKR:
     case SYM_HYP_LST_BGN_MKR:
@@ -58,13 +58,13 @@ ParseState blk_sym_pst(const Symbol sym) {
     case SYM_IND_COD_BGN_MKR: return PST_IND_COD;
     case SYM_BTK_FEN_COD_BGN: return PST_BTK_FEN_COD;
     case SYM_TLD_FEN_COD_BGN: return PST_TLD_FEN_COD;
-    case SYM_HTM_BLK_SCR_BGN: return PST_HTM_BLK_SCR;
-    case SYM_HTM_BLK_CMT_BGN: return PST_HTM_BLK_CMT;
-    case SYM_HTM_BLK_PRC_BGN: return PST_HTM_BLK_PRC;
-    case SYM_HTM_BLK_DCL_BGN: return PST_HTM_BLK_DCL;
-    case SYM_HTM_BLK_CDA_BGN: return PST_HTM_BLK_CDA;
-    case SYM_HTM_BLK_DIV_BGN: return PST_HTM_BLK_DIV;
-    case SYM_HTM_BLK_CMP_BGN: return PST_HTM_BLK_CMP;
+    case SYM_HTM_BLK_SCR_BGN_MKR: return PST_HTM_BLK_SCR;
+    case SYM_HTM_BLK_CMT_BGN_MKR: return PST_HTM_BLK_CMT;
+    case SYM_HTM_BLK_PRC_BGN_MKR: return PST_HTM_BLK_PRC;
+    case SYM_HTM_BLK_DCL_BGN_MKR: return PST_HTM_BLK_DCL;
+    case SYM_HTM_BLK_CDA_BGN_MKR: return PST_HTM_BLK_CDA;
+    case SYM_HTM_BLK_DIV_BGN_MKR: return PST_HTM_BLK_DIV;
+    case SYM_HTM_BLK_CMP_BGN_MKR: return PST_HTM_BLK_CMP;
     case SYM_TBL_HED_ROW_BGN_MKR: return PST_TBL_DAT_ROW;
     case SYM_TBL_DLM_ROW_BGN_MKR: return PST_TBL_DLM_ROW;
     case SYM_TBL_DAT_ROW_BGN_MKR: return PST_TBL_DAT_ROW;

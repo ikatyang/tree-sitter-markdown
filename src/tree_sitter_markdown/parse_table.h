@@ -106,13 +106,13 @@ enum Symbol {
   SYM_IND_COD_BGN_MKR, // immediate
   SYM_BTK_FEN_COD_BGN, // ```
   SYM_TLD_FEN_COD_BGN, // ~~~
-  SYM_HTM_BLK_SCR_BGN, // <script
-  SYM_HTM_BLK_CMT_BGN, // <!--
-  SYM_HTM_BLK_PRC_BGN, // <?
-  SYM_HTM_BLK_DCL_BGN, // <!
-  SYM_HTM_BLK_CDA_BGN, // <![CDATA[
-  SYM_HTM_BLK_DIV_BGN, // <div
-  SYM_HTM_BLK_CMP_BGN, // <span>
+  SYM_HTM_BLK_SCR_BGN_MKR, // <script
+  SYM_HTM_BLK_CMT_BGN_MKR, // <!--
+  SYM_HTM_BLK_PRC_BGN_MKR, // <?
+  SYM_HTM_BLK_DCL_BGN_MKR, // <!
+  SYM_HTM_BLK_CDA_BGN_MKR, // <![CDATA[
+  SYM_HTM_BLK_DIV_BGN_MKR, // <div
+  SYM_HTM_BLK_CMP_BGN_MKR, // <span>
   SYM_BQT_BGN, // >
   SYM_ASR_LST_BGN_MKR, // *
   SYM_ASR_LST_ITM_BGN, // *

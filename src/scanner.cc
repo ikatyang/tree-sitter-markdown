@@ -92,7 +92,8 @@ struct Scanner {
       !blk_dlms_.empty()
       && (blk_dlms_.front().sym() == SYM_VRT_SPC
         || blk_dlms_.front().sym() == SYM_IND_COD_BGN_PFX
-        || blk_dlms_.front().sym() == SYM_IND_COD_BGN_MKR)
+        || blk_dlms_.front().sym() == SYM_IND_COD_BGN_MKR
+        || blk_dlms_.front().sym() == SYM_LST_ITM_CNT_BGN_MKR)
     ) {
       BlockDelimiter &dlm = blk_dlms_.front();
       TokenType rlt_sym = dlm.tkn_typ(lxr_.lka_chr());
@@ -106,22 +107,33 @@ struct Scanner {
         } else if (dlm.sym() == SYM_IND_COD_BGN_PFX) {
           lxr_.adv_len(dlm.len());
           blk_dlms_.pop_front();
-        } else if (dlm.sym() == SYM_IND_COD_BGN_MKR) {
+        } else {
           blk_ctx_stk_.push(BlockContext(dlm.sym(), dlm.len(), dlm.ind()));
           blk_dlms_.pop_front();
-        } else assert(false);
+        }
         lxr_.mrk_end();
         has_opt_wsp_ind_ = false;
         return lxr_.ret_sym(rlt_sym);
       }
     }
 
-    lxr_.adv_rpt(is_wsp_chr, true);
+    bool has_wsp = lxr_.adv_rpt(is_wsp_chr);
+
+    if (has_wsp && is_eol_chr(lxr_.lka_chr()) && valid_symbols[TKN_TXT] && valid_symbols[TKN_BLK_LBK]) {
+      lxr_.mrk_end();
+      return lxr_.ret_sym(TKN_TXT); // BLK_TXT
+    }
 
     if (!blk_dlms_.empty()) {
       BlockDelimiter &dlm = blk_dlms_.front();
       TokenType rlt_sym = dlm.tkn_typ(lxr_.lka_chr());
       if (rlt_sym != TKN_NOT_FOUND) {
+        // whitespaces are not considered part of block token
+        if (has_wsp && !/*exception*/(rlt_sym == TKN_LIT_LBK || rlt_sym == TKN_BNK_LBK || rlt_sym == TKN_FEN_COD_CTN_BGN_MKR)) {
+          lxr_.mrk_end();
+          // has_opt_wsp_ind_ is not affected
+          return lxr_.ret_sym(TKN_WSP);
+        }
         LexedLength spc_cnt = lxr_.cur_spc();
         if (dlm.len() || rlt_sym == TKN_PGH_BGN_MKR) {
           lxr_.adv_len(dlm.len());
@@ -158,9 +170,14 @@ struct Scanner {
     }
 
     if (!min_inl_dlms_.empty()) {
+      if (has_wsp && !is_eol_chr(lxr_.lka_chr())) {
+        lxr_.mrk_end();
+        return lxr_.ret_sym(valid_symbols[TKN_TXT] ? TKN_TXT : TKN_WSP);
+      }
+
       bool has_txt = false;
-      for (bool is_fst_rnd = true; !min_inl_dlms_.empty(); is_fst_rnd = false) {
-        if (!is_fst_rnd && is_wht_chr(lxr_.lka_chr())) {
+      while (!min_inl_dlms_.empty() && !is_eol_chr(lxr_.lka_chr())) {
+        if (is_wht_chr(lxr_.lka_chr()) && valid_symbols[TKN_WRD]) {
           assert(has_txt);
           break;
         }
@@ -169,8 +186,14 @@ struct Scanner {
         TokenType rlt_sym = dlm.tkn_typ(lxr_.cur_chr(), lxr_.lka_chr());
 
         if (rlt_sym == TKN_NOT_FOUND) {
-          has_txt = true;
-          lxr_.adv();
+          if (is_wsp_chr(lxr_.lka_chr())) {
+            assert(has_txt);
+            lxr_.mrk_end();
+            lxr_.adv_rpt(is_wsp_chr);
+          } else {
+            has_txt = true;
+            lxr_.adv();
+          }
           continue;
         }
 
@@ -197,11 +220,16 @@ struct Scanner {
         return lxr_.ret_sym(rlt_sym);
       }
 
-      if (has_txt) {
+      has_opt_wsp_ind_ = false;
+
+      if (is_eol_chr(lxr_.lka_chr()) && !has_txt) {
         lxr_.mrk_end();
-        has_opt_wsp_ind_ = false;
-        return lxr_.ret_sym(TKN_TXT);
+        return lxr_.ret_sym(TKN_WSP);
       }
+
+      assert(has_txt);
+      if (!is_wsp_chr(lxr_.cur_chr())) lxr_.mrk_end();
+      return lxr_.ret_sym(valid_symbols[TKN_WRD] ? TKN_WRD : TKN_TXT);
     }
 
     assert(min_inl_dlms_.empty());

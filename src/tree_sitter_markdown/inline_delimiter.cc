@@ -93,12 +93,12 @@ TokenType MinimizedInlineDelimiter::tkn_typ(LexedCharacter cur_chr, LexedCharact
     if (lka_chr == '`') return TKN_COD_SPN_END;
   } else if (sym_ == SYM_EXT_AUT_LNK_BGN) {
     if (is_ext_aut_lnk_bgn(cur_chr, lka_chr)) return TKN_TXT;
-  } else if (sym_ == SYM_EXT_WWW_AUT_LNK_BGN) {
-    if (is_ext_aut_lnk_bgn(cur_chr, lka_chr)) return TKN_EXT_WWW_AUT_LNK_BGN;
-  } else if (sym_ == SYM_EXT_URL_AUT_LNK_BGN) {
-    if (is_ext_aut_lnk_bgn(cur_chr, lka_chr)) return TKN_EXT_URL_AUT_LNK_BGN;
-  } else if (sym_ == SYM_EXT_EML_AUT_LNK_BGN) {
-    if (is_ext_aut_lnk_bgn(cur_chr, lka_chr)) return TKN_EXT_EML_AUT_LNK_BGN;
+  } else if (sym_ == SYM_EXT_WWW_AUT_LNK_BGN_MKR) {
+    if (is_ext_aut_lnk_bgn(cur_chr, lka_chr)) return TKN_EXT_WWW_AUT_LNK_BGN_MKR;
+  } else if (sym_ == SYM_EXT_URL_AUT_LNK_BGN_MKR) {
+    if (is_ext_aut_lnk_bgn(cur_chr, lka_chr)) return TKN_EXT_URL_AUT_LNK_BGN_MKR;
+  } else if (sym_ == SYM_EXT_EML_AUT_LNK_BGN_MKR) {
+    if (is_ext_aut_lnk_bgn(cur_chr, lka_chr)) return TKN_EXT_EML_AUT_LNK_BGN_MKR;
   } else if (sym_ == SYM_EXT_AUT_LNK_CTN) {
     return TKN_TXT;
   } else if (sym_ == SYM_EXT_AUT_LNK_END_MKR) {

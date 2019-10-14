@@ -8,10 +8,6 @@
       "required": false,
       "types": [
         {
-          "type": "code_fence_content",
-          "named": true
-        },
-        {
           "type": "heading_content",
           "named": true
         },

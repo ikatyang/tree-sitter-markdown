@@ -38,9 +38,9 @@ enum Symbol {
   SYM_COD_SPN_BGN, // `
   SYM_COD_SPN_END, // `
   SYM_EXT_AUT_LNK_BGN,
-  SYM_EXT_WWW_AUT_LNK_BGN,
-  SYM_EXT_URL_AUT_LNK_BGN,
-  SYM_EXT_EML_AUT_LNK_BGN,
+  SYM_EXT_WWW_AUT_LNK_BGN_MKR,
+  SYM_EXT_URL_AUT_LNK_BGN_MKR,
+  SYM_EXT_EML_AUT_LNK_BGN_MKR,
   SYM_EXT_AUT_LNK_CTN,
   SYM_AUT_LNK_HTM_OPN_TAG_BGN, // <
   SYM_URI_AUT_LNK_BGN, // <
@@ -92,6 +92,7 @@ enum Symbol {
   SYM_BLK_TXT,
   SYM_LIT_LBK,
   SYM_BNK_LBK,
+  SYM_FEN_COD_CTN_BGN_MKR, // immediate
 
   // block open
   SYM_ASR_THM_BRK_BGN, // ***
@@ -105,13 +106,13 @@ enum Symbol {
   SYM_IND_COD_BGN_MKR, // immediate
   SYM_BTK_FEN_COD_BGN, // ```
   SYM_TLD_FEN_COD_BGN, // ~~~
-  SYM_HTM_BLK_SCR_BGN, // <script
-  SYM_HTM_BLK_CMT_BGN, // <!--
-  SYM_HTM_BLK_PRC_BGN, // <?
-  SYM_HTM_BLK_DCL_BGN, // <!
-  SYM_HTM_BLK_CDA_BGN, // <![CDATA[
-  SYM_HTM_BLK_DIV_BGN, // <div
-  SYM_HTM_BLK_CMP_BGN, // <span>
+  SYM_HTM_BLK_SCR_BGN_MKR, // <script
+  SYM_HTM_BLK_CMT_BGN_MKR, // <!--
+  SYM_HTM_BLK_PRC_BGN_MKR, // <?
+  SYM_HTM_BLK_DCL_BGN_MKR, // <!
+  SYM_HTM_BLK_CDA_BGN_MKR, // <![CDATA[
+  SYM_HTM_BLK_DIV_BGN_MKR, // <div
+  SYM_HTM_BLK_CMP_BGN_MKR, // <span>
   SYM_BQT_BGN, // >
   SYM_ASR_LST_BGN_MKR, // *
   SYM_ASR_LST_ITM_BGN, // *

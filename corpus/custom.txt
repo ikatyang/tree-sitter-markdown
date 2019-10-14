@@ -1,4 +1,85 @@
 ================================================================================
+Fenced code block - trailing blank lines are considered part of its content
+================================================================================
+- ```
+
+
+- ~~~
+
+
+- ```
+	
+	
+- ~~~
+	
+	
+- ```
+    
+    
+- ~~~
+    
+    
+-
+--------------------------------------------------------------------------------
+
+(document
+  (tight_list
+    (list_item
+      (list_marker)
+      (fenced_code_block
+        (code_fence_content
+          (line_break))))
+    (list_item
+      (list_marker)
+      (fenced_code_block
+        (code_fence_content
+          (line_break))))
+    (list_item
+      (list_marker)
+      (fenced_code_block
+        (code_fence_content
+          (virtual_space)
+          (virtual_space)
+          (line_break)
+          (virtual_space)
+          (virtual_space))))
+    (list_item
+      (list_marker)
+      (fenced_code_block
+        (code_fence_content
+          (virtual_space)
+          (virtual_space)
+          (line_break)
+          (virtual_space)
+          (virtual_space))))
+    (list_item
+      (list_marker)
+      (fenced_code_block
+        (code_fence_content
+          (line_break))))
+    (list_item
+      (list_marker)
+      (fenced_code_block
+        (code_fence_content
+          (line_break))))
+    (list_item
+      (list_marker))))
+
+================================================================================
+Fenced code block - EOF-only newlines are NOT considered part of its content
+================================================================================
+- ```
+
+
+--------------------------------------------------------------------------------
+
+(document
+  (tight_list
+    (list_item
+      (list_marker)
+      (fenced_code_block))))
+
+================================================================================
 Table (extension) - too more indentation in list item [is NOT table]
 ================================================================================
 -  | abc | def |

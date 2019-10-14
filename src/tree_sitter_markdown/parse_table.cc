@@ -113,8 +113,8 @@ ParseState inl_sym_pst(const Symbol sym, const bool has_asr, const bool has_usc,
     case SYM_LNK_TIT_END_MKR: return PST_LNK_TIT_END;
     case SYM_LNK_REF_BGN: return PST_LNK_REF;
     case SYM_COD_SPN_BGN: return PST_COD_SPN;
-    case SYM_EXT_WWW_AUT_LNK_BGN:
-    case SYM_EXT_URL_AUT_LNK_BGN: return PST_EXT_AUT_LNK_DMN_END;
+    case SYM_EXT_WWW_AUT_LNK_BGN_MKR:
+    case SYM_EXT_URL_AUT_LNK_BGN_MKR: return PST_EXT_AUT_LNK_DMN_END;
     case SYM_AUT_LNK_HTM_OPN_TAG_BGN: return PST_AUT_LNK_HTM_OPN_TAG;
     case SYM_URI_AUT_LNK_BGN: return PST_URI_AUT_LNK_SCH_END;
     case SYM_EML_AUT_LNK_BGN: return PST_EML_AUT_LNK;

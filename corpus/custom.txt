@@ -423,6 +423,7 @@ Table (extension) - escaped column separator in autolink (extension)
       (table_cell
         (text)
         (www_autolink
+          (text)
           (backslash_escape))
         (text))
       (table_cell
@@ -826,14 +827,16 @@ is-autolink     www.su_b.example.com
     (text)
     (soft_line_break)
     (text)
-    (www_autolink)
+    (www_autolink
+      (text))
     (soft_line_break)
     (text)
     (soft_line_break)
     (text)
     (soft_line_break)
     (text)
-    (www_autolink)))
+    (www_autolink
+      (text))))
 
 ================================================================================
 Virtual space

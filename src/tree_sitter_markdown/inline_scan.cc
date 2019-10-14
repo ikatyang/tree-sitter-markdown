@@ -423,7 +423,8 @@ bool scn_ext_aut_lnk(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextSta
               if (lxr.adv_if('/')) {
                 if (lxr.adv_if('/')) {
                   if (scn_ext_aut_lnk_vld_dmn(lxr)) {
-                    inl_ctx_stk.push(inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_EXT_URL_AUT_LNK_BGN, bgn_pos, lxr.cur_pos())));
+                    inl_ctx_stk.push(inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_EXT_URL_AUT_LNK_BGN_MKR, bgn_pos, bgn_pos)));
+                    inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_EXT_AUT_LNK_CTN, bgn_pos, lxr.cur_pos()));
                     inl_ctx_stk.back().dlm_itr()->set_ctm_dat(DEFAULT_EXT_AUT_LNK_PAREN_BALANCE_COUNTER);
                     return true;
                   }
@@ -441,7 +442,8 @@ bool scn_ext_aut_lnk(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextSta
         if (lxr.adv_if('w')) {
           if (lxr.adv_if('.')) {
             if (scn_ext_aut_lnk_vld_dmn(lxr)) {
-              inl_ctx_stk.push(inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_EXT_WWW_AUT_LNK_BGN, bgn_pos, lxr.cur_pos())));
+              inl_ctx_stk.push(inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_EXT_WWW_AUT_LNK_BGN_MKR, bgn_pos, bgn_pos)));
+              inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_EXT_AUT_LNK_CTN, bgn_pos, lxr.cur_pos()));
               inl_ctx_stk.back().dlm_itr()->set_ctm_dat(DEFAULT_EXT_AUT_LNK_PAREN_BALANCE_COUNTER);
               return true;
             }
@@ -480,7 +482,8 @@ bool scn_ext_aut_lnk(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextSta
         if (!lxr.adv_if('.')) break;
       }
       if (seg_cnt >= 2 && lxr.cur_chr() != '-' && lxr.cur_chr() != '_') {
-        inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_EXT_EML_AUT_LNK_BGN, bgn_pos, lxr.cur_pos()));
+        inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_EXT_EML_AUT_LNK_BGN_MKR, bgn_pos, bgn_pos));
+        inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_EXT_AUT_LNK_CTN, bgn_pos, lxr.cur_pos()));
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_EXT_AUT_LNK_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
         return true;
       }
@@ -597,8 +600,8 @@ bool scn_inl_bsl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     Symbol ctx_sym = inl_ctx_stk.back().dlm_itr()->sym();
     if (
       ctx_sym == SYM_COD_SPN_BGN
-      || ctx_sym == SYM_EXT_WWW_AUT_LNK_BGN
-      || ctx_sym == SYM_EXT_URL_AUT_LNK_BGN
+      || ctx_sym == SYM_EXT_WWW_AUT_LNK_BGN_MKR
+      || ctx_sym == SYM_EXT_URL_AUT_LNK_BGN_MKR
       || ctx_sym == SYM_URI_AUT_LNK_BGN
       || ctx_sym == SYM_EML_AUT_LNK_BGN
       || ctx_sym == SYM_HTM_DCL_NAM_END_MKR
@@ -1768,8 +1771,8 @@ void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineConte
   bool shd_ers = false;
   bool shd_hdl_lnk_end = false;
   switch (unpaired_dlm_itr->sym()) {
-    case SYM_EXT_WWW_AUT_LNK_BGN:
-    case SYM_EXT_URL_AUT_LNK_BGN:
+    case SYM_EXT_WWW_AUT_LNK_BGN_MKR:
+    case SYM_EXT_URL_AUT_LNK_BGN_MKR:
       inl_ctx_stk.pop_paired(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_EXT_AUT_LNK_END_MKR, unpaired_dlm_itr->end_pos(), unpaired_dlm_itr->end_pos()))
       );

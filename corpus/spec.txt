@@ -10949,7 +10949,8 @@ Example 616 - https://github.github.com/gfm/#example-616
 (document
   (paragraph
     (text)
-    (uri_autolink)
+    (uri_autolink
+      (text))
     (text)))
 
 ================================================================================
@@ -10983,7 +10984,8 @@ http://example.com
 
 (document
   (paragraph
-    (uri_autolink)))
+    (uri_autolink
+      (text))))
 
 ================================================================================
 Example 620 - https://github.github.com/gfm/#example-620
@@ -10994,7 +10996,8 @@ foo@bar.example.com
 
 (document
   (paragraph
-    (email_autolink)))
+    (email_autolink
+      (text))))
 
 ================================================================================
 Example 621 - https://github.github.com/gfm/#example-621
@@ -11005,7 +11008,8 @@ www.commonmark.org
 
 (document
   (paragraph
-    (www_autolink)))
+    (www_autolink
+      (text))))
 
 ================================================================================
 Example 622 - https://github.github.com/gfm/#example-622
@@ -11033,7 +11037,8 @@ Visit www.commonmark.org/a.b.
 (document
   (paragraph
     (text)
-    (www_autolink)
+    (www_autolink
+      (text))
     (text))
   (paragraph
     (text)
@@ -11126,7 +11131,8 @@ http://commonmark.org
 
 (document
   (paragraph
-    (uri_autolink))
+    (uri_autolink
+      (text)))
   (paragraph
     (text)
     (uri_autolink
@@ -11142,7 +11148,8 @@ foo@bar.baz
 
 (document
   (paragraph
-    (email_autolink)))
+    (email_autolink
+      (text))))
 
 ================================================================================
 Example 630 - https://github.github.com/gfm/#example-630
@@ -11154,7 +11161,8 @@ hello@mail+xyz.example isn't valid, but hello+xyz@mail.example is.
 (document
   (paragraph
     (text)
-    (email_autolink)
+    (email_autolink
+      (text))
     (text)))
 
 ================================================================================
@@ -11173,10 +11181,12 @@ a.b-c_d@a.b_
 (document
   (paragraph
     (text)
-    (email_autolink))
+    (email_autolink
+      (text)))
   (paragraph
     (text)
-    (email_autolink)
+    (email_autolink
+      (text))
     (text))
   (paragraph
     (text))

@@ -52,5 +52,5 @@ console.log(tree.rootNode.toString());
 ## License
 
 MIT © [Ika](https://github.com/ikatyang)
-`.trim().replace(/`/g, '\\`')
+`.trim()
 });

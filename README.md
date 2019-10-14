@@ -35,12 +35,15 @@ console.log(tree.rootNode.toString());
 // (document
 //   (atx_heading
 //     (atx_heading_marker)
-//     (heading_content))
+//     (heading_content
+//       (text)))
 //   (tight_list
 //     (list_item
 //       (list_marker)
-//       (indented_code_block)
-//       (paragraph))))
+//       (indented_code_block
+//         (text))
+//       (paragraph
+//         (text)))))
 ```
 
 ## License

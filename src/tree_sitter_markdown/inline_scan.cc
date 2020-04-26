@@ -1898,7 +1898,7 @@ void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineConte
     }
     inl_ctx_stk.pop();
     unpaired_dlm_itr = inl_ctx_stk.back().dlm_itr();
-    assert(unpaired_dlm_itr->sym() == SYM_LNK_BGN);
+    assert(unpaired_dlm_itr->sym() == SYM_LNK_BGN || unpaired_dlm_itr->sym() == SYM_IMG_BGN);
   }
   switch (unpaired_dlm_itr->sym()) {
     case SYM_ASR_BGN:

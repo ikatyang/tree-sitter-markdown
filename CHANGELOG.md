@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.1](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.3.0...v0.3.1) (2020-04-26)
+
+
+### Bug Fixes
+
+* do not throw errors on empty image descriptions ([#5](https://github.com/ikatyang/tree-sitter-markdown/issues/5)) ([994f572](https://github.com/ikatyang/tree-sitter-markdown/commit/994f572))
+
+
+
 # [0.3.0](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.2.0...v0.3.0) (2019-10-14)
 
 

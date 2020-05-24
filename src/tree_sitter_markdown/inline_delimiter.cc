@@ -1,6 +1,7 @@
 #include "./inline_delimiter.h"
-
 #include "./predicate.h"
+
+#define MAX_INL_DLM_LEN 0b11111111
 
 namespace tree_sitter_markdown {
 
@@ -14,7 +15,7 @@ MinimizedInlineDelimiter::MinimizedInlineDelimiter(const bool yes, const Symbol 
 unsigned MinimizedInlineDelimiter::serialize(unsigned char *buffer) const {
   assert(is_inl_sym(sym_));
   assert(sym_ <= 0b1111111);
-  assert(len_ <= 0b11111111);
+  assert(len_ <= MAX_INL_DLM_LEN);
   buffer[0] = (sym_ << 1) | yes_;
   buffer[1] = len_;
   return 2;
@@ -231,7 +232,20 @@ InlineDelimiterList::Iterator InlineDelimiterList::erase(Iterator itr, Iterator 
 
 void InlineDelimiterList::transfer_to(MinimizedInlineDelimiterList &minimized_list) {
   while (!empty()) {
-    minimized_list.push_back(front().to_min());
+    const MinimizedInlineDelimiter &inl_dlm = front().to_min();
+    if (inl_dlm.len() <= MAX_INL_DLM_LEN) {
+      minimized_list.push_back(inl_dlm);
+    } else {
+      // split SYM_EXT_AUT_LNK_BGN/SYM_EXT_AUT_LNK_CTN into multiple parts to bypass length limit for inline delimeters
+      assert(inl_dlm.sym() == SYM_EXT_AUT_LNK_BGN || inl_dlm.sym() == SYM_EXT_AUT_LNK_CTN);
+      minimized_list.push_back(MinimizedInlineDelimiter(inl_dlm.yes(), inl_dlm.sym(), MAX_INL_DLM_LEN));
+      LexedLength rst_len = inl_dlm.len() - MAX_INL_DLM_LEN;
+      while (rst_len > 0) {
+        LexedLength len = rst_len > MAX_INL_DLM_LEN ? MAX_INL_DLM_LEN : rst_len;
+        minimized_list.push_back(MinimizedInlineDelimiter(inl_dlm.yes(), SYM_EXT_AUT_LNK_CTN, len));
+        rst_len -= len;
+      }
+    }
     pop_front();
   }
 }

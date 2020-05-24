@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.4.0](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.3.1...v0.4.0) (2020-05-24)
+
+
+### Chores
+
+* **deps:** upgrade to tree-sitter@0.16.7 ([43b1134](https://github.com/ikatyang/tree-sitter-markdown/commit/43b1134e9571331a5b28b527ea5aec06991f38e2))
+
+
+### Features
+
+* support super long words ([3d67064](https://github.com/ikatyang/tree-sitter-markdown/commit/3d67064f2d98e1ffac9cf9a675634453404785e9))
+
+
+
 ## [0.3.1](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.3.0...v0.3.1) (2020-04-26)
 
 

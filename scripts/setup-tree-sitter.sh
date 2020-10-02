@@ -1,4 +1,4 @@
-git clone https://github.com/ikatyang/tree-sitter --branch 0.16.7-custom --depth 1
+git submodule update --init
 cd tree-sitter
 ./script/build-wasm
 cargo build --release

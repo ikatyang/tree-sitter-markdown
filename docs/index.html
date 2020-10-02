@@ -68,11 +68,17 @@
 <script src="assets/tree-sitter-playground-0.16.7/playground.js"></script>
 
 <script>
-(codeExample => {
+((codeExample, queryExample) => {
   const handle = setInterval(() => {
     const $codeEditor = document.querySelector('.CodeMirror');
-    if ($codeEditor) {
+    const $queryEditor = document.querySelector('#query-container .CodeMirror');
+    const $queryCheckbox = document.querySelector('#query-checkbox');
+    if ($codeEditor && $queryEditor) {
       $codeEditor.CodeMirror.setValue(codeExample);
+      if (queryExample) {
+        $queryEditor.CodeMirror.setValue(queryExample);
+        if (!$queryCheckbox.checked) $queryCheckbox.click();
+      }
       clearInterval(handle);
     }
   }, 500);
@@ -124,8 +130,7 @@ console.log(tree.rootNode.toString());
 
 ## License
 
-MIT © [Ika](https://github.com/ikatyang)
-`);
+MIT © [Ika](https://github.com/ikatyang)`, ``);
 </script>
 
     </main>

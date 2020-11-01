@@ -99,9 +99,10 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
           LexedIndex lbk_bgn_idx = lxr.cur_idx();
           if (scn_eol(lxr, blk_dlms, blk_ctx_stk)) {
             end_idx = lbk_bgn_idx;
-          } else {
-            assert(blk_dlms.back().sym() == SYM_LIT_LBK);
+          } else if (blk_dlms.back().sym() == SYM_LIT_LBK) {
             lxr.jmp_pos(blk_dlms.back().end_pos());
+          } else {
+            is_invalid = true;
           }
         } else if (lit_brk->sym() != SYM_LIT_LBK) {
           end_idx = lxr.cur_idx();

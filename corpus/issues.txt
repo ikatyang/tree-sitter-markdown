@@ -1,0 +1,27 @@
+================================================================================
+#14 - Assertion failed caused by unexpected block delimiter behind the literal line break in unfinished inline stack
+================================================================================
+*$$
+-:
+<<<*$$
+-:
+<<<+-+-
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (text)))
+    (table_delimiter_row
+      (table_column_alignment))
+    (table_data_row
+      (table_cell
+        (text)))
+    (table_data_row
+      (table_cell
+        (text)))
+    (table_data_row
+      (table_cell
+        (text)))))

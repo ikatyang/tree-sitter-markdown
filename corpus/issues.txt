@@ -25,3 +25,20 @@
     (table_data_row
       (table_cell
         (text)))))
+
+================================================================================
+#14 - Assertion failed caused by dot in the local-part of the extended email autolink
+================================================================================
+ss_*.
+	$
+6@-�~?�1:
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (text)
+    (soft_line_break)
+    (text)
+    (soft_line_break)
+    (text)))

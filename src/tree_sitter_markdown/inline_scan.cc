@@ -453,7 +453,7 @@ bool scn_ext_aut_lnk(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextSta
       }
     }
 
-    while (is_asc_ltr_chr(lxr.lka_chr()) || is_num_chr(lxr.lka_chr()) || lxr.lka_chr() == '_' || lxr.lka_chr() == '-' || lxr.lka_chr() == '+') {
+    while (is_asc_ltr_chr(lxr.lka_chr()) || is_num_chr(lxr.lka_chr()) || lxr.lka_chr() == '.' || lxr.lka_chr() == '-' || lxr.lka_chr() == '_' || lxr.lka_chr() == '+') {
       if (!has_usc && lxr.lka_chr() == '_') {
         has_usc = true;
         fst_usc_pos.set(lxr.cur_pos());

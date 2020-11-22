@@ -11180,11 +11180,9 @@ a.b-c_d@a.b_
 
 (document
   (paragraph
-    (text)
     (email_autolink
       (text)))
   (paragraph
-    (text)
     (email_autolink
       (text))
     (text))

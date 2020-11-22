@@ -1789,7 +1789,7 @@ void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineConte
     case SYM_LNK_TIT_PRN_BGN:
     case SYM_LNK_TIT_PRN_END:
     case SYM_LNK_TIT_END_MKR:
-      while (unpaired_dlm_itr->sym() != SYM_LNK_DST_END_MKR) {
+      while (unpaired_dlm_itr->sym() != SYM_LNK_DST_END_MKR && unpaired_dlm_itr->sym() != SYM_LNK_TIT_END_MKR) {
         inl_ctx_stk.pop();
         unpaired_dlm_itr = inl_ctx_stk.back().dlm_itr();
       }

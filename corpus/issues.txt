@@ -67,6 +67,30 @@ ss_*.
     (text)))
 
 ================================================================================
+#14 - Assertion failed caused by unexpected backslash line break in table
+================================================================================
+*�wj\�2[
+-|
+&_&\
+
+
+--------------------------------------------------------------------------------
+
+(document
+  (table
+    (table_header_row
+      (table_cell
+        (text)))
+    (table_delimiter_row
+      (table_column_alignment))
+    (table_data_row
+      (table_cell
+        (text)))
+    (table_data_row
+      (table_cell
+        (text)))))
+
+================================================================================
 #14 - SIGSEGV caused by incorrect end condition for the unpaired link title
 ================================================================================
 [](0 ()
@@ -76,4 +100,3 @@ ss_*.
 (document
   (paragraph
     (text)))
-

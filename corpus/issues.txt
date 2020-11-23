@@ -44,6 +44,29 @@ ss_*.
     (text)))
 
 ================================================================================
+#14 - Assertion failed caused by backslash line break followed by backslash escape in link label
+================================================================================
+[
+#k
+V\
+*)\\
+]:[[z
+[<!&<&s!j&P
+
+--------------------------------------------------------------------------------
+
+(document
+  (link_reference_definition
+    (link_label
+      (text)
+      (backslash_escape)
+      (text))
+    (link_destination
+      (text)))
+  (paragraph
+    (text)))
+
+================================================================================
 #14 - SIGSEGV caused by incorrect end condition for the unpaired link title
 ================================================================================
 [](0 ()
@@ -53,3 +76,4 @@ ss_*.
 (document
   (paragraph
     (text)))
+

@@ -1761,7 +1761,10 @@ void hdl_paired_lnk_ref_def(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineCon
   inl_ctx_stk.pop_paired(lnk_end_itr);
   assert(inl_ctx_stk.empty());
   for (InlineDelimiterList::Iterator itr = ++lnk_bgn_itr; itr != lnk_end_itr;) {
-    if (itr->sym() == SYM_BSL_ESC) itr++;
+    if (itr->sym() == SYM_BSL_ESC || itr->sym() == SYM_BSL_LBK) {
+      if (itr->sym() == SYM_BSL_LBK) itr->set_yes(false);
+      itr++;
+    }
     else itr = inl_dlms.erase(itr);
   }
 }
@@ -1806,6 +1809,7 @@ void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineConte
           );
           if (
             lnk_ref_def_end_mkr_nxt_itr != blk_dlms.end()
+            && lnk_ref_def_end_mkr_nxt_itr->sym() == SYM_PGH_END_MKR
           ) blk_dlms.erase(lnk_ref_def_end_mkr_nxt_itr, blk_dlms.end());
           return;
         }

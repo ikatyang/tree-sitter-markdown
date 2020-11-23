@@ -575,7 +575,7 @@ bool scn_inl_bsl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     if (lxr.adv_if(is_asc_pun_chr)) {
       if (lxr.cur_chr() == '\\' && lxr.lka_chr() == '|' && in_tbl) lxr.adv();
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_BSL_ESC, bgn_pos, lxr.cur_pos()));
-    } else if (VLD(SYM_BSL_LBK) && is_lbk_chr(lxr.lka_chr())) {
+    } else if (VLD(SYM_BSL_LBK) && !in_tbl && is_lbk_chr(lxr.lka_chr())) {
       LexedPosition bsl_end_pos = lxr.cur_pos();
       BlockDelimiter *lit_brk = blk_dlms.lit_lbk(lxr.cur_row());
       if (lit_brk == NULL_PTR) {

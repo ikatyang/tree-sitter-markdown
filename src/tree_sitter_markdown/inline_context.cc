@@ -8,6 +8,7 @@ bool InlineContext::is_vld_pst() const { return pst_ != PST_INVALID; }
 bool InlineContext::has_asr() const { return has_asr_; }
 bool InlineContext::has_usc() const { return has_usc_; }
 bool InlineContext::has_del() const { return has_del_; }
+bool InlineContext::has_cln() const { return has_cln_; }
 LexedLength InlineContext::btk_len() const { return btk_len_; }
 
 InlineContext::InlineContext(const InlineDelimiterList::Iterator dlm_itr) {
@@ -15,6 +16,7 @@ InlineContext::InlineContext(const InlineDelimiterList::Iterator dlm_itr) {
   has_asr_ = dlm_itr->sym() == SYM_ASR_BGN;
   has_usc_ = dlm_itr->sym() == SYM_USC_BGN;
   has_del_ = dlm_itr->sym() == SYM_DEL_BGN;
+  has_cln_ = dlm_itr->sym() == SYM_LNK_REF_DEF_CLN;
   btk_len_ = dlm_itr->sym() == SYM_COD_SPN_BGN ? dlm_itr->len() : 0;
   upd_pst();
 }
@@ -23,6 +25,7 @@ InlineContext::InlineContext(const InlineDelimiterList::Iterator dlm_itr, const 
   has_asr_ = prt_ctx.has_asr_ || dlm_itr->sym() == SYM_ASR_BGN;
   has_usc_ = prt_ctx.has_usc_ || dlm_itr->sym() == SYM_USC_BGN;
   has_del_ = prt_ctx.has_del_ || dlm_itr->sym() == SYM_DEL_BGN;
+  has_cln_ = prt_ctx.has_cln_ || dlm_itr->sym() == SYM_LNK_REF_DEF_CLN;
   btk_len_ = prt_ctx.btk_len_ || (dlm_itr->sym() == SYM_COD_SPN_BGN ? dlm_itr->len() : 0);
   upd_pst();
 }

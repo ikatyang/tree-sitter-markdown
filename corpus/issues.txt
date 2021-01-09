@@ -100,3 +100,20 @@ ss_*.
 (document
   (paragraph
     (text)))
+
+================================================================================
+#14 - Assertion failed caused by right parenthesis in link definition
+================================================================================
+[x]: x
+)
+
+--------------------------------------------------------------------------------
+
+(document
+  (link_reference_definition
+    (link_label
+      (text))
+    (link_destination
+      (text)))
+  (paragraph
+    (text)))

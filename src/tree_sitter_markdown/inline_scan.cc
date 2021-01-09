@@ -1073,7 +1073,7 @@ bool scn_inl_rng(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
 
 bool scn_inl_rpr(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk, const InlineDelimiterList::Iterator &nxt_inl_dlm_itr) {
   if (lxr.lka_chr() != ')') return false;
-  if (VLD(SYM_LNK_INL_END)) {
+  if (VLD(SYM_LNK_INL_END) && !inl_ctx_stk.back().has_cln()) {
     if (
       inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_END_MKR
       || inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_TIT_END_MKR

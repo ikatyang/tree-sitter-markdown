@@ -14,6 +14,7 @@ private:
   bool has_asr_;
   bool has_usc_;
   bool has_del_;
+  bool has_cln_;
   LexedLength btk_len_;
 public:
   InlineDelimiterList::Iterator dlm_itr() const;
@@ -22,6 +23,7 @@ public:
   bool has_asr() const;
   bool has_usc() const;
   bool has_del() const;
+  bool has_cln() const;
   LexedLength btk_len() const;
 
   InlineContext(const InlineDelimiterList::Iterator delimiter_iterator);

@@ -134,3 +134,19 @@ ss_*.
       (text)))
   (paragraph
     (text)))
+
+================================================================================
+#16 - infinite loop caused by overlapped delimiter range
+================================================================================
+[(https://example.com/foo[bar]
+
+--------------------------------------------------------------------------------
+
+(document
+  (paragraph
+    (text)
+    (uri_autolink
+      (text))
+    (link
+      (link_text
+        (text)))))

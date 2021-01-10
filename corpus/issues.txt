@@ -117,3 +117,20 @@ ss_*.
       (text)))
   (paragraph
     (text)))
+
+================================================================================
+#14 - Assertion failed caused by unpaired parenthesis with line break in link definition
+================================================================================
+[a]:b
+(
+
+--------------------------------------------------------------------------------
+
+(document
+  (link_reference_definition
+    (link_label
+      (text))
+    (link_destination
+      (text)))
+  (paragraph
+    (text)))

@@ -356,7 +356,10 @@ bool scn_ext_aut_lnk(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextSta
     LexedPosition bgn_pos = lxr.cur_pos();
     bool in_tbl = is_in_tbl(blk_ctx_stk);
     InlineDelimiterList::Iterator ctx_itr = inl_ctx_stk.back().dlm_itr();
-    while (!is_wht_chr(lxr.lka_chr()) && lxr.lka_chr() != '<' && !MAYBE_TBL_COL_SEP()) {
+    while (
+      (nxt_inl_dlm_itr == inl_dlms.end() || lxr.cur_idx() < nxt_inl_dlm_itr->pos().idx())
+      && !is_wht_chr(lxr.lka_chr()) && lxr.lka_chr() != '<' && !MAYBE_TBL_COL_SEP()
+    ) {
       if (lxr.lka_chr() == '(') {
         ctx_itr->set_ctm_dat(ctx_itr->ctm_dat() - 1);
       } else if (lxr.lka_chr() == ')') {

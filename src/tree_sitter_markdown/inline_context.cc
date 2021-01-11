@@ -34,6 +34,10 @@ void InlineContext::upd_pst() {
   pst_ = inl_sym_pst(dlm_itr_->sym(), has_asr_, has_usc_, has_del_);
 }
 
+void InlineContext::print() const {
+  dlm_itr_->print();
+}
+
 //==============================================================================
 
 bool InlineContextStack::empty() const { return stk_.empty(); }
@@ -111,6 +115,16 @@ bool InlineContextStack::pop_all_lnk_bgn(InlineDelimiterList::Iterator &fst_pop_
   }
 
   return has_fst_pop_lnk_bgn;
+}
+
+void InlineContextStack::print() const {
+  ConstIterator itr = stk_.begin();
+  ConstIterator bgn = stk_.begin();
+  ConstIterator end = stk_.end();
+  for (; itr != end; itr++) {
+    if (itr != bgn) fprintf(stderr, ", ");
+    itr->print();
+  }
 }
 
 }

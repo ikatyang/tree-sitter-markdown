@@ -175,6 +175,7 @@ enum Symbol {
   LAST_BLOCK_CLOSE_SYMBOL = SYM_TBL_ROW_END_MKR,
 };
 
+char *sym_nam(const Symbol symbol);
 bool is_inl_sym(const Symbol symbol);
 bool is_inl_cls_mrk_sym(const Symbol symbol);
 bool is_blk_sym(const Symbol symbol);

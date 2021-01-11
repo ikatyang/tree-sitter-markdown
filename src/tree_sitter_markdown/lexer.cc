@@ -59,6 +59,7 @@ unsigned Lexer::deserialize(const unsigned char *buffer) {
 }
 
 void Lexer::adv(const bool skp) {
+  fprintf(stderr, "-> adv '%c' (i=%d r=%d c=%d) -> '%c'\n", cur_chr_, cur_idx_, cur_row_, cur_col_, lka_chr_);
   if (lka_chr_ == '\n' || lka_chr_ == '\r') {
     cur_col_ = 0;
     cur_ind_ = 0;
@@ -179,6 +180,7 @@ void Lexer::jmp_pos(const LexedPosition &pos) {
   lka_chr_ = chr_buf_[cur_idx_ - buf_bgn_idx_ + 1];
   cur_spc_ = 0;
   cur_ind_ = 0;
+  fprintf(stderr, "-> jmp '%c' i=%d r=%d c=%d\n", cur_chr_, cur_idx_, cur_row_, cur_col_);
 }
 bool Lexer::has_chr_at_idx(const LexedCharacter chr, const LexedIndex idx) const {
   assert(idx >= buf_bgn_idx_);

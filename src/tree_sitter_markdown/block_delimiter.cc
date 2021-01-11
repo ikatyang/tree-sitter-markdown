@@ -50,6 +50,14 @@ unsigned BlockDelimiter::deserialize(const unsigned char *buffer) {
   return 3;
 }
 
+void BlockDelimiter::print() const {
+  if (has_pos_) {
+    fprintf(stderr, "(%s l=%d n=%d i=%d r=%d c=%d)", sym_nam(sym_), len_, ind_, pos_.idx(), pos_.row(), pos_.col());
+  } else {
+    fprintf(stderr, "(%s l=%d n=%d)", sym_nam(sym_), len_, ind_);
+  }
+}
+
 TokenType BlockDelimiter::tkn_typ(LexedCharacter c) const {
   if (sym_ == SYM_VRT_SPC) { return TKN_VRT_SPC; }
   else if (sym_ == SYM_LIT_LBK) { if (is_lbk_chr(c)) return TKN_LIT_LBK; }
@@ -192,6 +200,13 @@ void BlockDelimiterList::transfer_to(BlockDelimiterList &list, const uint16_t cn
   for (uint16_t i = 0; i < cnt; i++) {
     list.push_back(front());
     pop_front();
+  }
+}
+
+void BlockDelimiterList::print() const {
+  for (ConstIterator itr = list_.begin(), bgn = list_.begin(), end = list_.end(); itr != end; itr++) {
+    if (itr != bgn) fprintf(stderr, ", ");
+    itr->print();
   }
 }
 

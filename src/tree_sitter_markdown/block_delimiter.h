@@ -36,6 +36,8 @@ public:
   unsigned serialize(unsigned char *buffer) const;
   unsigned deserialize(const unsigned char *buffer);
 
+  void print() const;
+
   TokenType tkn_typ(LexedCharacter lookahead_character) const;
 };
 
@@ -67,6 +69,8 @@ public:
 
   void transfer_to(BlockDelimiterList &list);
   void transfer_to(BlockDelimiterList &list, const uint16_t count);
+
+  void print() const;
 };
 
 }

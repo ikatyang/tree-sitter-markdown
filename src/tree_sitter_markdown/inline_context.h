@@ -30,6 +30,8 @@ public:
   InlineContext(const InlineDelimiterList::Iterator delimiter_iterator, const InlineContext &parent_context);
 
   void upd_pst();
+
+  void print() const;
 };
 
 struct InlineContextStack {
@@ -54,6 +56,8 @@ public:
   void pop_paired(InlineDelimiter *const end_delimiter);
   void pop_paired(const InlineDelimiterList::Iterator end_delimiter_iterator);
   bool pop_all_lnk_bgn(InlineDelimiterList::Iterator &first_popped_lnk_bgn_iterator);
+
+  void print() const;
 };
 
 }

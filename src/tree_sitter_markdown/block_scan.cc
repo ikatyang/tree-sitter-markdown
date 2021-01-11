@@ -167,6 +167,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
     const bool is_pas_all_blk_ctx = fst_failed_ctx_itr == ctx_end_itr;
     const bool is_eol = is_eol_chr(lxr.lka_chr());
     if (is_pas_all_blk_ctx && is_eol) {
+      fprintf(stderr, "-> is_pas_all_blk_ctx && is_eol\n");
       if (blk_ctx_stk.empty() || blk_ctx_stk.back().sym() == SYM_BQT_BGN) {
         assert(!has_blk_lbk);
         has_blk_lbk = true;
@@ -202,6 +203,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
     } else if (is_pas_all_blk_ctx) {
+      fprintf(stderr, "-> is_pas_all_blk_ctx && !is_eol\n");
       if (blk_ctx_stk.empty() || blk_ctx_stk.back().sym() == SYM_BQT_BGN) {
         assert(!has_blk_lbk);
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
@@ -335,6 +337,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       }
       break;
     } else if (is_eol) {
+      fprintf(stderr, "-> !is_pas_all_blk_ctx && is_eol\n");
       assert(!blk_ctx_stk.empty());
       const BlockContext *fst_bqt_ctx = NULL_PTR;
       for (
@@ -378,6 +381,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
     } else {
+      fprintf(stderr, "-> !is_pas_all_blk_ctx && !is_eol\n");
       assert(!blk_ctx_stk.empty());
       if (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN) {
         assert(!has_blk_lbk);

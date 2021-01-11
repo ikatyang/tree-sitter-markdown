@@ -45,6 +45,8 @@ public:
   void clear();
   unsigned serialize(unsigned char *buffer) const;
   unsigned deserialize(const unsigned char *buffer);
+
+  void print() const;
 };
 
 struct InlineDelimiter {
@@ -78,6 +80,8 @@ public:
   InlineDelimiter(const bool yes, const Symbol symbol, const LexedPosition &position, const LexedPosition &end_position);
 
   MinimizedInlineDelimiter to_min() const;
+
+  void print() const;
 };
 
 struct InlineDelimiterList {
@@ -99,6 +103,8 @@ public:
   Iterator erase(Iterator iterator, Iterator end_iterator);
 
   void transfer_to(MinimizedInlineDelimiterList &minimized_list);
+
+  void print() const;
 };
 
 }

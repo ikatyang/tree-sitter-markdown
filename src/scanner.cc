@@ -5,6 +5,8 @@
 
 #include "./tree_sitter_markdown/token_type.h"
 
+// #define fprintf(...)
+
 // tree-sitter does not support multiple files for external scanner
 #include "./tree_sitter_markdown/block_context.cc"
 #include "./tree_sitter_markdown/block_delimiter.cc"
@@ -78,6 +80,26 @@ struct Scanner {
     lxr_.init(lexer);
     lxr_.mrk_end();
 
+    fprintf(stderr, "-> min_inl_dlms_: ");
+    min_inl_dlms_.print();
+    fprintf(stderr, "\n");
+
+    fprintf(stderr, "-> inl_dlms_: ");
+    inl_dlms_.print();
+    fprintf(stderr, "\n");
+
+    fprintf(stderr, "-> inl_ctx_stk_: ");
+    inl_ctx_stk_.print();
+    fprintf(stderr, "\n");
+
+    fprintf(stderr, "-> blk_dlms_: ");
+    blk_dlms_.print();
+    fprintf(stderr, "\n");
+
+    fprintf(stderr, "-> blk_ctx_stk_: ");
+    blk_ctx_stk_.print();
+    fprintf(stderr, "\n");
+
     if (!min_inl_dlms_.empty() && is_inl_cls_mrk_sym(min_inl_dlms_.front().sym())) {
       assert(min_inl_dlms_.front().len() == 0);
       TokenType rlt_sym = min_inl_dlms_.front().tkn_typ(lxr_.cur_chr(), lxr_.lka_chr());
@@ -124,9 +146,12 @@ struct Scanner {
       return lxr_.ret_sym(TKN_TXT); // BLK_TXT
     }
 
+    fprintf(stderr, "-> check !blk_dlms_.empty()\n");
     if (!blk_dlms_.empty()) {
+      fprintf(stderr, "-> !blk_dlms_.empty()\n");
       BlockDelimiter &dlm = blk_dlms_.front();
       TokenType rlt_sym = dlm.tkn_typ(lxr_.lka_chr());
+      fprintf(stderr, "-> %s\n", sym_nam(dlm.sym()));
       if (rlt_sym != TKN_NOT_FOUND) {
         // whitespaces are not considered part of block token
         if (has_wsp && !/*exception*/(rlt_sym == TKN_LIT_LBK || rlt_sym == TKN_BNK_LBK || rlt_sym == TKN_FEN_COD_CTN_BGN_MKR)) {
@@ -140,6 +165,7 @@ struct Scanner {
           lxr_.mrk_end();
         }
         if (is_blk_opn_sym(dlm.sym())) {
+          fprintf(stderr, "-> %s (is_blk_opn_sym)\n", sym_nam(dlm.sym()));
           blk_ctx_stk_.push(BlockContext(dlm.sym(), dlm.len(), dlm.ind()));
           if (is_lst_itm_bgn(dlm.sym()) || dlm.sym() == SYM_BQT_BGN) {
             has_opt_wsp_ind_ = is_wsp_chr(lxr_.lka_chr());
@@ -147,10 +173,13 @@ struct Scanner {
             has_opt_wsp_ind_ = false;
           }
         } else if (is_blk_cls_sym(dlm.sym())) {
+          fprintf(stderr, "-> %s (is_blk_cls_sym)\n", sym_nam(dlm.sym()));
+          fprintf(stderr, "-> pair = %s\n", sym_nam(blk_ctx_stk_.back().sym()));
           assert(is_paired_blk_syms(blk_ctx_stk_.back().sym(), dlm.sym()));
           blk_ctx_stk_.pop();
           has_opt_wsp_ind_ = false;
         } else {
+          fprintf(stderr, "-> %s (is_blk_nrm_sym)\n", sym_nam(dlm.sym()));
           has_opt_wsp_ind_ = false;
         }
         blk_dlms_.pop_front();
@@ -169,12 +198,14 @@ struct Scanner {
       }
     }
 
+    fprintf(stderr, "-> check !min_inl_dlms_.empty()\n");
     if (!min_inl_dlms_.empty()) {
       if (has_wsp && !is_eol_chr(lxr_.lka_chr())) {
         lxr_.mrk_end();
         return lxr_.ret_sym(valid_symbols[TKN_TXT] ? TKN_TXT : TKN_WSP);
       }
 
+      fprintf(stderr, "-> !min_inl_dlms_.empty()\n");
       bool has_txt = false;
       while (!min_inl_dlms_.empty() && !is_eol_chr(lxr_.lka_chr())) {
         if (is_wht_chr(lxr_.lka_chr()) && valid_symbols[TKN_WRD]) {
@@ -236,6 +267,7 @@ struct Scanner {
     assert(inl_dlms_.empty());
     assert(inl_ctx_stk_.empty());
 
+    fprintf(stderr, "-> check_eof\n");
     if (blk_ctx_stk_.empty() && is_eof_chr(lxr_.lka_chr())) {
       assert(blk_dlms_.empty());
       if (valid_symbols[TKN_EOF]) return lxr_.ret_sym(TKN_EOF);
@@ -243,6 +275,7 @@ struct Scanner {
     }
 
     if (is_eol_chr(lxr_.lka_chr())) {
+      fprintf(stderr, "-> scn_eol\n");
       assert(blk_dlms_.empty());
       scn_eol(lxr_, blk_dlms_, blk_ctx_stk_);
       assert(!blk_dlms_.empty());
@@ -265,6 +298,7 @@ struct Scanner {
     } else if (sym != SYM_BLK_TXT) {
       assert(!inl_dlms_.empty());
     }
+    fprintf(stderr, "-> scn_inl end\n");
 
     inl_dlms_.transfer_to(min_inl_dlms_);
 

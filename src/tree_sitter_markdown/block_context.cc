@@ -32,6 +32,10 @@ unsigned BlockContext::deserialize(const unsigned char *buffer) {
   return 3;
 }
 
+void BlockContext::print() const {
+  fprintf(stderr, "(%s h=%d l=%d n=%d)", sym_nam(sym_), has_fst_ctn_, len_, ind_);
+}
+
 bool BlockContextStack::empty() const { return stk_.empty(); }
 BlockContext &BlockContextStack::back() { return stk_.back(); }
 const BlockContext &BlockContextStack::back() const { return stk_.back(); }
@@ -77,6 +81,16 @@ void BlockContextStack::push(const BlockContext &ctx) {
 void BlockContextStack::pop() {
   assert(!empty());
   stk_.pop_back();
+}
+
+void BlockContextStack::print() const {
+  ConstIterator itr = stk_.begin();
+  ConstIterator bgn = stk_.begin();
+  ConstIterator end = stk_.end();
+  for (; itr != end; itr++) {
+    if (itr != bgn) fprintf(stderr, ", ");
+    itr->print();
+  }
 }
 
 }

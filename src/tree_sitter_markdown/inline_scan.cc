@@ -52,12 +52,29 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
   }
 
   for (bool is_fst_rnd = true; is_fst_rnd || !inl_ctx_stk.empty(); is_fst_rnd = false) {
+    fprintf(stderr, "-> inl_dlms: ");
+    inl_dlms.print();
+    fprintf(stderr, "\n");
+
+    fprintf(stderr, "-> inl_ctx_stk: ");
+    inl_ctx_stk.print();
+    fprintf(stderr, "\n");
+
+    fprintf(stderr, "-> blk_dlms: ");
+    blk_dlms.print();
+    fprintf(stderr, "\n");
+
+    fprintf(stderr, "-> blk_ctx_stk: ");
+    blk_ctx_stk.print();
+    fprintf(stderr, "\n");
+
     if (!is_fst_rnd && !is_fen_cod_inf) {
       blk_ctx_stk.mrk_has_fst_ctn();
     }
 
     bool is_end = is_eof_chr(lxr.lka_chr()) || lxr.cur_idx() >= end_idx;
     if (is_end || is_invalid) {
+      fprintf(stderr, "-> is_end\n");
       if (is_end && !shd_fsh_inl_ctx_stk) break;
       is_invalid = false;
       hdl_unpaired_inl_dlm(lxr, inl_dlms, inl_ctx_stk, blk_dlms, blk_ctx_stk, nxt_inl_dlm_itr, end_inl_dlm_itr);
@@ -65,6 +82,7 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
     }
 
     if (nxt_inl_dlm_itr != inl_dlms.end() && nxt_inl_dlm_itr->pos().idx() == lxr.cur_idx()) {
+      fprintf(stderr, "-> jmp_nxt\n");
       if (nxt_inl_dlm_itr->has_end_dlm()) {
         InlineDelimiter *nxt_dlm_end_dlm = nxt_inl_dlm_itr->end_dlm();
         lxr.jmp_pos(nxt_dlm_end_dlm->end_pos());
@@ -87,6 +105,7 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
     }
 
     if (is_lbk_chr(lxr.lka_chr())) {
+      fprintf(stderr, "-> is_lbk\n");
       if (VLD(SYM_FEN_COD_INF_END_MKR)) {
         inl_ctx_stk.pop_paired(
           inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_FEN_COD_INF_END_MKR, lxr.cur_pos(), lxr.cur_pos()))
@@ -118,6 +137,8 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
       }
       continue;
     }
+
+    fprintf(stderr, "-> scn_inl_nod\n");
 
     if (scn_ext_aut_lnk(lxr, inl_dlms, inl_ctx_stk, blk_dlms, blk_ctx_stk, nxt_inl_dlm_itr)) {
       is_txt = false;
@@ -152,14 +173,20 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
       continue;
     }
 
+    fprintf(stderr, "-> scn_wsp\n");
+
     if (VLD(SYM_WSP) && lxr.adv_rpt(is_wsp_chr)) {
       is_txt = false;
       continue;
     }
 
+    fprintf(stderr, "-> scn_txt\n");
+
     if (scn_inl_txt(lxr, inl_dlms, inl_ctx_stk, blk_dlms, blk_ctx_stk, nxt_inl_dlm_itr)) {
       continue;
     }
+
+    fprintf(stderr, "-> is_invalid\n");
 
     is_invalid = true;
   }

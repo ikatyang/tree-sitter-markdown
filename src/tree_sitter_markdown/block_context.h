@@ -28,6 +28,8 @@ public:
 
   unsigned serialize(unsigned char *buffer) const;
   unsigned deserialize(const unsigned char *buffer);
+
+  void print() const;
 };
 
 struct BlockContextStack {
@@ -55,6 +57,8 @@ public:
 
   void push(const BlockContext &block_context);
   void pop();
+
+  void print() const;
 };
 
 }

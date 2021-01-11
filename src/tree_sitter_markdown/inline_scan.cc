@@ -1810,6 +1810,9 @@ void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineConte
             lxr.cur_row(),
             BlockDelimiter(SYM_LNK_REF_DEF_END_MKR, lxr.cur_pos(), lxr.cur_pos())
           );
+          if (lnk_ref_def_end_mkr_nxt_itr != blk_dlms.end() && lnk_ref_def_end_mkr_nxt_itr->sym() == SYM_LIT_LBK) {
+            lnk_ref_def_end_mkr_nxt_itr = ++blk_dlms.insert(++lnk_ref_def_end_mkr_nxt_itr, BlockDelimiter(SYM_PGH_BGN_MKR, 0));
+          }
           while (lnk_ref_def_end_mkr_nxt_itr != blk_dlms.end()) {
             if (lnk_ref_def_end_mkr_nxt_itr->sym() == SYM_PGH_END_MKR) {
               blk_dlms.erase(lnk_ref_def_end_mkr_nxt_itr, blk_dlms.end());

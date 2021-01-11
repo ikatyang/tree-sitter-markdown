@@ -159,6 +159,9 @@ unsigned BlockDelimiterList::deserialize(const unsigned char *buffer) {
 
 void BlockDelimiterList::pop_front() { list_.pop_front(); }
 void BlockDelimiterList::push_back(const BlockDelimiter &dlm) { list_.push_back(dlm); }
+BlockDelimiterList::Iterator BlockDelimiterList::insert(const BlockDelimiterList::Iterator itr, const BlockDelimiter &dlm) {
+  return list_.insert(itr, dlm);
+}
 BlockDelimiterList::Iterator BlockDelimiterList::insert(const LexedRow row, const BlockDelimiter &dlm) {
   Iterator itr = list_.begin();
   Iterator end = list_.end();

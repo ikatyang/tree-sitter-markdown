@@ -59,6 +59,7 @@ public:
 
   void pop_front();
   void push_back(const BlockDelimiter &delimiter);
+  Iterator insert(const Iterator itr, const BlockDelimiter &delimiter);
   Iterator insert(const LexedRow row, const BlockDelimiter &delimiter);
   Iterator erase(Iterator iterator, Iterator end_iterator);
 

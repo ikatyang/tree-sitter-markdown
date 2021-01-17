@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.1](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.4.0...v0.4.1) (2021-01-17)
+
+
+### Bug Fixes
+
+* backslash line break should not be allowed in table ([1c0dbdc](https://github.com/ikatyang/tree-sitter-markdown/commit/1c0dbdc))
+* dot is allowed for the local-part of the extended email autolink ([0195050](https://github.com/ikatyang/tree-sitter-markdown/commit/0195050))
+* no "assertion failed" caused by backslash line break in link label ([341e85f](https://github.com/ikatyang/tree-sitter-markdown/commit/341e85f))
+* no "assertion failed" caused by cut link definition ([a09c4cb](https://github.com/ikatyang/tree-sitter-markdown/commit/a09c4cb))
+* no "assertion failed" caused by right parenthesis in link definition ([19d63b0](https://github.com/ikatyang/tree-sitter-markdown/commit/19d63b0))
+* no "assertion failed" caused by unexpected block delimiter behind the literal line break in unfinished inline stack ([62364f8](https://github.com/ikatyang/tree-sitter-markdown/commit/62364f8))
+* no "assertion failed" caused by unpaired parenthesis with line break in link definition ([97e1e61](https://github.com/ikatyang/tree-sitter-markdown/commit/97e1e61))
+* no infinite loop caused by overlapped delimiter range ([f9e9749](https://github.com/ikatyang/tree-sitter-markdown/commit/f9e9749))
+* no SIGSEGV caused by unfinished link title ([d4e59ac](https://github.com/ikatyang/tree-sitter-markdown/commit/d4e59ac))
+
+
+
 # [0.4.0](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.3.1...v0.4.0) (2020-05-24)
 
 

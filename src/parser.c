@@ -5,11 +5,11 @@
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #endif
 
-#define LANGUAGE_VERSION 11
+#define LANGUAGE_VERSION 12
 #define STATE_COUNT 1009
 #define LARGE_STATE_COUNT 2
 #define SYMBOL_COUNT 220
-#define ALIAS_COUNT 12
+#define ALIAS_COUNT 9
 #define TOKEN_COUNT 113
 #define EXTERNAL_TOKEN_COUNT 112
 #define FIELD_COUNT 0
@@ -235,18 +235,15 @@ enum {
   aux_sym__lnk_dst_repeat1 = 217,
   aux_sym__htm_opn_tag_hed_repeat1 = 218,
   aux_sym__txt_repeat1 = 219,
-  alias_sym_heading_content = 220,
-  alias_sym_html_attribute_key = 221,
-  alias_sym_html_declaration_name = 222,
-  alias_sym_html_tag_name = 223,
-  alias_sym_image_description = 224,
-  alias_sym_info_string = 225,
-  alias_sym_line_break = 226,
-  alias_sym_link_label = 227,
-  alias_sym_link_text = 228,
-  alias_sym_paragraph = 229,
-  alias_sym_table_cell = 230,
-  alias_sym_task_list_item_marker = 231,
+  alias_sym_html_attribute_key = 220,
+  alias_sym_html_declaration_name = 221,
+  alias_sym_image_description = 222,
+  alias_sym_info_string = 223,
+  alias_sym_line_break = 224,
+  alias_sym_link_label = 225,
+  alias_sym_link_text = 226,
+  alias_sym_table_cell = 227,
+  alias_sym_task_list_item_marker = 228,
 };
 
 static const char *ts_symbol_names[] = {
@@ -361,14 +358,14 @@ static const char *ts_symbol_names[] = {
   [sym__lit_lbk] = "_lit_lbk",
   [sym__wsp] = "_wsp",
   [sym__txt_frg] = "_txt_frg",
-  [sym__wrd] = "_wrd",
+  [sym__wrd] = "html_tag_name",
   [sym__vtr_spc] = "virtual_space",
   [sym_document] = "document",
   [sym__blk_nod] = "_blk_nod",
   [sym__thm_brk] = "_thm_brk",
   [sym__thm_brk_hed] = "thematic_break",
   [sym__pgh] = "_pgh",
-  [sym__pgh_hed] = "_pgh_hed",
+  [sym__pgh_hed] = "paragraph",
   [sym__lnk_ref_def] = "_lnk_ref_def",
   [sym__lnk_ref_def_hed] = "link_reference_definition",
   [sym__stx] = "_stx",
@@ -470,16 +467,13 @@ static const char *ts_symbol_names[] = {
   [aux_sym__lnk_dst_repeat1] = "_lnk_dst_repeat1",
   [aux_sym__htm_opn_tag_hed_repeat1] = "_htm_opn_tag_hed_repeat1",
   [aux_sym__txt_repeat1] = "_txt_repeat1",
-  [alias_sym_heading_content] = "heading_content",
   [alias_sym_html_attribute_key] = "html_attribute_key",
   [alias_sym_html_declaration_name] = "html_declaration_name",
-  [alias_sym_html_tag_name] = "html_tag_name",
   [alias_sym_image_description] = "image_description",
   [alias_sym_info_string] = "info_string",
   [alias_sym_line_break] = "line_break",
   [alias_sym_link_label] = "link_label",
   [alias_sym_link_text] = "link_text",
-  [alias_sym_paragraph] = "paragraph",
   [alias_sym_table_cell] = "table_cell",
   [alias_sym_task_list_item_marker] = "task_list_item_marker",
 };
@@ -643,7 +637,7 @@ static TSSymbol ts_symbol_map[] = {
   [sym__los_lst_itm_hed] = sym__tig_lst_itm_hed,
   [sym__los_chk_box_lst_itm_hed] = sym__tig_chk_box_lst_itm_hed,
   [sym__chk_box_pgh] = sym__chk_box_pgh,
-  [sym__chk_box_pgh_ctn] = sym__chk_box_pgh_ctn,
+  [sym__chk_box_pgh_ctn] = sym__pgh_hed,
   [sym__chk_box_lik_stx] = sym__chk_box_lik_stx,
   [sym__chk_box_lik_stx_hed] = sym__stx_hed,
   [sym__chk_box_lik_stx_ctn] = sym__chk_box_lik_stx_ctn,
@@ -705,16 +699,13 @@ static TSSymbol ts_symbol_map[] = {
   [aux_sym__lnk_dst_repeat1] = aux_sym__lnk_dst_repeat1,
   [aux_sym__htm_opn_tag_hed_repeat1] = aux_sym__htm_opn_tag_hed_repeat1,
   [aux_sym__txt_repeat1] = aux_sym__txt_repeat1,
-  [alias_sym_heading_content] = alias_sym_heading_content,
   [alias_sym_html_attribute_key] = alias_sym_html_attribute_key,
   [alias_sym_html_declaration_name] = alias_sym_html_declaration_name,
-  [alias_sym_html_tag_name] = alias_sym_html_tag_name,
   [alias_sym_image_description] = alias_sym_image_description,
   [alias_sym_info_string] = alias_sym_info_string,
   [alias_sym_line_break] = alias_sym_line_break,
   [alias_sym_link_label] = alias_sym_link_label,
   [alias_sym_link_text] = alias_sym_link_text,
-  [alias_sym_paragraph] = alias_sym_paragraph,
   [alias_sym_table_cell] = alias_sym_table_cell,
   [alias_sym_task_list_item_marker] = alias_sym_task_list_item_marker,
 };
@@ -1165,7 +1156,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym__wrd] = {
-    .visible = false,
+    .visible = true,
     .named = true,
   },
   [sym__vtr_spc] = {
@@ -1193,7 +1184,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym__pgh_hed] = {
-    .visible = false,
+    .visible = true,
     .named = true,
   },
   [sym__lnk_ref_def] = {
@@ -1600,19 +1591,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [alias_sym_heading_content] = {
-    .visible = true,
-    .named = true,
-  },
   [alias_sym_html_attribute_key] = {
     .visible = true,
     .named = true,
   },
   [alias_sym_html_declaration_name] = {
-    .visible = true,
-    .named = true,
-  },
-  [alias_sym_html_tag_name] = {
     .visible = true,
     .named = true,
   },
@@ -1636,10 +1619,6 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [alias_sym_paragraph] = {
-    .visible = true,
-    .named = true,
-  },
   [alias_sym_table_cell] = {
     .visible = true,
     .named = true,
@@ -1650,10 +1629,10 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
 };
 
-static TSSymbol ts_alias_sequences[16][MAX_ALIAS_SEQUENCE_LENGTH] = {
+static TSSymbol ts_alias_sequences[14][MAX_ALIAS_SEQUENCE_LENGTH] = {
   [0] = {0},
   [1] = {
-    [1] = alias_sym_heading_content,
+    [1] = sym__chk_box_lik_stx_ctn,
   },
   [2] = {
     [0] = alias_sym_line_break,
@@ -1662,41 +1641,58 @@ static TSSymbol ts_alias_sequences[16][MAX_ALIAS_SEQUENCE_LENGTH] = {
     [1] = alias_sym_table_cell,
   },
   [4] = {
-    [0] = alias_sym_paragraph,
-  },
-  [5] = {
-    [1] = alias_sym_html_tag_name,
-  },
-  [6] = {
     [2] = alias_sym_table_cell,
   },
-  [7] = {
-    [0] = alias_sym_heading_content,
+  [5] = {
+    [0] = sym__chk_box_lik_stx_ctn,
   },
-  [8] = {
+  [6] = {
     [1] = alias_sym_image_description,
   },
-  [9] = {
+  [7] = {
     [1] = alias_sym_link_text,
   },
-  [10] = {
+  [8] = {
     [0] = alias_sym_html_attribute_key,
   },
-  [11] = {
+  [9] = {
     [1] = alias_sym_html_declaration_name,
   },
-  [12] = {
+  [10] = {
     [1] = alias_sym_info_string,
   },
-  [13] = {
+  [11] = {
     [0] = alias_sym_task_list_item_marker,
   },
-  [14] = {
+  [12] = {
     [1] = alias_sym_link_label,
   },
-  [15] = {
+  [13] = {
     [2] = alias_sym_link_label,
   },
+};
+
+static uint16_t ts_non_terminal_alias_map[] = {
+  sym__pgh_hed, 2,
+    sym__pgh_hed,
+    sym__chk_box_lik_stx_ctn,
+  aux_sym__tbl_dat_cel, 2,
+    aux_sym__tbl_dat_cel,
+    alias_sym_table_cell,
+  aux_sym__pgh_hed_repeat1, 3,
+    aux_sym__pgh_hed_repeat1,
+    alias_sym_image_description,
+    alias_sym_link_text,
+  aux_sym__lnk_ref_def_hed_repeat1, 2,
+    aux_sym__lnk_ref_def_hed_repeat1,
+    alias_sym_link_label,
+  aux_sym__atx_hed_repeat1, 2,
+    aux_sym__atx_hed_repeat1,
+    sym__chk_box_lik_stx_ctn,
+  aux_sym__fen_cod_inf_repeat1, 2,
+    aux_sym__fen_cod_inf_repeat1,
+    alias_sym_info_string,
+  0,
 };
 
 static bool ts_lex(TSLexer *lexer, TSStateId state) {
@@ -33663,7 +33659,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [518] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__pgh_hed, 2),
   [520] = {.entry = {.count = 1, .reusable = true}}, SHIFT(238),
   [522] = {.entry = {.count = 1, .reusable = true}}, SHIFT(414),
-  [524] = {.entry = {.count = 2, .reusable = true}}, REDUCE(sym__chk_box_pgh_ctn, 1, .production_id = 13), REDUCE(sym__chk_box_lik_stx_ctn, 1),
+  [524] = {.entry = {.count = 2, .reusable = true}}, REDUCE(sym__chk_box_pgh_ctn, 1, .production_id = 11), REDUCE(sym__chk_box_lik_stx_ctn, 1),
   [527] = {.entry = {.count = 1, .reusable = true}}, SHIFT(317),
   [529] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__pgh_hed_repeat1, 2), SHIFT_REPEAT(319),
   [532] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__pgh_hed_repeat1, 2), SHIFT_REPEAT(66),
@@ -33716,7 +33712,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [655] = {.entry = {.count = 1, .reusable = true}}, SHIFT(227),
   [657] = {.entry = {.count = 1, .reusable = true}}, SHIFT(225),
   [659] = {.entry = {.count = 1, .reusable = true}}, SHIFT(292),
-  [661] = {.entry = {.count = 2, .reusable = true}}, REDUCE(sym__chk_box_pgh_ctn, 2, .production_id = 13), REDUCE(sym__chk_box_lik_stx_ctn, 2),
+  [661] = {.entry = {.count = 2, .reusable = true}}, REDUCE(sym__chk_box_pgh_ctn, 2, .production_id = 11), REDUCE(sym__chk_box_lik_stx_ctn, 2),
   [664] = {.entry = {.count = 1, .reusable = true}}, SHIFT(182),
   [666] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__pgh_hed_repeat1, 2), SHIFT_REPEAT(327),
   [669] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__pgh_hed_repeat1, 2), SHIFT_REPEAT(86),
@@ -33756,7 +33752,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [766] = {.entry = {.count = 1, .reusable = true}}, SHIFT(239),
   [768] = {.entry = {.count = 1, .reusable = true}}, SHIFT(352),
   [770] = {.entry = {.count = 1, .reusable = true}}, SHIFT(351),
-  [772] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 3, .production_id = 6),
+  [772] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 3, .production_id = 4),
   [774] = {.entry = {.count = 1, .reusable = true}}, SHIFT(344),
   [776] = {.entry = {.count = 1, .reusable = true}}, SHIFT(75),
   [778] = {.entry = {.count = 1, .reusable = true}}, SHIFT(72),
@@ -33775,7 +33771,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [804] = {.entry = {.count = 1, .reusable = true}}, SHIFT(228),
   [806] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 2, .production_id = 3),
   [808] = {.entry = {.count = 1, .reusable = true}}, SHIFT(125),
-  [810] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 3, .production_id = 6),
+  [810] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 3, .production_id = 4),
   [812] = {.entry = {.count = 1, .reusable = true}}, SHIFT(123),
   [814] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 2, .production_id = 3),
   [816] = {.entry = {.count = 1, .reusable = true}}, SHIFT(129),
@@ -33840,14 +33836,14 @@ static TSParseActionEntry ts_parse_actions[] = {
   [970] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__atx_hed_repeat1, 2), SHIFT_REPEAT(700),
   [973] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__atx_hed_repeat1, 2), SHIFT_REPEAT(320),
   [976] = {.entry = {.count = 1, .reusable = true}}, SHIFT(132),
-  [978] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 4, .production_id = 6),
-  [980] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 5, .production_id = 6),
+  [978] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 4, .production_id = 4),
+  [980] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 5, .production_id = 4),
   [982] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 3, .production_id = 3),
   [984] = {.entry = {.count = 1, .reusable = true}}, SHIFT(134),
   [986] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 4, .production_id = 3),
-  [988] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 4, .production_id = 6),
+  [988] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 4, .production_id = 4),
   [990] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row_hed, 3, .production_id = 3),
-  [992] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 5, .production_id = 6),
+  [992] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 5, .production_id = 4),
   [994] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_hed_row_hed, 4, .production_id = 3),
   [996] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal, 1),
   [998] = {.entry = {.count = 1, .reusable = true}}, SHIFT(740),
@@ -33878,7 +33874,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [1052] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__txt_repeat1, 2), SHIFT_REPEAT(151),
   [1055] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_slf_cls_tag, 2),
   [1057] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal_clp, 2),
-  [1059] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__img, 3, .production_id = 8),
+  [1059] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__img, 3, .production_id = 6),
   [1061] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal, 2),
   [1063] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal_inl, 2),
   [1065] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_cda, 3),
@@ -33886,19 +33882,19 @@ static TSParseActionEntry ts_parse_actions[] = {
   [1069] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stg, 3),
   [1071] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_prc, 3),
   [1073] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_cmt, 3),
-  [1075] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_dcl, 3, .production_id = 11),
-  [1077] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_cls_tag, 3, .production_id = 5),
+  [1075] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_dcl, 3, .production_id = 9),
+  [1077] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_cls_tag, 3),
   [1079] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__cod_spn, 3),
   [1081] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__emp, 3),
   [1083] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__eml_aut_lnk, 3),
   [1085] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__uri_aut_lnk, 3),
-  [1087] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk, 3, .production_id = 9),
+  [1087] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk, 3, .production_id = 7),
   [1089] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__cod_spn, 2),
   [1091] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_opn_tag, 2),
   [1093] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__ext_eml_aut_lnk, 2),
   [1095] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__ext_url_aut_lnk, 2),
   [1097] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__ext_www_aut_lnk, 2),
-  [1099] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_dcl, 4, .production_id = 11),
+  [1099] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_dcl, 4, .production_id = 9),
   [1101] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_cda, 2),
   [1103] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_prc, 2),
   [1105] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_cmt, 2),
@@ -33906,7 +33902,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [1109] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__uri_aut_lnk, 2),
   [1111] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk, 2),
   [1113] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal_inl, 3),
-  [1115] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal_ful, 3, .production_id = 14),
+  [1115] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal_ful, 3, .production_id = 12),
   [1117] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tal_inl, 4),
   [1119] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__img, 2),
   [1121] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__del, 2),
@@ -33926,7 +33922,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [1152] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl, 3),
   [1154] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dlm_row, 2),
   [1156] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tbl_dat_row, 2),
-  [1158] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__pgh, 2, .production_id = 4),
+  [1158] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__pgh, 2),
   [1160] = {.entry = {.count = 1, .reusable = true}}, SHIFT(868),
   [1162] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stx, 2),
   [1164] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_blk_div, 2),
@@ -34271,7 +34267,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [1909] = {.entry = {.count = 1, .reusable = true}}, SHIFT(886),
   [1911] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__fen_cod_hed, 3),
   [1913] = {.entry = {.count = 1, .reusable = true}}, SHIFT(888),
-  [1915] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_opn_tag_hed, 2, .production_id = 5),
+  [1915] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_opn_tag_hed, 2),
   [1917] = {.entry = {.count = 1, .reusable = true}}, SHIFT(746),
   [1919] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__txt_repeat1, 2), SHIFT_REPEAT(708),
   [1922] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym__htm_opn_tag_hed_repeat1, 2),
@@ -34284,7 +34280,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [1937] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__txt_repeat1, 2), SHIFT_REPEAT(714),
   [1940] = {.entry = {.count = 1, .reusable = true}}, SHIFT(716),
   [1942] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__txt_repeat1, 2), SHIFT_REPEAT(716),
-  [1945] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_opn_tag_hed, 3, .production_id = 5),
+  [1945] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_opn_tag_hed, 3),
   [1947] = {.entry = {.count = 1, .reusable = true}}, SHIFT(708),
   [1949] = {.entry = {.count = 1, .reusable = true}}, SHIFT(720),
   [1951] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__txt_repeat1, 2), SHIFT_REPEAT(720),
@@ -34310,7 +34306,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [1999] = {.entry = {.count = 1, .reusable = true}}, SHIFT(741),
   [2001] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym__txt_repeat1, 2), SHIFT_REPEAT(743),
   [2004] = {.entry = {.count = 1, .reusable = true}}, SHIFT(766),
-  [2006] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_atr, 1, .production_id = 10),
+  [2006] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_atr, 1, .production_id = 8),
   [2008] = {.entry = {.count = 1, .reusable = true}}, SHIFT(789),
   [2010] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__fen_cod_hed, 1),
   [2012] = {.entry = {.count = 1, .reusable = true}}, SHIFT(538),
@@ -34338,8 +34334,8 @@ static TSParseActionEntry ts_parse_actions[] = {
   [2063] = {.entry = {.count = 1, .reusable = true}}, SHIFT(522),
   [2065] = {.entry = {.count = 1, .reusable = true}}, SHIFT(124),
   [2067] = {.entry = {.count = 1, .reusable = true}}, SHIFT(216),
-  [2069] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_atr, 3, .production_id = 10),
-  [2071] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_ref_def_hed, 6, .production_id = 15),
+  [2069] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__htm_atr, 3, .production_id = 8),
+  [2071] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_ref_def_hed, 6, .production_id = 13),
   [2073] = {.entry = {.count = 1, .reusable = true}}, SHIFT(536),
   [2075] = {.entry = {.count = 1, .reusable = true}}, SHIFT(131),
   [2077] = {.entry = {.count = 1, .reusable = true}}, SHIFT(127),
@@ -34370,7 +34366,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [2129] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__tig_lst_itm, 3),
   [2131] = {.entry = {.count = 1, .reusable = true}}, SHIFT(296),
   [2133] = {.entry = {.count = 1, .reusable = true}}, SHIFT(295),
-  [2135] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__fen_cod_inf, 3, .production_id = 12),
+  [2135] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__fen_cod_inf, 3, .production_id = 10),
   [2137] = {.entry = {.count = 1, .reusable = true}}, SHIFT(818),
   [2139] = {.entry = {.count = 1, .reusable = true}}, SHIFT(333),
   [2141] = {.entry = {.count = 1, .reusable = true}}, SHIFT(154),
@@ -34426,7 +34422,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [2241] = {.entry = {.count = 1, .reusable = true}}, SHIFT(707),
   [2243] = {.entry = {.count = 1, .reusable = true}}, SHIFT(180),
   [2245] = {.entry = {.count = 1, .reusable = true}}, SHIFT(434),
-  [2247] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stx_hed, 3, .production_id = 7),
+  [2247] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__stx_hed, 3, .production_id = 5),
   [2249] = {.entry = {.count = 1, .reusable = true}}, SHIFT(798),
   [2251] = {.entry = {.count = 1, .reusable = true}}, SHIFT(448),
   [2253] = {.entry = {.count = 1, .reusable = true}}, SHIFT(428),
@@ -34508,7 +34504,7 @@ static TSParseActionEntry ts_parse_actions[] = {
   [2405] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_tit, 2),
   [2407] = {.entry = {.count = 1, .reusable = true}}, SHIFT(432),
   [2409] = {.entry = {.count = 1, .reusable = true}}, SHIFT(456),
-  [2411] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_ref_def_hed, 7, .production_id = 15),
+  [2411] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__lnk_ref_def_hed, 7, .production_id = 13),
   [2413] = {.entry = {.count = 1, .reusable = true}}, SHIFT(366),
   [2415] = {.entry = {.count = 1, .reusable = true}}, SHIFT(365),
   [2417] = {.entry = {.count = 1, .reusable = true}}, SHIFT(232),
@@ -34579,20 +34575,15 @@ extern const TSLanguage *tree_sitter_markdown(void) {
     .symbol_count = SYMBOL_COUNT,
     .alias_count = ALIAS_COUNT,
     .token_count = TOKEN_COUNT,
-    .large_state_count = LARGE_STATE_COUNT,
+    .external_token_count = EXTERNAL_TOKEN_COUNT,
+    .symbol_names = ts_symbol_names,
     .symbol_metadata = ts_symbol_metadata,
-    .parse_table = (const unsigned short *)ts_parse_table,
-    .small_parse_table = (const uint16_t *)ts_small_parse_table,
-    .small_parse_table_map = (const uint32_t *)ts_small_parse_table_map,
+    .parse_table = (const uint16_t *)ts_parse_table,
     .parse_actions = ts_parse_actions,
     .lex_modes = ts_lex_modes,
-    .symbol_names = ts_symbol_names,
-    .public_symbol_map = ts_symbol_map,
     .alias_sequences = (const TSSymbol *)ts_alias_sequences,
-    .field_count = FIELD_COUNT,
     .max_alias_sequence_length = MAX_ALIAS_SEQUENCE_LENGTH,
     .lex_fn = ts_lex,
-    .external_token_count = EXTERNAL_TOKEN_COUNT,
     .external_scanner = {
       (const bool *)ts_external_scanner_states,
       ts_external_scanner_symbol_map,
@@ -34602,6 +34593,13 @@ extern const TSLanguage *tree_sitter_markdown(void) {
       tree_sitter_markdown_external_scanner_serialize,
       tree_sitter_markdown_external_scanner_deserialize,
     },
+    .field_count = FIELD_COUNT,
+    .large_state_count = LARGE_STATE_COUNT,
+    .small_parse_table = (const uint16_t *)ts_small_parse_table,
+    .small_parse_table_map = (const uint32_t *)ts_small_parse_table_map,
+    .public_symbol_map = ts_symbol_map,
+    .alias_map = ts_non_terminal_alias_map,
+    .state_count = STATE_COUNT,
   };
   return &language;
 }

@@ -8,7 +8,27 @@
       "required": true,
       "types": [
         {
-          "type": "atx_heading_marker",
+          "type": "atx_h1_marker",
+          "named": true
+        },
+        {
+          "type": "atx_h2_marker",
+          "named": true
+        },
+        {
+          "type": "atx_h3_marker",
+          "named": true
+        },
+        {
+          "type": "atx_h4_marker",
+          "named": true
+        },
+        {
+          "type": "atx_h5_marker",
+          "named": true
+        },
+        {
+          "type": "atx_h6_marker",
           "named": true
         },
         {
@@ -1172,7 +1192,11 @@
           "named": true
         },
         {
-          "type": "setext_heading_underline",
+          "type": "setext_h1_underline",
+          "named": true
+        },
+        {
+          "type": "setext_h2_underline",
           "named": true
         }
       ]
@@ -1654,7 +1678,27 @@
     }
   },
   {
-    "type": "atx_heading_marker",
+    "type": "atx_h1_marker",
+    "named": true
+  },
+  {
+    "type": "atx_h2_marker",
+    "named": true
+  },
+  {
+    "type": "atx_h3_marker",
+    "named": true
+  },
+  {
+    "type": "atx_h4_marker",
+    "named": true
+  },
+  {
+    "type": "atx_h5_marker",
+    "named": true
+  },
+  {
+    "type": "atx_h6_marker",
     "named": true
   },
   {
@@ -1690,7 +1734,11 @@
     "named": true
   },
   {
-    "type": "setext_heading_underline",
+    "type": "setext_h1_underline",
+    "named": true
+  },
+  {
+    "type": "setext_h2_underline",
     "named": true
   },
   {

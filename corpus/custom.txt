@@ -800,13 +800,13 @@ Task list item (extension) - setext heading takes precedence over it
       (setext_heading
         (heading_content
           (text))
-        (setext_heading_underline)))
+        (setext_h1_underline)))
     (list_item
       (list_marker)
       (setext_heading
         (heading_content
           (text))
-        (setext_heading_underline)))))
+        (setext_h1_underline)))))
 
 ================================================================================
 Autolink (extension) - valid domain

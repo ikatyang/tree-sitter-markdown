@@ -58,9 +58,9 @@ TokenType BlockDelimiter::tkn_typ(LexedCharacter c) const {
   else if (sym_ == SYM_USC_THM_BRK_BGN) { if (c == '_') return TKN_THM_BRK_BGN; }
   else if (sym_ == SYM_HYP_THM_BRK_BGN) { if (c == '-') return TKN_THM_BRK_BGN; }
   else if (sym_ == SYM_PGH_BGN_MKR) { if (!is_wht_chr(c)) return TKN_PGH_BGN_MKR; }
-  else if (sym_ == SYM_EQL_STX_BGN) { if (c == '=') return TKN_STX_BGN; }
-  else if (sym_ == SYM_HYP_STX_BGN) { if (c == '-') return TKN_STX_BGN; }
-  else if (sym_ == SYM_ATX_BGN) { if (c == '#') return TKN_ATX_BGN; }
+  else if (sym_ == SYM_EQL_STX_BGN) { if (c == '=') return TKN_STX_BGN_1; }
+  else if (sym_ == SYM_HYP_STX_BGN) { if (c == '-') return TKN_STX_BGN_2; }
+  else if (sym_ == SYM_ATX_BGN) { if (c == '#') return TKN_ATX_BGN_ARR[len_ - 1]; }
   else if (sym_ == SYM_IND_COD_BGN_PFX) { if (is_wsp_chr(c)) return TKN_IND_COD_BGN_PFX; }
   else if (sym_ == SYM_IND_COD_BGN_MKR) { return TKN_IND_COD_BGN_MKR; }
   else if (sym_ == SYM_FEN_COD_CTN_BGN_MKR) { return TKN_FEN_COD_CTN_BGN_MKR; }

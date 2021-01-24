@@ -10,8 +10,14 @@ enum TokenType {
   TKN_THM_BRK_BGN,                                          TKN_THM_BRK_END_MKR,
   TKN_PGH_BGN_MKR,                                          TKN_PGH_END_MKR,
                                                             TKN_LNK_REF_DEF_END_MKR,
-  TKN_STX_BGN,                                              TKN_STX_END_MKR,
-  TKN_ATX_BGN,                                              TKN_ATX_END_MKR,
+  TKN_STX_BGN_1,
+  TKN_STX_BGN_2,                                            TKN_STX_END_MKR,
+  TKN_ATX_BGN_1,
+  TKN_ATX_BGN_2,
+  TKN_ATX_BGN_3,
+  TKN_ATX_BGN_4,
+  TKN_ATX_BGN_5,
+  TKN_ATX_BGN_6,                                            TKN_ATX_END_MKR,
   TKN_IND_COD_BGN_PFX,
   TKN_IND_COD_BGN_MKR,                                      TKN_IND_COD_END_MKR,
   TKN_FEN_COD_CTN_BGN_MKR,
@@ -78,6 +84,15 @@ enum TokenType {
   TKN_VRT_SPC,
 
   TKN_NOT_FOUND,
+};
+
+TokenType TKN_ATX_BGN_ARR[] = {
+  TKN_ATX_BGN_1,
+  TKN_ATX_BGN_2,
+  TKN_ATX_BGN_3,
+  TKN_ATX_BGN_4,
+  TKN_ATX_BGN_5,
+  TKN_ATX_BGN_6,
 };
 
 }

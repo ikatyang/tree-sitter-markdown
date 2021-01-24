@@ -287,6 +287,29 @@
         }
       ]
     },
+    "_stx_bgn": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_stx_bgn_1"
+          },
+          "named": true,
+          "value": "setext_h1_underline"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_stx_bgn_2"
+          },
+          "named": true,
+          "value": "setext_h2_underline"
+        }
+      ]
+    },
     "_stx_hed": {
       "type": "SEQ",
       "members": [
@@ -304,13 +327,8 @@
           "name": "_pgh_end_mkr"
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_stx_bgn"
-          },
-          "named": true,
-          "value": "setext_heading_underline"
+          "type": "SYMBOL",
+          "name": "_stx_bgn"
         }
       ]
     },
@@ -332,17 +350,71 @@
         }
       ]
     },
-    "_atx_hed": {
-      "type": "SEQ",
+    "_atx_bgn": {
+      "type": "CHOICE",
       "members": [
         {
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "_atx_bgn"
+            "name": "_atx_bgn_1"
           },
           "named": true,
-          "value": "atx_heading_marker"
+          "value": "atx_h1_marker"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_atx_bgn_2"
+          },
+          "named": true,
+          "value": "atx_h2_marker"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_atx_bgn_3"
+          },
+          "named": true,
+          "value": "atx_h3_marker"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_atx_bgn_4"
+          },
+          "named": true,
+          "value": "atx_h4_marker"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_atx_bgn_5"
+          },
+          "named": true,
+          "value": "atx_h5_marker"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_atx_bgn_6"
+          },
+          "named": true,
+          "value": "atx_h6_marker"
+        }
+      ]
+    },
+    "_atx_hed": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_atx_bgn"
         },
         {
           "type": "ALIAS",
@@ -1577,13 +1649,8 @@
           "name": "_pgh_end_mkr"
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_stx_bgn"
-          },
-          "named": true,
-          "value": "setext_heading_underline"
+          "type": "SYMBOL",
+          "name": "_stx_bgn"
         }
       ]
     },
@@ -3164,7 +3231,11 @@
     },
     {
       "type": "SYMBOL",
-      "name": "_stx_bgn"
+      "name": "_stx_bgn_1"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_stx_bgn_2"
     },
     {
       "type": "SYMBOL",
@@ -3172,7 +3243,27 @@
     },
     {
       "type": "SYMBOL",
-      "name": "_atx_bgn"
+      "name": "_atx_bgn_1"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_atx_bgn_2"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_atx_bgn_3"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_atx_bgn_4"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_atx_bgn_5"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_atx_bgn_6"
     },
     {
       "type": "SYMBOL",

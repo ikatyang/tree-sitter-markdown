@@ -151,7 +151,7 @@ Example 10 - https://github.github.com/gfm/#example-10
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text))))
 
@@ -408,7 +408,7 @@ bar
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (paragraph
     (text)))
 
@@ -466,27 +466,27 @@ Example 32 - https://github.github.com/gfm/#example-32
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h2_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h4_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h5_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h6_marker)
     (heading_content
       (text))))
 
@@ -537,7 +537,7 @@ Example 36 - https://github.github.com/gfm/#example-36
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text)
       (emphasis
@@ -556,7 +556,7 @@ Example 37 - https://github.github.com/gfm/#example-37
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text))))
 
@@ -571,15 +571,15 @@ Example 38 - https://github.github.com/gfm/#example-38
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h2_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text))))
 
@@ -618,11 +618,11 @@ Example 41 - https://github.github.com/gfm/#example-41
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h2_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text))))
 
@@ -636,11 +636,11 @@ Example 42 - https://github.github.com/gfm/#example-42
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h5_marker)
     (heading_content
       (text))))
 
@@ -653,7 +653,7 @@ Example 43 - https://github.github.com/gfm/#example-43
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text))))
 
@@ -666,7 +666,7 @@ Example 44 - https://github.github.com/gfm/#example-44
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text))))
 
@@ -679,7 +679,7 @@ Example 45 - https://github.github.com/gfm/#example-45
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text))))
 
@@ -694,19 +694,19 @@ Example 46 - https://github.github.com/gfm/#example-46
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text)
       (backslash_escape)
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h2_marker)
     (heading_content
       (text)
       (backslash_escape)
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text)
       (backslash_escape))))
@@ -723,7 +723,7 @@ Example 47 - https://github.github.com/gfm/#example-47
 (document
   (thematic_break)
   (atx_heading
-    (atx_heading_marker)
+    (atx_h2_marker)
     (heading_content
       (text)))
   (thematic_break))
@@ -741,7 +741,7 @@ Bar foo
   (paragraph
     (text))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text)))
   (paragraph
@@ -758,11 +758,11 @@ Example 49 - https://github.github.com/gfm/#example-49
 
 (document
   (atx_heading
-    (atx_heading_marker))
+    (atx_h2_marker))
   (atx_heading
-    (atx_heading_marker))
+    (atx_h1_marker))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text))))
 
@@ -783,13 +783,13 @@ Foo *bar*
       (text)
       (emphasis
         (text)))
-    (setext_heading_underline))
+    (setext_h1_underline))
   (setext_heading
     (heading_content
       (text)
       (emphasis
         (text)))
-    (setext_heading_underline)))
+    (setext_h2_underline)))
 
 ================================================================================
 Example 51 - https://github.github.com/gfm/#example-51
@@ -808,7 +808,7 @@ baz*
         (text)
         (soft_line_break)
         (text)))
-    (setext_heading_underline)))
+    (setext_h1_underline)))
 
 ================================================================================
 Example 52 - https://github.github.com/gfm/#example-52
@@ -827,7 +827,7 @@ baz*
         (text)
         (soft_line_break)
         (text)))
-    (setext_heading_underline)))
+    (setext_h1_underline)))
 
 ================================================================================
 Example 53 - https://github.github.com/gfm/#example-53
@@ -844,11 +844,11 @@ Foo
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline)))
+    (setext_h1_underline)))
 
 ================================================================================
 Example 54 - https://github.github.com/gfm/#example-54
@@ -868,15 +868,15 @@ Example 54 - https://github.github.com/gfm/#example-54
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline)))
+    (setext_h1_underline)))
 
 ================================================================================
 Example 55 - https://github.github.com/gfm/#example-55
@@ -911,7 +911,7 @@ Foo
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline)))
+    (setext_h2_underline)))
 
 ================================================================================
 Example 57 - https://github.github.com/gfm/#example-57
@@ -959,7 +959,7 @@ Foo
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline)))
+    (setext_h2_underline)))
 
 ================================================================================
 Example 60 - https://github.github.com/gfm/#example-60
@@ -973,7 +973,7 @@ Foo\
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline)))
+    (setext_h2_underline)))
 
 ================================================================================
 Example 61 - https://github.github.com/gfm/#example-61
@@ -992,13 +992,13 @@ of dashes"/>
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (paragraph
     (text))
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (paragraph
     (text)))
 
@@ -1065,7 +1065,7 @@ Bar
       (text)
       (soft_line_break)
       (text))
-    (setext_heading_underline)))
+    (setext_h2_underline)))
 
 ================================================================================
 Example 66 - https://github.github.com/gfm/#example-66
@@ -1084,11 +1084,11 @@ Baz
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (paragraph
     (text)))
 
@@ -1172,7 +1172,7 @@ Example 72 - https://github.github.com/gfm/#example-72
     (heading_content
       (backslash_escape)
       (text))
-    (setext_heading_underline)))
+    (setext_h2_underline)))
 
 ================================================================================
 Example 73 - https://github.github.com/gfm/#example-73
@@ -1191,7 +1191,7 @@ baz
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (paragraph
     (text)))
 
@@ -1413,7 +1413,7 @@ Heading
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text)))
   (indented_code_block
@@ -1421,7 +1421,7 @@ Heading
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (indented_code_block
     (text))
   (thematic_break))
@@ -1840,12 +1840,12 @@ bar
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h2_underline))
   (fenced_code_block
     (code_fence_content
       (text)))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text))))
 
@@ -3283,7 +3283,7 @@ Example 183 - https://github.github.com/gfm/#example-183
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text)
       (link
@@ -3317,7 +3317,7 @@ bar
   (setext_heading
     (heading_content
       (text))
-    (setext_heading_underline))
+    (setext_h1_underline))
   (paragraph
     (link
       (link_text
@@ -3572,7 +3572,7 @@ aaa
   (paragraph
     (text))
   (atx_heading
-    (atx_heading_marker)
+    (atx_h1_marker)
     (heading_content
       (text))))
 
@@ -3799,7 +3799,7 @@ Example 206 - https://github.github.com/gfm/#example-206
 (document
   (block_quote
     (atx_heading
-      (atx_heading_marker)
+      (atx_h1_marker)
       (heading_content
         (text)))
     (paragraph
@@ -3819,7 +3819,7 @@ Example 207 - https://github.github.com/gfm/#example-207
 (document
   (block_quote
     (atx_heading
-      (atx_heading_marker)
+      (atx_h1_marker)
       (heading_content
         (text)))
     (paragraph
@@ -3839,7 +3839,7 @@ Example 208 - https://github.github.com/gfm/#example-208
 (document
   (block_quote
     (atx_heading
-      (atx_heading_marker)
+      (atx_h1_marker)
       (heading_content
         (text)))
     (paragraph
@@ -3876,7 +3876,7 @@ baz
 (document
   (block_quote
     (atx_heading
-      (atx_heading_marker)
+      (atx_h1_marker)
       (heading_content
         (text)))
     (paragraph
@@ -5161,7 +5161,7 @@ Example 278 - https://github.github.com/gfm/#example-278
     (list_item
       (list_marker)
       (atx_heading
-        (atx_heading_marker)
+        (atx_h1_marker)
         (heading_content
           (text))))
     (list_item
@@ -5169,7 +5169,7 @@ Example 278 - https://github.github.com/gfm/#example-278
       (setext_heading
         (heading_content
           (text))
-        (setext_heading_underline))
+        (setext_h2_underline))
       (paragraph
         (text)))))
 
@@ -11722,7 +11722,7 @@ Example 667 - https://github.github.com/gfm/#example-667
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text))))
 
@@ -11735,7 +11735,7 @@ Example 668 - https://github.github.com/gfm/#example-668
 
 (document
   (atx_heading
-    (atx_heading_marker)
+    (atx_h3_marker)
     (heading_content
       (text))))
 

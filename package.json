@@ -6,7 +6,7 @@
     "parser",
     "lexer"
   ],
-  "main": "index.js",
+  "main": "bindings/node",
   "repository": "https://github.com/ikatyang/tree-sitter-markdown",
   "homepage": "https://github.com/ikatyang/tree-sitter-markdown#readme",
   "author": {
@@ -36,8 +36,7 @@
   },
   "files": [
     "/src/",
-    "/binding.gyp",
-    "/grammar.js",
-    "/index.js"
+    "/bindings/node/",
+    "/grammar.js"
   ]
 }

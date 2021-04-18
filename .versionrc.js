@@ -1,4 +1,11 @@
 module.exports = {
+  preset: "angular",
+  scripts: {
+    postbump: [
+      "cargo package --list --allow-dirty && git add Cargo.lock",
+      "rm -r docs && node scripts/generate-playground.js && git add docs",
+    ].join(" && "),
+  },
   bumpFiles: [
     {
       filename: "package.json",

@@ -30,7 +30,7 @@ void scn_mid(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_
 }
 
 Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk) {
-  assert(!is_wht_chr(lxr.lka_chr()));
+  TREE_SITTER_MARKDOWN_ASSERT(!is_wht_chr(lxr.lka_chr()));
   if (scn_blk_txt(lxr, inl_dlms, inl_ctx_stk, blk_dlms, blk_ctx_stk)) return SYM_BLK_TXT;
   InlineDelimiterList::Iterator nxt_inl_dlm_itr = inl_dlms.end();
   InlineDelimiterList::Iterator end_inl_dlm_itr = inl_dlms.end();
@@ -82,7 +82,7 @@ Symbol scn_inl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &in
       || hdl_htm_atr_uqt_bgn_mkr(lxr, inl_dlms, inl_ctx_stk, nxt_inl_dlm_itr)
       || hdl_htm_atr_uqt_end_mkr(lxr, inl_dlms, inl_ctx_stk, nxt_inl_dlm_itr)
     ) {
-      assert(!is_txt);
+      TREE_SITTER_MARKDOWN_ASSERT(!is_txt);
       continue;
     }
 
@@ -208,7 +208,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     }
     lxr.mrk_end();
     if (has_end) {
-      assert(blk_dlms.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms.empty());
       blk_dlms.push_back(BlockDelimiter(SYM_HTM_BLK_SCR_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
     }
     return true;
@@ -232,7 +232,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     }
     lxr.mrk_end();
     if (has_end) {
-      assert(blk_dlms.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms.empty());
       blk_dlms.push_back(BlockDelimiter(SYM_HTM_BLK_CMT_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
     }
     return true;
@@ -253,7 +253,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     }
     lxr.mrk_end();
     if (has_end) {
-      assert(blk_dlms.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms.empty());
       blk_dlms.push_back(BlockDelimiter(SYM_HTM_BLK_PRC_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
     }
     return true;
@@ -274,7 +274,7 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     }
     lxr.mrk_end();
     if (has_end) {
-      assert(blk_dlms.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms.empty());
       blk_dlms.push_back(BlockDelimiter(SYM_HTM_BLK_DCL_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
     }
     return true;
@@ -297,13 +297,13 @@ bool scn_blk_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     }
     lxr.mrk_end();
     if (has_end) {
-      assert(blk_dlms.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms.empty());
       blk_dlms.push_back(BlockDelimiter(SYM_HTM_BLK_CDA_END_MKR, lxr.cur_pos(), lxr.cur_pos()));
     }
     return true;
   }
 
-  assert(false);
+  TREE_SITTER_MARKDOWN_ASSERT(false);
 }
 
 struct ExtendedAutolinkDomainSegment {
@@ -496,7 +496,7 @@ bool scn_ext_aut_lnk(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextSta
     if (has_usc) lxr.jmp_pos(fst_usc_pos);
     LexedPosition end_pos = lxr.cur_pos();
     if (bgn_pos.dist(end_pos) == 0) {
-      assert(has_usc);
+      TREE_SITTER_MARKDOWN_ASSERT(has_usc);
       return false;
     }
     inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_EXT_AUT_LNK_BGN, bgn_pos, end_pos));
@@ -586,7 +586,7 @@ bool scn_inl_bsl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
           inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_BSL_LBK, bgn_pos, bsl_end_pos));
           end_idx = bgn_pos.idx();
         } else {
-          assert(blk_dlms.back().sym() == SYM_LIT_LBK);
+          TREE_SITTER_MARKDOWN_ASSERT(blk_dlms.back().sym() == SYM_LIT_LBK);
           inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_BSL_LBK, bgn_pos, bsl_end_pos));
           lxr.jmp_pos(blk_dlms.back().end_pos());
         }
@@ -631,7 +631,7 @@ bool scn_inl_bsl(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
         inl_ctx_stk.push(
           inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_EML_AUT_LNK_IVD_MKR, bgn_pos, bgn_pos))
         );
-        assert(!inl_ctx_stk.back().is_vld_pst());
+        TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
       } else {
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_BSL_ESC, bgn_pos, lxr.cur_pos()));
       }
@@ -651,7 +651,7 @@ bool scn_inl_btk(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_COD_SPN_BGN, bgn_pos, end_pos))
     );
   } else {
-    assert(!inl_ctx_stk.empty());
+    TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.empty());
     if (inl_ctx_stk.back().btk_len() == btk_len) {
       inl_ctx_stk.pop_paired(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_COD_SPN_END, bgn_pos, end_pos))
@@ -667,7 +667,7 @@ bool scn_inl_cln(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
   if (lxr.lka_chr() != ':') return false;
   if (VLD(SYM_LNK_REF_DEF_CLN)) {
     InlineDelimiterList::Iterator lnk_end_itr = inl_ctx_stk.back().dlm_itr();
-    assert(lnk_end_itr->sym() == SYM_LNK_END);
+    TREE_SITTER_MARKDOWN_ASSERT(lnk_end_itr->sym() == SYM_LNK_END);
 
     InlineDelimiterList::Iterator lnk_bgn_itr = inl_ctx_stk.back(1).dlm_itr();
     if (lnk_bgn_itr->sym() != SYM_LNK_BGN) return false;
@@ -710,7 +710,7 @@ bool scn_inl_eql(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
   LexedPosition bgn_pos = lxr.cur_pos();
   lxr.adv();
   LexedPosition end_pos = lxr.cur_pos();
-  assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_ATR_KEY_END_MKR);
+  TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_ATR_KEY_END_MKR);
   inl_ctx_stk.pop_erase(inl_dlms);
   inl_ctx_stk.push(
     inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_HTM_ATR_EQL, bgn_pos, end_pos))
@@ -736,7 +736,7 @@ bool scn_inl_hyp(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     LexedLength hyp_len = lxr.adv_rpt_len('-', 3);
     lxr.adv_rpt('-');
     if (hyp_len == 2 && lxr.adv_if('>')) {
-      assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_CMT_BGN);
+      TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_CMT_BGN);
       inl_ctx_stk.pop_paired(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_HTM_CMT_END, bgn_pos, lxr.cur_pos()))
       );
@@ -744,7 +744,7 @@ bool scn_inl_hyp(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
       inl_ctx_stk.push(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_HTM_CMT_END, bgn_pos, lxr.cur_pos()))
       );
-      assert(!inl_ctx_stk.back().is_vld_pst());
+      TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
     } else {
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_HTM_CMT_END, bgn_pos, lxr.cur_pos()));
     }
@@ -795,7 +795,7 @@ bool scn_inl_lbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
   if (VLD(SYM_LNK_REF_BGN)) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_END);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_END);
     LexedPosition bgn_pos = lxr.cur_pos();
     lxr.adv();
     inl_ctx_stk.push(
@@ -817,7 +817,7 @@ bool scn_inl_lng(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
   if (VLD(SYM_AUT_LNK_HTM_OPN_TAG_BGN)) {
-    assert(
+    TREE_SITTER_MARKDOWN_ASSERT(
       VLD(SYM_HTM_CLS_TAG_BGN)
       && VLD(SYM_HTM_DCL_BGN)
       && VLD(SYM_HTM_CMT_BGN)
@@ -885,7 +885,7 @@ bool scn_inl_lng(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
 bool scn_inl_lpr(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk, const InlineDelimiterList::Iterator &nxt_inl_dlm_itr) {
   if (lxr.lka_chr() != '(') return false;
   if (VLD(SYM_LNK_INL_BGN)) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_END);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_END);
     LexedPosition bgn_pos = lxr.cur_pos();
     lxr.adv();
     inl_ctx_stk.push(
@@ -922,7 +922,7 @@ bool scn_inl_qus(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
   LexedPosition bgn_pos = lxr.cur_pos();
   lxr.adv();
   if (lxr.adv_if('>')) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_PRC_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_PRC_BGN);
     inl_ctx_stk.pop_paired(
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_HTM_PRC_END, bgn_pos, lxr.cur_pos()))
     );
@@ -938,7 +938,7 @@ bool scn_inl_rbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     InlineDelimiterList::Iterator ctx_dlm_itr = inl_ctx_stk.back().dlm_itr();
     bool is_img = ctx_dlm_itr->sym() == SYM_IMG_BGN;
     bool is_lnk = ctx_dlm_itr->sym() == SYM_LNK_BGN;
-    assert(is_img || is_lnk);
+    TREE_SITTER_MARKDOWN_ASSERT(is_img || is_lnk);
 
     LexedPosition bgn_pos = lxr.cur_pos();
     lxr.adv();
@@ -961,7 +961,7 @@ bool scn_inl_rbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
   }
   if (VLD(SYM_LNK_REF_END)) {
     InlineDelimiterList::Iterator ctx_dlm_itr = inl_ctx_stk.back().dlm_itr();
-    assert(ctx_dlm_itr->sym() == SYM_LNK_REF_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(ctx_dlm_itr->sym() == SYM_LNK_REF_BGN);
 
     LexedPosition bgn_pos = lxr.cur_pos();
     lxr.adv();
@@ -972,7 +972,7 @@ bool scn_inl_rbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
                    && lxr.has_chr_in_rng(is_non_wht_chr, ctx_dlm_itr->end_pos().idx() + 1, bgn_pos.idx() + 1);
 
     InlineDelimiterList::Iterator lnk_end_itr = inl_ctx_stk.back(1).dlm_itr();
-    assert(lnk_end_itr->sym() == SYM_LNK_END);
+    TREE_SITTER_MARKDOWN_ASSERT(lnk_end_itr->sym() == SYM_LNK_END);
 
     bool is_lnk_frt_vlk_lnk_lbl = lnk_end_itr->ctm_dat();
 
@@ -980,7 +980,7 @@ bool scn_inl_rbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
       inl_ctx_stk.push(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_LNK_REF_END, bgn_pos, end_pos))
       );
-      assert(!inl_ctx_stk.back().is_vld_pst());
+      TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
     } else {
       InlineDelimiterList::Iterator lnk_ref_end_itr = inl_dlms.insert(
         nxt_inl_dlm_itr,
@@ -993,7 +993,7 @@ bool scn_inl_rbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
   if (VLD(SYM_HTM_CDA_END)) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_CDA_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_CDA_BGN);
     LexedPosition bgn_pos = lxr.cur_pos();
     LexedLength rbt_len = lxr.adv_rpt_len(']');
     if (rbt_len > 2 && lxr.adv_if('>')) {
@@ -1017,9 +1017,9 @@ bool scn_inl_rbt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
 bool scn_inl_rng(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk, const InlineDelimiterList::Iterator &nxt_inl_dlm_itr) {
   if (lxr.lka_chr() != '>') return false;
   if (VLD(SYM_LNK_DST_EXP_END)) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_EXP_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_EXP_BGN);
     InlineDelimiterList::Iterator lnk_end_nxt_itr = inl_ctx_stk.back(1).dlm_itr();
-    assert(lnk_end_nxt_itr->sym() == SYM_LNK_INL_BGN || lnk_end_nxt_itr->sym() == SYM_LNK_REF_DEF_CLN);
+    TREE_SITTER_MARKDOWN_ASSERT(lnk_end_nxt_itr->sym() == SYM_LNK_INL_BGN || lnk_end_nxt_itr->sym() == SYM_LNK_REF_DEF_CLN);
     LexedPosition bgn_pos = lxr.cur_pos();
     lxr.adv();
     LexedPosition end_pos = lxr.cur_pos();
@@ -1034,7 +1034,7 @@ bool scn_inl_rng(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
       inl_ctx_stk.push(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_LNK_DST_EXP_END, bgn_pos, end_pos))
       );
-      assert(!inl_ctx_stk.back().is_vld_pst());
+      TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
     }
     return true;
   }
@@ -1042,7 +1042,7 @@ bool scn_inl_rng(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     if (inl_ctx_stk.back().dlm_itr()->sym() == SYM_EML_AUT_LNK_END_MKR) {
       inl_ctx_stk.pop_erase(inl_dlms);
     }
-    assert(
+    TREE_SITTER_MARKDOWN_ASSERT(
       inl_ctx_stk.back().dlm_itr()->sym() == SYM_URI_AUT_LNK_BGN
       || inl_ctx_stk.back().dlm_itr()->sym() == SYM_EML_AUT_LNK_BGN
     );
@@ -1059,7 +1059,7 @@ bool scn_inl_rng(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
       || inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_CLS_TAG_NAM_END_MKR
       || inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_DCL_NAM_END_MKR
     ) inl_ctx_stk.pop_erase(inl_dlms);
-    assert(
+    TREE_SITTER_MARKDOWN_ASSERT(
       inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_OPN_TAG_BGN
       || inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_CLS_TAG_BGN
       || inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_DCL_BGN
@@ -1081,7 +1081,7 @@ bool scn_inl_rpr(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
       inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_END_MKR
       || inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_TIT_END_MKR
     ) inl_ctx_stk.pop_erase(inl_dlms);
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_INL_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_INL_BGN);
 
     LexedPosition bgn_pos = lxr.cur_pos();
     lxr.adv();
@@ -1097,7 +1097,7 @@ bool scn_inl_rpr(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     return true;
   }
   if (VLD(SYM_LNK_DST_IMP_PRN_END)) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_IMP_PRN_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_IMP_PRN_BGN);
     inl_ctx_stk.pop();
     LexedPosition bgn_pos = lxr.cur_pos();
     lxr.adv();
@@ -1115,7 +1115,7 @@ bool scn_inl_slh(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     if (
       inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_ATR_KEY_END_MKR
     ) inl_ctx_stk.pop_erase(inl_dlms);
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_OPN_TAG_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_OPN_TAG_BGN);
     inl_ctx_stk.pop_paired(
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, SYM_HTM_SLF_TAG_END, bgn_pos, lxr.cur_pos()))
     );
@@ -1123,7 +1123,7 @@ bool scn_inl_slh(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
     inl_ctx_stk.push(
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_HTM_SLF_TAG_END, bgn_pos, lxr.cur_pos()))
     );
-    assert(!inl_ctx_stk.back().is_vld_pst());
+    TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
   }
   return true;
 }
@@ -1311,7 +1311,7 @@ bool scn_inl_txt(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &
         while (is_asc_ltr_chr(lxr.lka_chr()) || is_num_chr(lxr.lka_chr()) || lxr.lka_chr() == '_' || lxr.lka_chr() == '.' || lxr.lka_chr() == ':' || lxr.lka_chr() == '-') lxr.adv();
         if (ctx_sym == SYM_HTM_ATR_KEY_END_MKR) {
           inl_ctx_stk.pop_erase(inl_dlms);
-          assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_OPN_TAG_BGN);
+          TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_OPN_TAG_BGN);
         }
         inl_ctx_stk.push(
           inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_HTM_ATR_KEY_END_MKR, lxr.cur_pos(), lxr.cur_pos()))
@@ -1399,7 +1399,7 @@ bool scn_aut_lnk_htm_opn_tag_txt(
       || lxr.lka_chr() == '?' || lxr.lka_chr() == '^' || lxr.lka_chr() == '_' || lxr.lka_chr() == '`'
       || lxr.lka_chr() == '{' || lxr.lka_chr() == '|' || lxr.lka_chr() == '}' || lxr.lka_chr() == '~'
     ) {
-      assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
+      TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
       inl_ctx_stk.back().dlm_itr()->set_sym(SYM_EML_AUT_LNK_BGN);
       inl_ctx_stk.back().upd_pst();
       return true;
@@ -1407,7 +1407,7 @@ bool scn_aut_lnk_htm_opn_tag_txt(
   }
 
   if (is_htm_opn_tag && txt_len >= 1 && (is_wht_chr(lxr.lka_chr()) || lxr.lka_chr() == '>' || (lxr.cur_chr() == '/' && slh_cnt == 1 && txt_len >= 2))) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
     inl_ctx_stk.back().dlm_itr()->set_sym(SYM_HTM_OPN_TAG_BGN);
     inl_ctx_stk.back().upd_pst();
     if (lxr.cur_chr() == '/') lxr.jmp_pos(lxr.cur_pos().clone_add(-1));
@@ -1415,14 +1415,14 @@ bool scn_aut_lnk_htm_opn_tag_txt(
   }
 
   if (is_uri_aut_lnk && txt_len >= 2 && txt_len <= 32 && lxr.adv_if(':')) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
     inl_ctx_stk.back().dlm_itr()->set_sym(SYM_URI_AUT_LNK_BGN);
     inl_ctx_stk.back().upd_pst();
     return true;
   }
 
   if (is_eml_aut_lnk && txt_len >= 1) {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_AUT_LNK_HTM_OPN_TAG_BGN);
     inl_ctx_stk.back().dlm_itr()->set_sym(SYM_EML_AUT_LNK_BGN);
     inl_ctx_stk.back().upd_pst();
     return true;
@@ -1588,9 +1588,9 @@ bool scn_lnk_tit_end(
   Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk, const InlineDelimiterList::Iterator &nxt_inl_dlm_itr
 ) {
   if (lxr.lka_chr() != dlm_chr || !VLD(end_sym)) return false;
-  assert(inl_ctx_stk.back().dlm_itr()->sym() == bgn_sym);
+  TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == bgn_sym);
   Symbol lnk_end_nxt_sym = inl_ctx_stk.back(2).dlm_itr()->sym();
-  assert(lnk_end_nxt_sym == SYM_LNK_INL_BGN || lnk_end_nxt_sym == SYM_LNK_REF_DEF_CLN);
+  TREE_SITTER_MARKDOWN_ASSERT(lnk_end_nxt_sym == SYM_LNK_INL_BGN || lnk_end_nxt_sym == SYM_LNK_REF_DEF_CLN);
   LexedPosition bgn_pos = lxr.cur_pos();
   lxr.adv();
   LexedPosition end_pos = lxr.cur_pos();
@@ -1608,14 +1608,14 @@ bool scn_lnk_tit_end(
       inl_ctx_stk.push(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, end_sym, bgn_pos, end_pos))
       );
-      assert(!inl_ctx_stk.back().is_vld_pst());
+      TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
     }
   } else {
     if (is_wht_chr(lxr.lka_chr()) || lxr.lka_chr() == ')') {
       inl_ctx_stk.pop_paired(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, end_sym, bgn_pos, end_pos))
       );
-      assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_END_MKR);
+      TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_END_MKR);
       inl_ctx_stk.pop_erase(inl_dlms);
       inl_ctx_stk.push(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, SYM_LNK_TIT_END_MKR, end_pos, end_pos))
@@ -1624,7 +1624,7 @@ bool scn_lnk_tit_end(
       inl_ctx_stk.push(
         inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, end_sym, bgn_pos, end_pos))
       );
-      assert(!inl_ctx_stk.back().is_vld_pst());
+      TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
     }
   }
   return true;
@@ -1635,7 +1635,7 @@ bool scn_htm_atr_val_bgn(
   Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk, const InlineDelimiterList::Iterator &nxt_inl_dlm_itr
 ) {
   if (lxr.lka_chr() != dlm_chr || !VLD(bgn_sym)) return false;
-  assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_ATR_EQL);
+  TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_HTM_ATR_EQL);
   inl_ctx_stk.pop_yes();
   LexedPosition bgn_pos = lxr.cur_pos();
   lxr.adv();
@@ -1653,7 +1653,7 @@ bool scn_htm_atr_val_end(
   LexedPosition bgn_pos = lxr.cur_pos();
   lxr.adv();
   if (is_wht_chr(lxr.lka_chr()) || lxr.lka_chr() == '/' || lxr.lka_chr() == '>') {
-    assert(inl_ctx_stk.back().dlm_itr()->sym() == bgn_sym);
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == bgn_sym);
     inl_ctx_stk.pop_paired(
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(true, end_sym, bgn_pos, lxr.cur_pos()))
     );
@@ -1661,7 +1661,7 @@ bool scn_htm_atr_val_end(
     inl_ctx_stk.push(
       inl_dlms.insert(nxt_inl_dlm_itr, InlineDelimiter(false, end_sym, bgn_pos, lxr.cur_pos()))
     );
-    assert(!inl_ctx_stk.back().is_vld_pst());
+    TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.back().is_vld_pst());
   }
   return true;
 }
@@ -1715,18 +1715,18 @@ bool hdl_htm_atr_uqt_end_mkr(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineCo
 }
 
 void hdl_paired_lnk_end(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk) {
-  assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_END);
+  TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_END);
   LexedPosition ori_pos = lxr.cur_pos();
 
   InlineDelimiterList::Iterator lnk_end_itr = inl_ctx_stk.back().dlm_itr();
   inl_ctx_stk.pop();
 
-  assert(!inl_ctx_stk.empty());
+  TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.empty());
 
   bool is_img = inl_ctx_stk.back().dlm_itr()->sym() == SYM_IMG_BGN;
   bool is_lnk = inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_BGN;
 
-  assert(is_img || is_lnk);
+  TREE_SITTER_MARKDOWN_ASSERT(is_img || is_lnk);
 
   InlineDelimiterList::Iterator lnk_bgn_itr = inl_ctx_stk.back().dlm_itr();
   inl_ctx_stk.pop_paired(lnk_end_itr);
@@ -1751,18 +1751,18 @@ void hdl_paired_lnk_end(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContext
 }
 
 void hdl_paired_lnk_ref_def(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk) {
-  assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_END_MKR);
+  TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_DST_END_MKR);
   inl_ctx_stk.pop_erase(inl_dlms);
-  assert(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_REF_DEF_CLN);
+  TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.back().dlm_itr()->sym() == SYM_LNK_REF_DEF_CLN);
   inl_ctx_stk.pop_yes();
   InlineDelimiterList::Iterator lnk_end_itr = inl_ctx_stk.back().dlm_itr();
-  assert(lnk_end_itr->sym() == SYM_LNK_END);
+  TREE_SITTER_MARKDOWN_ASSERT(lnk_end_itr->sym() == SYM_LNK_END);
   inl_ctx_stk.pop();
   InlineDelimiterList::Iterator lnk_bgn_itr = inl_ctx_stk.back().dlm_itr();
-  assert(lnk_bgn_itr->sym() == SYM_LNK_BGN);
+  TREE_SITTER_MARKDOWN_ASSERT(lnk_bgn_itr->sym() == SYM_LNK_BGN);
   lnk_bgn_itr->set_sym(SYM_LNK_REF_DEF_BGN);
   inl_ctx_stk.pop_paired(lnk_end_itr);
-  assert(inl_ctx_stk.empty());
+  TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk.empty());
   for (InlineDelimiterList::Iterator itr = ++lnk_bgn_itr; itr != lnk_end_itr;) {
     if (itr->sym() == SYM_BSL_ESC || itr->sym() == SYM_BSL_LBK) {
       if (itr->sym() == SYM_BSL_LBK) itr->set_yes(false);
@@ -1773,7 +1773,7 @@ void hdl_paired_lnk_ref_def(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineCon
 }
 
 void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineContextStack &inl_ctx_stk, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk, InlineDelimiterList::Iterator &nxt_inl_dlm_itr, const InlineDelimiterList::Iterator &end_inl_dlm_itr) {
-  assert(!inl_ctx_stk.empty());
+  TREE_SITTER_MARKDOWN_ASSERT(!inl_ctx_stk.empty());
   InlineDelimiterList::Iterator unpaired_dlm_itr = inl_ctx_stk.back().dlm_itr();
   bool shd_ers = false;
   bool shd_hdl_lnk_end = false;
@@ -1901,7 +1901,7 @@ void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineConte
     inl_dlms.erase(NXT_ITR(unpaired_dlm_itr), end_inl_dlm_itr);
   }
   if (shd_hdl_lnk_end) {
-    assert(unpaired_dlm_itr->sym() == SYM_LNK_END);
+    TREE_SITTER_MARKDOWN_ASSERT(unpaired_dlm_itr->sym() == SYM_LNK_END);
     InlineDelimiterList::Iterator lnk_end_itr = unpaired_dlm_itr;
     bool is_vld_lnk_lbl = lnk_end_itr->ctm_dat();
     if (is_vld_lnk_lbl) {
@@ -1912,7 +1912,7 @@ void hdl_unpaired_inl_dlm(Lexer &lxr, InlineDelimiterList &inl_dlms, InlineConte
     }
     inl_ctx_stk.pop();
     unpaired_dlm_itr = inl_ctx_stk.back().dlm_itr();
-    assert(unpaired_dlm_itr->sym() == SYM_LNK_BGN || unpaired_dlm_itr->sym() == SYM_IMG_BGN);
+    TREE_SITTER_MARKDOWN_ASSERT(unpaired_dlm_itr->sym() == SYM_LNK_BGN || unpaired_dlm_itr->sym() == SYM_IMG_BGN);
   }
   switch (unpaired_dlm_itr->sym()) {
     case SYM_ASR_BGN:

@@ -29,6 +29,7 @@ fn main() {
     cpp_config.cpp(true);
     cpp_config.include(&src_dir);
     cpp_config
+        .define("TREE_SITTER_MARKDOWN_AVOID_CRASH", None)
         .flag_if_supported("-Wno-unused-parameter")
         .flag_if_supported("-Wno-unused-but-set-variable");
     let scanner_path = src_dir.join("scanner.cc");

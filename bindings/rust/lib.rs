@@ -48,5 +48,6 @@ mod tests {
         parser
             .set_language(super::language())
             .expect("Error loading markdown language");
+        assert_eq!(format!("{:?}", parser.parse("abc", None).unwrap()), "{Tree {Node document (0, 0) - (0, 3)}}")
     }
 }

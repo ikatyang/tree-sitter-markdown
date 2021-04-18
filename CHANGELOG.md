@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.7.0](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.6.1...v0.7.0) (2021-04-18)
+
+
+### Features
+
+* add rust binding ([#28](https://github.com/ikatyang/tree-sitter-markdown/issues/28)) ([43ac64d](https://github.com/ikatyang/tree-sitter-markdown/commit/43ac64d8cade4244e3484d2588342dc28991333d))
+
+
+
 ## [0.6.1](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.6.0...v0.6.1) (2021-03-21)
 
 

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.1](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.7.0...v0.7.1) (2021-04-18)
+
+
+### Bug Fixes
+
+* avoid crash ([#29](https://github.com/ikatyang/tree-sitter-markdown/issues/29)) ([db01494](https://github.com/ikatyang/tree-sitter-markdown/commit/db01494e4fa82b6da610e932c7bcce3408779013))
+
+
+
 # [0.7.0](https://github.com/ikatyang/tree-sitter-markdown/compare/v0.6.1...v0.7.0) (2021-04-18)
 
 

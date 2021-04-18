@@ -7,6 +7,7 @@ script:
   - if [ ! -d "./tree-sitter/target/release" ]; then bash ./scripts/setup-tree-sitter.sh; fi
   - ./tree-sitter/target/release/tree-sitter --version
   - ./tree-sitter/target/release/tree-sitter test
+  - cargo test
 
 cache:
   cargo: true

@@ -1,0 +1,28 @@
+[package]
+name = "tree-sitter-markdown"
+description = "Markdown grammar for tree-sitter"
+version = "0.6.1"
+keywords = ["incremental", "parsing", "markdown"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/ikatyang/tree-sitter-markdown"
+edition = "2018"
+license = "MIT"
+
+build = "bindings/rust/build.rs"
+include = [
+  "/bindings/rust/",
+  "/src/",
+  "/CHANGELOG.md",
+  "/grammar.js",
+  "/LICENSE",
+  "/README.md"
+]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter = "0.19"
+
+[build-dependencies]
+cc = "1.0"

@@ -31,13 +31,16 @@
     "nan": "^2.14.0"
   },
   "devDependencies": {
-    "standard-version": "7.0.0",
+    "standard-version": "9.2.0",
     "unicode-regex": "3.0.0"
   },
   "files": [
-    "/src/",
     "/bindings/node/",
+    "/src/",
     "/binding.gyp",
-    "/grammar.js"
+    "/CHANGELOG.md",
+    "/grammar.js",
+    "/LICENSE",
+    "/README.md"
   ]
 }

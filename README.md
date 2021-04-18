@@ -1,6 +1,7 @@
 # tree-sitter-markdown
 
 [![npm](https://img.shields.io/npm/v/tree-sitter-markdown.svg)](https://www.npmjs.com/package/tree-sitter-markdown)
+[![crates](https://img.shields.io/crates/v/tree-sitter-markdown.svg)](https://crates.io/crates/tree-sitter-markdown)
 [![build](https://img.shields.io/travis/com/ikatyang/tree-sitter-markdown/master.svg)](https://travis-ci.com/ikatyang/tree-sitter-markdown/builds)
 
 Markdown ([CommonMark Spec v0.29-gfm](https://github.github.com/gfm/)) grammar for [tree-sitter](https://github.com/tree-sitter/tree-sitter)

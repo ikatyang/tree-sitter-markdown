@@ -78,13 +78,13 @@ void scn_blk(Lexer &lxr, BlockDelimiterList &blk_dlms, const BlockContextStack &
 
     if (!is_tbl) tmp_blk_dlms.push_back(BlockDelimiter(SYM_PGH_BGN_MKR, 0));
   }
-  assert(!tmp_blk_dlms.empty());
+  TREE_SITTER_MARKDOWN_ASSERT(!tmp_blk_dlms.empty());
   push_lst_nod_mkr_if_necessary(blk_dlms, tmp_blk_dlms.front(), ind, blk_ctx_stk.empty() ? SYM_NOT_FOUND : blk_ctx_stk.back().sym());
   tmp_blk_dlms.transfer_to(blk_dlms);
 }
 
 bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockContextStack &blk_ctx_stk) {
-  assert(is_eol_chr(lxr.lka_chr()));
+  TREE_SITTER_MARKDOWN_ASSERT(is_eol_chr(lxr.lka_chr()));
 
   LexedPosition bgn_pos = lxr.cur_pos();
 
@@ -153,7 +153,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       && !blk_ctx_stk.empty()
       && (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN)
     ) {
-      assert(!has_blk_lbk);
+      TREE_SITTER_MARKDOWN_ASSERT(!has_blk_lbk);
       has_end_mkr = true;
       tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
       break;
@@ -168,7 +168,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
     const bool is_eol = is_eol_chr(lxr.lka_chr());
     if (is_pas_all_blk_ctx && is_eol) {
       if (blk_ctx_stk.empty() || blk_ctx_stk.back().sym() == SYM_BQT_BGN) {
-        assert(!has_blk_lbk);
+        TREE_SITTER_MARKDOWN_ASSERT(!has_blk_lbk);
         has_blk_lbk = true;
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_BNK_LBK, bgn_pos, lst_non_wsp_end_pos));
         break;
@@ -180,7 +180,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         || blk_ctx_stk.back().sym() == SYM_TBL_DLM_ROW_BGN_MKR
         || blk_ctx_stk.back().sym() == SYM_TBL_DAT_ROW_BGN_MKR
       ) {
-        assert(!has_blk_lbk);
+        TREE_SITTER_MARKDOWN_ASSERT(!has_blk_lbk);
         has_end_mkr = true;
         tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         break;
@@ -203,7 +203,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       }
     } else if (is_pas_all_blk_ctx) {
       if (blk_ctx_stk.empty() || blk_ctx_stk.back().sym() == SYM_BQT_BGN) {
-        assert(!has_blk_lbk);
+        TREE_SITTER_MARKDOWN_ASSERT(!has_blk_lbk);
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos, lst_non_wsp_end_pos));
         has_opn_mkr = true;
         scn_blk(lxr, tmp_blk_dlms, blk_ctx_stk, cur_ind);
@@ -216,7 +216,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
       if (blk_ctx_stk.back().sym() == SYM_HTM_BLK_DIV_BGN_MKR || blk_ctx_stk.back().sym() == SYM_HTM_BLK_CMP_BGN_MKR) {
-        assert(!has_blk_lbk);
+        TREE_SITTER_MARKDOWN_ASSERT(!has_blk_lbk);
         LexedLength ind_chr_cnt;
         LexedLength vrt_spc_cnt = lxr.clc_vtr_spc_cnt(cur_ind, 0, ind_chr_cnt);
         tmp_blk_dlms.push_back(BlockDelimiter(SYM_LIT_LBK, bgn_pos.dist(lst_non_wsp_end_pos) + ind_chr_cnt));
@@ -311,7 +311,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         }
         break;
       }
-      assert(
+      TREE_SITTER_MARKDOWN_ASSERT(
         !has_blk_lbk
         && (blk_ctx_stk.back().sym() == SYM_PGH_BGN_MKR
           || blk_ctx_stk.back().sym() == SYM_TBL_DLM_ROW_BGN_MKR
@@ -335,7 +335,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       }
       break;
     } else if (is_eol) {
-      assert(!blk_ctx_stk.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(!blk_ctx_stk.empty());
       const BlockContext *fst_bqt_ctx = NULL_PTR;
       for (
         BlockContextStack::ConstIterator cur_ctx_itr = fst_failed_ctx_itr;
@@ -367,7 +367,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         || blk_ctx_stk.back().sym() == SYM_TBL_DLM_ROW_BGN_MKR
         || blk_ctx_stk.back().sym() == SYM_TBL_DAT_ROW_BGN_MKR
       ) {
-        assert(!has_blk_lbk);
+        TREE_SITTER_MARKDOWN_ASSERT(!has_blk_lbk);
         has_end_mkr = true;
         tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         break;
@@ -378,9 +378,9 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         break;
       }
     } else {
-      assert(!blk_ctx_stk.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(!blk_ctx_stk.empty());
       if (blk_ctx_stk.back().sym() == SYM_BTK_FEN_COD_BGN || blk_ctx_stk.back().sym() == SYM_TLD_FEN_COD_BGN) {
-        assert(!has_blk_lbk);
+        TREE_SITTER_MARKDOWN_ASSERT(!has_blk_lbk);
         has_end_mkr = true;
         tmp_blk_dlms.push_back(BlockDelimiter(get_blk_cls_sym(blk_ctx_stk.back().sym()), 0));
         break;
@@ -413,7 +413,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
         }
         break;
       }
-      assert(blk_ctx_stk.back().sym() == SYM_PGH_BGN_MKR && !has_blk_lbk);
+      TREE_SITTER_MARKDOWN_ASSERT(blk_ctx_stk.back().sym() == SYM_PGH_BGN_MKR && !has_blk_lbk);
       if (BSR_ACCEPT == scn_blk_nod(lxr, tmp_blk_dlms, cur_ind, is_pas_all_blk_ctx, /*is_pgh_cont_ln*/ true)) {
         has_opn_mkr = true;
         BlockContextStack::ConstReverseIterator cur_ctx_itr = blk_ctx_stk.rbegin();
@@ -457,7 +457,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
       continue;
     }
 
-    assert(is_eof_chr(lxr.lka_chr()) && !has_opn_mkr && !has_end_mkr);
+    TREE_SITTER_MARKDOWN_ASSERT(is_eof_chr(lxr.lka_chr()) && !has_opn_mkr && !has_end_mkr);
     has_blk_lbk = false;
     tmp_blk_dlms.clear();
     for (
@@ -471,7 +471,7 @@ bool /*is_interrupted*/ scn_eol(Lexer &lxr, BlockDelimiterList &blk_dlms, BlockC
   if (!has_opn_mkr && !has_end_mkr && !blk_ctx_stk.empty() && !is_eof_chr(lbk_nxt_chr)) {
     BlockContext &ctx = blk_ctx_stk.back();
     if (!ctx.has_fst_ctn() && (ctx.sym() == SYM_BTK_FEN_COD_BGN || ctx.sym() == SYM_TLD_FEN_COD_BGN)) {
-      assert(tmp_blk_dlms.front().sym() == SYM_LIT_LBK || tmp_blk_dlms.front().sym() == SYM_BNK_LBK);
+      TREE_SITTER_MARKDOWN_ASSERT(tmp_blk_dlms.front().sym() == SYM_LIT_LBK || tmp_blk_dlms.front().sym() == SYM_BNK_LBK);
       tmp_blk_dlms.transfer_to(blk_dlms, 1);
       blk_dlms.push_back(BlockDelimiter(SYM_FEN_COD_CTN_BGN_MKR, 0));
     }

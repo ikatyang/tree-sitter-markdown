@@ -3,7 +3,7 @@
 namespace tree_sitter_markdown {
 
 InlineDelimiterList::Iterator InlineContext::dlm_itr() const { return dlm_itr_; }
-ParseState InlineContext::pst() const { assert(is_vld_pst()); return pst_; }
+ParseState InlineContext::pst() const { TREE_SITTER_MARKDOWN_ASSERT(is_vld_pst()); return pst_; }
 bool InlineContext::is_vld_pst() const { return pst_ != PST_INVALID; }
 bool InlineContext::has_asr() const { return has_asr_; }
 bool InlineContext::has_usc() const { return has_usc_; }
@@ -42,7 +42,7 @@ const InlineContext &InlineContextStack::back() const { return stk_.back(); }
 const InlineContext &InlineContextStack::back(const uint8_t offset) const {
   ConstReverseIterator itr = stk_.rbegin();
   for (uint8_t i = 0; i < offset; i++) itr++;
-  assert(itr != stk_.rend());
+  TREE_SITTER_MARKDOWN_ASSERT(itr != stk_.rend());
   return *itr;
 }
 
@@ -56,21 +56,21 @@ void InlineContextStack::push(const InlineDelimiterList::Iterator dlm_itr) {
   }
 }
 void InlineContextStack::pop() {
-  assert(!empty());
+  TREE_SITTER_MARKDOWN_ASSERT(!empty());
   stk_.pop_back();
 }
 void InlineContextStack::pop_erase(InlineDelimiterList &inl_dlms) {
-  assert(!empty());
+  TREE_SITTER_MARKDOWN_ASSERT(!empty());
   inl_dlms.erase(stk_.back().dlm_itr());
   stk_.pop_back();
 }
 void InlineContextStack::pop_yes() {
-  assert(!stk_.back().dlm_itr()->yes());
+  TREE_SITTER_MARKDOWN_ASSERT(!stk_.back().dlm_itr()->yes());
   stk_.back().dlm_itr()->set_yes(true);
   pop();
 }
 void InlineContextStack::pop_paired(InlineDelimiter *const end_dlm) {
-  assert(!stk_.back().dlm_itr()->has_end_dlm());
+  TREE_SITTER_MARKDOWN_ASSERT(!stk_.back().dlm_itr()->has_end_dlm());
   end_dlm->set_yes(true);
   stk_.back().dlm_itr()->set_end_dlm(end_dlm);
   pop_yes();

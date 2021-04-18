@@ -47,7 +47,7 @@ Symbol get_blk_cls_sym(const Symbol opn_sym) {
     case SYM_TBL_HED_ROW_BGN_MKR:
     case SYM_TBL_DLM_ROW_BGN_MKR:
     case SYM_TBL_DAT_ROW_BGN_MKR: return SYM_TBL_ROW_END_MKR;
-    default: assert(false);
+    default: TREE_SITTER_MARKDOWN_ASSERT(false);
   }
 }
 

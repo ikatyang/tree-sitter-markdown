@@ -17,7 +17,7 @@ LexedPosition::LexedPosition(const LexedIndex idx, const LexedRow row, const Lex
 LexedPosition LexedPosition::clone_add(const LexedIndex offset_idx) const { return LexedPosition(idx_ + offset_idx, row_, col_ + offset_idx); }
 
 LexedLength LexedPosition::dist(const LexedPosition &pos) const {
-  assert(idx_ <= pos.idx());
+  TREE_SITTER_MARKDOWN_ASSERT(idx_ <= pos.idx());
   return pos.idx() - idx_;
 }
 

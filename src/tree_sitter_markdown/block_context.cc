@@ -6,7 +6,7 @@ bool BlockContext::has_fst_ctn() const { return has_fst_ctn_; }
 Symbol BlockContext::sym() const { return sym_; }
 LexedLength BlockContext::len() const { return len_; }
 LexedColumn BlockContext::ind() const { return ind_; }
-ParseState BlockContext::pst() const { assert(pst_ != PST_INVALID); return pst_; }
+ParseState BlockContext::pst() const { TREE_SITTER_MARKDOWN_ASSERT(pst_ != PST_INVALID); return pst_; }
 
 void BlockContext::mrk_has_fst_ctn() { has_fst_ctn_ = true; }
 
@@ -14,10 +14,10 @@ BlockContext::BlockContext(): has_fst_ctn_(false), sym_(SYM_TXT), len_(LEXED_LEN
 BlockContext::BlockContext(const Symbol sym, const LexedLength len, const LexedColumn ind): has_fst_ctn_(false), sym_(sym), len_(len), ind_(ind), pst_(blk_sym_pst(sym)) {}
 
 unsigned BlockContext::serialize(unsigned char *buffer) const {
-  assert(is_blk_sym(sym_));
-  assert(sym_ <= 0b1111111);
-  assert(len_ <= 0b11111111);
-  assert(ind_ <= 0b11111111);
+  TREE_SITTER_MARKDOWN_ASSERT(is_blk_sym(sym_));
+  TREE_SITTER_MARKDOWN_ASSERT(sym_ <= 0b1111111);
+  TREE_SITTER_MARKDOWN_ASSERT(len_ <= 0b11111111);
+  TREE_SITTER_MARKDOWN_ASSERT(ind_ <= 0b11111111);
   buffer[0] = (sym_ << 1) | has_fst_ctn_;
   buffer[1] = len_;
   buffer[2] = ind_;
@@ -75,7 +75,7 @@ void BlockContextStack::push(const BlockContext &ctx) {
   stk_.push_back(ctx);
 }
 void BlockContextStack::pop() {
-  assert(!empty());
+  TREE_SITTER_MARKDOWN_ASSERT(!empty());
   stk_.pop_back();
 }
 

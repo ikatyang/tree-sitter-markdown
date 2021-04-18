@@ -5,6 +5,12 @@
 
 #include "./tree_sitter_markdown/token_type.h"
 
+#ifdef TREE_SITTER_MARKDOWN_AVOID_CRASH
+#define TREE_SITTER_MARKDOWN_ASSERT(condition) if (!(condition)) throw 1;
+#else
+#define TREE_SITTER_MARKDOWN_ASSERT(condition) assert(condition)
+#endif
+
 // tree-sitter does not support multiple files for external scanner
 #include "./tree_sitter_markdown/block_context.cc"
 #include "./tree_sitter_markdown/block_delimiter.cc"
@@ -47,7 +53,7 @@ struct Scanner {
     i += blk_ctx_stk_.serialize(&buffer[i]);
     buffer[i++] = has_opt_wsp_ind_;
 
-    assert(i <= TREE_SITTER_SERIALIZATION_BUFFER_SIZE);
+    TREE_SITTER_MARKDOWN_ASSERT(i <= TREE_SITTER_SERIALIZATION_BUFFER_SIZE);
 
     return i;
   }
@@ -70,7 +76,7 @@ struct Scanner {
       i += blk_ctx_stk_.deserialize(&buffer[i]);
       has_opt_wsp_ind_ = buffer[i++];
 
-      assert(i == length);
+      TREE_SITTER_MARKDOWN_ASSERT(i == length);
     }
   }
 
@@ -79,7 +85,7 @@ struct Scanner {
     lxr_.mrk_end();
 
     if (!min_inl_dlms_.empty() && is_inl_cls_mrk_sym(min_inl_dlms_.front().sym())) {
-      assert(min_inl_dlms_.front().len() == 0);
+      TREE_SITTER_MARKDOWN_ASSERT(min_inl_dlms_.front().len() == 0);
       TokenType rlt_sym = min_inl_dlms_.front().tkn_typ(lxr_.cur_chr(), lxr_.lka_chr());
       if (rlt_sym != TKN_NOT_FOUND) {
         min_inl_dlms_.pop_front();
@@ -147,7 +153,7 @@ struct Scanner {
             has_opt_wsp_ind_ = false;
           }
         } else if (is_blk_cls_sym(dlm.sym())) {
-          assert(is_paired_blk_syms(blk_ctx_stk_.back().sym(), dlm.sym()));
+          TREE_SITTER_MARKDOWN_ASSERT(is_paired_blk_syms(blk_ctx_stk_.back().sym(), dlm.sym()));
           blk_ctx_stk_.pop();
           has_opt_wsp_ind_ = false;
         } else {
@@ -178,7 +184,7 @@ struct Scanner {
       bool has_txt = false;
       while (!min_inl_dlms_.empty() && !is_eol_chr(lxr_.lka_chr())) {
         if (is_wht_chr(lxr_.lka_chr()) && valid_symbols[TKN_WRD]) {
-          assert(has_txt);
+          TREE_SITTER_MARKDOWN_ASSERT(has_txt);
           break;
         }
 
@@ -187,7 +193,7 @@ struct Scanner {
 
         if (rlt_sym == TKN_NOT_FOUND) {
           if (is_wsp_chr(lxr_.lka_chr())) {
-            assert(has_txt);
+            TREE_SITTER_MARKDOWN_ASSERT(has_txt);
             lxr_.mrk_end();
             lxr_.adv_rpt(is_wsp_chr);
           } else {
@@ -210,7 +216,7 @@ struct Scanner {
         min_inl_dlms_.pop_front();
 
         if (rlt_sym == TKN_HRD_LBK) {
-          assert(blk_dlms_.front().sym() == SYM_LIT_LBK);
+          TREE_SITTER_MARKDOWN_ASSERT(blk_dlms_.front().sym() == SYM_LIT_LBK);
           lxr_.adv_len(blk_dlms_.front().len());
           blk_dlms_.pop_front();
         }
@@ -227,32 +233,32 @@ struct Scanner {
         return lxr_.ret_sym(TKN_WSP);
       }
 
-      assert(has_txt);
+      TREE_SITTER_MARKDOWN_ASSERT(has_txt);
       if (!is_wsp_chr(lxr_.cur_chr())) lxr_.mrk_end();
       return lxr_.ret_sym(valid_symbols[TKN_WRD] ? TKN_WRD : TKN_TXT);
     }
 
-    assert(min_inl_dlms_.empty());
-    assert(inl_dlms_.empty());
-    assert(inl_ctx_stk_.empty());
+    TREE_SITTER_MARKDOWN_ASSERT(min_inl_dlms_.empty());
+    TREE_SITTER_MARKDOWN_ASSERT(inl_dlms_.empty());
+    TREE_SITTER_MARKDOWN_ASSERT(inl_ctx_stk_.empty());
 
     if (blk_ctx_stk_.empty() && is_eof_chr(lxr_.lka_chr())) {
-      assert(blk_dlms_.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms_.empty());
       if (valid_symbols[TKN_EOF]) return lxr_.ret_sym(TKN_EOF);
       return false;
     }
 
     if (is_eol_chr(lxr_.lka_chr())) {
-      assert(blk_dlms_.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms_.empty());
       scn_eol(lxr_, blk_dlms_, blk_ctx_stk_);
-      assert(!blk_dlms_.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(!blk_dlms_.empty());
       return lxr_.ret_sym(TKN_LKA);
     }
 
     if (valid_symbols[TKN_IND_COD_BGN_PFX] || valid_symbols[TKN_LST_ITM_CNT_BGN_MKR]) {
-      assert(blk_dlms_.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(blk_dlms_.empty());
       scn_blk(lxr_, blk_dlms_, blk_ctx_stk_, lxr_.cur_ind() - has_opt_wsp_ind_);
-      assert(!blk_dlms_.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(!blk_dlms_.empty());
       return lxr_.ret_sym(TKN_LKA);
     }
 
@@ -263,7 +269,7 @@ struct Scanner {
       do lxr_.mrk_end();
       while (!is_wht_chr(lxr_.lka_chr()) && scn_inl(lxr_, inl_dlms_, inl_ctx_stk_, blk_dlms_, blk_ctx_stk_) == SYM_TXT);
     } else if (sym != SYM_BLK_TXT) {
-      assert(!inl_dlms_.empty());
+      TREE_SITTER_MARKDOWN_ASSERT(!inl_dlms_.empty());
     }
 
     inl_dlms_.transfer_to(min_inl_dlms_);
@@ -302,7 +308,15 @@ void tree_sitter_markdown_external_scanner_deserialize(void *payload, const char
 
 bool tree_sitter_markdown_external_scanner_scan(void *payload, TSLexer *lexer, const bool *valid_symbols) {
   Scanner *scanner = static_cast<Scanner *>(payload);
+#ifdef TREE_SITTER_MARKDOWN_AVOID_CRASH
+  try {
+    return scanner->scan(lexer, valid_symbols);
+  } catch (...) {
+    return false;
+  }
+#else
   return scanner->scan(lexer, valid_symbols);
+#endif
 }
 
 }

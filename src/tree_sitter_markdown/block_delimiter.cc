@@ -8,8 +8,8 @@ Symbol BlockDelimiter::sym() const { return sym_; }
 LexedLength BlockDelimiter::len() const { return len_; }
 LexedColumn BlockDelimiter::ind() const { return ind_; }
 bool BlockDelimiter::has_pos() const { return has_pos_; }
-const LexedPosition &BlockDelimiter::pos() const { assert(has_pos_); return pos_; }
-const LexedPosition &BlockDelimiter::end_pos() const { assert(has_pos_); return end_pos_; }
+const LexedPosition &BlockDelimiter::pos() const { TREE_SITTER_MARKDOWN_ASSERT(has_pos_); return pos_; }
+const LexedPosition &BlockDelimiter::end_pos() const { TREE_SITTER_MARKDOWN_ASSERT(has_pos_); return end_pos_; }
 
 void BlockDelimiter::set_len(const LexedLength len) {
   len_ = len;
@@ -21,7 +21,7 @@ void BlockDelimiter::set_pos(const LexedPosition &pos, const LexedPosition &end_
   pos_.set(pos);
   end_pos_.set(end_pos);
   has_pos_ = true;
-  assert(pos_.dist(end_pos_) == len_);
+  TREE_SITTER_MARKDOWN_ASSERT(pos_.dist(end_pos_) == len_);
 }
 void BlockDelimiter::drop_pos() {
   has_pos_ = false;
@@ -34,10 +34,10 @@ BlockDelimiter::BlockDelimiter(const Symbol sym, const LexedPosition &pos, const
   sym_(sym), len_(pos.dist(end_pos)), ind_(ind), has_pos_(true), pos_(pos), end_pos_(end_pos) {}
 
 unsigned BlockDelimiter::serialize(unsigned char *buffer) const {
-  assert(is_blk_sym(sym_));
-  assert(sym_ < 0b11111111);
-  assert(len_ < 0b11111111);
-  assert(ind_ < 0b11111111);
+  TREE_SITTER_MARKDOWN_ASSERT(is_blk_sym(sym_));
+  TREE_SITTER_MARKDOWN_ASSERT(sym_ < 0b11111111);
+  TREE_SITTER_MARKDOWN_ASSERT(len_ < 0b11111111);
+  TREE_SITTER_MARKDOWN_ASSERT(ind_ < 0b11111111);
   buffer[0] = sym_;
   buffer[1] = len_;
   buffer[2] = ind_;

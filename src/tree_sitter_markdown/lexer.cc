@@ -163,15 +163,15 @@ LexedLength Lexer::adv_rpt_len(bool (*is_chr)(LexedCharacter), const LexedLength
 }
 
 void Lexer::bgn_buf() {
-  assert(buf_bgn_idx_ == LEXED_INDEX_MAX);
+  TREE_SITTER_MARKDOWN_ASSERT(buf_bgn_idx_ == LEXED_INDEX_MAX);
   buf_bgn_idx_ = cur_idx_;
   chr_buf_.push_back(cur_chr_);
   chr_buf_.push_back(lka_chr_);
 }
 void Lexer::jmp_pos(const LexedPosition &pos) {
   if (pos.idx() == cur_idx_) return;
-  assert(pos.idx() >= buf_bgn_idx_);
-  assert(pos.idx() - buf_bgn_idx_ < chr_buf_.size() - 1);
+  TREE_SITTER_MARKDOWN_ASSERT(pos.idx() >= buf_bgn_idx_);
+  TREE_SITTER_MARKDOWN_ASSERT(pos.idx() - buf_bgn_idx_ < chr_buf_.size() - 1);
   cur_idx_ = pos.idx();
   cur_row_ = pos.row();
   cur_col_ = pos.col();
@@ -181,19 +181,19 @@ void Lexer::jmp_pos(const LexedPosition &pos) {
   cur_ind_ = 0;
 }
 bool Lexer::has_chr_at_idx(const LexedCharacter chr, const LexedIndex idx) const {
-  assert(idx >= buf_bgn_idx_);
-  assert(idx - buf_bgn_idx_ < chr_buf_.size());
+  TREE_SITTER_MARKDOWN_ASSERT(idx >= buf_bgn_idx_);
+  TREE_SITTER_MARKDOWN_ASSERT(idx - buf_bgn_idx_ < chr_buf_.size());
   return idx < 0 ? false : chr_buf_[idx - buf_bgn_idx_] == chr;
 }
 bool Lexer::has_chr_at_idx(bool (*is_chr)(LexedCharacter), const LexedIndex idx) const {
-  assert(idx >= buf_bgn_idx_);
-  assert(idx - buf_bgn_idx_ < chr_buf_.size());
+  TREE_SITTER_MARKDOWN_ASSERT(idx >= buf_bgn_idx_);
+  TREE_SITTER_MARKDOWN_ASSERT(idx - buf_bgn_idx_ < chr_buf_.size());
   return idx < 0 ? false : is_chr(chr_buf_[idx - buf_bgn_idx_]);
 }
 bool Lexer::has_chr_in_rng(bool (*is_chr)(LexedCharacter), const LexedIndex idx, const LexedIndex end_idx) const {
-  assert(idx >= buf_bgn_idx_);
-  assert(idx - buf_bgn_idx_ <= end_idx);
-  assert(end_idx - buf_bgn_idx_ < chr_buf_.size() - 1);
+  TREE_SITTER_MARKDOWN_ASSERT(idx >= buf_bgn_idx_);
+  TREE_SITTER_MARKDOWN_ASSERT(idx - buf_bgn_idx_ <= end_idx);
+  TREE_SITTER_MARKDOWN_ASSERT(end_idx - buf_bgn_idx_ < chr_buf_.size() - 1);
   for (LexedIndex i = idx - buf_bgn_idx_; i < end_idx - buf_bgn_idx_; i++) {
     if (is_chr(chr_buf_[i])) return true;
   }
@@ -204,7 +204,7 @@ bool Lexer::has_chr_in_rng(bool (*is_chr)(LexedCharacter), const LexedPosition p
 }
 
 void Lexer::bgn_rec_tbl_col_cnt() {
-  assert(!is_rec_tbl_col_cnt_);
+  TREE_SITTER_MARKDOWN_ASSERT(!is_rec_tbl_col_cnt_);
   is_rec_tbl_col_cnt_ = true;
   tbl_col_is_bgn_ = true;
   tbl_col_has_bgn_pip_ = false;
@@ -212,11 +212,11 @@ void Lexer::bgn_rec_tbl_col_cnt() {
   tbl_col_pip_cnt_ = 0;
 }
 void Lexer::end_rec_tbl_col_cnt() {
-  assert(is_rec_tbl_col_cnt_);
+  TREE_SITTER_MARKDOWN_ASSERT(is_rec_tbl_col_cnt_);
   is_rec_tbl_col_cnt_ = false;
 }
 uint16_t Lexer::tbl_col_cnt() {
-  assert(is_rec_tbl_col_cnt_);
+  TREE_SITTER_MARKDOWN_ASSERT(is_rec_tbl_col_cnt_);
   uint16_t tbl_col_cnt_ = tbl_col_pip_cnt_ + 1;
   if (tbl_col_has_bgn_pip_) tbl_col_cnt_--;
   bool has_end_pip = (tbl_col_pip_cnt_ - tbl_col_has_bgn_pip_) && !tbl_col_has_ctn_;
@@ -238,13 +238,13 @@ LexedLength Lexer::clc_vtr_spc_cnt(const LexedColumn cur_ind, const LexedColumn 
       return ind - actual_tgt_ind;
     }
   }
-  assert(false);
+  TREE_SITTER_MARKDOWN_ASSERT(false);
 }
 
 bool Lexer::ret_sym(const TokenType rlt_sym) {
-  assert(end_col_ != LEXED_COLUMN_MAX);
+  TREE_SITTER_MARKDOWN_ASSERT(end_col_ != LEXED_COLUMN_MAX);
   bgn_col_ = end_col_;
-  assert(end_chr_ != LEXED_CHARACTER_MAX);
+  TREE_SITTER_MARKDOWN_ASSERT(end_chr_ != LEXED_CHARACTER_MAX);
   bgn_chr_ = end_chr_;
   lxr_->result_symbol = rlt_sym;
   return true;

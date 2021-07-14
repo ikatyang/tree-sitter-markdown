@@ -15,6 +15,9 @@
         "-std=c99",
         "-fexceptions"
       ],
+      "cflags_cc": [
+        "-fexceptions"
+      ],
       "defines": [
         "TREE_SITTER_MARKDOWN_AVOID_CRASH"
       ],

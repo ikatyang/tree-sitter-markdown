@@ -72,6 +72,7 @@ unsigned BlockContextStack::deserialize(const unsigned char *buffer) {
 }
 
 void BlockContextStack::push(const BlockContext &ctx) {
+  TREE_SITTER_MARKDOWN_ASSERT(stk_.size() < 255);
   stk_.push_back(ctx);
 }
 void BlockContextStack::pop() {

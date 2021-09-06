@@ -140,7 +140,7 @@ void BlockDelimiterList::drop_pos() {
 unsigned BlockDelimiterList::serialize(unsigned char *buffer) const {
   size_t i = 0;
   size_t size_i = i++;
-  size_t size = 0;
+  unsigned char size = 0;
   for (ConstIterator itr = list_.begin(), end = list_.end(); itr != end; itr++) {
     i += itr->serialize(&buffer[i]);
     size++;
@@ -160,6 +160,7 @@ unsigned BlockDelimiterList::deserialize(const unsigned char *buffer) {
 void BlockDelimiterList::pop_front() { list_.pop_front(); }
 void BlockDelimiterList::push_back(const BlockDelimiter &dlm) { list_.push_back(dlm); }
 BlockDelimiterList::Iterator BlockDelimiterList::insert(const BlockDelimiterList::Iterator itr, const BlockDelimiter &dlm) {
+  TREE_SITTER_MARKDOWN_ASSERT(list_.size() < 255);
   return list_.insert(itr, dlm);
 }
 BlockDelimiterList::Iterator BlockDelimiterList::insert(const LexedRow row, const BlockDelimiter &dlm) {

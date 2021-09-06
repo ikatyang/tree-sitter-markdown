@@ -170,13 +170,16 @@ bool MinimizedInlineDelimiterList::empty() const { return list_.empty(); }
 MinimizedInlineDelimiter &MinimizedInlineDelimiterList::front() { return list_.front(); }
 
 void MinimizedInlineDelimiterList::pop_front() { list_.pop_front(); }
-void MinimizedInlineDelimiterList::push_back(const MinimizedInlineDelimiter &delimiter) { list_.push_back(delimiter); }
+void MinimizedInlineDelimiterList::push_back(const MinimizedInlineDelimiter &delimiter) {
+    TREE_SITTER_MARKDOWN_ASSERT(list_.size() < 255);
+    list_.push_back(delimiter);
+}
 
 void MinimizedInlineDelimiterList::clear() { list_.clear(); }
 unsigned MinimizedInlineDelimiterList::serialize(unsigned char *buffer) const {
   size_t i = 0;
   size_t size_i = i++;
-  size_t size = 0;
+  unsigned char size = 0;
   for (ConstIterator itr = list_.begin(), end = list_.end(); itr != end; itr++) {
     i += itr->serialize(&buffer[i]);
     size++;

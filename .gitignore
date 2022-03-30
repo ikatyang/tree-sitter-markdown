@@ -1,3 +1,9 @@
 /build
 /node_modules
 /target
+*.a
+*.dylib
+*.so
+*.o
+bindings/c/*.h
+bindings/c/tree-sitter-*.pc

@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-markdown"
 description = "Markdown grammar for tree-sitter"
-version = "0.7.1"
+version = "0.7.2"
 keywords = ["incremental", "parsing", "markdown"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/ikatyang/tree-sitter-markdown"
@@ -22,7 +22,7 @@ include = [
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "0.19"
+tree-sitter = "0.20"
 
 [build-dependencies]
 cc = "1.0"

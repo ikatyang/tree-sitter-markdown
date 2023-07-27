@@ -36,5 +36,11 @@
     "/grammar.js",
     "/LICENSE",
     "/README.md"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.markdown",
+      "file-types": ["md"]
+    }
   ]
 }
